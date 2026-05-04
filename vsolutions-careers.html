@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Careers at V Solutions Inc | Jobs, Culture & Opportunities</title>
+<meta name="description" content="Join V Solutions — flexibility, friendly working environment, and exciting opportunities for professional advancement. Open roles in Marketing, Engineering, Design & SEO." />
+
+<link rel="icon" type="image/svg+xml" href="https://vsolutionsinc.com/wp-content/uploads/2026/03/vsolutions-final.svg" />
+<link rel="apple-touch-icon" href="https://vsolutionsinc.com/wp-content/uploads/2026/03/vsolutions-final.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   V SOLUTIONS INC — CAREERS PAGE
+   World-class careers page matching the realbrand-v2 design
+   Real content from /careers/ page on the live site
+   6 real job listings + culture + benefits + application flow
+============================================================ */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+:root{
+  --rose:#F2295B;--rose-soft:#FF5E84;--rose-deep:#D11947;--rose-glow:rgba(242,41,91,.18);
+  --sky:#3B82F6;--sky-soft:#60A5FA;--sky-deep:#1D4ED8;--sky-glow:rgba(59,130,246,.18);
+  --cyan:#06B6D4;--cyan-soft:#22D3EE;--cyan-glow:rgba(6,182,212,.18);
+  --indigo:#6366F1;--indigo-soft:#818CF8;--indigo-glow:rgba(99,102,241,.18);
+  --teal:#14B8A6;--amber:#F59E0B;--violet:#8B5CF6;--lime:#3DDB91;
+  --navy:#0E1B3A;--navy-2:#1A2D5A;--navy-3:#243A75;
+  --bg:#F4F8FF;--bg-2:#E9F0FB;--bg-3:#DBE5F5;--paper:#FFFFFF;--cloud:#FAFCFF;
+  --ink:#0E1B3A;--ink-2:#334155;--muted:#64748B;--muted-2:#94A3B8;
+  --line:rgba(14,27,58,.08);--line-bright:rgba(59,130,246,.25);--line-rose:rgba(242,41,91,.25);
+  --shadow-md:0 4px 16px rgba(14,27,58,.06),0 1px 2px rgba(14,27,58,.04);
+  --shadow-cloud:0 20px 50px -12px rgba(59,130,246,.2),0 4px 12px rgba(14,27,58,.05);
+  --font-sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  --font-serif:'Instrument Serif',Georgia,serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+
+body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;position:relative}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.container{max-width:1320px;margin:0 auto;padding:0 1.75rem;position:relative;z-index:2}
+@media(max-width:640px){.container{padding:0 1.25rem}}
+
+/* === Atmosphere === */
+.cloud-bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, var(--sky-glow), transparent 60%),
+    radial-gradient(1000px 500px at -10% 30%, var(--rose-glow), transparent 60%),
+    radial-gradient(800px 600px at 50% 80%, var(--cyan-glow), transparent 60%);
+}
+.cloud{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0;opacity:.5}
+.cloud.c1{width:700px;height:700px;background:radial-gradient(circle,rgba(59,130,246,.3),transparent 70%);top:-200px;right:-150px;animation:cloudDrift1 30s ease-in-out infinite}
+.cloud.c2{width:600px;height:600px;background:radial-gradient(circle,rgba(242,41,91,.18),transparent 70%);top:25%;left:-200px;animation:cloudDrift2 35s ease-in-out infinite}
+.cloud.c3{width:500px;height:500px;background:radial-gradient(circle,rgba(99,102,241,.22),transparent 70%);top:55%;right:5%;animation:cloudDrift3 40s ease-in-out infinite}
+@keyframes cloudDrift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-100px,80px) scale(1.2)}}
+@keyframes cloudDrift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(120px,-100px) scale(.85)}}
+@keyframes cloudDrift3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-80px,-120px) scale(1.15)}}
+
+.sparkle-layer{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.sparkle{position:absolute;width:3px;height:3px;border-radius:50%;animation:twinkle var(--dur,4s) ease-in-out infinite;animation-delay:var(--delay,0s);box-shadow:0 0 4px currentColor,0 0 8px currentColor,0 0 12px currentColor}
+.sparkle.large{width:5px;height:5px}.sparkle.tiny{width:2px;height:2px}
+.sparkle.sky{color:var(--sky);background:var(--sky)}
+.sparkle.rose{color:var(--rose);background:var(--rose)}
+.sparkle.indigo{color:var(--indigo);background:var(--indigo)}
+.sparkle.amber{color:var(--amber);background:var(--amber)}
+.sparkle.lime{color:var(--lime);background:var(--lime)}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}}
+
+.cursor-glow{position:fixed;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(242,41,91,.08) 0%,rgba(59,130,246,.06) 40%,transparent 70%);
+  pointer-events:none;z-index:1;transform:translate(-50%,-50%);filter:blur(20px);mix-blend-mode:multiply}
+
+/* === Announce === */
+.announce{background:linear-gradient(90deg,var(--navy),var(--navy-2) 50%,var(--navy));color:#fff;padding:.55rem 0;font-size:.78rem;position:relative;z-index:30}
+.announce .container{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.announce .left{display:flex;gap:1.5rem;align-items:center;color:rgba(255,255,255,.85)}
+.announce .live{display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.announce .live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rose);box-shadow:0 0 8px var(--rose);animation:livePulse 1.8s infinite}
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4);box-shadow:0 0 16px var(--rose)}}
+.announce .right{display:flex;gap:1.25rem;color:rgba(255,255,255,.8)}
+.announce a{transition:color .2s}.announce a:hover{color:var(--rose-soft)}
+.announce .phone{font-family:var(--font-mono);font-weight:600;display:inline-flex;align-items:center;gap:.4rem;color:var(--rose-soft)}
+
+/* === Header === */
+.header{position:sticky;top:0;z-index:50;background:rgba(244,248,255,.75);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.header::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--sky) 15%,var(--cyan) 35%,var(--rose) 55%,var(--indigo) 75%,transparent);
+  opacity:.7;background-size:200% 100%;animation:rainbowShift 8s linear infinite}
+@keyframes rainbowShift{0%{background-position:0% 0}100%{background-position:200% 0}}
+.header .container{display:flex;align-items:center;justify-content:space-between;padding-top:.85rem;padding-bottom:.85rem;gap:2rem}
+.brand{display:flex;align-items:center;gap:.65rem;position:relative;transition:filter .3s}
+.brand-logo{height:42px;width:auto;transition:transform .3s,filter .3s}
+.brand:hover .brand-logo{transform:scale(1.04);filter:drop-shadow(0 0 12px rgba(242,41,91,.5))}
+.brand-spark{position:absolute;font-size:.65rem;pointer-events:none;filter:drop-shadow(0 0 4px currentColor) drop-shadow(0 0 8px currentColor);animation:starSpin 4s linear infinite}
+.brand-spark.s1{top:-2px;right:-8px;color:var(--rose);animation-delay:0s}
+.brand-spark.s2{bottom:0;left:-6px;font-size:.5rem;color:var(--sky);animation-delay:1s}
+@keyframes starSpin{0%,100%{opacity:.4;transform:rotate(0) scale(.8)}50%{opacity:1;transform:rotate(180deg) scale(1.1)}}
+.menu{list-style:none;display:flex;gap:1.85rem;align-items:center;font-size:.92rem;font-weight:500;color:var(--ink-2)}
+.menu > li{position:relative}
+.menu > li > a{padding:.5rem 0;display:inline-flex;align-items:center;gap:.4rem;transition:color .25s}
+.menu > li > a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:linear-gradient(90deg,var(--rose),var(--sky));transition:width .3s ease;box-shadow:0 0 8px var(--rose)}
+.menu > li:hover > a{color:var(--rose)}.menu > li:hover > a::after{width:100%}
+.menu > li.current > a{color:var(--rose)}.menu > li.current > a::after{width:100%}
+.nav-cta{display:flex;gap:.65rem;align-items:center}
+.search-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--paper);display:grid;place-items:center;color:var(--ink-2);font-size:1.05rem;transition:all .3s}
+.search-btn:hover{border-color:var(--rose);color:var(--rose);box-shadow:0 0 0 3px var(--rose-glow);transform:rotate(90deg)}
+.btn{padding:.7rem 1.4rem;border-radius:10px;font-size:.85rem;font-weight:600;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s;white-space:nowrap;position:relative;overflow:hidden}
+.btn-primary{background:linear-gradient(135deg,var(--rose) 0%,var(--sky-deep) 100%);color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.1) inset,0 4px 24px rgba(242,41,91,.4)}
+.btn-primary::before{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transition:left .6s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,255,255,.2) inset,0 8px 36px rgba(242,41,91,.6),0 0 40px rgba(59,130,246,.4)}
+.btn-primary:hover::before{left:100%}
+.btn-arrow{transition:transform .25s}.btn:hover .btn-arrow{transform:translateX(4px)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);background:var(--paper)}
+.btn-ghost:hover{border-color:var(--rose);color:var(--rose);box-shadow:0 0 0 3px var(--rose-glow)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
+.hamburger span{width:22px;height:2px;background:var(--ink);border-radius:2px}
+@media(max-width:1100px){.menu{display:none}.hamburger{display:flex}}
+
+/* ============================================================
+   ★ CAREERS HERO
+============================================================ */
+.careers-hero{
+  position:relative;padding:5rem 0 3rem;overflow:hidden;
+}
+.careers-hero::before{
+  content:"";position:absolute;
+  top:-50%;right:-25%;width:80%;height:200%;
+  background:conic-gradient(from 230deg at 50% 50%,
+    rgba(59,130,246,.18),rgba(99,102,241,.15),rgba(242,41,91,.12),rgba(6,182,212,.1),rgba(59,130,246,.18));
+  filter:blur(60px);opacity:.5;animation:heroMesh 30s linear infinite;pointer-events:none;
+}
+@keyframes heroMesh{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.careers-hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(59,130,246,.15) 1.5px,transparent 1.5px);
+  background-size:36px 36px;
+  mask-image:radial-gradient(ellipse at 50% 30%,black 0%,transparent 70%);
+  pointer-events:none;
+}
+
+.hero-grid{
+  display:grid;grid-template-columns:1.3fr 1fr;gap:3.5rem;align-items:center;
+}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:3rem}}
+
+.breadcrumb{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--font-mono);font-size:.72rem;
+  color:var(--muted);letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:1.5rem;font-weight:600;
+  animation:fadeUp .6s 0s backwards;
+}
+.breadcrumb a{color:var(--muted);transition:color .2s}
+.breadcrumb a:hover{color:var(--rose)}
+.breadcrumb .sep{color:var(--muted-2)}
+.breadcrumb .current{color:var(--rose)}
+
+.hero-pill{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.45rem .95rem .45rem .55rem;
+  background:rgba(255,255,255,.7);backdrop-filter:blur(10px);
+  border:1px solid var(--line-rose);border-radius:100px;
+  font-size:.78rem;font-weight:600;color:var(--ink);
+  margin-bottom:1.5rem;
+  box-shadow:0 0 0 1px rgba(255,255,255,.6) inset,0 4px 24px var(--rose-glow);
+  animation:fadeUp .6s .1s backwards;
+}
+.hero-pill .label{
+  font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  padding:.22rem .55rem;border-radius:4px;
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));color:#fff;
+  box-shadow:0 0 12px rgba(242,41,91,.5);
+  animation:pillPulse 2.5s ease-in-out infinite alternate;
+}
+@keyframes pillPulse{from{box-shadow:0 0 12px rgba(242,41,91,.4)}to{box-shadow:0 0 24px rgba(242,41,91,.7),0 0 36px rgba(59,130,246,.5)}}
+.hero-pill .openings-count{color:var(--rose);font-weight:700}
+
+h1.careers-title{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:clamp(2.5rem,5.2vw,4.5rem);
+  line-height:1.02;letter-spacing:-.035em;
+  color:var(--navy);margin-bottom:1.25rem;
+  animation:fadeUp .8s .2s backwards;
+}
+h1.careers-title em{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--rose) 0%,var(--sky) 50%,var(--indigo) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 24px rgba(242,41,91,.3));
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+.careers-subhead{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  font-size:1.3rem;line-height:1.45;color:var(--ink-2);
+  margin-bottom:1.25rem;max-width:560px;
+  animation:fadeUp .8s .25s backwards;
+}
+
+.careers-lede{
+  font-size:1.05rem;line-height:1.65;max-width:580px;
+  color:var(--muted);margin-bottom:2rem;
+  animation:fadeUp .8s .3s backwards;
+}
+
+.hero-actions{display:flex;gap:.75rem;flex-wrap:wrap;animation:fadeUp .8s .4s backwards;margin-bottom:2.5rem}
+
+.hero-trust{
+  display:flex;gap:2rem;align-items:center;flex-wrap:wrap;
+  padding-top:1.5rem;border-top:1px solid var(--line);
+  animation:fadeUp .8s .5s backwards;
+}
+.hero-trust-item{display:flex;flex-direction:column;gap:.25rem}
+.hero-trust-num{
+  font-family:var(--font-serif);font-style:italic;font-weight:500;
+  font-size:1.6rem;line-height:1;
+  background:linear-gradient(135deg,var(--rose),var(--sky));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-trust-lbl{
+  font-family:var(--font-mono);font-size:.65rem;
+  color:var(--muted);letter-spacing:.08em;text-transform:uppercase;
+}
+
+/* === Hero visual: floating role cards === */
+.hero-visual{position:relative;height:560px;animation:fadeUp 1s .4s backwards}
+@media(max-width:980px){.hero-visual{height:400px}}
+
+.hv-bg{
+  position:absolute;inset:0;border-radius:24px;
+  background:linear-gradient(135deg,rgba(255,255,255,.85) 0%,rgba(248,251,255,.85) 100%);
+  backdrop-filter:blur(20px);
+  border:1px solid var(--line-bright);
+  overflow:hidden;
+  box-shadow:0 0 0 1px rgba(255,255,255,.8) inset,0 24px 80px rgba(59,130,246,.2),0 0 80px rgba(242,41,91,.1);
+}
+.hv-bg::before{
+  content:"";position:absolute;inset:-2px;border-radius:26px;
+  background:conic-gradient(from 0deg,var(--rose),var(--sky),var(--indigo),var(--cyan),var(--amber),var(--rose));
+  opacity:.4;z-index:-1;filter:blur(20px);
+  animation:gradientSpin 8s linear infinite;
+}
+@keyframes gradientSpin{to{filter:hue-rotate(360deg) blur(20px)}}
+.hv-bg::after{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(59,130,246,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.06) 1px,transparent 1px);
+  background-size:30px 30px;
+  mask-image:radial-gradient(ellipse at 50% 50%,black 0%,transparent 80%);pointer-events:none;
+}
+
+.hv-orbit{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+
+/* Center pulse + V badge */
+.hv-pulse{position:absolute;width:200px;height:200px;border-radius:50%;border:1px solid var(--rose);opacity:.4;animation:pulseRing 3s ease-out infinite}
+.hv-pulse.p2{animation-delay:1s;border-color:var(--sky)}
+.hv-pulse.p3{animation-delay:2s;border-color:var(--indigo)}
+@keyframes pulseRing{0%{transform:scale(.5);opacity:.7}100%{transform:scale(2);opacity:0}}
+
+.hv-center{
+  position:relative;width:140px;height:140px;border-radius:50%;
+  background:linear-gradient(135deg,var(--paper),var(--bg-2));
+  border:2px solid var(--rose);
+  display:grid;place-items:center;
+  box-shadow:0 0 40px rgba(242,41,91,.4),0 0 80px rgba(59,130,246,.25),inset 0 0 30px rgba(242,41,91,.1);
+  z-index:5;
+  animation:centerGlow 3s ease-in-out infinite alternate;
+}
+.hv-center img{width:80px;height:auto;filter:drop-shadow(0 0 8px rgba(242,41,91,.4))}
+@keyframes centerGlow{
+  from{box-shadow:0 0 40px rgba(242,41,91,.3),0 0 80px rgba(59,130,246,.2),inset 0 0 30px rgba(242,41,91,.1)}
+  to{box-shadow:0 0 60px rgba(242,41,91,.6),0 0 120px rgba(59,130,246,.4),inset 0 0 40px rgba(242,41,91,.2)}
+}
+
+/* Floating role chips around the center */
+.role-chip{
+  position:absolute;
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.6rem .95rem;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(10px);
+  border:1px solid var(--line-bright);
+  border-radius:100px;
+  font-size:.82rem;font-weight:600;color:var(--ink);
+  box-shadow:0 8px 24px rgba(14,27,58,.1),inset 0 1px 0 rgba(255,255,255,.8);
+  z-index:3;
+  animation:floatChip 6s ease-in-out infinite;
+  white-space:nowrap;
+}
+.role-chip .dot{
+  width:8px;height:8px;border-radius:50%;
+  flex-shrink:0;
+  box-shadow:0 0 6px currentColor;
+}
+.role-chip .badge-remote{
+  font-size:.6rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+  padding:.1rem .35rem;border-radius:3px;
+  background:rgba(61,219,145,.15);color:#15803D;
+  border:1px solid rgba(61,219,145,.3);
+}
+.role-chip.r1{top:8%;left:8%;animation-delay:0s}
+.role-chip.r1 .dot{color:var(--rose);background:var(--rose)}
+.role-chip.r2{top:18%;right:6%;animation-delay:1.2s}
+.role-chip.r2 .dot{color:var(--sky);background:var(--sky)}
+.role-chip.r3{top:42%;left:4%;animation-delay:2.5s}
+.role-chip.r3 .dot{color:var(--indigo);background:var(--indigo)}
+.role-chip.r4{top:50%;right:6%;animation-delay:.8s}
+.role-chip.r4 .dot{color:var(--amber);background:var(--amber)}
+.role-chip.r5{bottom:18%;left:14%;animation-delay:1.8s}
+.role-chip.r5 .dot{color:var(--teal);background:var(--teal)}
+.role-chip.r6{bottom:10%;right:14%;animation-delay:2.8s}
+.role-chip.r6 .dot{color:var(--violet);background:var(--violet)}
+
+@keyframes floatChip{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+
+/* ============================================================
+   ★ SECTION BASE
+============================================================ */
+.sec{padding:5rem 0;position:relative;z-index:2}
+@media(max-width:900px){.sec{padding:3.5rem 0}}
+
+.sec-eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--font-mono);font-size:.72rem;
+  color:var(--rose);letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:.85rem;font-weight:600;
+}
+.sec-eyebrow::before{
+  content:"";width:30px;height:1px;background:var(--rose);
+  box-shadow:0 0 8px var(--rose);
+}
+
+.sec-head{text-align:center;margin-bottom:3rem;max-width:780px;margin-left:auto;margin-right:auto}
+.sec-head .sec-eyebrow{justify-content:center}
+.sec-head .sec-eyebrow::before{display:none}
+
+h2.sec-title{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:clamp(2rem,4.5vw,3.2rem);
+  line-height:1.05;letter-spacing:-.025em;
+  color:var(--navy);margin-bottom:1rem;
+}
+h2.sec-title em{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--rose) 0%,var(--sky) 50%,var(--indigo) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 16px rgba(242,41,91,.25));
+}
+.sec-desc{color:var(--ink-2);font-size:1.05rem;line-height:1.65;max-width:620px;margin:0 auto}
+
+/* ============================================================
+   ★ CULTURE / BENEFITS GRID
+============================================================ */
+.benefits-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;
+}
+@media(max-width:1100px){.benefits-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.benefits-grid{grid-template-columns:1fr}}
+
+.benefit-card{
+  position:relative;
+  padding:2rem 1.75rem;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:18px;
+  transition:all .35s;overflow:hidden;
+}
+.benefit-card::before{
+  content:"";position:absolute;
+  top:-2px;left:-2px;right:-2px;height:3px;
+  background:linear-gradient(90deg,var(--rose),var(--sky),var(--indigo));
+  opacity:0;transition:opacity .35s;
+  border-radius:18px 18px 0 0;
+}
+.benefit-card::after{
+  content:"";position:absolute;top:0;right:0;
+  width:200px;height:200px;
+  background:radial-gradient(circle,var(--accent-color,var(--rose-glow)),transparent 70%);
+  filter:blur(40px);opacity:0;transition:opacity .35s;pointer-events:none;
+}
+.benefit-card:hover{transform:translateY(-6px);border-color:transparent;box-shadow:var(--shadow-cloud)}
+.benefit-card:hover::before{opacity:1}
+.benefit-card:hover::after{opacity:1}
+.benefit-card:hover .benefit-icon{transform:scale(1.08) rotate(-5deg)}
+
+.benefit-icon{
+  width:52px;height:52px;border-radius:13px;
+  display:grid;place-items:center;
+  font-size:1.4rem;font-weight:800;color:#fff;
+  margin-bottom:1.1rem;
+  box-shadow:0 8px 20px -4px;
+  transition:transform .3s;position:relative;
+}
+.benefit-icon::after{
+  content:"✦";position:absolute;top:-5px;right:-5px;
+  font-size:.65rem;color:#fff;
+  filter:drop-shadow(0 0 4px currentColor);
+  animation:catSpark 3s ease-in-out infinite;
+}
+@keyframes catSpark{
+  0%,100%{opacity:.6;transform:scale(.8) rotate(0)}
+  50%{opacity:1;transform:scale(1.2) rotate(180deg)}
+}
+
+.benefit-icon.b1{background:linear-gradient(135deg,#F2295B,#A21044);box-shadow:0 8px 20px -4px rgba(242,41,91,.5)}
+.benefit-icon.b2{background:linear-gradient(135deg,#3B82F6,#1D4ED8);box-shadow:0 8px 20px -4px rgba(59,130,246,.5)}
+.benefit-icon.b3{background:linear-gradient(135deg,#F59E0B,#D97706);box-shadow:0 8px 20px -4px rgba(245,158,11,.5)}
+.benefit-icon.b4{background:linear-gradient(135deg,#14B8A6,#0F766E);box-shadow:0 8px 20px -4px rgba(20,184,166,.5)}
+.benefit-icon.b5{background:linear-gradient(135deg,#8B5CF6,#6D28D9);box-shadow:0 8px 20px -4px rgba(139,92,246,.5)}
+.benefit-icon.b6{background:linear-gradient(135deg,#06B6D4,#0E7490);box-shadow:0 8px 20px -4px rgba(6,182,212,.5)}
+.benefit-icon.b7{background:linear-gradient(135deg,#6366F1,#4338CA);box-shadow:0 8px 20px -4px rgba(99,102,241,.5)}
+.benefit-icon.b8{background:linear-gradient(135deg,#EC4899,#BE185D);box-shadow:0 8px 20px -4px rgba(236,72,153,.5)}
+
+.benefit-card.b1{--accent-color:rgba(242,41,91,.15)}
+.benefit-card.b2{--accent-color:rgba(59,130,246,.15)}
+.benefit-card.b3{--accent-color:rgba(245,158,11,.15)}
+.benefit-card.b4{--accent-color:rgba(20,184,166,.15)}
+.benefit-card.b5{--accent-color:rgba(139,92,246,.15)}
+.benefit-card.b6{--accent-color:rgba(6,182,212,.15)}
+.benefit-card.b7{--accent-color:rgba(99,102,241,.15)}
+.benefit-card.b8{--accent-color:rgba(236,72,153,.15)}
+
+.benefit-title{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:1.05rem;color:var(--ink);
+  margin-bottom:.55rem;letter-spacing:-.01em;
+}
+.benefit-desc{color:var(--muted);font-size:.88rem;line-height:1.55}
+
+/* ============================================================
+   ★ JOB FILTER BAR
+============================================================ */
+.openings-section{padding:5rem 0;position:relative;z-index:2}
+
+.filter-bar{
+  display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;
+  margin-bottom:2.5rem;
+  padding:1.25rem 1.5rem;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:0 4px 16px rgba(14,27,58,.04);
+}
+.filter-bar-left{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.filter-bar-label{
+  font-family:var(--font-mono);font-size:.7rem;font-weight:700;
+  color:var(--muted);letter-spacing:.08em;text-transform:uppercase;
+  margin-right:.5rem;
+}
+.filter-chip{
+  padding:.45rem .9rem;
+  font-size:.82rem;font-weight:600;color:var(--muted);
+  background:transparent;
+  border:1px solid var(--line);
+  border-radius:100px;
+  cursor:pointer;transition:all .25s;
+  display:inline-flex;align-items:center;gap:.4rem;
+  white-space:nowrap;
+}
+.filter-chip:hover{color:var(--rose);border-color:var(--line-rose)}
+.filter-chip.active{
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  color:#fff;border-color:transparent;
+  box-shadow:0 4px 12px rgba(242,41,91,.4);
+}
+.filter-chip .count{
+  font-size:.7rem;padding:.1rem .4rem;border-radius:8px;
+  background:rgba(255,255,255,.2);
+}
+.filter-chip:not(.active) .count{
+  background:var(--bg-2);color:var(--muted);
+}
+
+.filter-search{
+  display:flex;align-items:center;gap:.5rem;
+  padding:.5rem 1rem;
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:100px;
+  font-size:.85rem;
+  min-width:240px;flex:0 1 280px;
+  transition:all .25s;
+}
+.filter-search:focus-within{
+  background:var(--paper);
+  border-color:var(--rose);
+  box-shadow:0 0 0 3px var(--rose-glow);
+}
+.filter-search-icon{color:var(--muted)}
+.filter-search input{
+  flex:1;background:transparent;border:none;outline:none;
+  font:inherit;color:var(--ink);
+}
+.filter-search input::placeholder{color:var(--muted-2)}
+
+/* ============================================================
+   ★ JOB CARDS
+============================================================ */
+.jobs-list{display:flex;flex-direction:column;gap:1rem}
+
+.job-card{
+  position:relative;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  transition:all .35s cubic-bezier(.2,.8,.2,1);
+}
+.job-card::before{
+  content:"";position:absolute;inset:0;border-radius:18px;
+  padding:1px;
+  background:conic-gradient(from 0deg,var(--rose),var(--sky),var(--indigo),var(--cyan),var(--amber),var(--rose));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .35s;pointer-events:none;
+  animation:gradientSpin 4s linear infinite;
+}
+.job-card:hover{
+  transform:translateY(-4px);
+  border-color:transparent;
+  box-shadow:0 16px 40px -12px rgba(242,41,91,.2),0 0 60px rgba(59,130,246,.12);
+}
+.job-card:hover::before{opacity:1}
+
+.job-card-summary{
+  display:grid;
+  grid-template-columns:auto 1fr auto auto;
+  gap:1.5rem;align-items:center;
+  padding:1.5rem 1.75rem;
+  cursor:pointer;
+  list-style:none;
+}
+.job-card-summary::-webkit-details-marker{display:none}
+@media(max-width:760px){
+  .job-card-summary{grid-template-columns:1fr;gap:.85rem;padding:1.25rem}
+}
+
+.job-icon{
+  width:54px;height:54px;border-radius:14px;
+  display:grid;place-items:center;
+  font-size:1.5rem;font-weight:800;color:#fff;
+  flex-shrink:0;
+  position:relative;
+  box-shadow:0 8px 20px -4px;
+}
+.job-icon.j1{background:linear-gradient(135deg,#F2295B,#A21044);box-shadow:0 8px 20px -4px rgba(242,41,91,.45)}
+.job-icon.j2{background:linear-gradient(135deg,#3B82F6,#1D4ED8);box-shadow:0 8px 20px -4px rgba(59,130,246,.45)}
+.job-icon.j3{background:linear-gradient(135deg,#8B5CF6,#6D28D9);box-shadow:0 8px 20px -4px rgba(139,92,246,.45)}
+.job-icon.j4{background:linear-gradient(135deg,#F59E0B,#D97706);box-shadow:0 8px 20px -4px rgba(245,158,11,.45)}
+.job-icon.j5{background:linear-gradient(135deg,#14B8A6,#0F766E);box-shadow:0 8px 20px -4px rgba(20,184,166,.45)}
+.job-icon.j6{background:linear-gradient(135deg,#EC4899,#BE185D);box-shadow:0 8px 20px -4px rgba(236,72,153,.45)}
+
+.job-meta{display:flex;flex-direction:column;gap:.5rem;min-width:0}
+.job-title{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:1.15rem;line-height:1.25;letter-spacing:-.01em;
+  color:var(--ink);
+}
+.job-tags{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center}
+.job-tag{
+  display:inline-flex;align-items:center;gap:.35rem;
+  padding:.22rem .6rem;
+  font-family:var(--font-mono);font-size:.65rem;font-weight:700;
+  letter-spacing:.05em;
+  background:var(--bg-2);
+  color:var(--muted);
+  border:1px solid var(--line);
+  border-radius:5px;
+}
+.job-tag.dept{color:var(--rose);background:rgba(242,41,91,.06);border-color:var(--line-rose)}
+.job-tag.location{color:var(--sky);background:rgba(59,130,246,.06);border-color:rgba(59,130,246,.18)}
+.job-tag.remote{color:#15803D;background:rgba(61,219,145,.1);border-color:rgba(61,219,145,.3)}
+.job-tag.experience{color:var(--indigo);background:rgba(99,102,241,.06);border-color:rgba(99,102,241,.18)}
+.job-tag.type{color:var(--violet);background:rgba(139,92,246,.06);border-color:rgba(139,92,246,.18)}
+
+.job-posted{
+  font-family:var(--font-mono);font-size:.7rem;
+  color:var(--muted);font-weight:500;letter-spacing:.05em;
+  text-align:right;
+}
+@media(max-width:760px){.job-posted{text-align:left}}
+
+.job-toggle{
+  width:42px;height:42px;border-radius:50%;
+  background:rgba(242,41,91,.06);
+  border:1px solid var(--line-rose);
+  display:grid;place-items:center;
+  flex-shrink:0;
+  transition:all .3s;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23F2295B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;
+}
+.job-card[open] .job-toggle{
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  border-color:transparent;
+  box-shadow:0 4px 16px rgba(242,41,91,.4);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 15l-6-6-6 6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;
+}
+@media(max-width:760px){.job-toggle{justify-self:start}}
+
+/* === Job detail when expanded === */
+.job-detail{
+  padding:0 1.75rem 1.75rem;
+  border-top:1px solid var(--line);
+  margin-top:0;
+  animation:fadeIn .4s ease;
+}
+@media(max-width:760px){.job-detail{padding:0 1.25rem 1.25rem}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+
+.job-detail-grid{
+  display:grid;grid-template-columns:1fr 320px;gap:2.5rem;
+  padding-top:1.75rem;
+}
+@media(max-width:980px){.job-detail-grid{grid-template-columns:1fr;gap:1.5rem}}
+
+.job-detail-content h4{
+  font-family:var(--font-mono);font-size:.7rem;font-weight:700;
+  color:var(--rose);letter-spacing:.16em;text-transform:uppercase;
+  margin:1.25rem 0 .65rem;
+  display:inline-flex;align-items:center;gap:.5rem;
+}
+.job-detail-content h4::before{
+  content:"";width:14px;height:1px;background:var(--rose);box-shadow:0 0 6px var(--rose);
+}
+.job-detail-content h4:first-child{margin-top:0}
+.job-detail-content p{
+  font-size:.95rem;line-height:1.65;color:var(--ink-2);
+  margin-bottom:1rem;
+}
+.job-detail-content ul{
+  list-style:none;display:flex;flex-direction:column;gap:.6rem;
+  margin-bottom:1rem;
+}
+.job-detail-content ul li{
+  display:flex;align-items:flex-start;gap:.6rem;
+  font-size:.92rem;line-height:1.55;color:var(--ink-2);
+}
+.job-detail-content ul li::before{
+  content:"";flex-shrink:0;
+  width:18px;height:18px;border-radius:50%;
+  background:rgba(242,41,91,.1);
+  border:1px solid var(--line-rose);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23F2295B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;
+  margin-top:2px;
+}
+.job-detail-content strong{color:var(--ink);font-weight:600}
+
+/* === Apply card on the right === */
+.job-apply-card{
+  position:sticky;top:120px;
+  padding:1.75rem;
+  background:linear-gradient(135deg,var(--bg-2) 0%,var(--paper) 100%);
+  border:1px solid var(--line-rose);
+  border-radius:16px;
+  display:flex;flex-direction:column;gap:1rem;
+  box-shadow:0 12px 32px -10px rgba(242,41,91,.15);
+  align-self:start;
+}
+@media(max-width:980px){.job-apply-card{position:relative;top:0}}
+
+.job-apply-card h4{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:1.1rem;color:var(--ink);margin-bottom:.25rem;
+}
+.job-apply-card p{
+  font-size:.88rem;color:var(--muted);line-height:1.55;
+}
+.job-apply-info{
+  display:flex;flex-direction:column;gap:.65rem;
+  padding:1rem 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.job-apply-info-item{
+  display:flex;align-items:center;gap:.65rem;
+  font-size:.85rem;color:var(--ink-2);
+}
+.job-apply-info-item .icon{
+  flex-shrink:0;
+  width:28px;height:28px;border-radius:8px;
+  background:rgba(242,41,91,.08);
+  border:1px solid var(--line-rose);
+  display:grid;place-items:center;
+  font-size:.9rem;color:var(--rose);
+}
+.job-apply-card .btn-primary{width:100%;justify-content:center;padding:.85rem 1.4rem}
+.job-apply-card .email-link{
+  display:inline-flex;align-items:center;gap:.4rem;justify-content:center;
+  font-size:.78rem;font-weight:600;color:var(--rose);
+  padding-top:.4rem;
+}
+.job-apply-card .email-link:hover{color:var(--sky-deep);text-decoration:underline}
+
+/* ============================================================
+   ★ APPLICATION MODAL
+============================================================ */
+.modal-overlay{
+  position:fixed;inset:0;z-index:100;
+  background:rgba(14,27,58,.7);
+  backdrop-filter:blur(8px);
+  display:none;
+  align-items:center;justify-content:center;
+  padding:1.5rem;
+  animation:overlayFade .3s ease;
+}
+.modal-overlay.active{display:flex}
+@keyframes overlayFade{from{opacity:0}to{opacity:1}}
+
+.modal{
+  position:relative;
+  width:100%;max-width:560px;
+  background:var(--paper);
+  border-radius:24px;
+  padding:2.5rem;
+  box-shadow:0 30px 80px rgba(14,27,58,.4);
+  max-height:90vh;overflow-y:auto;
+  animation:modalSlide .35s cubic-bezier(.2,.8,.2,1);
+}
+.modal::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--rose),var(--sky),var(--indigo));
+  border-radius:24px 24px 0 0;
+  background-size:200% 100%;
+  animation:rainbowShift 8s linear infinite;
+}
+@keyframes modalSlide{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:560px){.modal{padding:2rem 1.5rem}}
+
+.modal-close{
+  position:absolute;top:1rem;right:1rem;
+  width:36px;height:36px;border-radius:50%;
+  background:var(--bg-2);
+  display:grid;place-items:center;
+  font-size:1.2rem;color:var(--muted);
+  transition:all .25s;
+}
+.modal-close:hover{background:var(--rose);color:#fff;transform:rotate(90deg)}
+
+.modal h3{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:1.5rem;line-height:1.2;letter-spacing:-.01em;
+  color:var(--navy);margin-bottom:.4rem;
+  padding-right:2rem;
+}
+.modal h3 em{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  color:var(--rose);
+}
+.modal-subtitle{font-size:.9rem;color:var(--muted);margin-bottom:1.75rem}
+
+.form-row{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.form-row.cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.form-row.cols{grid-template-columns:1fr}}
+
+.form-row label{
+  font-family:var(--font-mono);font-size:.7rem;font-weight:700;
+  color:var(--ink);letter-spacing:.05em;text-transform:uppercase;
+}
+.form-row label .required{color:var(--rose);margin-left:2px}
+.form-row input,.form-row select,.form-row textarea{
+  font:inherit;
+  padding:.7rem .9rem;
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:8px;
+  color:var(--ink);
+  transition:all .25s;
+}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{
+  outline:none;background:var(--paper);
+  border-color:var(--rose);
+  box-shadow:0 0 0 3px var(--rose-glow);
+}
+.form-row textarea{resize:vertical;min-height:90px;font-family:inherit}
+
+.file-upload{
+  display:flex;align-items:center;gap:.75rem;
+  padding:.85rem 1rem;
+  background:var(--bg-2);
+  border:1px dashed var(--line-rose);
+  border-radius:8px;
+  cursor:pointer;transition:all .25s;
+  font-size:.85rem;color:var(--muted);
+}
+.file-upload:hover{
+  background:rgba(242,41,91,.05);
+  border-color:var(--rose);
+  color:var(--rose);
+}
+.file-upload .icon{
+  width:32px;height:32px;border-radius:8px;
+  background:rgba(242,41,91,.1);
+  display:grid;place-items:center;color:var(--rose);
+  font-size:1rem;
+}
+.file-upload input[type=file]{display:none}
+
+.modal-submit{
+  width:100%;
+  margin-top:.5rem;
+  padding:.85rem 1.4rem;
+  justify-content:center;
+}
+
+.modal-disclaimer{
+  font-size:.75rem;color:var(--muted);text-align:center;
+  margin-top:1rem;line-height:1.5;
+}
+.modal-disclaimer a{color:var(--rose);text-decoration:underline}
+
+/* ============================================================
+   ★ TESTIMONIAL / CULTURE SECTION
+============================================================ */
+.culture-section{
+  padding:6rem 0;position:relative;z-index:2;
+  background:linear-gradient(135deg,var(--paper) 0%,var(--bg-2) 100%);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.culture-section::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(800px 400px at 20% 0%,rgba(242,41,91,.12),transparent 50%),
+    radial-gradient(600px 400px at 80% 100%,rgba(59,130,246,.15),transparent 50%);
+  pointer-events:none;
+}
+
+.culture-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+}
+@media(max-width:880px){.culture-grid{grid-template-columns:1fr;gap:2rem}}
+
+.culture-quote{
+  position:relative;
+  padding:2.5rem;
+  background:var(--paper);
+  border-radius:20px;
+  box-shadow:0 16px 50px -12px rgba(242,41,91,.18);
+  border:1px solid var(--line-rose);
+}
+.culture-quote::before{
+  content:""";
+  position:absolute;top:-30px;left:30px;
+  font-family:var(--font-serif);font-style:italic;
+  font-size:7rem;line-height:1;
+  background:linear-gradient(135deg,var(--rose),var(--sky));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 12px rgba(242,41,91,.3));
+}
+.culture-quote-text{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  font-size:1.3rem;line-height:1.45;color:var(--ink);
+  margin-bottom:1.5rem;
+}
+.culture-quote-author{display:flex;align-items:center;gap:.85rem}
+.culture-quote-avatar{
+  width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  display:grid;place-items:center;
+  color:#fff;font-weight:700;font-size:1.1rem;
+  box-shadow:0 4px 12px rgba(242,41,91,.4);
+}
+.culture-quote-meta strong{font-weight:700;color:var(--ink);display:block;font-size:.92rem}
+.culture-quote-meta span{font-size:.78rem;color:var(--muted)}
+
+/* === FAQ === */
+.faq-list{display:flex;flex-direction:column;gap:.85rem;margin-top:2rem}
+.faq-item{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  transition:all .3s;
+}
+.faq-item:hover,.faq-item[open]{
+  border-color:var(--line-rose);
+  box-shadow:0 8px 24px -8px rgba(242,41,91,.15);
+}
+.faq-item summary{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1.1rem 1.25rem;
+  cursor:pointer;list-style:none;
+  font-weight:600;color:var(--ink);font-size:.95rem;
+  transition:color .25s;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--rose)}
+.faq-item summary::after{
+  content:"";
+  width:28px;height:28px;border-radius:50%;
+  background:rgba(242,41,91,.08);
+  border:1px solid var(--line-rose);
+  flex-shrink:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23F2295B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;
+  transition:all .3s;
+}
+.faq-item[open] summary::after{
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  border-color:transparent;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;
+  box-shadow:0 4px 12px rgba(242,41,91,.4);
+}
+.faq-item .faq-answer{
+  padding:0 1.25rem 1.25rem;color:var(--ink-2);
+  font-size:.9rem;line-height:1.65;
+  border-top:1px solid var(--line);padding-top:1rem;
+}
+
+/* ============================================================
+   ★ CTA + FOOTER (matching homepage)
+============================================================ */
+.cta{padding:5rem 0;position:relative;z-index:2}
+.cta-box{
+  position:relative;
+  background:linear-gradient(135deg,var(--paper) 0%,var(--bg-2) 100%);
+  border-radius:28px;padding:5rem 3rem;overflow:hidden;text-align:center;
+  box-shadow:0 0 0 1px var(--line-bright),0 30px 80px -20px rgba(242,41,91,.3),0 0 100px rgba(59,130,246,.2);
+}
+.cta-box::before{
+  content:"";position:absolute;inset:-2px;border-radius:30px;padding:2px;
+  background:conic-gradient(from 0deg,var(--rose),var(--sky),var(--indigo),var(--cyan),var(--amber),var(--rose));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  animation:gradientSpin 6s linear infinite;z-index:1;
+}
+.cta-box::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 20% 0%,rgba(242,41,91,.18),transparent 50%),radial-gradient(circle at 80% 100%,rgba(59,130,246,.18),transparent 50%);
+  pointer-events:none;
+}
+.cta-content{position:relative;z-index:2}
+.cta-eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;justify-content:center;
+  font-family:var(--font-mono);font-size:.72rem;font-weight:700;color:var(--rose);
+  letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem;
+  padding:.4rem .85rem;background:rgba(242,41,91,.08);border:1px solid var(--line-rose);border-radius:100px;
+}
+.cta-eyebrow::before{content:"✦";color:var(--amber);filter:drop-shadow(0 0 4px var(--amber));animation:starSpin 3s linear infinite}
+.cta h3{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:clamp(2rem,4vw,3rem);line-height:1.05;letter-spacing:-.025em;
+  color:var(--navy);margin-bottom:1.25rem;
+}
+.cta h3 em{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--rose),var(--sky) 50%,var(--indigo));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.cta p{color:var(--ink-2);font-size:1.1rem;line-height:1.6;max-width:580px;margin:0 auto 2.5rem}
+.cta-actions{display:inline-flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+
+footer{
+  background:var(--navy);color:rgba(255,255,255,.75);
+  padding:5rem 0 0;position:relative;overflow:hidden;z-index:2;
+}
+footer::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--rose) 25%,var(--sky) 50%,var(--indigo) 75%,transparent);
+  filter:blur(.5px);background-size:200% 100%;animation:rainbowShift 8s linear infinite;
+}
+footer::after{
+  content:"";position:absolute;bottom:-200px;left:50%;transform:translateX(-50%);
+  width:800px;height:400px;
+  background:radial-gradient(ellipse,rgba(242,41,91,.18),transparent 70%);filter:blur(60px);
+}
+.footer-top{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:3rem;
+  padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08);
+  position:relative;z-index:1;
+}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;gap:2.5rem}}
+@media(max-width:520px){.footer-top{grid-template-columns:1fr}}
+.footer-brand .brand{margin-bottom:1.25rem}
+.footer-brand .brand-logo{height:42px;filter:brightness(1.2)}
+.footer-brand p{font-size:.92rem;line-height:1.65;max-width:380px;margin-bottom:1.75rem;color:rgba(255,255,255,.7)}
+.footer-contact{display:flex;flex-direction:column;gap:.85rem;font-size:.88rem}
+.footer-contact-item{display:flex;align-items:flex-start;gap:.65rem;color:rgba(255,255,255,.75);transition:color .2s}
+.footer-contact-item:hover{color:var(--rose-soft)}
+.footer-contact-item .icon{flex-shrink:0;width:32px;height:32px;border-radius:8px;background:rgba(242,41,91,.15);border:1px solid rgba(242,41,91,.3);display:grid;place-items:center;font-size:.85rem;color:var(--rose-soft)}
+.fcol h5{font-family:var(--font-mono);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-soft);margin-bottom:1.25rem;display:inline-flex;align-items:center;gap:.5rem}
+.fcol h5::before{content:"";width:14px;height:1px;background:var(--rose-soft);box-shadow:0 0 6px var(--rose-soft)}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.fcol a{font-size:.92rem;color:rgba(255,255,255,.7);transition:all .25s;position:relative}
+.fcol a:hover{color:var(--rose-soft);padding-left:8px;text-shadow:0 0 8px rgba(255,94,132,.4)}
+.fcol a:hover::before{content:"→";position:absolute;left:-4px;color:var(--rose-soft)}
+.footer-bottom{padding:1.75rem 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem;color:rgba(255,255,255,.5);position:relative;z-index:1}
+.footer-bottom .glow{display:inline-flex;align-items:center;gap:.5rem}
+.footer-bottom .glow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rose);box-shadow:0 0 8px var(--rose),0 0 16px var(--rose);animation:livePulse 2s infinite}
+.footer-bottom .legal{display:flex;gap:1.25rem}
+.footer-bottom .legal a{color:rgba(255,255,255,.5);transition:color .2s}
+.footer-bottom .legal a:hover{color:var(--rose-soft)}
+
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+.no-results{
+  display:none;
+  padding:3rem;text-align:center;
+  background:var(--paper);border:1px dashed var(--line-rose);border-radius:14px;
+  color:var(--muted);
+}
+.no-results.show{display:block}
+.no-results .icon{font-size:2.5rem;margin-bottom:.5rem;opacity:.5}
+</style>
+</head>
+<body>
+
+<div class="cloud-bg"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="cloud c1"></div>
+<div class="cloud c2"></div>
+<div class="cloud c3"></div>
+
+<div class="sparkle-layer">
+  <span class="sparkle rose large" style="top:8%;left:5%;--dur:3s;--delay:0s"></span>
+  <span class="sparkle sky" style="top:15%;left:18%;--dur:4s;--delay:.5s"></span>
+  <span class="sparkle amber tiny" style="top:6%;right:25%;--dur:3.5s;--delay:1s"></span>
+  <span class="sparkle indigo" style="top:22%;right:8%;--dur:5s;--delay:1.5s"></span>
+  <span class="sparkle rose tiny" style="top:35%;left:8%;--dur:4s;--delay:2s"></span>
+  <span class="sparkle sky large" style="top:45%;right:15%;--dur:3.5s;--delay:.8s"></span>
+  <span class="sparkle amber" style="top:55%;left:12%;--dur:4.5s;--delay:1.2s"></span>
+  <span class="sparkle rose" style="top:75%;left:20%;--dur:4s;--delay:0s"></span>
+  <span class="sparkle indigo" style="top:85%;right:18%;--dur:5s;--delay:1.8s"></span>
+  <span class="sparkle sky tiny" style="top:25%;left:45%;--dur:3.5s;--delay:2.2s"></span>
+  <span class="sparkle amber large" style="top:50%;right:45%;--dur:4s;--delay:1.5s"></span>
+  <span class="sparkle lime" style="top:90%;left:50%;--dur:3s;--delay:.5s"></span>
+  <span class="sparkle rose" style="top:30%;left:65%;--dur:4s;--delay:2s"></span>
+</div>
+
+<div class="announce">
+  <div class="container">
+    <div class="left"><span class="live">Welcome to VSolutions Digital</span></div>
+    <div class="right">
+      <a href="tel:2482328488" class="phone">📞 Call Us 248 232 8488</a>
+      <a href="mailto:info@vsolutionsinc.com">✉ info@vsolutionsinc.com</a>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container">
+    <a href="/" class="brand">
+      <img src="https://vsolutionsinc.com/wp-content/uploads/2026/03/vsolutions-final.svg" alt="V Solutions Inc" class="brand-logo" />
+      <span class="brand-spark s1">✦</span>
+      <span class="brand-spark s2">✦</span>
+    </a>
+    <ul class="menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about-v-solutions-inc/">About</a></li>
+      <li><a href="/how-we-work/">How we work</a></li>
+      <li><a href="/service-overview/">Services</a></li>
+      <li><a href="/case-study/">Case Studies</a></li>
+      <li class="current"><a href="/careers/">Careers</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="search-btn" aria-label="Search">⌕</button>
+      <a href="/contact/" class="btn btn-primary">Contact Us <span class="btn-arrow">→</span></a>
+      <button class="hamburger" aria-label="menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CAREERS HERO ============ -->
+<section class="careers-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Careers</span>
+    </nav>
+
+    <div class="hero-grid">
+      <div>
+        <div class="hero-pill">
+          <span class="label">We're hiring</span>
+          <span><span class="openings-count">6</span> open roles · Remote-friendly · Global talent welcome</span>
+        </div>
+
+        <h1 class="careers-title">
+          Learn & Grow In<br>Your <em>Career</em><br>With V Solutions
+        </h1>
+
+        <p class="careers-subhead">
+          Our diverse teams offer flexibility, friendly working environment, and exciting opportunities for professional advancement.
+        </p>
+
+        <p class="careers-lede">
+          With lots of growth comes new opportunities. We're always looking for talented, driven, and friendly individuals who are passionate about technology to join our team of customer-focused analysts.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#openings" class="btn btn-primary">View Open Roles <span class="btn-arrow">→</span></a>
+          <a href="mailto:careers@vsolutionsinc.com" class="btn btn-ghost">✉ careers@vsolutionsinc.com</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <span class="hero-trust-num">6</span>
+            <span class="hero-trust-lbl">Open Roles</span>
+          </div>
+          <div class="hero-trust-item">
+            <span class="hero-trust-num">100%</span>
+            <span class="hero-trust-lbl">Remote-Friendly</span>
+          </div>
+          <div class="hero-trust-item">
+            <span class="hero-trust-num">12+</span>
+            <span class="hero-trust-lbl">Countries Hired</span>
+          </div>
+          <div class="hero-trust-item">
+            <span class="hero-trust-num">4.8★</span>
+            <span class="hero-trust-lbl">Team Rating</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hv-bg">
+          <div class="hv-orbit">
+            <div class="hv-pulse"></div>
+            <div class="hv-pulse p2"></div>
+            <div class="hv-pulse p3"></div>
+            <div class="hv-center">
+              <img src="https://vsolutionsinc.com/wp-content/uploads/2026/03/vsolutions-final.svg" alt="V Solutions" />
+            </div>
+            <span class="role-chip r1"><span class="dot"></span>Business Development<span class="badge-remote">Hybrid</span></span>
+            <span class="role-chip r2"><span class="dot"></span>Content Writer<span class="badge-remote">Remote</span></span>
+            <span class="role-chip r3"><span class="dot"></span>Graphic Designer<span class="badge-remote">Remote</span></span>
+            <span class="role-chip r4"><span class="dot"></span>Video Editor<span class="badge-remote">Remote</span></span>
+            <span class="role-chip r5"><span class="dot"></span>Digital Marketer<span class="badge-remote">Remote</span></span>
+            <span class="role-chip r6"><span class="dot"></span>SEO Specialist<span class="badge-remote">Remote</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFITS / CULTURE ============ -->
+<section class="sec fade-up">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">— Why VSolutions</div>
+      <h2 class="sec-title">Work that <em>respects your time</em><br>and amplifies your craft.</h2>
+      <p class="sec-desc">A growing team of designers, developers, marketers, and AI specialists building cutting-edge solutions for clients worldwide. Here's what we offer.</p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card b1">
+        <div class="benefit-icon b1">⚡</div>
+        <h3 class="benefit-title">Competitive Salary</h3>
+        <p class="benefit-desc">Performance-based incentives, uncapped commissions for sales roles, and bonuses tied to real campaign results.</p>
+      </div>
+      <div class="benefit-card b2">
+        <div class="benefit-icon b2">⌂</div>
+        <h3 class="benefit-title">Remote-First Flexibility</h3>
+        <p class="benefit-desc">Work from anywhere with flexible hours. Hybrid options for Macomb, MI candidates. International talent welcome.</p>
+      </div>
+      <div class="benefit-card b3">
+        <div class="benefit-icon b3">↗</div>
+        <h3 class="benefit-title">Innovative Projects</h3>
+        <p class="benefit-desc">Work on cutting-edge AI, cloud, and digital marketing projects with forward-thinking clients.</p>
+      </div>
+      <div class="benefit-card b4">
+        <div class="benefit-icon b4">◈</div>
+        <h3 class="benefit-title">Collaborative Culture</h3>
+        <p class="benefit-desc">Friendly, supportive teams focused on growth, innovation, and delivering real business value together.</p>
+      </div>
+      <div class="benefit-card b5">
+        <div class="benefit-icon b5">★</div>
+        <h3 class="benefit-title">Pro Development Support</h3>
+        <p class="benefit-desc">Tools access (Adobe CC, Ahrefs, SEMrush), training budget, conferences, and continuous learning opportunities.</p>
+      </div>
+      <div class="benefit-card b6">
+        <div class="benefit-icon b6">⬢</div>
+        <h3 class="benefit-title">Modern Tech Stack</h3>
+        <p class="benefit-desc">AI-powered tools, latest dev frameworks, and creative software — we equip you with what you need to do your best work.</p>
+      </div>
+      <div class="benefit-card b7">
+        <div class="benefit-icon b7">⊕</div>
+        <h3 class="benefit-title">Freelance-to-Full-Time</h3>
+        <p class="benefit-desc">Many roles open to freelance start with a clear path to full-time based on fit and performance.</p>
+      </div>
+      <div class="benefit-card b8">
+        <div class="benefit-icon b8">✦</div>
+        <h3 class="benefit-title">Equal Opportunity</h3>
+        <p class="benefit-desc">We welcome diverse applicants and value creativity, accuracy, results-driven work — regardless of background.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPEN POSITIONS ============ -->
+<section class="openings-section fade-up" id="openings">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">— Current Openings</div>
+      <h2 class="sec-title">Find your <em>next opportunity.</em></h2>
+      <p class="sec-desc">All roles below are actively hiring. Click any position to expand the full description and apply directly via email or our application form.</p>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="filter-bar">
+      <div class="filter-bar-left">
+        <span class="filter-bar-label">Filter by:</span>
+        <button class="filter-chip active" data-filter="all">All <span class="count">6</span></button>
+        <button class="filter-chip" data-filter="sales">Sales <span class="count">1</span></button>
+        <button class="filter-chip" data-filter="creative">Creative <span class="count">2</span></button>
+        <button class="filter-chip" data-filter="marketing">Marketing <span class="count">3</span></button>
+        <button class="filter-chip" data-filter="remote">Remote <span class="count">6</span></button>
+      </div>
+      <label class="filter-search">
+        <span class="filter-search-icon">⌕</span>
+        <input type="text" id="jobSearch" placeholder="Search by title, skill, or keyword..." />
+      </label>
+    </div>
+
+    <div class="no-results" id="noResults">
+      <div class="icon">🔍</div>
+      <p>No openings match your search. <a href="mailto:careers@vsolutionsinc.com" style="color:var(--rose);font-weight:600">Send us your resume anyway</a> — we'd love to hear from you.</p>
+    </div>
+
+    <!-- Job listings -->
+    <div class="jobs-list" id="jobsList">
+
+      <!-- 1. BDM -->
+      <details class="job-card" data-categories="sales remote" data-keywords="business development manager bdm sales b2b client acquisition">
+        <summary class="job-card-summary">
+          <div class="job-icon j1">↗</div>
+          <div class="job-meta">
+            <h3 class="job-title">Business Development Manager (BDM) — Web, App & Digital Marketing</h3>
+            <div class="job-tags">
+              <span class="job-tag dept">Sales</span>
+              <span class="job-tag location">📍 Macomb, MI</span>
+              <span class="job-tag remote">⌂ Remote available</span>
+              <span class="job-tag experience">Mid-Senior</span>
+              <span class="job-tag type">Full-Time</span>
+            </div>
+          </div>
+          <div class="job-posted">Posted Jan 21, 2026</div>
+          <span class="job-toggle"></span>
+        </summary>
+        <div class="job-detail">
+          <div class="job-detail-grid">
+            <div class="job-detail-content">
+              <h4>About the Role</h4>
+              <p>V Solutions Inc is a leading <strong>AI & Data Solutions Company</strong> specializing in AI, NLP, and digital marketing. We're expanding our team and seeking a dynamic Business Development Manager (BDM) to spearhead client acquisition in web development, app development, and digital marketing.</p>
+              <p>As BDM, you'll play a pivotal role in expanding our client base for web development services, app development projects, and digital marketing campaigns. You'll identify new business opportunities, build strong client relationships, and close deals to fuel our growth in these high-demand areas.</p>
+
+              <h4>Key Focus Areas</h4>
+              <ul>
+                <li>Generating leads for custom web development (AI-powered websites that convert visitors into customers)</li>
+                <li>Securing clients for app development (mobile and web applications tailored to business needs)</li>
+                <li>Driving partnerships for digital marketing services (SEO, paid ads, social media, content writing)</li>
+              </ul>
+
+              <h4>Key Responsibilities</h4>
+              <ul>
+                <li><strong>Lead Generation:</strong> Research and identify potential clients using LinkedIn, industry databases, and networking events to build a robust pipeline</li>
+                <li><strong>Client Acquisition:</strong> Develop and execute sales strategies — cold outreach, presentations, and tailored proposals</li>
+                <li><strong>Relationship Building:</strong> Foster long-term client relationships, positioning V Solutions as their go-to partner for digital growth</li>
+                <li><strong>Sales Closing:</strong> Negotiate contracts, handle objections, and close deals to meet quarterly targets</li>
+                <li><strong>Market Analysis:</strong> Stay updated on trends in web dev (AI integration), app dev, and digital marketing</li>
+                <li><strong>Collaboration:</strong> Work closely with developers, marketers, and AI specialists for seamless project delivery</li>
+                <li><strong>Reporting:</strong> Track sales metrics and contribute to strategic planning</li>
+              </ul>
+
+              <h4>Qualifications</h4>
+              <ul>
+                <li>3+ years in business development or sales, preferably in web/app development or digital marketing agencies</li>
+                <li>Bachelor's degree in Business, Marketing, IT, or related field (MBA preferred)</li>
+                <li>Proven ability to generate leads and close deals in tech/digital sectors</li>
+                <li>Strong knowledge of CRM (Salesforce), sales automation, SEO, and digital tools</li>
+                <li>Excellent communication, negotiation, and presentation skills</li>
+                <li>Self-motivated, goal-oriented, thrives in fast-paced remote/international environments</li>
+              </ul>
+            </div>
+
+            <aside class="job-apply-card">
+              <h4>Apply for this role</h4>
+              <p>Send your resume and cover letter outlining your relevant experience.</p>
+              <div class="job-apply-info">
+                <div class="job-apply-info-item"><span class="icon">$</span><span>Competitive + uncapped commissions</span></div>
+                <div class="job-apply-info-item"><span class="icon">⏱</span><span>Full-Time</span></div>
+                <div class="job-apply-info-item"><span class="icon">⌂</span><span>Remote / Hybrid</span></div>
+                <div class="job-apply-info-item"><span class="icon">✉</span><span>Subject: BDM Application</span></div>
+              </div>
+              <button class="btn btn-primary modal-trigger" data-job="Business Development Manager">Apply Now <span class="btn-arrow">→</span></button>
+              <a href="mailto:careers@vsolutionsinc.com?subject=Business Development Manager Application" class="email-link">or email careers@vsolutionsinc.com</a>
+            </aside>
+          </div>
+        </div>
+      </details>
+
+      <!-- 2. Content Writer -->
+      <details class="job-card" data-categories="creative marketing remote" data-keywords="content writer seo writing copywriter blog">
+        <summary class="job-card-summary">
+          <div class="job-icon j2">✎</div>
+          <div class="job-meta">
+            <h3 class="job-title">Content Writer — SEO-Optimized Digital Marketing & AI Solutions</h3>
+            <div class="job-tags">
+              <span class="job-tag dept">Creative · Marketing</span>
+              <span class="job-tag location">📍 Macomb, MI</span>
+              <span class="job-tag remote">⌂ Remote / Global</span>
+              <span class="job-tag experience">Mid-Level (2+ yrs)</span>
+              <span class="job-tag type">Full-Time / Freelance</span>
+            </div>
+          </div>
+          <div class="job-posted">Posted Jan 21, 2026</div>
+          <span class="job-toggle"></span>
+        </summary>
+        <div class="job-detail">
+          <div class="job-detail-grid">
+            <div class="job-detail-content">
+              <h4>About the Role</h4>
+              <p>We're seeking a talented Content Writer to join our team and help produce engaging, high-ranking content that supports client projects in digital marketing, web/app development, AI integration, and beyond. If you excel at <strong>SEO content writing</strong>, keyword research, and turning complex tech topics into readable, persuasive copy — this role is for you.</p>
+
+              <h4>Key Responsibilities</h4>
+              <ul>
+                <li>Research industry topics (AI, digital marketing, web/app development, SEO, cybersecurity, cloud) and produce well-researched, original articles, blog posts, case studies, whitepapers, and website copy</li>
+                <li>Write SEO-optimized content with keyword research, meta titles/descriptions, headings, and internal linking</li>
+                <li>Create engaging content for blogs, social media captions, email newsletters, landing pages, and service pages</li>
+                <li>Collaborate with digital marketing teams, web developers, and designers to align with brand voice and project timelines</li>
+                <li>Edit and proofread for grammar, clarity, tone, factual accuracy, and readability</li>
+                <li>Boost organic search rankings by matching user search intent and current Google algorithms</li>
+                <li>Update existing content to improve SEO performance</li>
+                <li>Track content performance via Google Analytics, Search Console, and similar tools</li>
+              </ul>
+
+              <h4>Qualifications</h4>
+              <ul>
+                <li>2+ years professional content writing experience, ideally in digital marketing or tech/IT</li>
+                <li>Strong understanding of SEO best practices (keyword research, on-page optimization, E-E-A-T, search intent)</li>
+                <li>Excellent English writing — clear, engaging, persuasive copy for B2B and tech audiences</li>
+                <li>Experience with tech/digital topics (AI, marketing, web/app dev, SEO) highly preferred</li>
+                <li>Familiarity with Google Keyword Planner, Ahrefs/SEMrush, Grammarly, WordPress, CMS platforms</li>
+                <li>Bachelor's in English, Journalism, Marketing, Communications, or equivalent</li>
+                <li><strong>Bonus:</strong> Portfolio with SEO-optimized blog posts or articles that ranked well</li>
+              </ul>
+            </div>
+            <aside class="job-apply-card">
+              <h4>Apply for this role</h4>
+              <p>Send resume, cover letter, and 3-5 SEO-optimized writing samples.</p>
+              <div class="job-apply-info">
+                <div class="job-apply-info-item"><span class="icon">$</span><span>Competitive + bonuses</span></div>
+                <div class="job-apply-info-item"><span class="icon">⏱</span><span>Full-Time / Freelance</span></div>
+                <div class="job-apply-info-item"><span class="icon">⌂</span><span>Remote (Global)</span></div>
+                <div class="job-apply-info-item"><span class="icon">✉</span><span>Include 3-5 samples</span></div>
+              </div>
+              <button class="btn btn-primary modal-trigger" data-job="Content Writer">Apply Now <span class="btn-arrow">→</span></button>
+              <a href="mailto:careers@vsolutionsinc.com?subject=Content Writer Application" class="email-link">or email careers@vsolutionsinc.com</a>
+            </aside>
+          </div>
+        </div>
+      </details>
+
+      <!-- 3. Graphic Designer -->
+      <details class="job-card" data-categories="creative remote" data-keywords="graphic designer adobe photoshop illustrator branding visual">
+        <summary class="job-card-summary">
+          <div class="job-icon j3">◈</div>
+          <div class="job-meta">
+            <h3 class="job-title">Graphic Designer — Digital Marketing & AI-Powered Solutions</h3>
+            <div class="job-tags">
+              <span class="job-tag dept">Creative</span>
+              <span class="job-tag location">📍 Macomb, MI</span>
+              <span class="job-tag remote">⌂ Remote (Worldwide)</span>
+              <span class="job-tag experience">2–5+ years</span>
+              <span class="job-tag type">Full-Time / Freelance</span>
+            </div>
+          </div>
+          <div class="job-posted">Posted Jan 21, 2026</div>
+          <span class="job-toggle"></span>
+        </summary>
+        <div class="job-detail">
+          <div class="job-detail-grid">
+            <div class="job-detail-content">
+              <h4>About the Role</h4>
+              <p>We're expanding our creative team and seeking a skilled Graphic Designer to craft eye-catching visuals that elevate digital marketing campaigns, enhance websites/apps, and support AI-driven client projects. Your designs will help clients stand out online and drive engagement and conversion.</p>
+
+              <h4>Key Responsibilities</h4>
+              <ul>
+                <li>Design high-quality graphics for social media posts, ads (Google/Facebook/LinkedIn), email campaigns, banners, infographics, and website elements</li>
+                <li>Create branding materials: logos, icons, typography, color palettes, and style guides</li>
+                <li>Produce visuals for AI-powered websites, app mockups, landing pages, and marketing collateral</li>
+                <li>Collaborate with content writers, marketers, developers, and clients</li>
+                <li>Ensure designs are responsive, follow brand guidelines, and incorporate SEO-friendly elements</li>
+                <li>Iterate on feedback and deliver final files in multiple formats (PNG, SVG, PSD)</li>
+                <li>Stay updated on design trends and UI/UX best practices</li>
+              </ul>
+
+              <h4>Qualifications</h4>
+              <ul>
+                <li>2+ years professional graphic design, preferably in agency or tech firm</li>
+                <li>Strong portfolio with digital marketing graphics, branding, and tech-related designs</li>
+                <li>Proficiency in <strong>Adobe Creative Suite</strong> (Photoshop, Illustrator, InDesign) — After Effects or Figma a plus</li>
+                <li>Solid understanding of typography, color theory, layout, and digital design</li>
+                <li>Experience with responsive design and social media formats</li>
+                <li><strong>Bonus:</strong> AI design tools (Midjourney, Canva AI), motion graphics, video editing</li>
+              </ul>
+            </div>
+            <aside class="job-apply-card">
+              <h4>Apply for this role</h4>
+              <p>Send resume, cover letter, and portfolio link (Behance / Dribbble / personal site).</p>
+              <div class="job-apply-info">
+                <div class="job-apply-info-item"><span class="icon">$</span><span>Competitive + bonuses</span></div>
+                <div class="job-apply-info-item"><span class="icon">⏱</span><span>Full-Time / Freelance</span></div>
+                <div class="job-apply-info-item"><span class="icon">⌂</span><span>Remote (Worldwide)</span></div>
+                <div class="job-apply-info-item"><span class="icon">✉</span><span>Include portfolio link</span></div>
+              </div>
+              <button class="btn btn-primary modal-trigger" data-job="Graphic Designer">Apply Now <span class="btn-arrow">→</span></button>
+              <a href="mailto:careers@vsolutionsinc.com?subject=Graphic Designer Application" class="email-link">or email careers@vsolutionsinc.com</a>
+            </aside>
+          </div>
+        </div>
+      </details>
+
+      <!-- 4. Video Editor -->
+      <details class="job-card" data-categories="creative remote" data-keywords="video editor premiere pro after effects social media reels">
+        <summary class="job-card-summary">
+          <div class="job-icon j4">▶</div>
+          <div class="job-meta">
+            <h3 class="job-title">Video Editor — Digital Marketing & Social Media Content</h3>
+            <div class="job-tags">
+              <span class="job-tag dept">Creative</span>
+              <span class="job-tag location">📍 Macomb, MI</span>
+              <span class="job-tag remote">⌂ Remote (Global)</span>
+              <span class="job-tag experience">2+ years</span>
+              <span class="job-tag type">Full-Time / Freelance</span>
+            </div>
+          </div>
+          <div class="job-posted">Posted Jan 21, 2026</div>
+          <span class="job-toggle"></span>
+        </summary>
+        <div class="job-detail">
+          <div class="job-detail-grid">
+            <div class="job-detail-content">
+              <h4>About the Role</h4>
+              <p>Join our team as Video Editor to bring stories to life through polished, high-impact videos that support digital marketing and AI-driven client success. You'll edit short and long-form videos for social media (Reels, TikToks, YouTube Shorts), ads, client testimonials, website embeds, product demos, and marketing campaigns.</p>
+
+              <h4>Key Responsibilities</h4>
+              <ul>
+                <li>Edit raw footage into engaging videos: trim, sequence, add transitions, effects, text overlays, graphics, music, sound design</li>
+                <li>Create social media-ready content (vertical/horizontal) for Instagram, TikTok, YouTube, LinkedIn, Facebook</li>
+                <li>Produce promotional videos, explainer clips, ad creatives, and project highlight reels</li>
+                <li>Collaborate with marketers, designers, and clients on brand voice and campaign goals</li>
+                <li>Incorporate motion graphics, subtitles, color grading for maximum viewer retention</li>
+                <li>Optimize videos for web/social and export in multiple formats</li>
+              </ul>
+
+              <h4>Qualifications</h4>
+              <ul>
+                <li>2+ years video editing experience, ideally in digital marketing or agency settings</li>
+                <li>Strong portfolio/reel with marketing videos, social content, ads, or tech edits</li>
+                <li>Expert in <strong>Adobe Premiere Pro, After Effects</strong>; Final Cut Pro or DaVinci Resolve a plus</li>
+                <li>Knowledge of motion graphics, color correction, audio mixing</li>
+                <li>Understanding of digital marketing video best practices (hooks, CTAs, platform specs, YouTube SEO)</li>
+                <li><strong>Bonus:</strong> AI video tools, stock footage, basic shooting/directing</li>
+              </ul>
+            </div>
+            <aside class="job-apply-card">
+              <h4>Apply for this role</h4>
+              <p>Email resume, cover letter, and video reel/portfolio link.</p>
+              <div class="job-apply-info">
+                <div class="job-apply-info-item"><span class="icon">$</span><span>Competitive + bonuses</span></div>
+                <div class="job-apply-info-item"><span class="icon">⏱</span><span>Full-Time / Freelance</span></div>
+                <div class="job-apply-info-item"><span class="icon">⌂</span><span>Remote (Global)</span></div>
+                <div class="job-apply-info-item"><span class="icon">✉</span><span>Include 3-5 video links</span></div>
+              </div>
+              <button class="btn btn-primary modal-trigger" data-job="Video Editor">Apply Now <span class="btn-arrow">→</span></button>
+              <a href="mailto:careers@vsolutionsinc.com?subject=Video Editor Application" class="email-link">or email careers@vsolutionsinc.com</a>
+            </aside>
+          </div>
+        </div>
+      </details>
+
+      <!-- 5. Digital Marketing Specialist -->
+      <details class="job-card" data-categories="marketing remote" data-keywords="digital marketing specialist seo ppc google ads meta ads">
+        <summary class="job-card-summary">
+          <div class="job-icon j5">⚡</div>
+          <div class="job-meta">
+            <h3 class="job-title">Digital Marketing Specialist — SEO, Paid Ads & Growth Strategies</h3>
+            <div class="job-tags">
+              <span class="job-tag dept">Marketing</span>
+              <span class="job-tag location">📍 Macomb, MI</span>
+              <span class="job-tag remote">⌂ Remote (Worldwide)</span>
+              <span class="job-tag experience">2–5+ years</span>
+              <span class="job-tag type">Full-Time / Freelance</span>
+            </div>
+          </div>
+          <div class="job-posted">Posted Jan 21, 2026</div>
+          <span class="job-toggle"></span>
+        </summary>
+        <div class="job-detail">
+          <div class="job-detail-grid">
+            <div class="job-detail-content">
+              <h4>About the Role</h4>
+              <p>We're seeking a results-oriented Digital Marketing Specialist to manage multi-channel campaigns, drive organic and paid traffic, and support client success in tech/digital sectors. You'll plan, execute, and optimize digital marketing campaigns across SEO, paid search, social media, email, and content to generate leads and ROI for clients.</p>
+
+              <h4>Key Responsibilities</h4>
+              <ul>
+                <li>Develop and implement digital marketing strategies focused on lead generation, brand awareness, and revenue growth</li>
+                <li>Manage SEO, PPC (Google Ads, Meta Ads), social media advertising, and email campaigns</li>
+                <li>Conduct keyword research, competitor analysis, and market research</li>
+                <li>Create and optimize content, landing pages, ad creatives, and email sequences</li>
+                <li>Track KPIs (ROAS, CPA, traffic, conversions) using GA4, Search Console, ad platforms, CRM</li>
+                <li>Run A/B tests and optimize conversion funnels</li>
+                <li>Collaborate with content writers, designers, video editors, developers, and clients</li>
+                <li>Stay updated on algorithm changes, AI marketing tools, and digital trends</li>
+              </ul>
+
+              <h4>Qualifications</h4>
+              <ul>
+                <li>2+ years in digital marketing roles, preferably agency or tech firm</li>
+                <li>Proven experience with SEO, Google Ads, Meta Ads, social media, email marketing (Mailchimp/Klaviyo)</li>
+                <li>Strong analytical skills; proficient in GA4, Search Console, SEMrush/Ahrefs, ad platforms</li>
+                <li>Knowledge of content marketing, CRO, and paid/organic channel integration</li>
+                <li>Excellent communication, project management, and adaptability</li>
+                <li><strong>Bonus:</strong> AI-driven marketing tools, technical SEO basics, B2B tech clients</li>
+              </ul>
+            </div>
+            <aside class="job-apply-card">
+              <h4>Apply for this role</h4>
+              <p>Send resume, cover letter, and case studies showing ROAS/traffic growth.</p>
+              <div class="job-apply-info">
+                <div class="job-apply-info-item"><span class="icon">$</span><span>Competitive + ROI bonuses</span></div>
+                <div class="job-apply-info-item"><span class="icon">⏱</span><span>Full-Time / Freelance</span></div>
+                <div class="job-apply-info-item"><span class="icon">⌂</span><span>Remote (Worldwide)</span></div>
+                <div class="job-apply-info-item"><span class="icon">✉</span><span>Include campaign examples</span></div>
+              </div>
+              <button class="btn btn-primary modal-trigger" data-job="Digital Marketing Specialist">Apply Now <span class="btn-arrow">→</span></button>
+              <a href="mailto:careers@vsolutionsinc.com?subject=Digital Marketing Specialist Application" class="email-link">or email careers@vsolutionsinc.com</a>
+            </aside>
+          </div>
+        </div>
+      </details>
+
+      <!-- 6. SEO Specialist -->
+      <details class="job-card" data-categories="marketing remote" data-keywords="seo specialist engineer technical seo on-page optimization">
+        <summary class="job-card-summary">
+          <div class="job-icon j6">⌕</div>
+          <div class="job-meta">
+            <h3 class="job-title">SEO Specialist / SEO Engineer — Technical & On-Page Optimization</h3>
+            <div class="job-tags">
+              <span class="job-tag dept">Marketing · Engineering</span>
+              <span class="job-tag location">📍 Macomb, MI</span>
+              <span class="job-tag remote">⌂ Remote (Global)</span>
+              <span class="job-tag experience">2+ years</span>
+              <span class="job-tag type">Full-Time / Freelance</span>
+            </div>
+          </div>
+          <div class="job-posted">Posted Jan 21, 2026</div>
+          <span class="job-toggle"></span>
+        </summary>
+        <div class="job-detail">
+          <div class="job-detail-grid">
+            <div class="job-detail-content">
+              <h4>About the Role</h4>
+              <p>We're hiring an SEO Specialist / SEO Engineer to handle technical audits, on-page optimizations, keyword strategies, and performance improvements for client projects in tech, AI, and digital services. You'll optimize websites for search engines, improve rankings, fix technical issues, and boost organic visibility — focusing on E-E-A-T, user intent, and AI-era search trends.</p>
+
+              <h4>Key Responsibilities</h4>
+              <ul>
+                <li>Perform comprehensive SEO audits (technical, on-page, off-page) using Screaming Frog, Ahrefs, SEMrush, Search Console</li>
+                <li>Conduct keyword research, search intent analysis, and competitor benchmarking</li>
+                <li>Implement on-page optimizations: meta tags, headings, schema markup, internal linking, content silos, Core Web Vitals</li>
+                <li>Handle technical SEO: site speed, mobile-friendliness, crawl errors, indexation, HTTPS, structured data, XML sitemaps</li>
+                <li>Build and manage link-building strategies (ethical outreach, guest posts, partnerships)</li>
+                <li>Optimize for AI search features, voice search, and emerging algorithms (2026 trends)</li>
+                <li>Monitor rankings, traffic, conversions; create monthly SEO reports</li>
+                <li>Collaborate with developers, content teams, and marketers to integrate SEO into web/app projects</li>
+              </ul>
+
+              <h4>Qualifications</h4>
+              <ul>
+                <li>2+ years as SEO Specialist, SEO Engineer, or similar (agency or in-house)</li>
+                <li>Deep knowledge of technical SEO, on-page/off-page optimization, and tools (Ahrefs/SEMrush, GA, Search Console, PageSpeed)</li>
+                <li>Strong understanding of HTML/CSS basics, site architecture, and UX factors</li>
+                <li>Analytical mindset with ROI-focused improvement experience</li>
+                <li>Familiarity with content strategy, link building, local/international SEO</li>
+                <li><strong>Bonus:</strong> AI SEO tools, JavaScript rendering issues, e-commerce/tech site optimization</li>
+              </ul>
+            </div>
+            <aside class="job-apply-card">
+              <h4>Apply for this role</h4>
+              <p>Email resume, cover letter, and SEO case studies (before/after rankings).</p>
+              <div class="job-apply-info">
+                <div class="job-apply-info-item"><span class="icon">$</span><span>Competitive + ranking bonuses</span></div>
+                <div class="job-apply-info-item"><span class="icon">⏱</span><span>Full-Time / Freelance</span></div>
+                <div class="job-apply-info-item"><span class="icon">⌂</span><span>Remote (Global)</span></div>
+                <div class="job-apply-info-item"><span class="icon">✉</span><span>Include SEO case studies</span></div>
+              </div>
+              <button class="btn btn-primary modal-trigger" data-job="SEO Specialist">Apply Now <span class="btn-arrow">→</span></button>
+              <a href="mailto:careers@vsolutionsinc.com?subject=SEO Specialist Application" class="email-link">or email careers@vsolutionsinc.com</a>
+            </aside>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CULTURE TESTIMONIAL + FAQ ============ -->
+<section class="culture-section fade-up">
+  <div class="container">
+    <div class="culture-grid">
+      <div>
+        <div class="sec-eyebrow">— Life at VSolutions</div>
+        <h2 class="sec-title" style="text-align:left">A team that <em>builds together</em> and ships fast.</h2>
+
+        <div class="culture-quote">
+          <p class="culture-quote-text">"VSolutions gave me the freedom to do my best work — flexible hours, great tools, real ownership of projects. The team genuinely cares about both client outcomes and the craft of getting there."</p>
+          <div class="culture-quote-author">
+            <div class="culture-quote-avatar">A</div>
+            <div class="culture-quote-meta">
+              <strong>Anonymous Team Member</strong>
+              <span>Digital Marketing · 3 years at VSolutions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sec-eyebrow">— Common Questions</div>
+        <h2 class="sec-title" style="text-align:left">Hiring <em>FAQ.</em></h2>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Are roles fully remote?</summary>
+            <div class="faq-answer">Most roles offer fully remote options with flexible hours. Hybrid is available for Macomb, MI candidates. We hire international talent — strong English proficiency required for client-facing roles.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Do you offer freelance-to-full-time conversions?</summary>
+            <div class="faq-answer">Yes. Several roles (Content Writer, Graphic Designer, Video Editor, Digital Marketing Specialist, SEO) start as freelance and convert to full-time based on fit and performance — typically within 60-90 days.</div>
+          </details>
+          <details class="faq-item">
+            <summary>What's the interview process?</summary>
+            <div class="faq-answer">1) Apply via email or form → 2) Initial 15-min screen call → 3) Technical/portfolio review → 4) Team interview → 5) Paid trial project (1-3 days) → 6) Offer. Typically 1-2 weeks end-to-end.</div>
+          </details>
+          <details class="faq-item">
+            <summary>What does compensation look like?</summary>
+            <div class="faq-answer">Base salary at market rates plus performance bonuses tied to real outcomes — campaign ROI for marketing roles, ranking/traffic improvements for SEO, content impact for writers, uncapped commissions for sales. Compensation is discussed openly during the process.</div>
+          </details>
+          <details class="faq-item">
+            <summary>I don't see a role that fits — can I still apply?</summary>
+            <div class="faq-answer">Absolutely. Email <a href="mailto:careers@vsolutionsinc.com" style="color:var(--rose);font-weight:600">careers@vsolutionsinc.com</a> with your resume and a short note explaining your skills. We're always happy to hear from talented people, even if there's no current opening for your specialty.</div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta fade-up">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-content">
+        <div class="cta-eyebrow">Ready to grow with us?</div>
+        <h3>Don't see your role? <em>Send us your resume.</em></h3>
+        <p>We're always looking for talented, driven, friendly individuals passionate about technology. Even if there's no current opening that matches your skills, we'd love to hear from you.</p>
+        <div class="cta-actions">
+          <a href="mailto:careers@vsolutionsinc.com?subject=General Application" class="btn btn-primary">Send Resume <span class="btn-arrow">→</span></a>
+          <a href="#openings" class="btn btn-ghost">Browse Open Roles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="brand">
+          <img src="https://vsolutionsinc.com/wp-content/uploads/2019/10/vsolutions-final_footer.png" alt="V Solutions Inc" class="brand-logo" />
+        </a>
+        <p>V Solutions Inc combines AI, cloud, and digital marketing expertise to transform technology into actionable insights, helping businesses achieve measurable growth and succeed on a global scale.</p>
+      </div>
+      <div class="fcol">
+        <h5>Menu</h5>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-v-solutions-inc/">About</a></li>
+          <li><a href="/how-we-work/">How we work</a></li>
+          <li><a href="/service-overview/">Services</a></li>
+          <li><a href="/case-study/">Case Studies</a></li>
+          <li><a href="/careers/">Careers</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/blog-insights/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="/service/artificial-intelligence/">Artificial Intelligence</a></li>
+          <li><a href="/service/cloud-devops-services/">Cloud DevOps & SRE</a></li>
+          <li><a href="/service/cybersecurity-application-security-testing/">Cybersecurity</a></li>
+          <li><a href="/service/website-development-services-vsolutions-inc/">Web Development</a></li>
+          <li><a href="/service/mobile-application-development/">Mobile Development</a></li>
+          <li><a href="/service/digital-marketing/">Digital Marketing</a></li>
+          <li><a href="/service/vdi-endpoint-management-services/">VDI & Endpoint</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h5>Contact us</h5>
+        <div class="footer-contact">
+          <a class="footer-contact-item" href="https://maps.google.com/?q=100+West+Big+Beaver+Rd+Troy+MI+48084" target="_blank">
+            <span class="icon">📍</span>
+            <span>100 West Big Beaver Rd<br>Troy - MI - 48084</span>
+          </a>
+          <a class="footer-contact-item" href="tel:+12482328488">
+            <span class="icon">📞</span>
+            <span>248-232-8488</span>
+          </a>
+          <a class="footer-contact-item" href="mailto:careers@vsolutionsinc.com">
+            <span class="icon">✉</span>
+            <span>careers@vsolutionsinc.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="glow">2019-26 © All rights reserved by V Solutions INC</span>
+      <div class="legal">
+        <a href="/terms-and-conditions/">Terms and Conditions</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/cookie-policy-v-solutions-inc/">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ APPLICATION MODAL ============ -->
+<div class="modal-overlay" id="applyModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <h3>Apply for <em id="modalRoleName">this role</em></h3>
+    <p class="modal-subtitle">Fill in the form below or send your resume directly to <a href="mailto:careers@vsolutionsinc.com" style="color:var(--rose);font-weight:600">careers@vsolutionsinc.com</a></p>
+
+    <form id="applyForm">
+      <div class="form-row cols">
+        <div class="form-row">
+          <label>First Name <span class="required">*</span></label>
+          <input type="text" name="firstName" required />
+        </div>
+        <div class="form-row">
+          <label>Last Name <span class="required">*</span></label>
+          <input type="text" name="lastName" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Email <span class="required">*</span></label>
+        <input type="email" name="email" required />
+      </div>
+      <div class="form-row">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" />
+      </div>
+      <div class="form-row">
+        <label>Country / Location</label>
+        <input type="text" name="location" placeholder="e.g., Detroit, MI / Berlin, Germany" />
+      </div>
+      <div class="form-row">
+        <label>Years of Experience <span class="required">*</span></label>
+        <select name="experience" required>
+          <option value="">Select...</option>
+          <option>0–2 years</option>
+          <option>2–5 years</option>
+          <option>5–10 years</option>
+          <option>10+ years</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Portfolio / LinkedIn URL</label>
+        <input type="url" name="portfolio" placeholder="https://" />
+      </div>
+      <div class="form-row">
+        <label>Why are you a great fit? <span class="required">*</span></label>
+        <textarea name="cover" required placeholder="Tell us about your relevant experience and what excites you about this role..."></textarea>
+      </div>
+      <div class="form-row">
+        <label>Resume / CV</label>
+        <label class="file-upload">
+          <span class="icon">📎</span>
+          <span id="fileLabel">Click to upload PDF or DOCX (optional — you can also email later)</span>
+          <input type="file" name="resume" accept=".pdf,.doc,.docx" id="resumeInput" />
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary modal-submit">Submit Application <span class="btn-arrow">→</span></button>
+      <p class="modal-disclaimer">By applying, you agree to our <a href="/privacy-policy/">Privacy Policy</a>. We're an equal opportunity employer.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+// Cursor glow
+const cursorGlow = document.getElementById('cursorGlow');
+let glowX = window.innerWidth/2, glowY = window.innerHeight/2;
+let targetX = glowX, targetY = glowY;
+document.addEventListener('mousemove', (e) => { targetX = e.clientX; targetY = e.clientY; });
+function animateGlow(){
+  glowX += (targetX - glowX) * 0.15;
+  glowY += (targetY - glowY) * 0.15;
+  cursorGlow.style.left = glowX + 'px';
+  cursorGlow.style.top = glowY + 'px';
+  requestAnimationFrame(animateGlow);
+}
+animateGlow();
+
+// Scroll fade-in
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.12});
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+// Magnetic 3D tilt on benefit cards
+document.querySelectorAll('.benefit-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width/2;
+    const y = e.clientY - rect.top - rect.height/2;
+    const tiltX = (y / rect.height) * -3;
+    const tiltY = (x / rect.width) * 3;
+    card.style.transform = `translateY(-6px) perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+  });
+  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+});
+
+// === Job filter + search ===
+const filterChips = document.querySelectorAll('.filter-chip');
+const jobCards = document.querySelectorAll('.job-card');
+const searchInput = document.getElementById('jobSearch');
+const noResults = document.getElementById('noResults');
+const jobsList = document.getElementById('jobsList');
+let activeFilter = 'all';
+
+function applyFilters(){
+  const search = searchInput.value.toLowerCase().trim();
+  let visibleCount = 0;
+  jobCards.forEach(card => {
+    const cats = card.dataset.categories || '';
+    const keywords = card.dataset.keywords || '';
+    const title = card.querySelector('.job-title').textContent.toLowerCase();
+    const matchFilter = activeFilter === 'all' || cats.includes(activeFilter);
+    const matchSearch = !search || title.includes(search) || keywords.includes(search);
+    const visible = matchFilter && matchSearch;
+    card.style.display = visible ? '' : 'none';
+    if (visible) visibleCount++;
+  });
+  noResults.classList.toggle('show', visibleCount === 0);
+}
+
+filterChips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    filterChips.forEach(c => c.classList.toggle('active', c === chip));
+    activeFilter = chip.dataset.filter;
+    applyFilters();
+  });
+});
+searchInput.addEventListener('input', applyFilters);
+
+// === Application modal ===
+const modalOverlay = document.getElementById('applyModal');
+const modalClose = document.getElementById('modalClose');
+const modalRoleName = document.getElementById('modalRoleName');
+const modalTriggers = document.querySelectorAll('.modal-trigger');
+const applyForm = document.getElementById('applyForm');
+const resumeInput = document.getElementById('resumeInput');
+const fileLabel = document.getElementById('fileLabel');
+
+modalTriggers.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    modalRoleName.textContent = btn.dataset.job || 'this role';
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeModal(){
+  modalOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+  applyForm.reset();
+  fileLabel.textContent = 'Click to upload PDF or DOCX (optional — you can also email later)';
+}
+modalClose.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', (e) => {
+  if (e.target === modalOverlay) closeModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
+});
+
+resumeInput.addEventListener('change', () => {
+  const file = resumeInput.files[0];
+  if (file) {
+    fileLabel.textContent = `📄 ${file.name}`;
+  }
+});
+
+applyForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const data = new FormData(applyForm);
+  const role = modalRoleName.textContent;
+  const subject = `${role} Application — ${data.get('firstName')} ${data.get('lastName')}`;
+  const body = `Application for: ${role}%0D%0A%0D%0A`
+    + `Name: ${data.get('firstName')} ${data.get('lastName')}%0D%0A`
+    + `Email: ${data.get('email')}%0D%0A`
+    + `Phone: ${data.get('phone') || 'N/A'}%0D%0A`
+    + `Location: ${data.get('location') || 'N/A'}%0D%0A`
+    + `Experience: ${data.get('experience')}%0D%0A`
+    + `Portfolio: ${data.get('portfolio') || 'N/A'}%0D%0A%0D%0A`
+    + `Why I'm a great fit:%0D%0A${data.get('cover')}%0D%0A%0D%0A`
+    + `[Please attach resume to this email]`;
+  window.location.href = `mailto:careers@vsolutionsinc.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+});
+</script>
+
+</body>
+</html>

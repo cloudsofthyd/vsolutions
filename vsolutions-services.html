@@ -1,0 +1,2346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services | V Solutions Inc – AI, Cloud, Web, Mobile, Cybersecurity & More</title>
+<meta name="description" content="Explore V Solutions services — AI, Cloud DevOps & SRE, Cybersecurity, Web Development, Mobile Apps, Digital Marketing, Content Writing, and VDI." />
+<link rel="icon" type="image/svg+xml" href="https://vsolutionsinc.com/wp-content/uploads/2026/03/vsolutions-final.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+:root{
+  --rose:#F2295B;--rose-soft:#FF5E84;--rose-deep:#D11947;--rose-glow:rgba(242,41,91,.18);
+  --sky:#3B82F6;--sky-soft:#60A5FA;--sky-deep:#1D4ED8;--sky-glow:rgba(59,130,246,.18);
+  --cyan:#06B6D4;--cyan-soft:#22D3EE;--cyan-glow:rgba(6,182,212,.18);
+  --indigo:#6366F1;--indigo-soft:#818CF8;--indigo-glow:rgba(99,102,241,.18);
+  --teal:#14B8A6;--amber:#F59E0B;--violet:#8B5CF6;--lime:#3DDB91;
+  --navy:#0E1B3A;--navy-2:#1A2D5A;--navy-3:#243A75;
+  --bg:#F4F8FF;--bg-2:#E9F0FB;--bg-3:#DBE5F5;--paper:#FFFFFF;--cloud:#FAFCFF;
+  --ink:#0E1B3A;--ink-2:#334155;--muted:#64748B;--muted-2:#94A3B8;
+  --line:rgba(14,27,58,.08);--line-bright:rgba(59,130,246,.25);--line-rose:rgba(242,41,91,.25);
+  --shadow-cloud:0 20px 50px -12px rgba(59,130,246,.2),0 4px 12px rgba(14,27,58,.05);
+  --font-sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  --font-serif:'Instrument Serif',Georgia,serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+  /* Per-service accent color, will be set by JS */
+  --accent:var(--rose);
+  --accent-2:var(--sky);
+  --accent-glow:var(--rose-glow);
+}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;position:relative}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.container{max-width:1320px;margin:0 auto;padding:0 1.75rem;position:relative;z-index:2}
+@media(max-width:640px){.container{padding:0 1.25rem}}
+
+/* === Atmosphere === */
+.cloud-bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(1200px 600px at 80% -10%,var(--sky-glow),transparent 60%),
+    radial-gradient(1000px 500px at -10% 30%,var(--rose-glow),transparent 60%),
+    radial-gradient(800px 600px at 50% 80%,var(--cyan-glow),transparent 60%);
+}
+.cloud{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0;opacity:.5}
+.cloud.c1{width:700px;height:700px;background:radial-gradient(circle,rgba(59,130,246,.3),transparent 70%);top:-200px;right:-150px;animation:cd1 30s ease-in-out infinite}
+.cloud.c2{width:600px;height:600px;background:radial-gradient(circle,rgba(242,41,91,.18),transparent 70%);top:25%;left:-200px;animation:cd2 35s ease-in-out infinite}
+.cloud.c3{width:500px;height:500px;background:radial-gradient(circle,rgba(99,102,241,.22),transparent 70%);top:55%;right:5%;animation:cd3 40s ease-in-out infinite}
+@keyframes cd1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-100px,80px) scale(1.2)}}
+@keyframes cd2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(120px,-100px) scale(.85)}}
+@keyframes cd3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-80px,-120px) scale(1.15)}}
+.sparkle-layer{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.sparkle{position:absolute;width:3px;height:3px;border-radius:50%;animation:tw var(--dur,4s) ease-in-out infinite;animation-delay:var(--delay,0s);box-shadow:0 0 4px currentColor,0 0 8px currentColor,0 0 12px currentColor}
+.sparkle.large{width:5px;height:5px}.sparkle.tiny{width:2px;height:2px}
+.sparkle.a{color:var(--rose);background:var(--rose)}
+.sparkle.b{color:var(--sky);background:var(--sky)}
+.sparkle.c{color:var(--indigo);background:var(--indigo)}
+.sparkle.d{color:var(--amber);background:var(--amber)}
+.sparkle.e{color:var(--lime);background:var(--lime)}
+@keyframes tw{0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}}
+.cursor-glow{position:fixed;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(242,41,91,.08) 0%,rgba(59,130,246,.06) 40%,transparent 70%);
+  pointer-events:none;z-index:1;transform:translate(-50%,-50%);filter:blur(20px);mix-blend-mode:multiply}
+
+/* === Announce === */
+.announce{background:linear-gradient(90deg,var(--navy),var(--navy-2) 50%,var(--navy));color:#fff;padding:.55rem 0;font-size:.78rem;position:relative;z-index:30}
+.announce .container{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.announce .left{display:flex;gap:1.5rem;align-items:center;color:rgba(255,255,255,.85)}
+.announce .live{display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.announce .live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rose);box-shadow:0 0 8px var(--rose);animation:livePulse 1.8s infinite}
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4);box-shadow:0 0 16px var(--rose)}}
+.announce .right{display:flex;gap:1.25rem;color:rgba(255,255,255,.8)}
+.announce a:hover{color:var(--rose-soft)}
+.announce .phone{font-family:var(--font-mono);font-weight:600;color:var(--rose-soft)}
+
+/* === Header === */
+.header{position:sticky;top:0;z-index:50;background:rgba(244,248,255,.75);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.header::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--sky) 15%,var(--cyan) 35%,var(--rose) 55%,var(--indigo) 75%,transparent);
+  opacity:.7;background-size:200% 100%;animation:rs 8s linear infinite}
+@keyframes rs{0%{background-position:0% 0}100%{background-position:200% 0}}
+.header .container{display:flex;align-items:center;justify-content:space-between;padding-top:.85rem;padding-bottom:.85rem;gap:2rem}
+.brand{display:flex;align-items:center;gap:.65rem;position:relative;transition:filter .3s}
+.brand-logo{height:42px;width:auto;transition:transform .3s,filter .3s}
+.brand:hover .brand-logo{transform:scale(1.04);filter:drop-shadow(0 0 12px rgba(242,41,91,.5))}
+.brand-spark{position:absolute;font-size:.65rem;pointer-events:none;filter:drop-shadow(0 0 4px currentColor) drop-shadow(0 0 8px currentColor);animation:spin 4s linear infinite}
+.brand-spark.s1{top:-2px;right:-8px;color:var(--rose);animation-delay:0s}
+.brand-spark.s2{bottom:0;left:-6px;font-size:.5rem;color:var(--sky);animation-delay:1s}
+@keyframes spin{0%,100%{opacity:.4;transform:rotate(0) scale(.8)}50%{opacity:1;transform:rotate(180deg) scale(1.1)}}
+.menu{list-style:none;display:flex;gap:1.85rem;align-items:center;font-size:.92rem;font-weight:500;color:var(--ink-2)}
+.menu>li{position:relative}
+.menu>li>a{padding:.5rem 0;display:inline-flex;align-items:center;gap:.4rem;transition:color .25s}
+.menu>li>a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:linear-gradient(90deg,var(--rose),var(--sky));transition:width .3s ease;box-shadow:0 0 8px var(--rose)}
+.menu>li:hover>a,.menu>li.current>a{color:var(--rose)}
+.menu>li:hover>a::after,.menu>li.current>a::after{width:100%}
+.nav-cta{display:flex;gap:.65rem;align-items:center}
+.search-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--paper);display:grid;place-items:center;color:var(--ink-2);font-size:1.05rem;transition:all .3s}
+.search-btn:hover{border-color:var(--rose);color:var(--rose);box-shadow:0 0 0 3px var(--rose-glow);transform:rotate(90deg)}
+.btn{padding:.7rem 1.4rem;border-radius:10px;font-size:.85rem;font-weight:600;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s;white-space:nowrap;position:relative;overflow:hidden}
+.btn-primary{background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 100%);color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.1) inset,0 4px 24px var(--accent-glow)}
+.btn-primary::before{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transition:left .6s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,255,255,.2) inset,0 8px 36px var(--accent-glow),0 0 40px rgba(59,130,246,.3)}
+.btn-primary:hover::before{left:100%}
+.btn-arrow{transition:transform .25s}.btn:hover .btn-arrow{transform:translateX(4px)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);background:var(--paper)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
+.hamburger span{width:22px;height:2px;background:var(--ink);border-radius:2px}
+@media(max-width:1100px){.menu{display:none}.hamburger{display:flex}}
+
+/* ============================================================
+   ★ SERVICE NAV PILLS (top of page — switch services)
+============================================================ */
+.service-pills{
+  position:sticky;top:74px;z-index:40;
+  background:rgba(244,248,255,.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+  padding:.75rem 0;
+}
+.pills-track{
+  display:flex;gap:.4rem;overflow-x:auto;
+  scrollbar-width:none;
+  padding:.15rem .15rem;
+}
+.pills-track::-webkit-scrollbar{display:none}
+.pill{
+  flex-shrink:0;
+  padding:.55rem .9rem;
+  font-size:.78rem;font-weight:600;
+  color:var(--muted);
+  border-radius:100px;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:all .25s;
+  display:inline-flex;align-items:center;gap:.4rem;
+  white-space:nowrap;
+}
+.pill:hover{color:var(--ink);background:var(--paper)}
+.pill.active{
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#fff;
+  box-shadow:0 4px 14px var(--accent-glow);
+}
+.pill .pill-icon{
+  width:18px;height:18px;border-radius:5px;
+  display:grid;place-items:center;
+  font-size:.65rem;font-weight:800;
+  background:var(--bg-2);color:var(--accent);
+  flex-shrink:0;
+}
+.pill.active .pill-icon{background:rgba(255,255,255,.25);color:#fff}
+
+/* ============================================================
+   ★ HERO
+============================================================ */
+.hero{position:relative;padding:5rem 0 3rem;overflow:hidden;z-index:2}
+.hero::before{content:"";position:absolute;top:-50%;right:-25%;width:80%;height:200%;
+  background:conic-gradient(from 230deg at 50% 50%,var(--accent-glow),rgba(99,102,241,.15),rgba(242,41,91,.12),rgba(6,182,212,.1),var(--accent-glow));
+  filter:blur(60px);opacity:.5;animation:hm 30s linear infinite;pointer-events:none}
+@keyframes hm{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+.hero::after{content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(59,130,246,.15) 1.5px,transparent 1.5px);
+  background-size:36px 36px;mask-image:radial-gradient(ellipse at 50% 30%,black 0%,transparent 70%);pointer-events:none}
+
+.breadcrumb{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.72rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.5rem;font-weight:600}
+.breadcrumb a:hover{color:var(--accent)}
+.breadcrumb .sep{color:var(--muted-2)}
+.breadcrumb .current{color:var(--accent)}
+
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:3.5rem;align-items:center}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:3rem}}
+
+.hero-pill{
+  display:inline-flex;align-items:center;gap:.6rem;padding:.45rem .95rem .45rem .55rem;
+  background:rgba(255,255,255,.7);backdrop-filter:blur(10px);
+  border:1px solid var(--line-rose);border-radius:100px;
+  font-size:.78rem;font-weight:600;color:var(--ink);margin-bottom:1.5rem;
+  box-shadow:0 0 0 1px rgba(255,255,255,.6) inset,0 4px 24px var(--accent-glow);
+}
+.hero-pill .label{
+  font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  padding:.22rem .55rem;border-radius:4px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;
+  box-shadow:0 0 12px var(--accent-glow);
+}
+h1.hero-title{font-family:var(--font-sans);font-weight:700;font-size:clamp(2.5rem,5vw,4.2rem);line-height:1.05;letter-spacing:-.03em;color:var(--navy);margin-bottom:1.25rem}
+h1.hero-title em{font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 50%,var(--indigo) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 24px var(--accent-glow))}
+.hero-subhead{font-family:var(--font-serif);font-style:italic;font-size:1.25rem;line-height:1.45;color:var(--ink-2);margin-bottom:1.25rem;max-width:580px}
+.hero-lede{font-size:1.02rem;line-height:1.65;color:var(--muted);margin-bottom:2rem;max-width:580px}
+.hero-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2.5rem}
+
+.hero-trust{display:flex;gap:2rem;align-items:center;flex-wrap:wrap;padding-top:1.5rem;border-top:1px solid var(--line)}
+.hero-trust-item{display:flex;flex-direction:column;gap:.25rem}
+.hero-trust-num{font-family:var(--font-serif);font-style:italic;font-weight:500;font-size:1.6rem;line-height:1;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-trust-lbl{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+
+/* === Hero visual: floating glass card with service icon === */
+.hero-visual{position:relative;height:540px}
+@media(max-width:980px){.hero-visual{height:380px}}
+
+.hv-shell{
+  position:absolute;inset:0;border-radius:24px;
+  background:linear-gradient(135deg,rgba(255,255,255,.85) 0%,rgba(248,251,255,.85) 100%);
+  backdrop-filter:blur(20px);
+  border:1px solid var(--line-bright);overflow:hidden;
+  box-shadow:0 0 0 1px rgba(255,255,255,.8) inset,0 24px 80px var(--accent-glow),0 0 80px rgba(59,130,246,.1);
+}
+.hv-shell::before{content:"";position:absolute;inset:-2px;border-radius:26px;
+  background:conic-gradient(from 0deg,var(--accent),var(--accent-2),var(--indigo),var(--cyan),var(--amber),var(--accent));
+  opacity:.4;z-index:-1;filter:blur(20px);animation:gs 8s linear infinite}
+@keyframes gs{to{filter:hue-rotate(360deg) blur(20px)}}
+.hv-shell::after{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(59,130,246,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.06) 1px,transparent 1px);
+  background-size:30px 30px;
+  mask-image:radial-gradient(ellipse at 50% 50%,black 0%,transparent 80%);pointer-events:none}
+
+.hv-orbit{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.hv-pulse{position:absolute;width:200px;height:200px;border-radius:50%;border:1px solid var(--accent);opacity:.4;animation:pr 3s ease-out infinite}
+.hv-pulse.p2{animation-delay:1s;border-color:var(--accent-2)}
+.hv-pulse.p3{animation-delay:2s;border-color:var(--indigo)}
+@keyframes pr{0%{transform:scale(.5);opacity:.7}100%{transform:scale(2);opacity:0}}
+
+.hv-center{
+  position:relative;width:200px;height:200px;border-radius:50%;
+  background:linear-gradient(135deg,var(--paper),var(--bg-2));
+  border:2px solid var(--accent);
+  display:grid;place-items:center;
+  box-shadow:0 0 40px var(--accent-glow),0 0 80px rgba(59,130,246,.25),inset 0 0 30px var(--accent-glow);
+  z-index:5;animation:cg 3s ease-in-out infinite alternate;
+  overflow:hidden;
+}
+.hv-center img{width:120px;height:120px;object-fit:contain;filter:drop-shadow(0 0 8px var(--accent-glow))}
+@keyframes cg{
+  from{box-shadow:0 0 40px var(--accent-glow),0 0 80px rgba(59,130,246,.2),inset 0 0 30px var(--accent-glow)}
+  to{box-shadow:0 0 60px var(--accent-glow),0 0 120px rgba(59,130,246,.4),inset 0 0 40px var(--accent-glow)}
+}
+
+.hv-tag{
+  position:absolute;
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.55rem .9rem;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(10px);
+  border:1px solid var(--line-bright);
+  border-radius:100px;
+  font-size:.78rem;font-weight:600;color:var(--ink);
+  box-shadow:0 8px 24px rgba(14,27,58,.1);
+  z-index:3;animation:floatTag 6s ease-in-out infinite;
+  white-space:nowrap;
+}
+.hv-tag .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;box-shadow:0 0 6px currentColor}
+.hv-tag.t1{top:8%;left:6%;animation-delay:0s}.hv-tag.t1 .dot{color:var(--rose);background:var(--rose)}
+.hv-tag.t2{top:14%;right:5%;animation-delay:1.2s}.hv-tag.t2 .dot{color:var(--sky);background:var(--sky)}
+.hv-tag.t3{top:48%;left:3%;animation-delay:2.5s}.hv-tag.t3 .dot{color:var(--indigo);background:var(--indigo)}
+.hv-tag.t4{top:54%;right:5%;animation-delay:.8s}.hv-tag.t4 .dot{color:var(--amber);background:var(--amber)}
+.hv-tag.t5{bottom:10%;left:18%;animation-delay:1.8s}.hv-tag.t5 .dot{color:var(--teal);background:var(--teal)}
+.hv-tag.t6{bottom:14%;right:18%;animation-delay:2.8s}.hv-tag.t6 .dot{color:var(--violet);background:var(--violet)}
+@keyframes floatTag{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* ============================================================
+   ★ INTRO SECTION (long-form intro paragraphs)
+============================================================ */
+.intro-sec{padding:5rem 0;position:relative;z-index:2}
+.intro-grid{display:grid;grid-template-columns:380px 1fr;gap:4rem;align-items:start}
+@media(max-width:980px){.intro-grid{grid-template-columns:1fr;gap:2rem}}
+
+.intro-side{position:sticky;top:160px}
+@media(max-width:980px){.intro-side{position:relative;top:0}}
+
+.intro-side .sec-eyebrow{margin-bottom:1rem}
+.intro-side h2{font-family:var(--font-sans);font-weight:700;font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1.05;letter-spacing:-.025em;color:var(--navy);margin-bottom:1.25rem}
+.intro-side h2 em{font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+.intro-side .stat-tile{
+  margin-top:1.5rem;
+  padding:1.25rem;
+  background:var(--paper);
+  border:1px solid var(--line-rose);
+  border-radius:14px;
+  display:grid;grid-template-columns:auto 1fr;gap:.85rem;align-items:center;
+  box-shadow:0 8px 24px -8px var(--accent-glow);
+}
+.stat-tile-num{
+  font-family:var(--font-serif);font-style:italic;font-weight:500;
+  font-size:2.4rem;line-height:1;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.stat-tile-text{font-size:.85rem;color:var(--muted);line-height:1.4}
+.stat-tile-text strong{color:var(--ink);font-weight:700;display:block;font-size:.95rem;margin-bottom:.15rem}
+
+.intro-content{font-size:1.05rem;line-height:1.7;color:var(--ink-2)}
+.intro-content p{margin-bottom:1.25rem}
+.intro-content p:first-child::first-letter{
+  font-family:var(--font-serif);font-weight:400;
+  font-size:3.5rem;line-height:.9;
+  float:left;margin-right:.65rem;margin-top:.3rem;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.intro-content strong{color:var(--ink);font-weight:600}
+
+/* ============================================================
+   ★ FEATURE BLOCKS (alternating left/right with bullet lists)
+============================================================ */
+.features-sec{padding:5rem 0;position:relative;z-index:2}
+
+.feature-block{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+  margin-bottom:5rem;
+}
+.feature-block:last-child{margin-bottom:0}
+.feature-block:nth-child(even){direction:rtl}
+.feature-block:nth-child(even) > *{direction:ltr}
+@media(max-width:880px){
+  .feature-block{grid-template-columns:1fr;gap:2rem;direction:ltr;margin-bottom:3.5rem}
+  .feature-block:nth-child(even){direction:ltr}
+}
+
+.feature-content{display:flex;flex-direction:column;gap:1rem}
+.feature-eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.35rem .8rem;align-self:flex-start;
+  font-family:var(--font-mono);font-size:.65rem;font-weight:700;
+  background:rgba(242,41,91,.08);color:var(--accent);
+  letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid var(--line-rose);border-radius:100px;
+}
+.feature-eyebrow::before{content:"";width:14px;height:1px;background:var(--accent);box-shadow:0 0 6px var(--accent)}
+.feature-content h3{font-family:var(--font-sans);font-weight:700;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.15;letter-spacing:-.02em;color:var(--navy)}
+.feature-content h3 em{font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.feature-summary{color:var(--ink-2);font-size:1rem;line-height:1.6;font-style:italic;font-family:var(--font-serif);font-size:1.15rem;margin-bottom:.5rem}
+
+.feature-list{list-style:none;display:flex;flex-direction:column;gap:.85rem;margin-top:.5rem}
+.feature-list li{
+  display:flex;gap:.85rem;align-items:flex-start;
+  font-size:.95rem;line-height:1.55;color:var(--ink-2);
+  padding:.6rem 0;border-bottom:1px dashed var(--line);
+}
+.feature-list li:last-child{border-bottom:0}
+.feature-list li .num{
+  flex-shrink:0;
+  width:28px;height:28px;border-radius:8px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:grid;place-items:center;
+  color:#fff;font-family:var(--font-mono);font-size:.7rem;font-weight:800;
+  box-shadow:0 4px 12px var(--accent-glow);
+  margin-top:1px;
+}
+.feature-list li strong{color:var(--ink);font-weight:600;display:block;margin-bottom:.15rem}
+
+/* === Visual side — animated illustration card === */
+.feature-visual{
+  position:relative;
+  aspect-ratio:5/4;
+  border-radius:20px;
+  overflow:hidden;
+  background:linear-gradient(135deg,var(--bg-2) 0%,var(--paper) 100%);
+  border:1px solid var(--line);
+  box-shadow:0 16px 50px -12px rgba(14,27,58,.1);
+}
+.feature-visual::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 30%,var(--accent-glow),transparent 60%),radial-gradient(circle at 70% 70%,rgba(59,130,246,.12),transparent 60%);}
+.feature-visual::after{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(59,130,246,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.05) 1px,transparent 1px);
+  background-size:24px 24px;
+  mask-image:radial-gradient(ellipse at 50% 50%,black 0%,transparent 80%);}
+
+.feature-visual-glyph{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:160px;height:160px;border-radius:50%;
+  background:linear-gradient(135deg,var(--paper),var(--bg-2));
+  border:2px solid var(--accent);
+  display:grid;place-items:center;
+  box-shadow:0 0 40px var(--accent-glow),0 0 80px rgba(59,130,246,.2),inset 0 0 30px var(--accent-glow);
+  z-index:3;animation:vg 3s ease-in-out infinite alternate;
+}
+.feature-visual-glyph .glyph{
+  font-family:var(--font-serif);font-style:italic;font-weight:500;
+  font-size:5rem;line-height:1;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 12px var(--accent-glow));
+}
+@keyframes vg{
+  from{box-shadow:0 0 40px var(--accent-glow),0 0 80px rgba(59,130,246,.2),inset 0 0 30px var(--accent-glow);transform:translate(-50%,-50%) scale(1)}
+  to{box-shadow:0 0 60px var(--accent-glow),0 0 120px rgba(59,130,246,.4),inset 0 0 40px var(--accent-glow);transform:translate(-50%,-50%) scale(1.04)}
+}
+
+.feature-visual-ring{
+  position:absolute;top:50%;left:50%;
+  width:160px;height:160px;border-radius:50%;
+  border:1px solid var(--accent);
+  opacity:.3;transform:translate(-50%,-50%);
+  animation:fvr 3s ease-out infinite;
+}
+.feature-visual-ring.r2{animation-delay:1s;border-color:var(--accent-2)}
+.feature-visual-ring.r3{animation-delay:2s;border-color:var(--indigo)}
+@keyframes fvr{0%{transform:translate(-50%,-50%) scale(.5);opacity:.6}100%{transform:translate(-50%,-50%) scale(2);opacity:0}}
+
+.feature-mini-tag{
+  position:absolute;
+  padding:.4rem .7rem;
+  font-family:var(--font-mono);font-size:.65rem;font-weight:700;
+  background:rgba(255,255,255,.95);
+  border:1px solid var(--line-bright);
+  border-radius:100px;
+  color:var(--ink);letter-spacing:.05em;
+  box-shadow:0 4px 12px rgba(14,27,58,.08);
+  z-index:2;
+  display:inline-flex;align-items:center;gap:.35rem;
+  animation:floatTag 5s ease-in-out infinite;
+}
+.feature-mini-tag::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 4px var(--accent)}
+.feature-mini-tag.m1{top:12%;left:8%;animation-delay:0s}
+.feature-mini-tag.m2{top:18%;right:10%;animation-delay:1.5s}
+.feature-mini-tag.m3{bottom:18%;left:12%;animation-delay:2.5s}
+.feature-mini-tag.m4{bottom:12%;right:8%;animation-delay:.8s}
+
+/* ============================================================
+   ★ "WHY PARTNER" 4-card grid
+============================================================ */
+.why-sec{padding:5rem 0;position:relative;z-index:2;
+  background:linear-gradient(135deg,var(--paper) 0%,var(--bg-2) 100%);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.why-sec::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(800px 400px at 20% 0%,var(--accent-glow),transparent 50%),radial-gradient(600px 400px at 80% 100%,rgba(59,130,246,.12),transparent 50%);pointer-events:none}
+
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;position:relative;z-index:1}
+@media(max-width:1100px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.why-grid{grid-template-columns:1fr}}
+
+.why-card{
+  position:relative;padding:2rem 1.75rem;
+  background:var(--paper);border:1px solid var(--line);border-radius:16px;
+  transition:all .35s;overflow:hidden;
+}
+.why-card::before{content:"";position:absolute;top:-2px;left:-2px;right:-2px;height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2),var(--indigo));
+  opacity:0;transition:opacity .35s;border-radius:16px 16px 0 0}
+.why-card::after{content:"";position:absolute;top:0;right:0;width:200px;height:200px;
+  background:radial-gradient(circle,var(--accent-glow),transparent 70%);
+  filter:blur(40px);opacity:0;transition:opacity .35s;pointer-events:none}
+.why-card:hover{transform:translateY(-6px);border-color:transparent;box-shadow:var(--shadow-cloud)}
+.why-card:hover::before{opacity:1}
+.why-card:hover::after{opacity:1}
+.why-card:hover .why-icon{transform:scale(1.1) rotate(-5deg)}
+
+.why-icon{
+  width:52px;height:52px;border-radius:13px;
+  display:grid;place-items:center;font-size:1.4rem;font-weight:800;color:#fff;
+  margin-bottom:1.1rem;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  box-shadow:0 8px 20px -4px var(--accent-glow);
+  transition:transform .3s;position:relative;
+}
+.why-icon::after{content:"✦";position:absolute;top:-5px;right:-5px;font-size:.65rem;color:#fff;
+  filter:drop-shadow(0 0 4px currentColor);animation:cs 3s ease-in-out infinite}
+@keyframes cs{0%,100%{opacity:.6;transform:scale(.8) rotate(0)}50%{opacity:1;transform:scale(1.2) rotate(180deg)}}
+
+.why-title{font-family:var(--font-sans);font-weight:700;font-size:1.05rem;color:var(--ink);margin-bottom:.55rem;letter-spacing:-.01em}
+.why-desc{color:var(--muted);font-size:.88rem;line-height:1.55}
+
+/* ============================================================
+   ★ PROCESS TIMELINE
+============================================================ */
+.process-sec{padding:6rem 0;position:relative;z-index:2}
+
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.25rem;
+  position:relative;
+  margin-top:3rem;
+}
+@media(max-width:980px){.process-grid{grid-template-columns:1fr 1fr;gap:1.5rem 1.25rem}}
+@media(max-width:560px){.process-grid{grid-template-columns:1fr}}
+
+/* Connecting line behind cards on desktop */
+.process-grid::before{
+  content:"";position:absolute;
+  top:32px;left:7%;right:7%;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2),var(--indigo),var(--cyan));
+  background-size:200% 100%;
+  animation:rs 6s linear infinite;
+  z-index:0;
+}
+@media(max-width:980px){.process-grid::before{display:none}}
+
+.process-step{
+  position:relative;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:1.5rem 1.25rem;
+  transition:all .35s;
+  z-index:1;
+  display:flex;flex-direction:column;gap:.6rem;
+}
+.process-step::before{content:"";position:absolute;inset:0;border-radius:16px;
+  padding:1px;background:conic-gradient(from 0deg,var(--accent),var(--accent-2),var(--indigo),var(--cyan),var(--amber),var(--accent));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .35s;pointer-events:none;
+  animation:gs 4s linear infinite}
+.process-step:hover{transform:translateY(-6px);border-color:transparent;box-shadow:var(--shadow-cloud)}
+.process-step:hover::before{opacity:1}
+
+.process-num{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--paper);
+  border:2px solid var(--accent);
+  display:grid;place-items:center;
+  font-family:var(--font-serif);font-style:italic;font-weight:500;
+  font-size:1.6rem;line-height:1;
+  background:linear-gradient(135deg,var(--paper),var(--bg-2));
+  color:var(--accent);
+  box-shadow:0 8px 20px var(--accent-glow);
+  margin-bottom:.5rem;align-self:flex-start;
+  position:relative;
+}
+.process-num::after{content:"✦";position:absolute;top:-3px;right:-3px;font-size:.6rem;color:var(--amber);
+  filter:drop-shadow(0 0 4px var(--amber));animation:cs 3s ease-in-out infinite}
+
+.process-step h4{font-family:var(--font-sans);font-weight:700;font-size:1.05rem;letter-spacing:-.01em;color:var(--ink);line-height:1.25}
+.process-step p{color:var(--muted);font-size:.88rem;line-height:1.55}
+
+/* ============================================================
+   ★ CROSS-SELL / RELATED SERVICES
+============================================================ */
+.related-sec{padding:5rem 0;position:relative;z-index:2;background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media(max-width:980px){.related-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.related-grid{grid-template-columns:1fr}}
+
+.related-card{
+  display:flex;flex-direction:column;gap:.85rem;
+  padding:1.5rem;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:14px;
+  transition:all .3s;
+  cursor:pointer;
+}
+.related-card:hover{transform:translateY(-4px);border-color:transparent;box-shadow:var(--shadow-cloud)}
+.related-card:hover .related-icon{transform:scale(1.08)}
+.related-card:hover .related-title{color:var(--accent)}
+
+.related-icon{
+  width:42px;height:42px;border-radius:11px;
+  display:grid;place-items:center;
+  font-size:1.1rem;font-weight:800;color:#fff;
+  background:linear-gradient(135deg,var(--c1,var(--rose)),var(--c2,var(--sky-deep)));
+  box-shadow:0 6px 16px -4px;
+  transition:transform .3s;
+}
+.related-title{font-family:var(--font-sans);font-weight:700;font-size:.95rem;color:var(--ink);line-height:1.2;transition:color .25s}
+.related-card .arrow{
+  margin-top:auto;
+  font-size:.75rem;font-weight:600;color:var(--muted);
+  display:inline-flex;align-items:center;gap:.35rem;
+  transition:gap .25s,color .25s;
+}
+.related-card:hover .arrow{color:var(--accent);gap:.55rem}
+
+/* ============================================================
+   ★ CTA + FOOTER
+============================================================ */
+.cta{padding:5rem 0;position:relative;z-index:2}
+.cta-box{position:relative;
+  background:linear-gradient(135deg,var(--paper) 0%,var(--bg-2) 100%);
+  border-radius:28px;padding:5rem 3rem;overflow:hidden;text-align:center;
+  box-shadow:0 0 0 1px var(--line-bright),0 30px 80px -20px var(--accent-glow),0 0 100px rgba(59,130,246,.2);
+}
+.cta-box::before{content:"";position:absolute;inset:-2px;border-radius:30px;padding:2px;
+  background:conic-gradient(from 0deg,var(--accent),var(--accent-2),var(--indigo),var(--cyan),var(--amber),var(--accent));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;animation:gs 6s linear infinite;z-index:1}
+.cta-box::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 20% 0%,var(--accent-glow),transparent 50%),radial-gradient(circle at 80% 100%,rgba(59,130,246,.18),transparent 50%);pointer-events:none}
+.cta-content{position:relative;z-index:2}
+.cta-eyebrow{display:inline-flex;align-items:center;gap:.5rem;justify-content:center;
+  font-family:var(--font-mono);font-size:.72rem;font-weight:700;color:var(--accent);
+  letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem;
+  padding:.4rem .85rem;background:rgba(242,41,91,.08);border:1px solid var(--line-rose);border-radius:100px}
+.cta-eyebrow::before{content:"✦";color:var(--amber);filter:drop-shadow(0 0 4px var(--amber));animation:spin 3s linear infinite}
+.cta h3{font-family:var(--font-sans);font-weight:700;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.05;letter-spacing:-.025em;color:var(--navy);margin-bottom:1rem}
+.cta h3 em{font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2),var(--indigo));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.cta p{color:var(--ink-2);font-size:1.05rem;line-height:1.6;max-width:580px;margin:0 auto 2rem}
+.cta-actions{display:inline-flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+
+footer{background:var(--navy);color:rgba(255,255,255,.75);padding:5rem 0 0;position:relative;overflow:hidden;z-index:2}
+footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--rose) 25%,var(--sky) 50%,var(--indigo) 75%,transparent);
+  filter:blur(.5px);background-size:200% 100%;animation:rs 8s linear infinite}
+footer::after{content:"";position:absolute;bottom:-200px;left:50%;transform:translateX(-50%);
+  width:800px;height:400px;background:radial-gradient(ellipse,rgba(242,41,91,.18),transparent 70%);filter:blur(60px)}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08);position:relative;z-index:1}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;gap:2.5rem}}
+@media(max-width:520px){.footer-top{grid-template-columns:1fr}}
+.footer-brand .brand{margin-bottom:1.25rem}
+.footer-brand .brand-logo{height:42px;filter:brightness(1.2)}
+.footer-brand p{font-size:.92rem;line-height:1.65;max-width:380px;margin-bottom:1.75rem;color:rgba(255,255,255,.7)}
+.footer-contact{display:flex;flex-direction:column;gap:.85rem;font-size:.88rem}
+.footer-contact-item{display:flex;align-items:flex-start;gap:.65rem;color:rgba(255,255,255,.75);transition:color .2s}
+.footer-contact-item:hover{color:var(--rose-soft)}
+.footer-contact-item .icon{flex-shrink:0;width:32px;height:32px;border-radius:8px;background:rgba(242,41,91,.15);border:1px solid rgba(242,41,91,.3);display:grid;place-items:center;font-size:.85rem;color:var(--rose-soft)}
+.fcol h5{font-family:var(--font-mono);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-soft);margin-bottom:1.25rem;display:inline-flex;align-items:center;gap:.5rem}
+.fcol h5::before{content:"";width:14px;height:1px;background:var(--rose-soft);box-shadow:0 0 6px var(--rose-soft)}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.fcol a{font-size:.92rem;color:rgba(255,255,255,.7);transition:all .25s;position:relative}
+.fcol a:hover{color:var(--rose-soft);padding-left:8px;text-shadow:0 0 8px rgba(255,94,132,.4)}
+.fcol a:hover::before{content:"→";position:absolute;left:-4px;color:var(--rose-soft)}
+.footer-bottom{padding:1.75rem 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem;color:rgba(255,255,255,.5);position:relative;z-index:1}
+.footer-bottom .glow{display:inline-flex;align-items:center;gap:.5rem}
+.footer-bottom .glow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rose);box-shadow:0 0 8px var(--rose),0 0 16px var(--rose);animation:livePulse 2s infinite}
+.footer-bottom .legal{display:flex;gap:1.25rem}
+.footer-bottom .legal a{color:rgba(255,255,255,.5);transition:color .2s}
+.footer-bottom .legal a:hover{color:var(--rose-soft)}
+
+/* === Section eyebrow === */
+.sec-eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--font-mono);font-size:.72rem;
+  color:var(--accent);letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:.85rem;font-weight:600;
+}
+.sec-eyebrow::before{content:"";width:30px;height:1px;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+.sec-head{text-align:center;margin-bottom:3rem;max-width:780px;margin-left:auto;margin-right:auto}
+.sec-head .sec-eyebrow{justify-content:center}
+.sec-head .sec-eyebrow::before{display:none}
+h2.sec-title{font-family:var(--font-sans);font-weight:700;font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.05;letter-spacing:-.025em;color:var(--navy);margin-bottom:1rem}
+h2.sec-title em{font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2),var(--indigo));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 16px var(--accent-glow))}
+.sec-desc{color:var(--ink-2);font-size:1rem;line-height:1.65;max-width:620px;margin:0 auto}
+
+/* === Page swap animation === */
+.page-content{animation:pageIn .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ============================================================
+   ★ HERO POLISH: tagline ribbon + image card
+============================================================ */
+.hero-tagline{
+  font-family:var(--font-mono);font-size:.7rem;font-weight:700;
+  color:var(--accent);letter-spacing:.18em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:.55rem;margin-top:1.1rem;
+}
+.hero-tagline::before{content:"";width:24px;height:1px;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+
+/* Floating image card next to the orb */
+.hv-photo{
+  position:absolute;bottom:-26px;right:-8px;
+  width:180px;height:120px;border-radius:14px;overflow:hidden;
+  border:2px solid var(--paper);
+  box-shadow:0 16px 40px -10px rgba(14,27,58,.25),0 0 0 1px var(--line-bright);
+  background:var(--paper);z-index:6;
+  animation:floatTag 7s ease-in-out infinite;
+}
+.hv-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.hv-photo::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg,transparent 60%,var(--accent-glow));
+  pointer-events:none}
+@media(max-width:980px){.hv-photo{display:none}}
+
+/* ============================================================
+   ★ INTRO SECTION: gallery rail
+============================================================ */
+.intro-gallery{
+  margin-top:1.5rem;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;
+}
+.intro-gallery img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;
+  border-radius:12px;border:1px solid var(--line-bright);
+  box-shadow:0 8px 22px -10px rgba(14,27,58,.15);
+  transition:transform .35s,box-shadow .35s;
+}
+.intro-gallery img:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 40px -12px var(--accent-glow)}
+@media(max-width:980px){.intro-gallery{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.intro-gallery{grid-template-columns:repeat(2,1fr)}}
+
+/* ============================================================
+   ★ FEATURE BLOCK: enhance visual with real image
+============================================================ */
+.feature-visual.with-image{background:var(--paper)}
+.feature-visual.with-image::before{opacity:.45}
+.feature-visual.with-image .fv-photo{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:.92;mix-blend-mode:multiply;
+}
+.feature-visual.with-image .feature-visual-glyph{
+  background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+}
+
+/* === Tech / tools chip strip inside feature blocks === */
+.feature-tools{
+  display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.65rem;padding-top:.85rem;
+  border-top:1px dashed var(--line);
+}
+.feature-tools .chip{
+  padding:.3rem .65rem;border-radius:100px;
+  font-family:var(--font-mono);font-size:.66rem;font-weight:600;
+  letter-spacing:.04em;color:var(--ink-2);
+  background:var(--bg-2);border:1px solid var(--line);
+  display:inline-flex;align-items:center;gap:.35rem;
+}
+.feature-tools .chip::before{content:"◆";color:var(--accent);font-size:.55rem}
+
+/* ============================================================
+   ★ INDUSTRIES STRIP
+============================================================ */
+.industries-sec{
+  padding:4rem 0;position:relative;z-index:2;overflow:hidden;
+  background:linear-gradient(135deg,var(--bg-2) 0%,var(--paper) 60%,var(--bg-2) 100%);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.industries-sec::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(700px 320px at 50% 0%,var(--accent-glow),transparent 60%);
+  pointer-events:none;opacity:.6}
+.industries-head{text-align:center;margin-bottom:2rem}
+.industries-head h3{font-family:var(--font-mono);font-size:.75rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  display:inline-flex;align-items:center;gap:.65rem}
+.industries-head h3::before,.industries-head h3::after{
+  content:"";width:30px;height:1px;background:var(--accent);box-shadow:0 0 6px var(--accent)
+}
+.industries-track{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:.65rem;position:relative;z-index:1;
+}
+.industry-pill{
+  padding:.7rem 1.2rem;border-radius:100px;
+  font-size:.85rem;font-weight:600;color:var(--ink);
+  background:var(--paper);border:1px solid var(--line-bright);
+  display:inline-flex;align-items:center;gap:.55rem;
+  box-shadow:0 4px 12px -4px var(--accent-glow);
+  transition:all .3s;
+}
+.industry-pill:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent);box-shadow:0 8px 24px -6px var(--accent-glow)}
+.industry-pill::before{content:"";width:7px;height:7px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  box-shadow:0 0 6px var(--accent)}
+
+/* ============================================================
+   ★ TECH STACK GRID
+============================================================ */
+.tech-sec{padding:5rem 0;position:relative;z-index:2}
+.tech-grid{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:.75rem;
+  max-width:1100px;margin:2.5rem auto 0;
+}
+@media(max-width:880px){.tech-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:560px){.tech-grid{grid-template-columns:repeat(3,1fr)}}
+.tech-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:14px;
+  padding:1.1rem .65rem;text-align:center;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;
+  font-size:.78rem;font-weight:600;color:var(--ink);
+  font-family:var(--font-mono);letter-spacing:.02em;
+  transition:all .3s;position:relative;overflow:hidden;
+  min-height:90px;
+}
+.tech-card::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 100%,var(--accent-glow),transparent 70%);
+  opacity:0;transition:opacity .3s}
+.tech-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:var(--shadow-cloud);color:var(--accent)}
+.tech-card:hover::before{opacity:1}
+.tech-card .tech-dot{
+  width:32px;height:32px;border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:grid;place-items:center;color:#fff;font-size:.72rem;
+  box-shadow:0 4px 10px -2px var(--accent-glow);
+}
+
+/* ============================================================
+   ★ TESTIMONIAL / PULL-QUOTE
+============================================================ */
+.testimonial-sec{
+  padding:6rem 0;position:relative;z-index:2;overflow:hidden;
+}
+.testimonial-sec::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(900px 500px at 50% 50%,var(--accent-glow),transparent 60%);
+  pointer-events:none;opacity:.7}
+.testimonial-card{
+  position:relative;max-width:920px;margin:0 auto;
+  padding:3.5rem 3rem;
+  background:linear-gradient(135deg,var(--paper),var(--bg-2));
+  border-radius:24px;
+  box-shadow:0 0 0 1px var(--line-bright),0 20px 60px -20px var(--accent-glow);
+  text-align:center;
+}
+.testimonial-card::before{content:"";position:absolute;inset:-2px;border-radius:26px;padding:2px;
+  background:conic-gradient(from 0deg,var(--accent),var(--accent-2),var(--indigo),var(--cyan),var(--amber),var(--accent));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  animation:gs 8s linear infinite;opacity:.7;pointer-events:none}
+.testimonial-quote-mark{
+  font-family:var(--font-serif);font-style:italic;font-weight:500;
+  font-size:6rem;line-height:.7;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:.5rem;display:inline-block;
+}
+.testimonial-text{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  font-size:clamp(1.2rem,2.4vw,1.65rem);line-height:1.45;
+  color:var(--ink);margin-bottom:2rem;
+  max-width:780px;margin-left:auto;margin-right:auto;
+}
+.testimonial-meta{
+  display:inline-flex;align-items:center;gap:.85rem;
+  padding:.65rem 1.25rem;
+  background:rgba(255,255,255,.7);
+  border:1px solid var(--line-bright);
+  border-radius:100px;backdrop-filter:blur(10px);
+}
+.testimonial-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:grid;place-items:center;color:#fff;font-weight:800;font-size:.85rem;
+  box-shadow:0 0 0 2px var(--paper),0 4px 10px var(--accent-glow);
+}
+.testimonial-who{display:flex;flex-direction:column;align-items:flex-start;text-align:left}
+.testimonial-name{font-size:.88rem;font-weight:700;color:var(--ink)}
+.testimonial-org{font-family:var(--font-mono);font-size:.7rem;color:var(--muted);letter-spacing:.04em}
+
+/* ============================================================
+   ★ FAQ ACCORDION
+============================================================ */
+.faq-sec{padding:5rem 0;position:relative;z-index:2}
+.faq-grid{
+  display:grid;grid-template-columns:1fr 1.6fr;gap:3rem;
+  max-width:1180px;margin:0 auto;
+  align-items:start;
+}
+@media(max-width:900px){.faq-grid{grid-template-columns:1fr;gap:2rem}}
+
+.faq-side{position:sticky;top:160px}
+@media(max-width:900px){.faq-side{position:relative;top:0}}
+.faq-side h2{font-family:var(--font-sans);font-weight:700;font-size:clamp(1.7rem,3.2vw,2.4rem);line-height:1.05;letter-spacing:-.02em;color:var(--navy);margin-bottom:1rem}
+.faq-side h2 em{font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.faq-side p{color:var(--muted);font-size:.95rem;line-height:1.6;margin-bottom:1.5rem}
+
+.faq-list{display:flex;flex-direction:column;gap:.75rem}
+.faq-item{
+  background:var(--paper);
+  border:1px solid var(--line);border-radius:14px;
+  overflow:hidden;transition:all .3s;
+}
+.faq-item:hover{border-color:var(--line-bright);box-shadow:0 8px 22px -10px var(--accent-glow)}
+.faq-item[open]{border-color:var(--accent);box-shadow:0 8px 22px -10px var(--accent-glow)}
+
+.faq-item summary{
+  list-style:none;cursor:pointer;
+  padding:1.15rem 1.4rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  font-weight:600;font-size:.98rem;color:var(--ink);
+  user-select:none;transition:color .25s;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--accent)}
+.faq-item summary::after{
+  content:"+";flex-shrink:0;
+  width:30px;height:30px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#fff;display:grid;place-items:center;
+  font-weight:300;font-size:1.3rem;line-height:1;
+  box-shadow:0 4px 10px -2px var(--accent-glow);
+  transition:transform .3s;
+}
+.faq-item[open] summary::after{content:"−";transform:rotate(180deg)}
+.faq-answer{
+  padding:0 1.4rem 1.3rem;
+  color:var(--ink-2);font-size:.92rem;line-height:1.65;
+  border-top:1px dashed var(--line);padding-top:1rem;
+  animation:faqIn .35s ease-out;
+}
+@keyframes faqIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+
+/* === Polish: sec-divider with sparkle === */
+.sec-divider{
+  display:flex;align-items:center;justify-content:center;gap:.85rem;
+  color:var(--accent);margin:0 auto 1rem;
+}
+.sec-divider::before,.sec-divider::after{
+  content:"";width:60px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+}
+.sec-divider span{font-family:var(--font-serif);font-style:italic;font-size:1.1rem;color:var(--accent);
+  filter:drop-shadow(0 0 4px var(--accent-glow))}
+</style>
+</head>
+<body>
+
+<div class="cloud-bg"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="cloud c1"></div>
+<div class="cloud c2"></div>
+<div class="cloud c3"></div>
+
+<div class="sparkle-layer">
+  <span class="sparkle a large" style="top:8%;left:5%;--dur:3s;--delay:0s"></span>
+  <span class="sparkle b" style="top:15%;left:18%;--dur:4s;--delay:.5s"></span>
+  <span class="sparkle d tiny" style="top:6%;right:25%;--dur:3.5s;--delay:1s"></span>
+  <span class="sparkle c" style="top:22%;right:8%;--dur:5s;--delay:1.5s"></span>
+  <span class="sparkle a tiny" style="top:35%;left:8%;--dur:4s;--delay:2s"></span>
+  <span class="sparkle b large" style="top:45%;right:15%;--dur:3.5s;--delay:.8s"></span>
+  <span class="sparkle d" style="top:55%;left:12%;--dur:4.5s;--delay:1.2s"></span>
+  <span class="sparkle e tiny" style="top:65%;right:30%;--dur:3s;--delay:2.5s"></span>
+  <span class="sparkle a" style="top:75%;left:20%;--dur:4s;--delay:0s"></span>
+  <span class="sparkle c" style="top:85%;right:18%;--dur:5s;--delay:1.8s"></span>
+  <span class="sparkle b tiny" style="top:25%;left:45%;--dur:3.5s;--delay:2.2s"></span>
+  <span class="sparkle d large" style="top:50%;right:45%;--dur:4s;--delay:1.5s"></span>
+  <span class="sparkle e" style="top:90%;left:50%;--dur:3s;--delay:.5s"></span>
+</div>
+
+<!-- ANNOUNCE -->
+<div class="announce">
+  <div class="container">
+    <div class="left"><span class="live">Welcome to VSolutions Digital</span></div>
+    <div class="right">
+      <a href="tel:2482328488" class="phone">📞 248 232 8488</a>
+      <a href="mailto:info@vsolutionsinc.com">✉ info@vsolutionsinc.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <a href="/" class="brand">
+      <img src="https://vsolutionsinc.com/wp-content/uploads/2026/03/vsolutions-final.svg" alt="V Solutions Inc" class="brand-logo" />
+      <span class="brand-spark s1">✦</span>
+      <span class="brand-spark s2">✦</span>
+    </a>
+    <ul class="menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about-v-solutions-inc/">About</a></li>
+      <li><a href="/how-we-work/">How we work</a></li>
+      <li class="current"><a href="/service-overview/">Services</a></li>
+      <li><a href="/case-study/">Case Studies</a></li>
+      <li><a href="/careers/">Careers</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="search-btn" aria-label="Search">⌕</button>
+      <a href="/contact/" class="btn btn-primary">Contact Us <span class="btn-arrow">→</span></a>
+      <button class="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- SERVICE PILLS NAV -->
+<nav class="service-pills">
+  <div class="container">
+    <div class="pills-track" id="pillsTrack"></div>
+  </div>
+</nav>
+
+<!-- DYNAMIC PAGE CONTENT — gets replaced when service changes -->
+<main id="pageRoot"></main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="brand">
+          <img src="https://vsolutionsinc.com/wp-content/uploads/2019/10/vsolutions-final_footer.png" alt="V Solutions Inc" class="brand-logo" />
+        </a>
+        <p>V Solutions Inc combines AI, cloud, and digital marketing expertise to transform technology into actionable insights, helping businesses achieve measurable growth and succeed on a global scale.</p>
+      </div>
+      <div class="fcol">
+        <h5>Menu</h5>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-v-solutions-inc/">About</a></li>
+          <li><a href="/how-we-work/">How we work</a></li>
+          <li><a href="/service-overview/">Services</a></li>
+          <li><a href="/case-study/">Case Studies</a></li>
+          <li><a href="/careers/">Careers</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/blog-insights/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h5>Services</h5>
+        <ul id="footerServicesList"></ul>
+      </div>
+      <div class="fcol">
+        <h5>Contact us</h5>
+        <div class="footer-contact">
+          <a class="footer-contact-item" href="https://maps.google.com/?q=100+West+Big+Beaver+Rd+Troy+MI+48084" target="_blank">
+            <span class="icon">📍</span>
+            <span>100 West Big Beaver Rd<br>Troy - MI - 48084</span>
+          </a>
+          <a class="footer-contact-item" href="tel:+12482328488">
+            <span class="icon">📞</span>
+            <span>248-232-8488</span>
+          </a>
+          <a class="footer-contact-item" href="mailto:info@vsolutionsinc.com">
+            <span class="icon">✉</span>
+            <span>info@vsolutionsinc.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="glow">2019-26 © All rights reserved by V Solutions INC</span>
+      <div class="legal">
+        <a href="/terms-and-conditions/">Terms and Conditions</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/cookie-policy-v-solutions-inc/">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============================================================
+// SERVICE DATA — all 8 services with full content from live site
+// ============================================================
+const SERVICES = {
+  ai: {
+    slug: 'ai',
+    url: '/service/artificial-intelligence/',
+    name: 'Artificial Intelligence',
+    pillIcon: 'AI',
+    accent: '#F2295B', accent2: '#1D4ED8', accentGlow: 'rgba(242,41,91,.18)',
+    glyph: '⚡',
+    image: 'https://vsolutionsinc.com/wp-content/uploads/2020/03/ai-450x450.png',
+    pill: 'AI Services 2026',
+    title: 'Empower business with <em>intelligent AI</em> built for marketing',
+    subhead: 'In 2026, AI is not just a tool — it\'s the driving force behind smarter strategies, deeper insights, and unparalleled efficiency.',
+    lede: 'At <strong>VSolutions Inc</strong>, our Artificial Intelligence Services empower businesses to harness the full potential of AI. We deploy custom AI solutions that integrate seamlessly with your marketing efforts — delivering predictive intelligence, automation, and optimization at scale.',
+    stats: [
+      {num:'200%', lbl:'Avg ROI Lift'},
+      {num:'24/7', lbl:'Agentic Monitoring'},
+      {num:'4x', lbl:'Faster Insights'},
+      {num:'GDPR', lbl:'CCPA Ready'},
+    ],
+    tags: ['Predictive AI', 'NLP', 'GenAI', 'Computer Vision', 'Agentic Workflows', 'Ethical AI'],
+    introTitle: 'AI that <em>augments</em> human expertise',
+    introStat: {num:'200%', label:'Performance Gains', text:'Successfully implemented AI solutions that have driven 30-200% improvements in key metrics for clients across industries.'},
+    introBody: '<p>At VSolutions Inc, our Artificial Intelligence Services empower businesses to harness the full potential of AI in digital marketing and beyond. In 2026, AI is not just a tool—it\'s the driving force behind smarter strategies, deeper insights, and unparalleled efficiency. We specialize in deploying custom AI solutions that integrate seamlessly with your marketing efforts, delivering predictive intelligence, automation, and optimization at scale.</p><p>Our AI services are built on the principle of augmentation: <strong>advanced technology enhances human expertise, never replaces it.</strong> We combine state-of-the-art machine learning models with the creative and strategic insight of our marketing professionals to create solutions that are intelligent, ethical, and results-oriented.</p>',
+    features: [
+      {
+        eyebrow: 'Custom Integration',
+        title: 'AI Integration <em>For Digital Marketing</em>',
+        summary: 'Bespoke AI models trained on your data — connected to every tool you already use.',
+        glyph: '◈',
+        tags: ['CRM', 'CMS', 'Ad Platforms', 'Analytics'],
+        items: [
+          {strong:'Bespoke AI Models', text:'Development and deployment of custom machine learning models trained on your unique data for superior accuracy in audience segmentation, behavior prediction, and campaign forecasting.'},
+          {strong:'Seamless Platform Integration', text:'Connect AI capabilities with your existing tools (CRM, CMS, advertising platforms, analytics suites) for unified, automated workflows.'},
+          {strong:'Agentic AI Workflows', text:'Autonomous AI agents that manage repetitive tasks, monitor campaigns 24/7, and execute real-time optimizations based on predefined strategies.'},
+          {strong:'Scalable Infrastructure', text:'Cloud-based AI solutions that grow with your business, ensuring performance and reliability at any scale.'},
+        ]
+      },
+      {
+        eyebrow: 'Advanced Analytics',
+        title: 'AI-Powered <em>Analytics & Insights</em>',
+        summary: 'Predictive intelligence that doesn\'t just report — it forecasts what happens next.',
+        glyph: '↗',
+        tags: ['Predictive', 'Real-Time', 'Attribution', 'Competitive'],
+        items: [
+          {strong:'Predictive Customer Intelligence', text:'Forecast customer lifetime value, churn risk, and next-best actions using deep learning models.'},
+          {strong:'Real-Time Performance Analytics', text:'AI-driven dashboards that detect anomalies, identify trends, and suggest immediate optimizations.'},
+          {strong:'Competitive Intelligence', text:'Monitor market trends, competitor strategies, and emerging opportunities through automated data aggregation and analysis.'},
+          {strong:'Attribution & ROI Modeling', text:'Multi-touch attribution powered by AI to accurately measure channel impact and maximize marketing spend efficiency.'},
+        ]
+      },
+      {
+        eyebrow: 'Creative Optimization',
+        title: 'AI-Driven <em>Content & Creative</em>',
+        summary: 'Generate, test, and personalize content at scale — with human expert oversight on every output.',
+        glyph: '✎',
+        tags: ['GenAI', 'Personalization', 'Multimodal', 'Testing'],
+        items: [
+          {strong:'Generative AI for Content Creation', text:'AI-assisted generation of blog posts, social media copy, email campaigns, and ad creatives—refined and approved by human experts.'},
+          {strong:'Creative Performance Prediction', text:'Test thousands of variations virtually to predict winning creatives before launch.'},
+          {strong:'Personalized Content at Scale', text:'Dynamic content engines that adapt messaging, visuals, and offers in real-time based on individual user profiles.'},
+          {strong:'Multimodal AI Capabilities', text:'Generate and optimize images, videos, and interactive elements alongside text for richer experiences.'},
+        ]
+      },
+      {
+        eyebrow: 'Ethical AI',
+        title: 'Ethical <em>AI Governance</em> & Implementation',
+        summary: 'Trustworthy AI that aligns with your values, your data, and global compliance frameworks.',
+        glyph: '🛡',
+        tags: ['GDPR', 'CCPA', 'Bias-Free', 'Explainable'],
+        items: [
+          {strong:'Bias Detection & Mitigation', text:'Ongoing monitoring and correction to ensure fair, inclusive AI outcomes.'},
+          {strong:'Data Privacy Compliance', text:'Full adherence to GDPR, CCPA, and emerging AI regulations.'},
+          {strong:'Explainable AI', text:'Clear documentation and visibility into how models make decisions.'},
+          {strong:'Human-in-the-Loop Oversight', text:'Critical decisions always involve expert review and approval.'},
+        ]
+      },
+    ],
+    why: [
+      {icon:'⚡', title:'Marketing-First AI Expertise', desc:'Unlike general AI providers, we understand digital marketing deeply — ensuring solutions deliver measurable business impact.'},
+      {icon:'◈', title:'End-to-End Ownership', desc:'From strategy and development to deployment and ongoing optimization — one accountable partner.'},
+      {icon:'↗', title:'Proven Results', desc:'Successfully implemented AI solutions that have driven 30-200% improvements in key metrics for clients across industries.'},
+      {icon:'★', title:'Future-Proof Approach', desc:'Continuously updated with the latest advancements in AI, including multimodal models and agentic systems.'},
+    ],
+    process: [
+      {title:'Discovery & Assessment', desc:'Evaluate existing systems, data maturity, and business goals to uncover high-impact AI opportunities.'},
+      {title:'Strategy, Design & Use-Case Definition', desc:'Collaborate to define priority use cases, model requirements, architecture, and measurable success metrics.'},
+      {title:'Development, Training & Validation', desc:'Build, train, and rigorously test custom AI solutions in a controlled environment to ensure accuracy and reliability.'},
+      {title:'Deployment, Integration & Continuous Evolution', desc:'Deploy with minimal disruption, enable teams, and continuously monitor performance, retrain models, and expand capabilities.'},
+    ],
+    ctaTitle: 'Unlock smarter growth — <em>with AI today.</em>',
+    ctaText: 'Elevate your digital strategy with custom AI solutions that drive automation, predictive insights, and measurable business results. Let\'s transform your data into competitive advantage.',
+    tagline: 'Augment expertise. Never replace it.',
+    gallery: [
+      'https://vsolutionsinc.com/wp-content/uploads/2025/12/ai-ml.svg',
+      'https://vsolutionsinc.com/wp-content/uploads/2026/01/AI-Enhanced-Website-Features-1.jpg',
+      'https://vsolutionsinc.com/wp-content/uploads/2026/01/Advanced-AI-Enhanced-SEO-Services.jpg',
+    ],
+    industries: ['Healthcare', 'FinTech', 'E-commerce', 'SaaS', 'Manufacturing', 'Media'],
+    tech: [
+      {n:'OpenAI'},{n:'Anthropic'},{n:'Hugging Face'},{n:'LangChain'},
+      {n:'PyTorch'},{n:'TensorFlow'},{n:'Vector DBs'},{n:'AWS Bedrock'}
+    ],
+    quote: {
+      text: 'VSolutions deployed an AI pipeline in 6 weeks that lifted our qualified-lead conversion by 38%. The team didn\'t just deliver a model — they embedded it into our workflow with a clear path to ROI.',
+      who: 'VP, Marketing Operations',
+      org: 'B2B SaaS · Mid-market',
+    },
+    faqs: [
+      {q:'Do we need our own data to use AI?', a:'Not necessarily. Our AI consultants help you start with public, third-party, or pre-trained models, and we add your proprietary data only where it materially improves accuracy or differentiation.'},
+      {q:'How do you handle data privacy and compliance?', a:'Every engagement includes a data-handling plan aligned to GDPR, CCPA, HIPAA, and SOC 2. We default to private cloud and customer-controlled keys; we never train shared models on your data without explicit consent.'},
+      {q:'Can you integrate AI with our existing CRM, CMS, and ad platforms?', a:'Yes. We integrate with HubSpot, Salesforce, WordPress, Shopify, GA4, Google Ads, Meta, LinkedIn, and most modern stacks via APIs, webhooks, or message queues.'},
+      {q:'How long until we see measurable impact?', a:'Most clients see lift on the first KPI within 30–60 days. Larger transformations follow our 4-phase roadmap with quarterly business reviews and continuous re-training.'},
+    ],
+  },
+
+  cloud: {
+    slug: 'cloud',
+    url: '/service/cloud-devops-services/',
+    name: 'Cloud DevOps & SRE',
+    pillIcon: '☁',
+    accent: '#06B6D4', accent2: '#3B82F6', accentGlow: 'rgba(6,182,212,.18)',
+    glyph: '↗',
+    image: 'https://vsolutionsinc.com/wp-content/uploads/2026/01/Cloud-Devops-Services-450x450.jpg',
+    pill: 'Cloud · DevOps · SRE',
+    title: 'Build. Scale. Operate. <em>Without limits.</em>',
+    subhead: 'Production-grade reliability at the speed of a startup. Cloud platforms engineered for scale.',
+    lede: 'Enterprise-grade <strong>cloud infrastructure, CI/CD automation, Kubernetes orchestration, and Site Reliability Engineering</strong> — designed to keep your platform fast, secure, and 99.99% available across AWS, Azure, and GCP. From legacy migrations to multi-region rebuilds, we handle the hard parts.',
+    stats: [
+      {num:'99.99%', lbl:'Uptime Achieved'},
+      {num:'67%', lbl:'Faster Deploys'},
+      {num:'42%', lbl:'Cloud Spend Cut'},
+      {num:'80%', lbl:'Fewer Incidents'},
+    ],
+    tags: ['AWS', 'Azure', 'GCP', 'Kubernetes', 'Terraform', 'Argo CD'],
+    introTitle: 'Reliability <em>by design.</em>',
+    introStat: {num:'$2.4M', label:'Annual Cloud Savings', text:'Real client outcome — 42% spend reduction through right-sizing, FinOps, and smart workload placement across AWS, Azure, and GCP.'},
+    introBody: '<p>VSolutions delivers <strong>enterprise-grade cloud infrastructure</strong> with the velocity engineering teams need and the reliability that finance teams demand. Our DevOps practice combines deep expertise in AWS, Azure, and Google Cloud with battle-tested SRE principles drawn from Google\'s SRE handbook.</p><p>Whether you\'re modernizing a legacy monolith, migrating from on-prem, or scaling a microservices fleet across regions, our team designs <strong>infrastructure-as-code blueprints, GitOps deployment pipelines, observability stacks, and automated runbooks</strong> that keep your platform humming as your business grows.</p>',
+    features: [
+      {
+        eyebrow: 'Cloud Migration',
+        title: 'Migrate to <em>any cloud</em> — without the downtime',
+        summary: 'Lift-and-shift, replatform, or refactor — we handle complex migrations with zero data loss.',
+        glyph: '☁',
+        tags: ['AWS', 'Azure', 'GCP', 'Hybrid'],
+        items: [
+          {strong:'Cloud Migration & Modernization', text:'Lift-and-shift, replatform, or refactor — we choose the right strategy per workload and execute with zero data loss.'},
+          {strong:'Multi-Cloud Architecture', text:'Vendor-agnostic designs across AWS, Azure, and GCP — avoid lock-in and optimize cost per workload.'},
+          {strong:'Hybrid Cloud Setup', text:'Connect on-prem data centers with cloud resources via VPN, Direct Connect, or ExpressRoute for hybrid workloads.'},
+          {strong:'Disaster Recovery Planning', text:'Multi-region failover, automated backup verification, and RPO/RTO guarantees that survive real outages.'},
+        ]
+      },
+      {
+        eyebrow: 'CI/CD Automation',
+        title: 'Ship code <em>10x faster</em> with safe, automated pipelines',
+        summary: 'GitOps-driven deployments, blue-green rollouts, automated rollback. Your developers ship every hour.',
+        glyph: '⚡',
+        tags: ['GitHub Actions', 'GitLab CI', 'ArgoCD', 'Spinnaker'],
+        items: [
+          {strong:'Build & Deployment Pipelines', text:'GitHub Actions, GitLab CI, Jenkins, or CircleCI — wired to test gates, security scans, and automated rollbacks.'},
+          {strong:'GitOps with Argo CD / Flux', text:'Declarative deployments where Git is the source of truth — every change tracked, every rollback one commit away.'},
+          {strong:'Blue-Green & Canary Releases', text:'Ship safely with traffic-shifting deployments and automated abort on metric regression.'},
+          {strong:'Quality & Security Gates', text:'Unit tests, integration tests, SAST/DAST scans, dependency audits — all enforced before any production deploy.'},
+        ]
+      },
+      {
+        eyebrow: 'Kubernetes & Containers',
+        title: 'Production-ready <em>Kubernetes</em> at any scale',
+        summary: 'EKS, AKS, GKE — cluster design, hardening, autoscaling, observability. Your platform team will thank us.',
+        glyph: '⬢',
+        tags: ['EKS', 'GKE', 'AKS', 'Helm', 'Istio'],
+        items: [
+          {strong:'Cluster Design & Hardening', text:'Pod Security Standards, network policies, RBAC, secrets encryption, and node hardening per CIS benchmarks.'},
+          {strong:'Helm & GitOps Workflows', text:'Helm chart libraries, Kustomize overlays, and ArgoCD application sets that scale across teams and environments.'},
+          {strong:'Service Mesh (Istio / Linkerd)', text:'mTLS everywhere, traffic policies, observability, and zero-trust networking inside the cluster.'},
+          {strong:'Cluster Autoscaling & Cost Optimization', text:'Karpenter, Cluster Autoscaler, spot instances, and right-sized resource limits — pay only for what you use.'},
+        ]
+      },
+      {
+        eyebrow: 'Site Reliability Engineering',
+        title: 'SRE practices that <em>keep you up</em> at 3am — without the pager',
+        summary: 'SLOs, error budgets, blameless postmortems, automated runbooks. Reliability becomes engineering, not heroics.',
+        glyph: '🛡',
+        tags: ['SLOs', 'Prometheus', 'Grafana', 'PagerDuty'],
+        items: [
+          {strong:'SLOs & Error Budgets', text:'Define what reliability means for each service, set realistic targets, and use error budgets to balance velocity vs stability.'},
+          {strong:'Observability Stack', text:'Prometheus metrics, Loki logs, Tempo traces, Grafana dashboards — all wired into PagerDuty/OpsGenie for actionable alerts.'},
+          {strong:'Incident Response & Runbooks', text:'Pre-built runbooks, automated remediation, and blameless postmortem culture that turns incidents into improvements.'},
+          {strong:'Performance & Cost Optimization', text:'Right-sizing, query optimization, caching strategies, and FinOps practices that cut cloud bills 30-50%.'},
+        ]
+      },
+    ],
+    why: [
+      {icon:'☁', title:'Multi-Cloud Expertise', desc:'Certified engineers across AWS, Azure, and GCP — we choose the right cloud per workload, not per vendor relationship.'},
+      {icon:'⚡', title:'Battle-Tested SRE', desc:'Practices drawn from Google\'s SRE handbook adapted for your business — reliability becomes engineering discipline.'},
+      {icon:'↗', title:'Cost Engineering', desc:'FinOps practices that have saved clients 30-50% on cloud bills without sacrificing performance or reliability.'},
+      {icon:'★', title:'Always-On Coverage', desc:'24/7 monitoring, on-call rotations, and incident response baked into every engagement — not an afterthought.'},
+    ],
+    process: [
+      {title:'Architecture Review & Roadmap', desc:'Audit existing infrastructure, identify reliability and cost gaps, design a phased roadmap aligned to business priorities.'},
+      {title:'Infrastructure-as-Code Build', desc:'Terraform / Pulumi modules, GitOps pipelines, observability stack — everything version-controlled and reproducible.'},
+      {title:'Migration & Cutover', desc:'Phased rollouts with traffic shifting, parallel run validation, and zero-downtime cutover for production workloads.'},
+      {title:'SRE Operations & Optimization', desc:'Ongoing 24/7 monitoring, capacity planning, cost optimization, and continuous reliability improvements.'},
+    ],
+    ctaTitle: 'Stop firefighting. <em>Start engineering reliability.</em>',
+    ctaText: 'Get a free cloud architecture review. We\'ll identify your top 3 reliability and cost-savings opportunities — with concrete next steps.',
+    tagline: 'Build. Scale. Operate. Without limits.',
+    gallery: [
+      'https://vsolutionsinc.com/wp-content/uploads/2026/01/Cloud-Solutions-DevOps-Site-Reliability-Engineering.png',
+      'https://vsolutionsinc.com/wp-content/uploads/2026/01/devops.avif',
+      'https://vsolutionsinc.com/wp-content/uploads/2025/12/gdm.jpg',
+    ],
+    industries: ['Financial Services', 'Healthcare', 'E-commerce', 'SaaS', 'Manufacturing & IoT', 'Media'],
+    tech: [
+      {n:'AWS'},{n:'Azure'},{n:'GCP'},{n:'Kubernetes'},
+      {n:'Terraform'},{n:'Argo CD'},{n:'Prometheus'},{n:'Grafana'},
+      {n:'Helm'},{n:'Istio'},{n:'GitHub Actions'},{n:'Jenkins'}
+    ],
+    quote: {
+      text: 'A 6-week migration of our multi-tier app to Azure with zero data loss and zero rollback. The SRE handover was the most polished I\'ve seen — runbooks, dashboards, and on-call paths ready on day one.',
+      who: 'Director of Platform Engineering',
+      org: 'Healthcare SaaS',
+    },
+    faqs: [
+      {q:'Which cloud should we choose — AWS, Azure, or GCP?', a:'It depends on workload, existing tooling, and team skills. We run a workload-by-workload assessment and often recommend multi-cloud or hybrid architectures to avoid lock-in.'},
+      {q:'Can you reduce our existing cloud bill?', a:'Yes. Our FinOps engagements typically cut spend 30–50% through right-sizing, savings plans, spot/Reserved instances, storage tiering, and idle-resource cleanup — without performance regression.'},
+      {q:'Do you offer 24/7 SRE / managed services?', a:'Yes. We provide tier 1–3 on-call, SLA-backed monitoring, automated remediation, and quarterly reliability reviews. Most clients run with 99.99% achieved uptime.'},
+      {q:'How long does a typical migration take?', a:'Phase 1 (Discovery + Architecture) is usually 3–5 weeks. Production cutover ranges from 4–12 weeks depending on complexity, integrations, and downtime tolerance.'},
+    ],
+  },
+
+  cybersecurity: {
+    slug: 'cybersecurity',
+    url: '/service/cybersecurity-application-security-testing/',
+    name: 'Cybersecurity & AppSec',
+    pillIcon: '🛡',
+    accent: '#EC4899', accent2: '#BE185D', accentGlow: 'rgba(236,72,153,.18)',
+    glyph: '🛡',
+    image: 'https://vsolutionsinc.com/wp-content/uploads/2026/01/cybersecurity-450x450.jpg',
+    pill: 'Cybersecurity · AppSec',
+    title: 'Protect what <em>powers your business</em>.',
+    subhead: 'Application security testing, penetration testing, threat modeling, and compliance frameworks built for modern enterprises.',
+    lede: 'A single breach costs an average of <strong>$4.45 million</strong>. Modern attackers move at machine speed — your defenses must move faster. We deliver <strong>SAST, DAST, SCA, penetration testing, threat modeling, and compliance assessments</strong> — turning security from a checkbox into a competitive advantage.',
+    stats: [
+      {num:'$4.45M', lbl:'Avg Breach Avoided'},
+      {num:'24/7', lbl:'Threat Monitoring'},
+      {num:'OWASP', lbl:'Top 10 Coverage'},
+      {num:'SOC 2', lbl:'Audit-Ready'},
+    ],
+    tags: ['Pen-Testing', 'SAST/DAST', 'Threat Modeling', 'SOC2', 'GDPR', 'Zero Trust'],
+    introTitle: 'Security <em>woven into</em> every layer.',
+    introStat: {num:'100%', label:'OWASP Top 10', text:'Comprehensive coverage of OWASP Top 10 web vulnerabilities, plus emerging threats specific to your industry and tech stack.'},
+    introBody: '<p>VSolutions Inc delivers comprehensive cybersecurity services that protect your applications, data, and infrastructure from evolving threats. Our security practice combines <strong>offensive security expertise (penetration testing, red teaming) with defensive engineering (SAST/DAST integration, threat modeling, secure architecture review)</strong> — covering the full lifecycle from design to production.</p><p>Whether you\'re preparing for SOC 2, ISO 27001, or HIPAA audits, hardening a SaaS platform, or responding to an active incident — our certified security engineers move fast and document everything. <strong>We don\'t just find vulnerabilities — we help your team understand them, fix them, and prevent them from recurring.</strong></p>',
+    features: [
+      {
+        eyebrow: 'Application Security',
+        title: 'Application <em>Security Testing</em>',
+        summary: 'SAST, DAST, IAST integrated into every CI/CD pipeline. Vulnerabilities caught before code reaches production.',
+        glyph: '⊕',
+        tags: ['SAST', 'DAST', 'SCA', 'API Security'],
+        items: [
+          {strong:'Static Application Security Testing (SAST)', text:'Source code analysis integrated into your CI pipeline — catch vulnerabilities before code is merged.'},
+          {strong:'Dynamic Application Security Testing (DAST)', text:'Runtime testing against deployed apps to find real exploitable issues — not just theoretical CVEs.'},
+          {strong:'Software Composition Analysis (SCA)', text:'Identify vulnerable dependencies, license risks, and outdated libraries across your entire dependency tree.'},
+          {strong:'API Security Testing', text:'OpenAPI / GraphQL schema fuzzing, authentication testing, rate-limit validation, and injection testing.'},
+        ]
+      },
+      {
+        eyebrow: 'Penetration Testing',
+        title: 'Penetration <em>Testing & Red Team</em>',
+        summary: 'Manual pen-tests by certified ethical hackers. Find what scanners miss — before adversaries do.',
+        glyph: '⌕',
+        tags: ['OSCP', 'CEH', 'Web', 'Network'],
+        items: [
+          {strong:'Web Application Penetration Testing', text:'Manual testing by certified ethical hackers (OSCP, CEH) — finding logic flaws, auth bypasses, and chained exploits scanners can\'t detect.'},
+          {strong:'Network Penetration Testing', text:'External and internal network testing — perimeter, segmentation, lateral movement, and privilege escalation paths.'},
+          {strong:'Cloud Configuration Audits', text:'AWS/Azure/GCP configuration reviews against CIS benchmarks — find misconfigurations that lead to data breaches.'},
+          {strong:'Red Team Engagements', text:'Adversary simulation campaigns testing your detection, response, and recovery capabilities under real-world conditions.'},
+        ]
+      },
+      {
+        eyebrow: 'Threat Modeling',
+        title: 'Threat <em>Modeling & Architecture</em>',
+        summary: 'Security designed in, not bolted on. STRIDE-based threat models for new and existing systems.',
+        glyph: '◈',
+        tags: ['STRIDE', 'OCTAVE', 'PASTA', 'Trust Boundaries'],
+        items: [
+          {strong:'STRIDE Threat Modeling', text:'Systematic identification of Spoofing, Tampering, Repudiation, Information Disclosure, DoS, and Elevation threats.'},
+          {strong:'Secure Architecture Review', text:'Trust boundary analysis, attack surface mapping, and security control gap assessments for cloud architectures.'},
+          {strong:'Zero-Trust Implementation', text:'Identity-aware proxies, mTLS service mesh, principle of least privilege — security that survives perimeter compromise.'},
+          {strong:'DevSecOps Integration', text:'Embed security into every stage of the SDLC — from design reviews to automated testing to runtime protection.'},
+        ]
+      },
+      {
+        eyebrow: 'Compliance & Reporting',
+        title: 'Risk & <em>Compliance Frameworks</em>',
+        summary: 'SOC 2, ISO 27001, HIPAA, GDPR, PCI-DSS — preparation, evidence collection, and audit support.',
+        glyph: '✎',
+        tags: ['SOC 2', 'ISO 27001', 'HIPAA', 'PCI', 'GDPR'],
+        items: [
+          {strong:'Risk & Compliance Assessments', text:'Gap analysis against SOC 2, ISO 27001, HIPAA, PCI-DSS, GDPR — prioritized roadmap to compliance.'},
+          {strong:'Threat Mitigation Guidance', text:'Detailed remediation playbooks per finding — code-level fixes, configuration changes, and architectural recommendations.'},
+          {strong:'Detailed Security Reporting', text:'Executive summaries, technical deep-dives, CVSS-scored findings, and reproduction steps your engineers can act on.'},
+          {strong:'Incident Response Retainer', text:'Pre-arranged IR coverage so your team has expert help available within hours when an incident occurs.'},
+        ]
+      },
+    ],
+    why: [
+      {icon:'🛡', title:'Certified Security Engineers', desc:'OSCP, CEH, CISSP-certified team with deep expertise in offensive and defensive security — not generalists.'},
+      {icon:'⚡', title:'Speed Without Compromise', desc:'Security findings delivered in days, not weeks. Critical vulnerabilities flagged within 24 hours.'},
+      {icon:'↗', title:'Compliance Expertise', desc:'SOC 2, ISO 27001, HIPAA, PCI-DSS, GDPR — we\'ve helped clients pass dozens of audits across industries.'},
+      {icon:'★', title:'Actionable Reports', desc:'Findings include reproduction steps, code-level fixes, and architectural recommendations — not vague checklists.'},
+    ],
+    process: [
+      {title:'Scoping & Threat Modeling', desc:'Map attack surface, identify trust boundaries, prioritize testing scope based on business risk and compliance needs.'},
+      {title:'Testing & Analysis', desc:'Combine automated scanning (SAST/DAST/SCA) with manual penetration testing to find both known and novel vulnerabilities.'},
+      {title:'Reporting & Remediation', desc:'Deliver CVSS-scored findings with code-level fixes, then partner with your engineers to verify remediation effectiveness.'},
+      {title:'Monitoring & Re-Testing', desc:'Continuous re-testing on every release, plus 24/7 threat monitoring and incident response retainer for ongoing coverage.'},
+    ],
+    ctaTitle: 'Find vulnerabilities <em>before attackers do.</em>',
+    ctaText: 'Free 30-minute security review of your application architecture. We\'ll identify your top 3 risk areas and recommend a clear path to fix them.',
+    tagline: 'Protect what powers your business.',
+    gallery: [
+      'https://vsolutionsinc.com/wp-content/uploads/2026/01/cybersecurity-450x450.jpg',
+      'https://vsolutionsinc.com/wp-content/uploads/2026/01/11668583_20945597-1024x1024.jpg',
+    ],
+    industries: ['Financial Services', 'Healthcare', 'E-commerce', 'SaaS', 'Government', 'Education', 'Legal'],
+    tech: [
+      {n:'Checkmarx'},{n:'Fortify'},{n:'SonarQube'},{n:'Veracode'},
+      {n:'Semgrep'},{n:'Burp Suite'},{n:'OWASP ZAP'},{n:'Acunetix'},
+      {n:'Netsparker'},{n:'Rapid7'},{n:'Nessus'},{n:'Metasploit'}
+    ],
+    quote: {
+      text: 'Their pen-test report was the most actionable we\'ve ever received — every finding had reproduction steps, code-level fixes, and a CVSS score we could trust. We closed our SOC 2 audit two months ahead of schedule.',
+      who: 'CISO',
+      org: 'FinTech Platform',
+    },
+    faqs: [
+      {q:'How is your pen-test different from automated scanners?', a:'Automated scanners catch ~30% of real vulnerabilities and miss almost all logic flaws. Our OSCP- and CEH-certified hackers chain exploits, escalate privileges, and find issues scanners simply cannot — auth bypasses, IDORs, race conditions, and business-logic abuse.'},
+      {q:'Do you help with SOC 2, ISO 27001, HIPAA, or PCI compliance?', a:'Yes. We run gap assessments, draft policies, build evidence repositories, and partner with auditors. We\'ve helped clients pass SOC 2 Type II, ISO 27001, HIPAA, and PCI-DSS audits across multiple industries.'},
+      {q:'What do you deliver as a final report?', a:'Every engagement ends with an executive summary, a CVSS-scored technical report, code-level remediation guidance, video walkthroughs of critical findings, and a remediation re-test included.'},
+      {q:'Can you respond to an active incident?', a:'Yes. We offer Incident Response retainers — guaranteed response within hours, plus forensics, containment, eradication, and recovery support.'},
+    ],
+  },
+
+  web: {
+    slug: 'web',
+    url: '/service/website-development-services-vsolutions-inc/',
+    name: 'Web Development',
+    pillIcon: '⌬',
+    accent: '#6366F1', accent2: '#3B82F6', accentGlow: 'rgba(99,102,241,.18)',
+    glyph: '⌬',
+    image: 'https://vsolutionsinc.com/wp-content/uploads/2026/01/Custom-Website-Design-Development-450x450.jpg',
+    pill: 'Web Engineering · 2026',
+    title: 'Modern, high-performance websites that <em>work as hard</em> as you do.',
+    subhead: 'Powerful digital assets engineered for speed, SEO, accessibility, and conversion.',
+    lede: 'We build <strong>fast, modern, SEO-optimized websites</strong> with Next.js, React, and headless architectures — including corporate sites, e-commerce platforms, membership portals, and progressive web apps. Sites that load in under a second, score 95+ on Lighthouse, and convert visitors into loyal customers.',
+    stats: [
+      {num:'95+', lbl:'Lighthouse Score'},
+      {num:'<1s', lbl:'Time to Interactive'},
+      {num:'3x', lbl:'Conversion Lift'},
+      {num:'100%', lbl:'Mobile-First'},
+    ],
+    tags: ['Next.js', 'React', 'Headless CMS', 'TypeScript', 'Tailwind', 'Vercel'],
+    introTitle: '<em>Engineered</em> for performance and conversion.',
+    introStat: {num:'95+', label:'Lighthouse Score', text:'Every site we build hits Lighthouse Performance, SEO, Accessibility, and Best Practices scores of 95+ on real-world hardware.'},
+    introBody: '<p>Most agencies build pretty websites. We build <strong>websites that perform</strong>. Every page is engineered with Core Web Vitals as non-negotiables, semantic HTML for SEO and accessibility, and conversion paths designed from real user research — not just visual aesthetics.</p><p>Whether you need a high-converting marketing site, a SaaS product website with a complex admin dashboard, an e-commerce platform, or a content-rich publication, we deliver <strong>production-grade engineering with first-class developer experience for your team</strong> — so you can ship updates fast without breaking anything.</p>',
+    features: [
+      {
+        eyebrow: 'Custom Development',
+        title: 'Custom <em>Next.js & React</em> Builds',
+        summary: 'Server components, edge runtime, ISR — the modern web platform, used the way it was designed.',
+        glyph: '⌬',
+        tags: ['Next.js 15', 'React 19', 'TypeScript', 'Edge'],
+        items: [
+          {strong:'Next.js 15 + App Router', text:'Server components, streaming, parallel data fetching, and edge runtime — the modern React stack at its peak.'},
+          {strong:'Headless CMS Integration', text:'Sanity, Contentful, Strapi, Payload — your content team gets a powerful editor while developers ship clean code.'},
+          {strong:'Type-Safe End-to-End', text:'TypeScript across frontend, API routes, database (Prisma), and tRPC — catch bugs at compile time, not in production.'},
+          {strong:'API Routes & Server Actions', text:'Full-stack apps with Next.js handles authentication, payments, AI features, and database operations natively.'},
+        ]
+      },
+      {
+        eyebrow: 'Performance',
+        title: 'Performance-First <em>Architecture</em>',
+        summary: 'Static generation, edge caching, image optimization, font subsetting. Sub-second loads everywhere.',
+        glyph: '⚡',
+        tags: ['Core Web Vitals', 'CDN', 'Edge', 'Lazy Loading'],
+        items: [
+          {strong:'Core Web Vitals Optimization', text:'LCP < 2.5s, INP < 200ms, CLS < 0.1 — Google\'s ranking signals nailed on every page.'},
+          {strong:'Edge Caching & CDN', text:'Vercel, Cloudflare, or AWS CloudFront — pages served from the edge node closest to your visitor.'},
+          {strong:'Image & Asset Optimization', text:'AVIF/WebP, responsive sizing, blur placeholders, font subsetting — automatic via Next.js Image.'},
+          {strong:'ISR & On-Demand Revalidation', text:'Static performance with dynamic content — pages regenerate only when source data actually changes.'},
+        ]
+      },
+      {
+        eyebrow: 'SEO & Accessibility',
+        title: 'SEO & <em>Accessibility</em> Baked In',
+        summary: 'Semantic HTML, structured data, perfect Lighthouse scores. Built to rank and built for everyone.',
+        glyph: '↗',
+        tags: ['Schema.org', 'WCAG 2.2 AA', 'Sitemap', 'OG'],
+        items: [
+          {strong:'Schema.org Structured Data', text:'JSON-LD for Article, Product, Organization, BreadcrumbList — rich results in Google search.'},
+          {strong:'Semantic HTML5', text:'Proper heading hierarchy, landmarks, ARIA where needed — Google bots and screen readers both happy.'},
+          {strong:'Mobile-First Responsive', text:'Designed mobile-first with breakpoints that work on every device — phones, tablets, foldables, desktops, and beyond.'},
+          {strong:'WCAG 2.2 AA Compliance', text:'Color contrast, keyboard navigation, focus management, and screen reader support — accessibility audits pass on every build.'},
+        ]
+      },
+      {
+        eyebrow: 'Conversion Engineering',
+        title: 'Conversion-Focused <em>Design</em>',
+        summary: 'Forms that convert, CTAs that compel, A/B tested funnels. Every pixel earns its place.',
+        glyph: '◈',
+        tags: ['A/B Testing', 'Heatmaps', 'Forms', 'Funnels'],
+        items: [
+          {strong:'High-Converting Forms', text:'Multi-step forms with progress indicators, smart validation, and analytics tracking — conversion rates up 30-60%.'},
+          {strong:'A/B Testing Infrastructure', text:'Built-in experimentation framework with feature flags — test headlines, layouts, and CTAs without redeployment.'},
+          {strong:'Analytics & Heatmap Integration', text:'GA4, Plausible, Hotjar, Microsoft Clarity — understand exactly how users behave on every page.'},
+          {strong:'Funnel & Path Analysis', text:'Conversion path tracking from first touch through purchase — find drop-off points and fix them.'},
+        ]
+      },
+    ],
+    why: [
+      {icon:'⌬', title:'Modern React Stack', desc:'Next.js 15, React 19, TypeScript, and the latest tooling — your platform won\'t feel dated in two years.'},
+      {icon:'⚡', title:'Performance Obsessed', desc:'Every site we ship hits 95+ on Lighthouse Performance — no excuses, no compromises.'},
+      {icon:'↗', title:'SEO Native', desc:'Schema.org, sitemaps, semantic HTML, and Core Web Vitals all baked in — no SEO afterthoughts.'},
+      {icon:'★', title:'Owner-Friendly', desc:'Headless CMS, clear documentation, and developer experience your team can pick up — no agency lock-in.'},
+    ],
+    process: [
+      {title:'Discovery & Strategy', desc:'User research, competitor analysis, content audit, and conversion strategy — we design for outcomes, not just looks.'},
+      {title:'Design System & Prototypes', desc:'Figma design system, interactive prototypes, accessibility review, and stakeholder approval before code begins.'},
+      {title:'Development & Testing', desc:'Iterative builds with weekly demos, automated testing (unit + E2E), and Lighthouse CI on every pull request.'},
+      {title:'Launch & Ongoing Support', desc:'Phased rollout, performance monitoring, post-launch optimization, and 30-day post-launch support included.'},
+    ],
+    ctaTitle: 'Ready for a <em>website that performs?</em>',
+    ctaText: 'Free 30-minute consultation. We\'ll review your current site\'s performance, SEO, and conversion paths — with concrete recommendations.',
+    tagline: 'Powerful digital assets that ship and rank.',
+    gallery: [
+      'https://vsolutionsinc.com/wp-content/uploads/2026/01/Custom-Website-Design-Development-450x450.jpg',
+      'https://vsolutionsinc.com/wp-content/uploads/2026/01/AI-Enhanced-Website-Features-1.jpg',
+    ],
+    industries: ['SaaS', 'E-commerce', 'Healthcare', 'Education', 'Real Estate', 'Hospitality', 'Manufacturing'],
+    tech: [
+      {n:'Next.js 15'},{n:'React 19'},{n:'TypeScript'},{n:'Tailwind'},
+      {n:'Sanity'},{n:'Contentful'},{n:'Strapi'},{n:'WordPress'},
+      {n:'Shopify'},{n:'WooCommerce'},{n:'Vercel'},{n:'Cloudflare'}
+    ],
+    quote: {
+      text: 'They rebuilt our marketing site on Next.js and our Lighthouse Performance went from 41 to 98. Time-to-first-byte under 200ms, organic traffic up 3x in six months. Best part: our content team can ship updates without a developer.',
+      who: 'Head of Growth',
+      org: 'B2B SaaS · Series B',
+    },
+    faqs: [
+      {q:'How long does a typical website project take?', a:'Marketing sites: 6–10 weeks. Complex SaaS or e-commerce builds: 12–20 weeks. We work in 2-week iterative sprints with weekly demos so you see progress continuously.'},
+      {q:'Do you provide a CMS so our team can update content?', a:'Yes. We integrate headless CMS platforms (Sanity, Contentful, Strapi, Payload) or WordPress where appropriate — your editors get a powerful interface and developers ship clean, type-safe code.'},
+      {q:'Will the new site rank better in Google?', a:'Yes — when paired with content strategy. We bake in Core Web Vitals, schema.org, semantic HTML, and accessibility from day one, which Google rewards. Many clients see 2–3x organic traffic within 6 months.'},
+      {q:'Do you offer ongoing support after launch?', a:'Yes. Every project includes 30 days of post-launch support, and most clients sign on for monthly retainers covering performance monitoring, content updates, and feature additions.'},
+    ],
+  },
+
+  mobile: {
+    slug: 'mobile',
+    url: '/service/mobile-application-development/',
+    name: 'Mobile App Development',
+    pillIcon: '⊞',
+    accent: '#14B8A6', accent2: '#0F766E', accentGlow: 'rgba(20,184,166,.18)',
+    glyph: '⊞',
+    image: 'https://vsolutionsinc.com/wp-content/uploads/2026/01/Mobile-Application-Development-450x450.jpg',
+    pill: 'iOS · Android · Cross-Platform',
+    title: 'Build apps that <em>drive business forward</em>.',
+    subhead: 'From enterprise software to consumer mobile apps — engineered to delight users and accelerate growth.',
+    lede: 'We turn your vision into <strong>powerful, scalable applications</strong>. Native iOS in Swift, native Android in Kotlin, and cross-platform apps in React Native or Flutter — chosen per project to serve your users best. Backend integrations, offline-first sync, push notifications, and CI/CD baked in.',
+    stats: [
+      {num:'4.7★', lbl:'Avg App Rating'},
+      {num:'iOS+', lbl:'Android Native'},
+      {num:'<2s', lbl:'Cold Start'},
+      {num:'CI/CD', lbl:'TestFlight Ready'},
+    ],
+    tags: ['Swift', 'Kotlin', 'React Native', 'Flutter', 'Firebase', 'AWS Amplify'],
+    introTitle: 'Apps users <em>actually keep</em> on their home screen.',
+    introStat: {num:'4.7★', label:'Avg Store Rating', text:'Apps we build and maintain consistently rank 4.5★ or higher on the App Store and Google Play — driven by performance and UX obsession.'},
+    introBody: '<p>Most mobile apps get installed and never opened again. We build <strong>apps users actually keep on their home screen</strong> — fast cold starts, intuitive UX, offline-first reliability, and update flows that don\'t feel like a chore.</p><p>Whether you need a native iOS/Android app for maximum performance, a cross-platform React Native or Flutter build for budget efficiency, or a Progressive Web App as a step toward going fully native — we choose the right approach for your audience and ship apps that pass App Store and Google Play review on the first submission.</p>',
+    features: [
+      {
+        eyebrow: 'Native Development',
+        title: 'Native <em>iOS & Android</em>',
+        summary: 'Swift + SwiftUI for iOS. Kotlin + Jetpack Compose for Android. Maximum performance, platform-native UX.',
+        glyph: '⊞',
+        tags: ['Swift', 'SwiftUI', 'Kotlin', 'Compose'],
+        items: [
+          {strong:'iOS Development (Swift / SwiftUI)', text:'Modern Swift apps with SwiftUI, Combine, and the full Apple ecosystem (HealthKit, ARKit, Core ML, Apple Pay).'},
+          {strong:'Android Development (Kotlin / Compose)', text:'Kotlin + Jetpack Compose apps with full Material 3 support, WorkManager, and Google services integration.'},
+          {strong:'Native Performance', text:'60fps animations, sub-2s cold starts, optimized memory usage — apps that feel as fast as the platform best practices allow.'},
+          {strong:'Platform-Native UX', text:'iOS apps that feel like iOS apps. Android apps that feel like Android apps. No uncanny-valley cross-platform compromises.'},
+        ]
+      },
+      {
+        eyebrow: 'Cross-Platform',
+        title: 'Cross-Platform <em>with React Native or Flutter</em>',
+        summary: 'One codebase, two stores, 70% cost savings. When budget matters more than 60fps animations.',
+        glyph: '◈',
+        tags: ['React Native', 'Flutter', 'Expo', 'Dart'],
+        items: [
+          {strong:'React Native + Expo', text:'JavaScript/TypeScript apps with native modules where needed — fast development, easy hiring, mature ecosystem.'},
+          {strong:'Flutter + Dart', text:'Pixel-perfect cross-platform apps with custom UI — when you need consistency across iOS, Android, web, and desktop.'},
+          {strong:'Shared Codebase Strategy', text:'70-90% code reuse between platforms while preserving native UX where it matters (navigation, lists, gestures).'},
+          {strong:'OTA Updates with EAS / CodePush', text:'Push critical fixes to users in hours, not the App Store review cycle of days.'},
+        ]
+      },
+      {
+        eyebrow: 'UI/UX Design',
+        title: 'Intuitive <em>UI & UX Design</em>',
+        summary: 'iOS HIG, Material 3, and our own opinionated standards. Beautiful and accessible by default.',
+        glyph: '✎',
+        tags: ['Figma', 'iOS HIG', 'Material 3', 'A11y'],
+        items: [
+          {strong:'User Research & Testing', text:'Interview real users, test prototypes, validate flows before code is written — design decisions backed by data, not guesses.'},
+          {strong:'Figma Design System', text:'Component libraries, design tokens, and prototypes that translate 1:1 to code — no design-to-dev surprises.'},
+          {strong:'Accessibility First', text:'Voice Over, TalkBack, dynamic type, color contrast — WCAG 2.2 AA compliant from the first build.'},
+          {strong:'Motion & Microinteractions', text:'Fluid animations, haptic feedback, and microinteractions that make apps feel alive — without distracting from the task.'},
+        ]
+      },
+      {
+        eyebrow: 'Backend & DevOps',
+        title: 'Backend, <em>APIs, and CI/CD</em>',
+        summary: 'Firebase, Supabase, AWS Amplify, or custom — plus Fastlane CI/CD that ships builds to TestFlight nightly.',
+        glyph: '↗',
+        tags: ['Firebase', 'Supabase', 'AWS', 'Fastlane'],
+        items: [
+          {strong:'Backend & API Integration', text:'Firebase, Supabase, AWS Amplify, or custom Node/Go backends — auth, push notifications, real-time sync, and analytics.'},
+          {strong:'Offline-First Architecture', text:'Apps that work in airplane mode and sync seamlessly when reconnected — critical for field workers and travelers.'},
+          {strong:'CI/CD with Fastlane / EAS', text:'Automated builds, TestFlight deploys, Google Play uploads, screenshot generation — release cycle from days to hours.'},
+          {strong:'App Store Submission Support', text:'Review prep, metadata optimization, screenshot design, and reviewer response — first-submission approvals are our standard.'},
+        ]
+      },
+    ],
+    why: [
+      {icon:'⊞', title:'Right Stack Per Project', desc:'Native when performance matters, cross-platform when budget matters, PWA when SEO matters — we don\'t force one tool.'},
+      {icon:'⚡', title:'Performance Native', desc:'Sub-2s cold starts, 60fps animations, smooth scrolling — performance is not optional, it\'s the baseline.'},
+      {icon:'↗', title:'Store Approval First-Try', desc:'Deep familiarity with App Store and Google Play guidelines — we get apps approved on first submission, every time.'},
+      {icon:'★', title:'Long-Term Maintenance', desc:'Apps need OS updates twice a year — we build for maintainability and offer ongoing support contracts to keep things current.'},
+    ],
+    process: [
+      {title:'Discovery & Platform Strategy', desc:'User research, competitive analysis, native vs cross-platform decision, and feature prioritization based on business value.'},
+      {title:'Design & Prototyping', desc:'Figma design system, interactive prototypes tested with real users, accessibility review, and stakeholder sign-off.'},
+      {title:'Development & Testing', desc:'Iterative sprints, weekly TestFlight builds, automated unit + E2E tests, beta testing with real users before submission.'},
+      {title:'Launch & Continuous Improvement', desc:'App Store submission, launch monitoring, performance analytics, user feedback integration, and ongoing version updates.'},
+    ],
+    ctaTitle: 'Build the app <em>users can\'t live without.</em>',
+    ctaText: 'Free 30-minute strategy call. We\'ll review your concept, recommend the right tech stack, and outline a realistic timeline and budget.',
+    tagline: 'Apps that drive real business outcomes.',
+    gallery: [
+      'https://vsolutionsinc.com/wp-content/uploads/2026/01/Mobile-Application-Development-450x450.jpg',
+      'https://vsolutionsinc.com/wp-content/uploads/2026/02/mobile-app-development1-300x225.png',
+    ],
+    industries: ['FinTech & Banking', 'Healthcare & MedTech', 'E-commerce', 'Logistics', 'Real Estate', 'Education', 'Hospitality', 'IoT'],
+    tech: [
+      {n:'Swift'},{n:'SwiftUI'},{n:'Kotlin'},{n:'Jetpack Compose'},
+      {n:'React Native'},{n:'Flutter'},{n:'Expo'},{n:'Firebase'},
+      {n:'Supabase'},{n:'AWS Amplify'},{n:'Fastlane'},{n:'TestFlight'}
+    ],
+    quote: {
+      text: 'Both our iOS and Android apps were approved on first submission, with 4.8★ average reviews after 3 months. The offline-first architecture has saved us countless support tickets from field teams.',
+      who: 'VP, Field Operations',
+      org: 'Logistics & Supply Chain',
+    },
+    faqs: [
+      {q:'Native or cross-platform — which is right for us?', a:'Native (Swift + Kotlin) is best when you need maximum performance, deep platform integrations, or platform-specific UX. Cross-platform (React Native or Flutter) is best when budget, time-to-market, or shared codebase economics matter more. We help you decide in week 1.'},
+      {q:'Will my app pass App Store and Google Play review?', a:'Yes — first-submission approval is our standard. We know the guidelines deeply, prep metadata and screenshots professionally, and pre-test against rejection patterns.'},
+      {q:'Do you handle the backend, push notifications, and analytics?', a:'Yes. We build full-stack — Firebase, Supabase, AWS Amplify, or custom Node/Go backends. Push, real-time sync, analytics, and crash reporting are part of every engagement.'},
+      {q:'How do you handle ongoing maintenance and OS updates?', a:'iOS and Android ship a major OS update each year. We offer maintenance retainers that cover SDK updates, security patches, OS compatibility, and feature work — so your app stays current with no surprises.'},
+    ],
+  },
+
+  marketing: {
+    slug: 'marketing',
+    url: '/service/digital-marketing/',
+    name: 'Digital Marketing',
+    pillIcon: '⚡',
+    accent: '#F59E0B', accent2: '#D97706', accentGlow: 'rgba(245,158,11,.18)',
+    glyph: '⚡',
+    image: 'https://vsolutionsinc.com/wp-content/uploads/2020/03/dmhome-450x450.jpg',
+    pill: 'AI-Enhanced · Growth Marketing 2026',
+    title: 'Smarter marketing, <em>bigger results</em> — AI does the heavy lifting.',
+    subhead: 'AI-enhanced SEO, paid media, social, and conversion optimization — propelling your business forward in 2026 and beyond.',
+    lede: 'We balance <strong>AI efficiency</strong> (data analysis, optimization, automation) with <strong>human creativity</strong> (strategy, empathy, brand voice). Performance media buying, Generative Engine Optimization (GEO), content engineering, and conversion rate optimization — every dollar tracked, every campaign optimized in real-time.',
+    stats: [
+      {num:'312%', lbl:'Avg ROI'},
+      {num:'300%', lbl:'Traffic Growth'},
+      {num:'4.5x', lbl:'ROAS'},
+      {num:'24/7', lbl:'Campaign Optimization'},
+    ],
+    tags: ['SEO', 'PPC', 'Meta Ads', 'Content', 'Email', 'Analytics'],
+    introTitle: '<em>Real growth.</em> Real numbers.',
+    introStat: {num:'312%', label:'ROI Delivered', text:'Inspired Infotech case study: 312% ROI from a single SEO + content marketing engagement over 6 months.'},
+    introBody: '<p>Most agencies sell impressions, clicks, and "engagement". We sell <strong>pipeline, revenue, and customer LTV</strong>. Every campaign we run is tied to a measurable business outcome with full-funnel attribution — from the first ad impression to the closed deal.</p><p>Our AI-driven approach combines <strong>data engineering, predictive analytics, automated bid management, and AI-powered content generation</strong> with the strategic insight of senior marketers — so your campaigns optimize themselves 24/7 while humans focus on creative and strategic work.</p>',
+    features: [
+      {
+        eyebrow: 'SEO & Organic Growth',
+        title: 'SEO & <em>Organic Growth</em>',
+        summary: 'Technical SEO, content engineering, link building, AI search optimization. The full organic acquisition stack.',
+        glyph: '⌕',
+        tags: ['Technical', 'On-Page', 'Content', 'AI Search'],
+        items: [
+          {strong:'Technical SEO Audits', text:'Core Web Vitals, crawlability, indexation, schema markup, internal linking — fix the foundation before content efforts.'},
+          {strong:'Keyword Strategy & Content Engineering', text:'Topic clusters, search intent analysis, content gaps — content built to rank for queries your customers actually use.'},
+          {strong:'AI Search Optimization (LLMO)', text:'Optimize for Perplexity, ChatGPT Search, Google AI Overviews — get cited where buyers research in 2026.'},
+          {strong:'Link Building & Digital PR', text:'Editorial outreach, guest posting, broken link building, brand mentions — DR/DA growth without spammy networks.'},
+        ]
+      },
+      {
+        eyebrow: 'Paid Media',
+        title: 'Performance <em>Paid Media</em>',
+        summary: 'Google, Meta, LinkedIn, YouTube — managed by humans, optimized by AI. ROAS positive in 60 days.',
+        glyph: '↗',
+        tags: ['Google Ads', 'Meta', 'LinkedIn', 'YouTube'],
+        items: [
+          {strong:'Google Ads (Search, Performance Max, YouTube)', text:'Full Google ecosystem coverage with cross-channel attribution and AI-driven bid management.'},
+          {strong:'Meta Ads (Facebook & Instagram)', text:'Advantage+ campaigns, custom audiences, lookalikes, and creative testing infrastructure for scaled performance.'},
+          {strong:'LinkedIn Ads (B2B Focus)', text:'Account-based marketing, lead gen forms, conversation ads, and InMail sequences for B2B pipeline.'},
+          {strong:'Conversion API & Server-Side Tracking', text:'Bypass iOS 14.5+ tracking limits with first-party data and server-side conversion tracking — full attribution restored.'},
+        ]
+      },
+      {
+        eyebrow: 'Content & Email',
+        title: 'Content <em>Engineering & Email</em>',
+        summary: 'Content that ranks, converts, and earns links. Email flows that recover abandoned carts and nurture leads.',
+        glyph: '✎',
+        tags: ['Blog', 'Whitepapers', 'Email', 'Lifecycle'],
+        items: [
+          {strong:'Editorial Content Strategy', text:'Pillar pages, supporting content, content calendars — built to rank and to be shared, not just published.'},
+          {strong:'AI-Augmented Writing', text:'Senior writers + AI augmentation = scaled content output without sacrificing quality or factual accuracy.'},
+          {strong:'Lifecycle Email Marketing', text:'Welcome series, abandoned cart, re-engagement, post-purchase, churn prevention — Klaviyo, Mailchimp, or HubSpot.'},
+          {strong:'Lead Magnets & Funnels', text:'Whitepapers, calculators, mini-courses, free tools — high-converting magnets that build pipeline at the top of funnel.'},
+        ]
+      },
+      {
+        eyebrow: 'Analytics & CRO',
+        title: 'Analytics & <em>Conversion Rate Optimization</em>',
+        summary: 'Full-funnel attribution, A/B testing, heatmaps, funnel analysis. Data-driven decisions, not guesses.',
+        glyph: '◈',
+        tags: ['GA4', 'Looker', 'Hotjar', 'A/B'],
+        items: [
+          {strong:'Full-Funnel Analytics Setup', text:'GA4, Looker Studio, server-side tracking, BigQuery — clean data architecture you can actually trust.'},
+          {strong:'A/B Testing Infrastructure', text:'Headlines, layouts, CTAs, pricing pages — experimentation framework that runs continuous tests.'},
+          {strong:'Heatmaps & Session Recording', text:'Hotjar, Microsoft Clarity, Mouseflow — see exactly how users interact with your site, find friction, fix it.'},
+          {strong:'Multi-Touch Attribution', text:'Move beyond last-click — understand the full customer journey and allocate spend to channels that actually drive revenue.'},
+        ]
+      },
+    ],
+    why: [
+      {icon:'⚡', title:'Revenue-Focused, Not Vanity', desc:'Every campaign tied to a real business KPI — pipeline, MRR, LTV, ROAS. Not just clicks and impressions.'},
+      {icon:'↗', title:'Real Results', desc:'312% ROI for Inspired Infotech. 300% traffic growth for HinduTone. Case studies you can verify.'},
+      {icon:'◈', title:'Full-Stack Marketing', desc:'SEO + Paid + Content + Email + Analytics + CRO — one team owning the full funnel, no handoff gaps.'},
+      {icon:'★', title:'AI-Native Operations', desc:'AI tools embedded in every workflow — bid management, content generation, audience modeling, attribution — running 24/7.'},
+    ],
+    process: [
+      {title:'Audit & Benchmark', desc:'Comprehensive audit of current channels, attribution accuracy, content gaps, and competitor positioning.'},
+      {title:'Strategy & Roadmap', desc:'90-day strategy with channel mix, KPI targets, content calendar, and budget allocation tied to business outcomes.'},
+      {title:'Execute & Optimize', desc:'Campaigns launched in week 2, AI-driven optimization runs 24/7, weekly reporting cadence for transparency.'},
+      {title:'Scale & Iterate', desc:'Quarterly business reviews, channel expansion, creative refreshes, and continuous optimization toward bigger goals.'},
+    ],
+    ctaTitle: 'Stop guessing. <em>Start scaling.</em>',
+    ctaText: 'Free 30-minute marketing audit. We\'ll review your current channels, show you the biggest revenue opportunities, and recommend a 90-day plan.',
+    tagline: 'AI efficiency. Human creativity. Measurable growth.',
+    gallery: [
+      'https://vsolutionsinc.com/wp-content/uploads/2020/03/dmhome-450x450.jpg',
+      'https://vsolutionsinc.com/wp-content/uploads/2026/01/Advanced-AI-Enhanced-SEO-Services.jpg',
+      'https://vsolutionsinc.com/wp-content/uploads/2026/01/AI-Driven-Social-Media-Marketing.jpg',
+      'https://vsolutionsinc.com/wp-content/uploads/2026/01/Call_to_Actions1.png',
+    ],
+    industries: ['SaaS & Tech', 'E-commerce', 'Healthcare', 'B2B Services', 'Education', 'Real Estate', 'Financial Services'],
+    tech: [
+      {n:'Google Ads'},{n:'Meta Ads'},{n:'LinkedIn Ads'},{n:'TikTok Ads'},
+      {n:'GA4'},{n:'Looker Studio'},{n:'BigQuery'},{n:'HubSpot'},
+      {n:'Salesforce'},{n:'Klaviyo'},{n:'Hotjar'},{n:'Semrush'}
+    ],
+    quote: {
+      text: '312% ROI from a single SEO + content engagement in 6 months. Their AI-augmented workflow lets us publish 3x the volume at higher quality — and the team feels like an extension of ours, not an outside vendor.',
+      who: 'Founder & CEO',
+      org: 'Inspired Infotech',
+    },
+    faqs: [
+      {q:'How is AI-Enhanced marketing different from traditional digital marketing?', a:'Traditional teams optimize manually on weekly cadences. Our AI-enhanced workflows run optimization 24/7 — bid adjustments, creative testing, audience expansion, and budget reallocation happen continuously. Humans focus on strategy, creative, and brand.'},
+      {q:'What is Generative Engine Optimization (GEO)?', a:'GEO is optimizing your content to be cited by AI search engines (ChatGPT Search, Perplexity, Google AI Overviews, Bing Copilot). We adapt your content structure, citations, and entity signals so you get cited where buyers research in 2026.'},
+      {q:'How quickly will we see results?', a:'Paid media campaigns are usually ROAS-positive within 60–90 days. SEO compounds slower — most clients see meaningful organic traffic lift in months 4–6 and major ranking gains in months 6–12.'},
+      {q:'Do you offer transparent reporting?', a:'Yes. Real-time dashboards in Looker Studio, weekly performance summaries, and monthly business reviews tied to pipeline, revenue, and customer LTV — not vanity metrics.'},
+    ],
+  },
+
+  vdi: {
+    slug: 'vdi',
+    url: '/service/vdi-endpoint-management-services/',
+    name: 'VDI & Endpoint',
+    pillIcon: '⌂',
+    accent: '#8B5CF6', accent2: '#6D28D9', accentGlow: 'rgba(139,92,246,.18)',
+    glyph: '⌂',
+    image: 'https://vsolutionsinc.com/wp-content/uploads/2020/03/aisolutions-450x450.png',
+    pill: 'VDI · Endpoint Management',
+    title: 'Secure, scalable virtual workspaces for the <em>hybrid workforce</em>.',
+    subhead: 'High-performance VDI across Azure Virtual Desktop, VMware Horizon, Citrix, and Microsoft Intune.',
+    lede: 'We design, deploy, manage, and optimize <strong>enterprise-grade VDI and endpoint management platforms</strong> across <strong>Azure Virtual Desktop, VMware Horizon, Citrix Virtual Apps & Desktops, and Microsoft Intune</strong> — with end-to-end expertise ensuring seamless user experiences and robust zero-trust security.',
+    stats: [
+      {num:'10K+', lbl:'Endpoints Managed'},
+      {num:'Zero', lbl:'Trust Default'},
+      {num:'24/7', lbl:'Helpdesk Coverage'},
+      {num:'5min', lbl:'Avg Provision Time'},
+    ],
+    tags: ['Citrix', 'VMware Horizon', 'Azure AVD', 'Intune', 'Jamf', 'BYOD'],
+    introTitle: 'The hybrid workforce <em>built right.</em>',
+    introStat: {num:'10K+', label:'Endpoints Managed', text:'We currently manage 10,000+ endpoints across enterprise clients with 99.9% uptime and 5-minute average provision time.'},
+    introBody: '<p>Hybrid work is not a temporary trend — it\'s the new operating model. But most organizations have <strong>VDI deployed badly</strong>: slow logins, frustrated users, security gaps, and infrastructure costs that spiral out of control. We fix that.</p><p>Whether you\'re standing up your first VDI environment, modernizing a legacy Citrix farm, migrating to Azure Virtual Desktop, or rolling out unified endpoint management across 10,000+ devices — our team brings deep expertise across <strong>Citrix DaaS, VMware Horizon, Microsoft AVD, Intune, Jamf Pro, and zero-trust networking</strong>.</p>',
+    features: [
+      {
+        eyebrow: 'Virtual Desktops',
+        title: 'Virtual <em>Desktop Infrastructure</em>',
+        summary: 'Citrix DaaS, VMware Horizon, Azure AVD — designed, deployed, and operated by certified architects.',
+        glyph: '⌂',
+        tags: ['Citrix DaaS', 'VMware Horizon', 'Azure AVD', 'AppStream'],
+        items: [
+          {strong:'Citrix DaaS / CVAD Deployments', text:'Citrix Virtual Apps & Desktops (CVAD), Citrix DaaS, App Layering — full-stack Citrix expertise from architecture to operations.'},
+          {strong:'VMware Horizon Implementation', text:'Horizon 8, Horizon Cloud on Azure, Workspace ONE — designed for performance and scale.'},
+          {strong:'Microsoft Azure Virtual Desktop (AVD)', text:'Modern AVD deployments with FSLogix profiles, MSIX app attach, and integration with Microsoft Entra ID.'},
+          {strong:'Amazon WorkSpaces / AppStream 2.0', text:'AWS-native virtual desktop and application streaming for clients standardized on AWS.'},
+        ]
+      },
+      {
+        eyebrow: 'Endpoint Management',
+        title: 'Unified <em>Endpoint Management</em>',
+        summary: 'Intune, Jamf, MDM, BYOD — manage every device in your fleet from one console.',
+        glyph: '⊞',
+        tags: ['Intune', 'Jamf', 'BYOD', 'COPE'],
+        items: [
+          {strong:'Microsoft Intune Deployment', text:'Windows, macOS, iOS, Android — full unified endpoint management with conditional access and compliance policies.'},
+          {strong:'Jamf Pro for Apple Fleets', text:'Mac, iPhone, iPad management at scale — zero-touch DEP enrollment, app catalogs, and Apple Business Manager integration.'},
+          {strong:'Mobile Device Management (MDM)', text:'BYOD, COPE, COBO scenarios — separate work and personal data while preserving employee privacy.'},
+          {strong:'Patch Management & Compliance', text:'Automated OS patching, application updates, configuration drift detection, and compliance reporting.'},
+        ]
+      },
+      {
+        eyebrow: 'Secure Access',
+        title: 'Secure <em>Remote Access</em>',
+        summary: 'Zero-trust network access (ZTNA), MFA, conditional access. Replace VPNs with modern identity-aware proxies.',
+        glyph: '🛡',
+        tags: ['ZTNA', 'MFA', 'SSO', 'Conditional Access'],
+        items: [
+          {strong:'Zero Trust Network Access (ZTNA)', text:'Replace legacy VPN with identity-aware proxies — Cloudflare Access, Zscaler, Netskope, Citrix Secure Private Access.'},
+          {strong:'Multi-Factor Authentication (MFA)', text:'Phishing-resistant MFA with hardware keys (YubiKey), passkeys, and FIDO2 — eliminate password attack vectors.'},
+          {strong:'Conditional Access Policies', text:'Risk-based access decisions: allow only if device is compliant, location is trusted, and behavior is normal.'},
+          {strong:'Single Sign-On (SSO)', text:'Microsoft Entra ID, Okta, Google Workspace — one identity, every application, full audit trail.'},
+        ]
+      },
+      {
+        eyebrow: 'Operations',
+        title: 'Ongoing <em>Operations & Support</em>',
+        summary: '24/7 monitoring, helpdesk, patch management. White-glove operations so your IT team can focus on strategy.',
+        glyph: '↗',
+        tags: ['Monitoring', 'Helpdesk', 'Patching', 'Backup'],
+        items: [
+          {strong:'24/7 Monitoring & Alerting', text:'ControlUp, Citrix Director, eG Innovations — proactive monitoring with SLA-backed response times.'},
+          {strong:'Tier 1-3 Helpdesk Coverage', text:'White-label helpdesk for end-user issues — your employees get help, your IT team focuses on strategic work.'},
+          {strong:'Patch & Update Management', text:'Coordinated patching of host servers, gold images, applications, and endpoints — minimal user disruption.'},
+          {strong:'Backup & Disaster Recovery', text:'Image-level backups, profile data protection, and tested DR runbooks for VDI continuity in any scenario.'},
+        ]
+      },
+    ],
+    why: [
+      {icon:'⌂', title:'Multi-Vendor Expertise', desc:'Citrix CCE, VMware VCP, Microsoft MCSE certifications — deep experts across every major VDI platform.'},
+      {icon:'🛡', title:'Security-First Architecture', desc:'Zero-trust networking, phishing-resistant MFA, conditional access — security baked into every deployment.'},
+      {icon:'⚡', title:'Performance-Tuned', desc:'FSLogix profiles, GPU acceleration, login optimization — sub-30s logins even for power users with heavy app loads.'},
+      {icon:'★', title:'White-Glove Operations', desc:'24/7 monitoring, tier 1-3 helpdesk, patch management — your IT team can finally focus on strategic projects.'},
+    ],
+    process: [
+      {title:'Assessment & Architecture', desc:'Workload analysis, user persona mapping, capacity planning, and platform selection (Citrix vs VMware vs AVD).'},
+      {title:'Design & Pilot', desc:'Reference architecture, gold image creation, profile management strategy, and pilot deployment with 50-100 users.'},
+      {title:'Rollout & Migration', desc:'Phased rollout to all users, training enablement, helpdesk preparation, and decommissioning of legacy infrastructure.'},
+      {title:'Operations & Optimization', desc:'24/7 monitoring, ongoing helpdesk, capacity scaling, performance tuning, and continuous platform improvements.'},
+    ],
+    ctaTitle: 'Modernize your <em>workforce experience.</em>',
+    ctaText: 'Free 30-minute VDI architecture review. We\'ll assess your current setup and recommend the right modernization path — Citrix, VMware, AVD, or hybrid.',
+    tagline: 'High-performance virtual workspaces. Anywhere. Anytime.',
+    gallery: [
+      'https://vsolutionsinc.com/wp-content/uploads/2020/03/Secure-Virtual-Desktop-Infrastructure-VDI-Hosting-Solutions.png',
+      'https://vsolutionsinc.com/wp-content/uploads/2020/03/aisolutions-450x450.png',
+    ],
+    industries: ['Financial Services', 'Healthcare', 'Government', 'Education', 'Legal', 'Insurance', 'Defense'],
+    tech: [
+      {n:'Azure AVD'},{n:'Windows 365'},{n:'VMware Horizon'},{n:'vSphere'},
+      {n:'Citrix DaaS'},{n:'Citrix CVAD'},{n:'Microsoft Intune'},{n:'Jamf Pro'},
+      {n:'FSLogix'},{n:'MSIX App Attach'},{n:'Workspace ONE'},{n:'Entra ID'}
+    ],
+    quote: {
+      text: 'They migrated 4,000 endpoints to Azure Virtual Desktop in 11 weeks with zero data loss. Login times dropped from 90 seconds to 22, and our helpdesk tickets fell 60% in the first quarter.',
+      who: 'CIO',
+      org: 'Healthcare Network',
+    },
+    faqs: [
+      {q:'Should we use Citrix, VMware Horizon, or Azure Virtual Desktop?', a:'Citrix excels at heavy-duty graphics and complex multi-tenant scenarios. VMware Horizon shines for hybrid cloud and existing vSphere shops. AVD is the best fit for Microsoft 365–first organizations and tight Azure integration. We help you choose based on workload, identity, and existing investments.'},
+      {q:'Can VDI handle GPU-intensive workloads (CAD, video, AI)?', a:'Yes. We deploy NVIDIA GRID and AMD MxGPU configurations on AVD, Horizon, and Citrix to support 3D CAD, video editing, and AI/ML workstation use cases with native-feel performance.'},
+      {q:'How does Microsoft Intune fit into VDI?', a:'Intune complements VDI by managing physical endpoints (laptops, mobile, BYOD) alongside virtual desktops. We unify policy, compliance, conditional access, and software delivery across both — a single pane of glass for IT.'},
+      {q:'Do you offer 24/7 managed support after deployment?', a:'Yes. Most clients run on managed services covering monitoring, patching, capacity scaling, image lifecycle, helpdesk tier 1–3, and quarterly health reviews.'},
+    ],
+  },
+
+  content: {
+    slug: 'content',
+    url: '/service/content-writing/',
+    name: 'Content Writing',
+    pillIcon: '✎',
+    accent: '#0EA5E9', accent2: '#0369A1', accentGlow: 'rgba(14,165,233,.18)',
+    glyph: '✎',
+    image: 'https://vsolutionsinc.com/wp-content/uploads/2026/01/content-writing-450x450.jpg',
+    pill: 'Editorial · SEO Content',
+    title: 'Words that work. <em>Stories that sell.</em>',
+    subhead: 'Content that drives action, builds authority, and fuels measurable growth.',
+    lede: 'We craft content that <strong>does more than fill pages</strong> — it ranks in search, earns links, and converts readers into pipeline. Senior writers, AI augmentation, and editorial rigor — for blogs, whitepapers, technical docs, landing pages, email sequences, and beyond.',
+    stats: [
+      {num:'200+', lbl:'Articles Published'},
+      {num:'3.2x', lbl:'Engagement Lift'},
+      {num:'#1', lbl:'Avg SERP Position'},
+      {num:'E-E-A-T', lbl:'Native'},
+    ],
+    tags: ['SEO Writing', 'Whitepapers', 'Blog', 'Technical Docs', 'Email', 'Landing Pages'],
+    introTitle: 'Content that earns <em>attention and links.</em>',
+    introStat: {num:'3.2x', label:'Avg Engagement', text:'Content we publish averages 3.2x the engagement and time-on-page vs industry benchmarks — backed by editorial craft and SEO precision.'},
+    introBody: '<p>Most agencies treat content as a commodity — quantity over quality, keyword-stuffed posts written by generalists, then abandoned the day after publication. We treat content as a <strong>strategic business asset</strong>: every piece is researched, written, edited, optimized, and tracked against pipeline outcomes.</p><p>Our writers are <strong>senior tech and business journalists</strong>, augmented (not replaced) by AI for research and ideation. Every article passes editorial review, fact-checking, SEO optimization, and quality scoring before publication. Result: content that ranks, earns links, and actually drives revenue.</p>',
+    features: [
+      {
+        eyebrow: 'SEO Content',
+        title: 'SEO-Optimized <em>Blog & Articles</em>',
+        summary: 'Topic clusters, keyword strategy, search intent analysis. Content built to rank and to be useful.',
+        glyph: '⌕',
+        tags: ['Topic Clusters', 'Search Intent', 'E-E-A-T', 'Schema'],
+        items: [
+          {strong:'Keyword Research & Topic Clusters', text:'Pillar pages and supporting content built around topic clusters that establish topical authority in your niche.'},
+          {strong:'Search Intent Optimization', text:'Match informational, navigational, transactional, and commercial intent — content that actually answers the query.'},
+          {strong:'E-E-A-T Compliance', text:'Experience, Expertise, Authority, Trust signals throughout — author bylines, citations, fact-checking, expert quotes.'},
+          {strong:'On-Page SEO Excellence', text:'Title tags, meta descriptions, H1-H6 hierarchy, internal linking, schema markup — full technical optimization on every piece.'},
+        ]
+      },
+      {
+        eyebrow: 'Long-Form Content',
+        title: 'Whitepapers, <em>eBooks & Reports</em>',
+        summary: 'High-quality long-form lead magnets that establish thought leadership and capture qualified pipeline.',
+        glyph: '📑',
+        tags: ['Whitepapers', 'eBooks', 'Industry Reports', 'Lead Magnets'],
+        items: [
+          {strong:'Industry Whitepapers', text:'5,000-15,000 word research-driven whitepapers with original survey data, expert interviews, and visual data presentations.'},
+          {strong:'eBook & Guide Production', text:'Multi-chapter ebooks designed as gated lead magnets — strategic content that builds authority while capturing leads.'},
+          {strong:'Original Research & Surveys', text:'Conduct primary research, run industry surveys, analyze data — produce original insights other publications will cite and link.'},
+          {strong:'Designer Collaboration', text:'Editorial paired with our design team — every long-form piece gets custom illustrations, charts, and pull-quotes.'},
+        ]
+      },
+      {
+        eyebrow: 'Technical & B2B',
+        title: 'Technical <em>Documentation & B2B</em>',
+        summary: 'Developer docs, API references, B2B case studies, technical blog posts. Written by engineers who can write.',
+        glyph: '⌬',
+        tags: ['Dev Docs', 'API', 'Case Studies', 'B2B'],
+        items: [
+          {strong:'Developer Documentation', text:'API references, SDK guides, tutorials, code samples — clear, accurate, and tested by senior engineers.'},
+          {strong:'Technical Blog Posts', text:'Deep technical content on AI, cloud, security, DevOps — written by engineers who can also write, not the other way around.'},
+          {strong:'B2B Case Studies', text:'Customer success stories that aren\'t fluff — concrete numbers, real challenges, technical depth, and quotable insights.'},
+          {strong:'Comparison & Pillar Pages', text:'High-converting "X vs Y" comparison pages, alternatives pages, and ultimate guides — top-of-funnel SEO workhorses.'},
+        ]
+      },
+      {
+        eyebrow: 'Conversion Copy',
+        title: 'Landing Pages, <em>Email & Ad Copy</em>',
+        summary: 'High-converting copy for paid landing pages, drip emails, ad creative, and sales sequences.',
+        glyph: '↗',
+        tags: ['Landing Pages', 'Email Sequences', 'Ad Copy', 'Sales'],
+        items: [
+          {strong:'Landing Page Copywriting', text:'High-converting page structure, headline frameworks, social proof integration, and CTA optimization for paid traffic.'},
+          {strong:'Email Sequences & Newsletters', text:'Welcome flows, nurture campaigns, product launches, weekly newsletters — written to be opened and acted on.'},
+          {strong:'Ad Copy & Creative Briefs', text:'Google Ads, Meta Ads, LinkedIn — copy variations for testing, paired with creative briefs for designers and video editors.'},
+          {strong:'Sales Enablement Content', text:'Pitch decks, one-pagers, battle cards, ROI calculators — content that helps your sales team close more deals.'},
+        ]
+      },
+    ],
+    why: [
+      {icon:'✎', title:'Senior Writers Only', desc:'Every writer is a senior journalist or domain expert with 5+ years experience — no junior content mills, no generic copy.'},
+      {icon:'⌕', title:'SEO-Native', desc:'Every piece optimized for search from the first draft — keyword research, search intent, E-E-A-T, schema all baked in.'},
+      {icon:'↗', title:'Pipeline-Tied Metrics', desc:'Content ROI tracked from organic impressions through pipeline-attributed revenue — not vanity engagement scores.'},
+      {icon:'★', title:'AI-Augmented Workflows', desc:'AI handles research, ideation, and first drafts — humans handle strategy, fact-checking, voice, and editorial judgment.'},
+    ],
+    process: [
+      {title:'Strategy & Audit', desc:'Content audit, keyword opportunity analysis, competitive gap analysis, and content calendar for the next 90 days.'},
+      {title:'Research & Outline', desc:'Deep research, expert interviews, primary data gathering, and detailed outlines reviewed before drafting begins.'},
+      {title:'Draft, Edit & Optimize', desc:'Senior writer drafts, editor reviews for voice and accuracy, SEO optimization pass, and visual elements added.'},
+      {title:'Publish, Promote & Measure', desc:'Publication coordinated with social, email, and paid promotion; performance tracked against pipeline metrics monthly.'},
+    ],
+    ctaTitle: 'Content that <em>actually drives revenue.</em>',
+    ctaText: 'Free 30-minute content audit. We\'ll analyze your current content performance, identify ranking opportunities, and recommend a 90-day editorial calendar.',
+    tagline: 'Words that work. Stories that sell.',
+    gallery: [
+      'https://vsolutionsinc.com/wp-content/uploads/2026/01/content-writing-450x450.jpg',
+      'https://vsolutionsinc.com/wp-content/uploads/2026/01/Advanced-AI-Enhanced-SEO-Services.jpg',
+    ],
+    industries: ['Technology & SaaS', 'Healthcare', 'Financial Services', 'E-commerce', 'B2B Services', 'Education', 'Real Estate'],
+    tech: [
+      {n:'WordPress'},{n:'HubSpot'},{n:'Webflow'},{n:'Sanity'},
+      {n:'Contentful'},{n:'Semrush'},{n:'Ahrefs'},{n:'Surfer SEO'},
+      {n:'Frase'},{n:'Grammarly'},{n:'Clearscope'},{n:'Notion'}
+    ],
+    quote: {
+      text: 'Our blog went from 2,000 monthly visits to 47,000 in nine months. Their writers actually understand B2B SaaS — pieces ship with case studies, customer quotes, and original data. Real editorial craft, not template content.',
+      who: 'Director, Content Marketing',
+      org: 'B2B SaaS · Series C',
+    },
+    faqs: [
+      {q:'How long does a typical blog post take?', a:'Standard SEO blog posts ship in 3–5 business days from brief approval. Long-form pieces (3,000+ words) take 7–10 days. Whitepapers and ebooks run 3–5 weeks depending on research depth.'},
+      {q:'Do you handle SEO research or do we provide keywords?', a:'Either way works. Most clients start with a topic-cluster strategy we develop using their seed topics + competitive analysis; some come with their own keyword lists and editorial calendars. We adapt to your workflow.'},
+      {q:'How do you ensure factual accuracy?', a:'Every piece passes a 3-step review: writer self-edit, editor review for voice and accuracy, and an SME (subject-matter expert) pass for technical pieces. Citations are required and verified.'},
+      {q:'Can you write technical documentation for developers?', a:'Yes. Our technical writers come from engineering backgrounds — API references, SDK guides, tutorials, and developer-experience copy that\'s clear, accurate, and tested in real terminals.'},
+    ],
+  },
+};
+
+// Order matters for the pills nav and footer
+const SERVICE_ORDER = ['ai', 'cloud', 'cybersecurity', 'web', 'mobile', 'marketing', 'vdi', 'content'];
+
+// ============================================================
+// RENDER ENGINE
+// ============================================================
+
+function setAccent(s){
+  document.documentElement.style.setProperty('--accent', s.accent);
+  document.documentElement.style.setProperty('--accent-2', s.accent2);
+  document.documentElement.style.setProperty('--accent-glow', s.accentGlow);
+}
+
+function renderPills(activeSlug){
+  const track = document.getElementById('pillsTrack');
+  track.innerHTML = SERVICE_ORDER.map(slug => {
+    const s = SERVICES[slug];
+    const isActive = slug === activeSlug;
+    return `<button class="pill ${isActive ? 'active' : ''}" data-slug="${slug}">
+      <span class="pill-icon">${s.pillIcon}</span>
+      <span>${s.name}</span>
+    </button>`;
+  }).join('');
+  
+  track.querySelectorAll('.pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      navigate(btn.dataset.slug);
+    });
+  });
+}
+
+function renderFooterServices(){
+  const ul = document.getElementById('footerServicesList');
+  ul.innerHTML = SERVICE_ORDER.map(slug => {
+    const s = SERVICES[slug];
+    return `<li><a href="#${s.slug}" data-slug="${s.slug}">${s.name}</a></li>`;
+  }).join('');
+  ul.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', (e) => { e.preventDefault(); navigate(a.dataset.slug); window.scrollTo({top:0,behavior:'smooth'}); });
+  });
+}
+
+function renderRelated(currentSlug){
+  const others = SERVICE_ORDER.filter(s => s !== currentSlug).slice(0, 4);
+  return others.map(slug => {
+    const s = SERVICES[slug];
+    return `<a href="#${s.slug}" data-slug="${s.slug}" class="related-card" style="--c1:${s.accent};--c2:${s.accent2}">
+      <div class="related-icon">${s.pillIcon}</div>
+      <div class="related-title">${s.name}</div>
+      <span class="arrow">Learn more <span class="btn-arrow">→</span></span>
+    </a>`;
+  }).join('');
+}
+
+function renderPage(slug){
+  const s = SERVICES[slug];
+  if (!s) return;
+  setAccent(s);
+  
+  const root = document.getElementById('pageRoot');
+  root.innerHTML = `
+    <div class="page-content">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <a href="#">Services</a>
+          <span class="sep">/</span>
+          <span class="current">${s.name}</span>
+        </nav>
+        <div class="hero-grid">
+          <div>
+            <div class="hero-pill">
+              <span class="label">2026</span>
+              <span>${s.pill}</span>
+            </div>
+            <h1 class="hero-title">${s.title}</h1>
+            ${s.tagline ? `<div class="hero-tagline">${s.tagline}</div>` : ''}
+            <p class="hero-subhead">${s.subhead}</p>
+            <p class="hero-lede">${s.lede}</p>
+            <div class="hero-actions">
+              <a href="/contact/" class="btn btn-primary">Talk to an expert <span class="btn-arrow">→</span></a>
+              <a href="/case-study/" class="btn btn-ghost">View case studies</a>
+            </div>
+            <div class="hero-trust">
+              ${s.stats.map(st => `
+                <div class="hero-trust-item">
+                  <span class="hero-trust-num">${st.num}</span>
+                  <span class="hero-trust-lbl">${st.lbl}</span>
+                </div>`).join('')}
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hv-shell">
+              <div class="hv-orbit">
+                <div class="hv-pulse"></div>
+                <div class="hv-pulse p2"></div>
+                <div class="hv-pulse p3"></div>
+                <div class="hv-center">
+                  <img src="${s.image}" alt="${s.name}" />
+                </div>
+                ${s.tags.slice(0,6).map((t,i) => `<span class="hv-tag t${i+1}"><span class="dot"></span>${t}</span>`).join('')}
+              </div>
+              ${s.gallery && s.gallery[1] ? `<div class="hv-photo"><img src="${s.gallery[1]}" alt="${s.name} preview"/></div>` : ''}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro-sec fade-up">
+      <div class="container">
+        <div class="intro-grid">
+          <aside class="intro-side">
+            <div class="sec-eyebrow">— ${s.name}</div>
+            <h2>${s.introTitle}</h2>
+            <div class="stat-tile">
+              <span class="stat-tile-num">${s.introStat.num}</span>
+              <div class="stat-tile-text">
+                <strong>${s.introStat.label}</strong>
+                ${s.introStat.text}
+              </div>
+            </div>
+          </aside>
+          <div class="intro-content">
+            ${s.introBody}
+            ${s.gallery && s.gallery.length ? `<div class="intro-gallery">${s.gallery.slice(0,4).map(g => `<img src="${g}" alt="${s.name}" loading="lazy"/>`).join('')}</div>` : ''}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE BLOCKS -->
+    <section class="features-sec fade-up">
+      <div class="container">
+        ${s.features.map((f,fi) => {
+          const hasPhoto = s.gallery && s.gallery[fi % s.gallery.length] && fi % 2 === 1;
+          const photoSrc = hasPhoto ? s.gallery[fi % s.gallery.length] : null;
+          return `
+          <div class="feature-block">
+            <div class="feature-content">
+              <span class="feature-eyebrow">${f.eyebrow}</span>
+              <h3>${f.title}</h3>
+              <p class="feature-summary">${f.summary}</p>
+              <ul class="feature-list">
+                ${f.items.map((it,i) => `
+                  <li>
+                    <span class="num">${String(i+1).padStart(2,'0')}</span>
+                    <span><strong>${it.strong}</strong>${it.text}</span>
+                  </li>`).join('')}
+              </ul>
+              <div class="feature-tools">
+                ${f.tags.map(t => `<span class="chip">${t}</span>`).join('')}
+              </div>
+            </div>
+            <div class="feature-visual${photoSrc ? ' with-image' : ''}">
+              ${photoSrc ? `<img class="fv-photo" src="${photoSrc}" alt="${f.eyebrow}" loading="lazy"/>` : ''}
+              <div class="feature-visual-ring"></div>
+              <div class="feature-visual-ring r2"></div>
+              <div class="feature-visual-ring r3"></div>
+              <div class="feature-visual-glyph"><span class="glyph">${f.glyph}</span></div>
+              ${f.tags.slice(0,4).map((t,i) => `<span class="feature-mini-tag m${i+1}">${t}</span>`).join('')}
+            </div>
+          </div>
+        `}).join('')}
+      </div>
+    </section>
+
+    <!-- WHY PARTNER -->
+    <section class="why-sec fade-up">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-eyebrow">— Why Partner With Us</div>
+          <h2 class="sec-title">Why <em>VSolutions</em> for ${s.name}</h2>
+          <p class="sec-desc">A specialized team with deep expertise, proven results, and end-to-end ownership from strategy through ongoing optimization.</p>
+        </div>
+        <div class="why-grid">
+          ${s.why.map(w => `
+            <div class="why-card">
+              <div class="why-icon">${w.icon}</div>
+              <h3 class="why-title">${w.title}</h3>
+              <p class="why-desc">${w.desc}</p>
+            </div>`).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES STRIP -->
+    ${s.industries && s.industries.length ? `
+    <section class="industries-sec fade-up">
+      <div class="container">
+        <div class="industries-head">
+          <h3>Trusted across industries</h3>
+        </div>
+        <div class="industries-track">
+          ${s.industries.map(ind => `<span class="industry-pill">${ind}</span>`).join('')}
+        </div>
+      </div>
+    </section>` : ''}
+
+    <!-- PROCESS -->
+    <section class="process-sec fade-up">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-eyebrow">— Our Proven Process</div>
+          <h2 class="sec-title">How we <em>deliver excellence</em></h2>
+          <p class="sec-desc">A repeatable, transparent process refined over hundreds of engagements — designed to maximize impact while minimizing your team's lift.</p>
+        </div>
+        <div class="process-grid">
+          ${s.process.map((p,i) => `
+            <div class="process-step">
+              <div class="process-num">0${i+1}</div>
+              <h4>${p.title}</h4>
+              <p>${p.desc}</p>
+            </div>`).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    ${s.tech && s.tech.length ? `
+    <section class="tech-sec fade-up">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-eyebrow">— Tools & Platforms</div>
+          <h2 class="sec-title">The <em>technology</em> we work with</h2>
+          <p class="sec-desc">Best-in-class tooling — chosen per engagement based on your stack, constraints, and team experience.</p>
+        </div>
+        <div class="tech-grid">
+          ${s.tech.map(t => `
+            <div class="tech-card">
+              <div class="tech-dot">${(t.n||'').slice(0,1)}</div>
+              <span>${t.n}</span>
+            </div>`).join('')}
+        </div>
+      </div>
+    </section>` : ''}
+
+    <!-- TESTIMONIAL -->
+    ${s.quote ? `
+    <section class="testimonial-sec fade-up">
+      <div class="container">
+        <div class="testimonial-card">
+          <span class="testimonial-quote-mark">&ldquo;</span>
+          <p class="testimonial-text">${s.quote.text}</p>
+          <div class="testimonial-meta">
+            <span class="testimonial-avatar">${(s.quote.who||'?').slice(0,1)}</span>
+            <span class="testimonial-who">
+              <span class="testimonial-name">${s.quote.who}</span>
+              <span class="testimonial-org">${s.quote.org}</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>` : ''}
+
+    <!-- FAQ -->
+    ${s.faqs && s.faqs.length ? `
+    <section class="faq-sec fade-up">
+      <div class="container">
+        <div class="faq-grid">
+          <aside class="faq-side">
+            <div class="sec-eyebrow">— Frequently Asked</div>
+            <h2>Answers about <em>${s.name}</em></h2>
+            <p>Common questions we hear from teams evaluating ${s.name.toLowerCase()} engagements. Don't see yours? Book a 30-minute call — we'll answer it directly.</p>
+            <a href="/contact/" class="btn btn-ghost">Ask our team <span class="btn-arrow">→</span></a>
+          </aside>
+          <div class="faq-list">
+            ${s.faqs.map((f,i) => `
+              <details class="faq-item"${i===0 ? ' open' : ''}>
+                <summary>${f.q}</summary>
+                <div class="faq-answer">${f.a}</div>
+              </details>`).join('')}
+          </div>
+        </div>
+      </div>
+    </section>` : ''}
+
+    <!-- RELATED SERVICES -->
+    <section class="related-sec fade-up">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-eyebrow">— Explore Other Services</div>
+          <h2 class="sec-title">One partner. <em>Every solution.</em></h2>
+        </div>
+        <div class="related-grid">
+          ${renderRelated(slug)}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta fade-up">
+      <div class="container">
+        <div class="cta-box">
+          <div class="cta-content">
+            <div class="cta-eyebrow">Ready to start?</div>
+            <h3>${s.ctaTitle}</h3>
+            <p>${s.ctaText}</p>
+            <div class="cta-actions">
+              <a href="/contact/" class="btn btn-primary">Book a Free Consultation <span class="btn-arrow">→</span></a>
+              <a href="tel:2482328488" class="btn btn-ghost">📞 248 232 8488</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+  `;
+  
+  // Wire up related-card clicks
+  root.querySelectorAll('.related-card').forEach(c => {
+    c.addEventListener('click', (e) => { e.preventDefault(); navigate(c.dataset.slug); window.scrollTo({top:0,behavior:'smooth'}); });
+  });
+  
+  // Re-init scroll fade-ins
+  initFadeIns();
+  // Re-init magnetic tilt
+  initTilt();
+}
+
+function navigate(slug){
+  if (!SERVICES[slug]) return;
+  history.replaceState(null, '', '#' + slug);
+  renderPills(slug);
+  renderPage(slug);
+  document.title = `${SERVICES[slug].name} | V Solutions Inc`;
+}
+
+function initFadeIns(){
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.12});
+  document.querySelectorAll('.fade-up:not(.visible)').forEach(el => io.observe(el));
+}
+
+function initTilt(){
+  document.querySelectorAll('.why-card, .process-step').forEach(card => {
+    if (card._tilt) return;
+    card._tilt = true;
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width/2;
+      const y = e.clientY - rect.top - rect.height/2;
+      const tiltX = (y / rect.height) * -3;
+      const tiltY = (x / rect.width) * 3;
+      card.style.transform = `translateY(-6px) perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+}
+
+// Cursor glow
+const cursorGlow = document.getElementById('cursorGlow');
+let glowX = window.innerWidth/2, glowY = window.innerHeight/2;
+let targetX = glowX, targetY = glowY;
+document.addEventListener('mousemove', (e) => { targetX = e.clientX; targetY = e.clientY; });
+function animateGlow(){
+  glowX += (targetX - glowX) * 0.15;
+  glowY += (targetY - glowY) * 0.15;
+  cursorGlow.style.left = glowX + 'px';
+  cursorGlow.style.top = glowY + 'px';
+  requestAnimationFrame(animateGlow);
+}
+animateGlow();
+
+// Init
+const initialSlug = location.hash.replace('#','') in SERVICES ? location.hash.replace('#','') : 'ai';
+renderFooterServices();
+navigate(initialSlug);
+
+// Hash change listener
+window.addEventListener('hashchange', () => {
+  const slug = location.hash.replace('#','');
+  if (SERVICES[slug]) navigate(slug);
+});
+</script>
+</body>
+</html>

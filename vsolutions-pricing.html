@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pricing & Plans | VSolutions Digital – Transparent Service Costs</title>
+<meta name="description" content="Transparent starting prices with fully customized solutions. Digital Marketing, Web Development, AI, Cloud, Cybersecurity & more. Free consultation included." />
+
+<link rel="icon" type="image/svg+xml" href="https://vsolutionsinc.com/wp-content/uploads/2026/03/vsolutions-final.svg" />
+<link rel="apple-touch-icon" href="https://vsolutionsinc.com/wp-content/uploads/2026/03/vsolutions-final.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   V SOLUTIONS INC — PRICING PAGE
+   Same design system as realbrand-v2 homepage
+   Real prices from live site (Ads $599/$999/$1699, Web $499, etc.)
+   World-class pricing UX: tier comparison, billing toggle, FAQ accordion
+============================================================ */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+:root{
+  --rose:#F2295B;
+  --rose-soft:#FF5E84;
+  --rose-deep:#D11947;
+  --rose-glow:rgba(242,41,91,.18);
+  
+  --sky:#3B82F6;
+  --sky-soft:#60A5FA;
+  --sky-deep:#1D4ED8;
+  --sky-glow:rgba(59,130,246,.18);
+  
+  --cyan:#06B6D4;
+  --cyan-soft:#22D3EE;
+  --cyan-glow:rgba(6,182,212,.18);
+  
+  --indigo:#6366F1;
+  --indigo-soft:#818CF8;
+  --indigo-glow:rgba(99,102,241,.18);
+  
+  --teal:#14B8A6;
+  --amber:#F59E0B;
+  --violet:#8B5CF6;
+  --lime:#3DDB91;
+  
+  --navy:#0E1B3A;
+  --navy-2:#1A2D5A;
+  --navy-3:#243A75;
+  
+  --bg:#F4F8FF;
+  --bg-2:#E9F0FB;
+  --bg-3:#DBE5F5;
+  --paper:#FFFFFF;
+  --cloud:#FAFCFF;
+  
+  --ink:#0E1B3A;
+  --ink-2:#334155;
+  --muted:#64748B;
+  --muted-2:#94A3B8;
+  
+  --line:rgba(14,27,58,.08);
+  --line-bright:rgba(59,130,246,.25);
+  --line-rose:rgba(242,41,91,.25);
+  
+  --shadow-sm:0 1px 2px rgba(14,27,58,.04);
+  --shadow-md:0 4px 16px rgba(14,27,58,.06),0 1px 2px rgba(14,27,58,.04);
+  --shadow-cloud:0 20px 50px -12px rgba(59,130,246,.2),0 4px 12px rgba(14,27,58,.05);
+  --shadow-rose:0 16px 50px rgba(242,41,91,.3),0 0 60px rgba(242,41,91,.15);
+  
+  --font-sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  --font-serif:'Instrument Serif',Georgia,serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+
+body{
+  font-family:var(--font-sans);
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+  position:relative;
+}
+
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+.container{max-width:1320px;margin:0 auto;padding:0 1.75rem;position:relative;z-index:2}
+@media(max-width:640px){.container{padding:0 1.25rem}}
+
+/* ============ Background atmosphere (same as homepage) ============ */
+.cloud-bg{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, var(--sky-glow), transparent 60%),
+    radial-gradient(1000px 500px at -10% 30%, var(--rose-glow), transparent 60%),
+    radial-gradient(800px 600px at 50% 80%, var(--cyan-glow), transparent 60%);
+}
+.cloud{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0;opacity:.5}
+.cloud.c1{
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(59,130,246,.3),transparent 70%);
+  top:-200px;right:-150px;
+  animation:cloudDrift1 30s ease-in-out infinite;
+}
+.cloud.c2{
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(242,41,91,.18),transparent 70%);
+  top:25%;left:-200px;
+  animation:cloudDrift2 35s ease-in-out infinite;
+}
+.cloud.c3{
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(99,102,241,.22),transparent 70%);
+  top:55%;right:5%;
+  animation:cloudDrift3 40s ease-in-out infinite;
+}
+@keyframes cloudDrift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-100px,80px) scale(1.2)}}
+@keyframes cloudDrift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(120px,-100px) scale(.85)}}
+@keyframes cloudDrift3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-80px,-120px) scale(1.15)}}
+
+.sparkle-layer{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.sparkle{
+  position:absolute;width:3px;height:3px;border-radius:50%;
+  animation:twinkle var(--dur,4s) ease-in-out infinite;
+  animation-delay:var(--delay,0s);
+  box-shadow:0 0 4px currentColor,0 0 8px currentColor,0 0 12px currentColor;
+}
+.sparkle.large{width:5px;height:5px}
+.sparkle.tiny{width:2px;height:2px}
+.sparkle.sky{color:var(--sky);background:var(--sky)}
+.sparkle.rose{color:var(--rose);background:var(--rose)}
+.sparkle.indigo{color:var(--indigo);background:var(--indigo)}
+.sparkle.amber{color:var(--amber);background:var(--amber)}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}}
+
+.cursor-glow{
+  position:fixed;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(242,41,91,.08) 0%,rgba(59,130,246,.06) 40%,transparent 70%);
+  pointer-events:none;z-index:1;
+  transform:translate(-50%,-50%);
+  filter:blur(20px);mix-blend-mode:multiply;
+}
+
+/* ============ ANNOUNCE ============ */
+.announce{
+  background:linear-gradient(90deg,var(--navy),var(--navy-2) 50%,var(--navy));
+  color:#fff;padding:.55rem 0;font-size:.78rem;
+  position:relative;z-index:30;
+}
+.announce .container{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.announce .left{display:flex;gap:1.5rem;align-items:center;color:rgba(255,255,255,.85)}
+.announce .live{display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.announce .live::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--rose);box-shadow:0 0 8px var(--rose);
+  animation:livePulse 1.8s infinite;
+}
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4);box-shadow:0 0 16px var(--rose)}}
+.announce .right{display:flex;gap:1.25rem;color:rgba(255,255,255,.8)}
+.announce a{transition:color .2s}
+.announce a:hover{color:var(--rose-soft)}
+.announce .phone{font-family:var(--font-mono);font-weight:600;display:inline-flex;align-items:center;gap:.4rem;color:var(--rose-soft)}
+
+/* ============ HEADER ============ */
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(244,248,255,.75);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid var(--line);
+}
+.header::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--sky) 15%,var(--cyan) 35%,var(--rose) 55%,var(--indigo) 75%,transparent);
+  opacity:.7;background-size:200% 100%;
+  animation:rainbowShift 8s linear infinite;
+}
+@keyframes rainbowShift{0%{background-position:0% 0}100%{background-position:200% 0}}
+.header .container{display:flex;align-items:center;justify-content:space-between;padding-top:.85rem;padding-bottom:.85rem;gap:2rem}
+
+.brand{display:flex;align-items:center;gap:.65rem;position:relative;transition:filter .3s}
+.brand-logo{height:42px;width:auto;transition:transform .3s,filter .3s}
+.brand:hover .brand-logo{transform:scale(1.04);filter:drop-shadow(0 0 12px rgba(242,41,91,.5))}
+.brand-spark{
+  position:absolute;font-size:.65rem;pointer-events:none;
+  filter:drop-shadow(0 0 4px currentColor) drop-shadow(0 0 8px currentColor);
+  animation:starSpin 4s linear infinite;
+}
+.brand-spark.s1{top:-2px;right:-8px;color:var(--rose);animation-delay:0s}
+.brand-spark.s2{bottom:0;left:-6px;font-size:.5rem;color:var(--sky);animation-delay:1s}
+@keyframes starSpin{0%,100%{opacity:.4;transform:rotate(0) scale(.8)}50%{opacity:1;transform:rotate(180deg) scale(1.1)}}
+
+.menu{list-style:none;display:flex;gap:1.85rem;align-items:center;font-size:.92rem;font-weight:500;color:var(--ink-2)}
+.menu > li{position:relative}
+.menu > li > a{padding:.5rem 0;display:inline-flex;align-items:center;gap:.4rem;transition:color .25s}
+.menu > li > a::after{
+  content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;
+  background:linear-gradient(90deg,var(--rose),var(--sky));
+  transition:width .3s ease;box-shadow:0 0 8px var(--rose);
+}
+.menu > li:hover > a{color:var(--rose)}
+.menu > li:hover > a::after{width:100%}
+.menu > li.current > a{color:var(--rose)}
+.menu > li.current > a::after{width:100%}
+
+.nav-cta{display:flex;gap:.65rem;align-items:center}
+.search-btn{
+  width:38px;height:38px;border-radius:10px;
+  border:1px solid var(--line);background:var(--paper);
+  display:grid;place-items:center;color:var(--ink-2);font-size:1.05rem;
+  transition:all .3s;
+}
+.search-btn:hover{border-color:var(--rose);color:var(--rose);box-shadow:0 0 0 3px var(--rose-glow);transform:rotate(90deg)}
+
+.btn{
+  padding:.7rem 1.4rem;border-radius:10px;font-size:.85rem;font-weight:600;
+  display:inline-flex;align-items:center;gap:.5rem;
+  transition:all .3s;white-space:nowrap;position:relative;overflow:hidden;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--rose) 0%,var(--sky-deep) 100%);
+  color:#fff;
+  box-shadow:0 0 0 1px rgba(255,255,255,.1) inset,0 4px 24px rgba(242,41,91,.4);
+}
+.btn-primary::before{
+  content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+  transition:left .6s;
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 0 1px rgba(255,255,255,.2) inset,0 8px 36px rgba(242,41,91,.6),0 0 40px rgba(59,130,246,.4);
+}
+.btn-primary:hover::before{left:100%}
+.btn-arrow{transition:transform .25s}
+.btn:hover .btn-arrow{transform:translateX(4px)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);background:var(--paper)}
+.btn-ghost:hover{border-color:var(--rose);color:var(--rose);box-shadow:0 0 0 3px var(--rose-glow)}
+
+.hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
+.hamburger span{width:22px;height:2px;background:var(--ink);border-radius:2px}
+@media(max-width:1100px){.menu{display:none}.hamburger{display:flex}}
+
+/* ============================================================
+   ★ PRICING HERO
+============================================================ */
+.pricing-hero{
+  position:relative;
+  padding:5rem 0 3rem;
+  text-align:center;
+  overflow:hidden;
+}
+.pricing-hero::before{
+  content:"";position:absolute;
+  top:-50%;right:-25%;width:80%;height:200%;
+  background:conic-gradient(from 230deg at 50% 50%,
+    rgba(59,130,246,.18),rgba(99,102,241,.15),rgba(242,41,91,.12),rgba(6,182,212,.1),rgba(59,130,246,.18));
+  filter:blur(60px);opacity:.5;
+  animation:heroMesh 30s linear infinite;pointer-events:none;
+}
+@keyframes heroMesh{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
+.breadcrumb{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--font-mono);font-size:.72rem;
+  color:var(--muted);letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:1.5rem;
+  font-weight:600;
+}
+.breadcrumb a{color:var(--muted);transition:color .2s}
+.breadcrumb a:hover{color:var(--rose)}
+.breadcrumb .sep{color:var(--muted-2)}
+.breadcrumb .current{color:var(--rose)}
+
+.pricing-hero-pill{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.45rem .95rem .45rem .55rem;
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(10px);
+  border:1px solid var(--line-rose);
+  border-radius:100px;
+  font-size:.78rem;font-weight:600;color:var(--ink);
+  margin-bottom:1.5rem;
+  box-shadow:0 0 0 1px rgba(255,255,255,.6) inset,0 4px 24px var(--rose-glow);
+  animation:fadeUp .6s .1s backwards;
+}
+.pricing-hero-pill .label{
+  font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  padding:.22rem .55rem;border-radius:4px;
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  color:#fff;box-shadow:0 0 12px rgba(242,41,91,.5);
+}
+
+h1.pricing-title{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:clamp(2.5rem,5vw,4rem);
+  line-height:1.05;letter-spacing:-.025em;
+  color:var(--navy);
+  margin-bottom:1.25rem;
+  max-width:880px;margin-left:auto;margin-right:auto;
+  animation:fadeUp .8s .2s backwards;
+}
+h1.pricing-title em{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--rose) 0%,var(--sky) 50%,var(--indigo) 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 16px rgba(242,41,91,.25));
+}
+
+.pricing-subhead{
+  font-family:var(--font-serif);font-style:italic;
+  font-size:1.3rem;line-height:1.4;
+  color:var(--ink-2);
+  max-width:680px;margin:0 auto 1rem;
+  animation:fadeUp .8s .25s backwards;
+}
+
+.pricing-lede{
+  font-size:1.05rem;line-height:1.6;
+  color:var(--muted);
+  max-width:620px;margin:0 auto 2.5rem;
+  animation:fadeUp .8s .3s backwards;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ============ Billing toggle ============ */
+.billing-toggle{
+  display:inline-flex;align-items:center;gap:1rem;
+  padding:.4rem;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:100px;
+  margin-bottom:3rem;
+  box-shadow:0 4px 20px rgba(14,27,58,.06);
+  animation:fadeUp .8s .4s backwards;
+}
+.billing-option{
+  padding:.65rem 1.4rem;
+  font-size:.85rem;font-weight:600;
+  color:var(--muted);
+  border-radius:100px;
+  cursor:pointer;
+  transition:all .3s;
+  position:relative;
+  display:inline-flex;align-items:center;gap:.5rem;
+}
+.billing-option.active{
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  color:#fff;
+  box-shadow:0 4px 16px rgba(242,41,91,.35);
+}
+.billing-option .savings-badge{
+  display:inline-flex;align-items:center;
+  padding:.15rem .45rem;
+  font-size:.6rem;font-weight:800;letter-spacing:.05em;
+  background:rgba(61,219,145,.15);
+  color:#16A34A;
+  border-radius:4px;
+  border:1px solid rgba(61,219,145,.3);
+}
+.billing-option.active .savings-badge{
+  background:rgba(255,255,255,.2);
+  color:#fff;border-color:rgba(255,255,255,.3);
+}
+
+/* ============================================================
+   ★ TIERED PLANS (Digital Marketing 3-tier)
+============================================================ */
+.tiers-section{padding:3rem 0;position:relative;z-index:2}
+
+.tiers-eyebrow{
+  text-align:center;
+  display:inline-flex;align-items:center;gap:.6rem;justify-content:center;
+  font-family:var(--font-mono);font-size:.72rem;
+  color:var(--rose);letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:.85rem;font-weight:600;
+  width:100%;
+}
+.tiers-section-head{text-align:center;margin-bottom:3rem}
+h2.tiers-title{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  line-height:1.1;letter-spacing:-.02em;color:var(--navy);
+  margin-bottom:.75rem;
+}
+h2.tiers-title em{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--rose),var(--sky));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.tiers-section-head p{
+  color:var(--muted);font-size:1rem;
+  max-width:580px;margin:0 auto;
+}
+
+.tiers-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+  align-items:stretch;
+  max-width:1180px;margin:0 auto;
+}
+@media(max-width:980px){.tiers-grid{grid-template-columns:1fr;max-width:520px}}
+
+.tier-card{
+  position:relative;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:2.5rem 2rem;
+  display:flex;flex-direction:column;
+  transition:all .4s cubic-bezier(.2,.8,.2,1);
+}
+.tier-card::before{
+  content:"";position:absolute;inset:0;border-radius:20px;
+  padding:1px;
+  background:conic-gradient(from 0deg,var(--rose),var(--sky),var(--indigo),var(--cyan),var(--amber),var(--rose));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .4s;
+  pointer-events:none;
+  animation:gradientSpin 4s linear infinite;
+}
+@keyframes gradientSpin{to{filter:hue-rotate(360deg)}}
+.tier-card:hover{
+  transform:translateY(-8px);
+  border-color:transparent;
+  box-shadow:0 24px 60px -16px rgba(242,41,91,.25),0 0 80px rgba(59,130,246,.15);
+}
+.tier-card:hover::before{opacity:1}
+
+/* Recommended tier — bigger, gradient bg */
+.tier-card.recommended{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);
+  color:#fff;
+  border-color:transparent;
+  transform:scale(1.04);
+  box-shadow:0 24px 60px -16px rgba(242,41,91,.4),0 0 80px rgba(59,130,246,.25);
+  z-index:1;
+}
+.tier-card.recommended::after{
+  content:"";position:absolute;inset:-2px;border-radius:22px;
+  background:conic-gradient(from 0deg,var(--rose),var(--sky),var(--indigo),var(--rose));
+  z-index:-1;
+  filter:blur(20px);opacity:.5;
+  animation:gradientSpin 6s linear infinite;
+}
+.tier-card.recommended:hover{
+  transform:scale(1.04) translateY(-8px);
+}
+.tier-card.recommended .tier-name{color:#fff}
+.tier-card.recommended .tier-price-amount{color:#fff;background:linear-gradient(135deg,#fff,var(--cyan-soft));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.tier-card.recommended .tier-feature{color:rgba(255,255,255,.85)}
+.tier-card.recommended .tier-feature .check{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff}
+.tier-card.recommended .tier-feature .check::after{color:var(--cyan-soft)}
+.tier-card.recommended .tier-period{color:rgba(255,255,255,.6)}
+.tier-card.recommended .tier-tagline{color:rgba(255,255,255,.7)}
+
+.tier-badge{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  padding:.4rem .9rem;
+  font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  color:#fff;
+  border-radius:100px;
+  box-shadow:0 8px 24px rgba(242,41,91,.4);
+  white-space:nowrap;
+  display:inline-flex;align-items:center;gap:.4rem;
+}
+.tier-badge::before{
+  content:"★";color:var(--amber);
+  filter:drop-shadow(0 0 4px var(--amber));
+  animation:starSpin 3s linear infinite;
+}
+
+.tier-icon{
+  width:48px;height:48px;border-radius:12px;
+  display:grid;place-items:center;
+  font-size:1.3rem;font-weight:800;color:#fff;
+  margin-bottom:1.25rem;
+  box-shadow:0 8px 20px -4px;
+}
+.tier-icon.t1{background:linear-gradient(135deg,#3B82F6,#1D4ED8);box-shadow:0 8px 20px -4px rgba(59,130,246,.5)}
+.tier-icon.t2{background:linear-gradient(135deg,#F2295B,#A21044);box-shadow:0 8px 20px -4px rgba(242,41,91,.5)}
+.tier-icon.t3{background:linear-gradient(135deg,#8B5CF6,#6D28D9);box-shadow:0 8px 20px -4px rgba(139,92,246,.5)}
+
+.tier-name{
+  font-family:var(--font-sans);font-weight:700;font-size:1.4rem;
+  color:var(--ink);margin-bottom:.35rem;letter-spacing:-.01em;
+}
+.tier-tagline{
+  font-size:.85rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.45;
+}
+
+.tier-price{
+  display:flex;align-items:baseline;gap:.4rem;margin-bottom:1.5rem;flex-wrap:wrap;
+}
+.tier-price-currency{
+  font-size:1.4rem;font-weight:600;color:var(--ink);
+}
+.tier-price-amount{
+  font-family:var(--font-sans);font-weight:800;
+  font-size:3.2rem;line-height:1;letter-spacing:-.04em;
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 12px rgba(242,41,91,.2));
+}
+.tier-period{
+  font-size:.85rem;color:var(--muted);font-weight:500;
+}
+.tier-savings-note{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.75rem;font-weight:600;color:#16A34A;
+  margin-top:-.5rem;margin-bottom:1.25rem;
+  padding:.3rem .6rem;
+  background:rgba(61,219,145,.1);
+  border:1px solid rgba(61,219,145,.25);
+  border-radius:6px;
+  align-self:flex-start;
+}
+
+.tier-features{
+  list-style:none;display:flex;flex-direction:column;gap:.85rem;
+  margin-bottom:2rem;
+  flex:1;
+}
+.tier-feature{
+  display:flex;align-items:flex-start;gap:.65rem;
+  font-size:.92rem;color:var(--ink-2);line-height:1.45;
+}
+.tier-feature .check{
+  flex-shrink:0;
+  width:20px;height:20px;border-radius:50%;
+  background:rgba(242,41,91,.1);
+  border:1px solid var(--line-rose);
+  display:grid;place-items:center;
+  margin-top:1px;
+  position:relative;
+}
+.tier-feature .check::after{
+  content:"✓";font-size:.75rem;font-weight:700;color:var(--rose);
+}
+
+.tier-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  width:100%;padding:.85rem 1.4rem;
+  border-radius:10px;font-size:.9rem;font-weight:600;
+  transition:all .3s;
+  position:relative;overflow:hidden;
+}
+.tier-card:not(.recommended) .tier-cta{
+  background:var(--paper);
+  border:1px solid var(--line-rose);
+  color:var(--rose);
+}
+.tier-card:not(.recommended) .tier-cta:hover{
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  color:#fff;border-color:transparent;
+  box-shadow:0 4px 20px rgba(242,41,91,.4);
+  transform:translateY(-2px);
+}
+.tier-card.recommended .tier-cta{
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  color:#fff;
+  box-shadow:0 4px 20px rgba(242,41,91,.4);
+}
+.tier-card.recommended .tier-cta::before{
+  content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+  transition:left .6s;
+}
+.tier-card.recommended .tier-cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 30px rgba(242,41,91,.6),0 0 30px rgba(59,130,246,.4);
+}
+.tier-card.recommended .tier-cta:hover::before{left:100%}
+
+/* ============================================================
+   ★ INDIVIDUAL SERVICE PRICING
+   (Web Dev $499, DM $599, Content $350, + 6 custom)
+============================================================ */
+.services-section{padding:5rem 0;position:relative;z-index:2}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+@media(max-width:980px){.service-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.service-grid{grid-template-columns:1fr}}
+
+.service-pricing-card{
+  position:relative;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:all .4s cubic-bezier(.2,.8,.2,1);
+}
+.service-pricing-card::before{
+  content:"";position:absolute;inset:0;border-radius:18px;
+  padding:1px;
+  background:conic-gradient(from 0deg,var(--rose),var(--sky),var(--indigo),var(--cyan),var(--amber),var(--rose));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .4s;pointer-events:none;
+  animation:gradientSpin 4s linear infinite;
+}
+.service-pricing-card:hover{
+  transform:translateY(-6px);
+  border-color:transparent;
+  box-shadow:0 20px 50px -12px rgba(242,41,91,.25),0 0 60px rgba(59,130,246,.15);
+}
+.service-pricing-card:hover::before{opacity:1}
+.service-pricing-card:hover .service-thumb-img{transform:scale(1.06)}
+
+.service-thumb{
+  aspect-ratio:16/9;
+  position:relative;overflow:hidden;
+  background:var(--bg-2);
+}
+.service-thumb-img{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  transition:transform .8s cubic-bezier(.2,.8,.2,1);
+}
+.service-thumb::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(14,27,58,.65) 100%);
+}
+
+.service-thumb-tag{
+  position:absolute;top:1rem;left:1rem;z-index:2;
+  padding:.35rem .65rem;
+  font-family:var(--font-mono);
+  font-size:.65rem;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;
+  background:rgba(255,255,255,.95);
+  color:var(--rose);
+  border-radius:6px;border:1px solid var(--line-rose);
+  backdrop-filter:blur(8px);
+}
+
+.service-thumb-price{
+  position:absolute;bottom:1rem;right:1rem;z-index:2;
+  display:flex;align-items:baseline;gap:.3rem;
+  padding:.55rem .9rem;
+  background:rgba(255,255,255,.97);
+  border-radius:10px;
+  box-shadow:0 8px 24px rgba(0,0,0,.2);
+  backdrop-filter:blur(8px);
+}
+.service-thumb-price .from{
+  font-size:.65rem;font-weight:600;color:var(--muted);
+  letter-spacing:.05em;text-transform:uppercase;
+}
+.service-thumb-price .amount{
+  font-family:var(--font-sans);font-weight:800;font-size:1.3rem;
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  letter-spacing:-.02em;
+}
+.service-thumb-price.custom .amount{
+  font-size:.95rem;
+  background:linear-gradient(135deg,var(--indigo),var(--violet));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.service-body{
+  padding:1.5rem;display:flex;flex-direction:column;flex:1;gap:.75rem;
+}
+.service-name{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:1.15rem;line-height:1.25;letter-spacing:-.01em;
+  color:var(--ink);
+}
+.service-plan-name{
+  font-size:.78rem;font-weight:700;
+  color:var(--rose);letter-spacing:.05em;text-transform:uppercase;
+  font-family:var(--font-mono);
+  margin-top:-.4rem;
+}
+.service-features{
+  list-style:none;display:flex;flex-direction:column;gap:.55rem;
+  margin-top:.25rem;flex:1;
+}
+.service-feature{
+  display:flex;align-items:flex-start;gap:.55rem;
+  font-size:.85rem;color:var(--ink-2);line-height:1.4;
+}
+.service-feature .check{
+  flex-shrink:0;
+  width:18px;height:18px;border-radius:50%;
+  background:rgba(242,41,91,.1);
+  border:1px solid var(--line-rose);
+  display:grid;place-items:center;
+  margin-top:1px;
+  position:relative;
+}
+.service-feature .check::after{
+  content:"✓";font-size:.65rem;font-weight:700;color:var(--rose);
+}
+
+.service-cta{
+  display:inline-flex;align-items:center;justify-content:space-between;
+  padding:.75rem 1.1rem;
+  margin-top:.85rem;
+  background:linear-gradient(135deg,rgba(242,41,91,.08),rgba(59,130,246,.08));
+  border:1px solid var(--line-rose);
+  border-radius:10px;
+  font-size:.85rem;font-weight:600;color:var(--rose);
+  transition:all .3s;
+  position:relative;overflow:hidden;
+}
+.service-cta::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  opacity:0;transition:opacity .3s;z-index:-1;
+}
+.service-cta:hover{
+  color:#fff;border-color:transparent;
+  box-shadow:0 8px 20px rgba(242,41,91,.4);
+  transform:translateY(-2px);
+}
+.service-cta:hover::before{opacity:1}
+.service-cta-arrow{transition:transform .25s}
+.service-cta:hover .service-cta-arrow{transform:translateX(4px)}
+
+/* ============================================================
+   ★ COMPARISON TABLE (DM tiers)
+============================================================ */
+.compare-section{padding:5rem 0;position:relative;z-index:2}
+
+.compare-shell{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 16px 40px -12px rgba(14,27,58,.08);
+}
+.compare-shell::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--rose) 30%,var(--sky) 70%,transparent);
+  background-size:200% 100%;
+  animation:rainbowShift 8s linear infinite;
+}
+
+.compare-table{
+  width:100%;
+  border-collapse:collapse;
+}
+.compare-table th,.compare-table td{
+  padding:1.1rem 1.5rem;
+  text-align:left;
+  border-bottom:1px solid var(--line);
+  vertical-align:middle;
+}
+.compare-table th{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:.92rem;color:var(--ink);
+  background:var(--bg-2);
+  position:sticky;top:0;z-index:1;
+}
+.compare-table th:not(:first-child){
+  text-align:center;
+}
+.compare-table th .tier-th{
+  display:flex;flex-direction:column;align-items:center;gap:.4rem;
+}
+.compare-table th .tier-th-name{
+  font-size:.95rem;color:var(--ink);font-weight:700;
+}
+.compare-table th .tier-th-price{
+  display:flex;align-items:baseline;gap:.2rem;
+}
+.compare-table th .tier-th-price .amount{
+  font-family:var(--font-sans);font-weight:800;font-size:1.4rem;
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.compare-table th .tier-th-price .period{
+  font-size:.72rem;color:var(--muted);font-weight:500;
+}
+.compare-table th .tier-th-name.recommended{
+  display:inline-flex;align-items:center;gap:.4rem;
+}
+.compare-table th .tier-th-name.recommended::after{
+  content:"Recommended";
+  padding:.15rem .4rem;font-size:.55rem;font-weight:800;
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  color:#fff;
+  border-radius:4px;letter-spacing:.05em;
+  box-shadow:0 0 12px rgba(242,41,91,.4);
+}
+
+.compare-table td{
+  font-size:.9rem;color:var(--ink-2);
+}
+.compare-table td:not(:first-child){text-align:center}
+.compare-table tr:last-child td{border-bottom:0}
+.compare-table tr:hover{background:rgba(242,41,91,.02)}
+
+.compare-table .check-cell{color:var(--rose);font-size:1.1rem;font-weight:700}
+.compare-table .x-cell{color:var(--muted-2);font-size:1.1rem}
+.compare-table .feature-name{
+  font-weight:600;color:var(--ink);
+}
+.compare-table .feature-desc{
+  font-size:.78rem;color:var(--muted);font-weight:400;display:block;margin-top:.15rem;
+}
+
+@media(max-width:760px){
+  .compare-section{padding:3rem 0}
+  .compare-shell{overflow-x:auto}
+  .compare-table{min-width:640px}
+}
+
+/* ============================================================
+   ★ FAQ ACCORDION
+============================================================ */
+.faq-section{padding:5rem 0;position:relative;z-index:2}
+
+.faq-grid{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:4rem;
+  align-items:start;
+}
+@media(max-width:880px){.faq-grid{grid-template-columns:1fr;gap:2.5rem}}
+
+.faq-side{position:sticky;top:120px}
+@media(max-width:880px){.faq-side{position:relative;top:0}}
+
+.faq-side-eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--font-mono);font-size:.72rem;
+  color:var(--rose);letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:1rem;font-weight:600;
+}
+.faq-side-eyebrow::before{
+  content:"";width:30px;height:1px;background:var(--rose);
+  box-shadow:0 0 8px var(--rose);
+}
+.faq-side h2{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  line-height:1.05;letter-spacing:-.02em;
+  color:var(--navy);margin-bottom:1rem;
+}
+.faq-side h2 em{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--rose),var(--sky));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.faq-side p{color:var(--ink-2);font-size:1rem;line-height:1.6;margin-bottom:1.75rem}
+.faq-help-card{
+  padding:1.5rem;
+  background:linear-gradient(135deg,var(--paper),var(--bg-2));
+  border:1px solid var(--line);
+  border-radius:14px;
+  display:flex;flex-direction:column;gap:.85rem;
+}
+.faq-help-card h4{
+  font-weight:700;color:var(--ink);font-size:1.05rem;
+  display:inline-flex;align-items:center;gap:.5rem;
+}
+.faq-help-card h4::before{content:"💬";font-size:1.2rem}
+.faq-help-card p{font-size:.9rem;color:var(--muted);margin-bottom:0;line-height:1.5}
+.faq-help-card .actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.faq-help-card .btn{padding:.5rem 1rem;font-size:.78rem}
+
+.faq-list{display:flex;flex-direction:column;gap:.85rem}
+
+.faq-item{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  transition:all .3s;
+}
+.faq-item:hover{
+  border-color:var(--line-rose);
+  box-shadow:0 8px 24px -8px rgba(242,41,91,.15);
+}
+.faq-item[open]{
+  border-color:var(--line-rose);
+  box-shadow:0 12px 32px -10px rgba(242,41,91,.2);
+}
+.faq-item summary{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1.25rem 1.4rem;
+  cursor:pointer;
+  list-style:none;
+  font-weight:600;color:var(--ink);
+  font-size:1rem;line-height:1.4;
+  transition:color .25s;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--rose)}
+.faq-item summary::after{
+  content:"";
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(242,41,91,.08);
+  border:1px solid var(--line-rose);
+  flex-shrink:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23F2295B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;
+  transition:all .3s;
+}
+.faq-item[open] summary::after{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23F2295B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E");
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  border-color:transparent;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;
+  box-shadow:0 4px 16px rgba(242,41,91,.4);
+}
+.faq-item .faq-answer{
+  padding:0 1.4rem 1.4rem;
+  color:var(--ink-2);font-size:.95rem;line-height:1.65;
+  border-top:1px solid var(--line);
+  padding-top:1.1rem;
+  animation:fadeIn .3s ease;
+}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+
+/* ============================================================
+   ★ CTA BOX
+============================================================ */
+.cta{padding:5rem 0;position:relative;z-index:2}
+.cta-box{
+  position:relative;
+  background:linear-gradient(135deg,var(--paper) 0%,var(--bg-2) 100%);
+  border-radius:28px;
+  padding:5rem 3rem;
+  overflow:hidden;
+  text-align:center;
+  box-shadow:0 0 0 1px var(--line-bright),0 30px 80px -20px rgba(242,41,91,.3),0 0 100px rgba(59,130,246,.2);
+}
+.cta-box::before{
+  content:"";position:absolute;inset:-2px;border-radius:30px;
+  padding:2px;
+  background:conic-gradient(from 0deg,var(--rose),var(--sky),var(--indigo),var(--cyan),var(--amber),var(--rose));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  animation:gradientSpin 6s linear infinite;
+  z-index:1;
+}
+.cta-box::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 20% 0%,rgba(242,41,91,.18),transparent 50%),
+    radial-gradient(circle at 80% 100%,rgba(59,130,246,.18),transparent 50%);
+  pointer-events:none;
+}
+.cta-content{position:relative;z-index:2}
+.cta-eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;justify-content:center;
+  font-family:var(--font-mono);font-size:.72rem;font-weight:700;
+  color:var(--rose);letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:1rem;
+  padding:.4rem .85rem;
+  background:rgba(242,41,91,.08);
+  border:1px solid var(--line-rose);
+  border-radius:100px;
+}
+.cta-eyebrow::before{content:"✦";color:var(--amber);filter:drop-shadow(0 0 4px var(--amber));animation:starSpin 3s linear infinite}
+.cta h3{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:clamp(2rem,4vw,3rem);
+  line-height:1.05;letter-spacing:-.025em;
+  color:var(--navy);margin-bottom:1.25rem;
+}
+.cta h3 em{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--rose),var(--sky) 50%,var(--indigo));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.cta p{
+  color:var(--ink-2);font-size:1.1rem;line-height:1.6;
+  max-width:580px;margin:0 auto 2.5rem;
+}
+.cta-actions{display:inline-flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+
+/* ============================================================
+   ★ FOOTER
+============================================================ */
+footer{
+  background:var(--navy);
+  color:rgba(255,255,255,.75);
+  padding:5rem 0 0;
+  position:relative;overflow:hidden;z-index:2;
+}
+footer::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--rose) 25%,var(--sky) 50%,var(--indigo) 75%,transparent);
+  filter:blur(.5px);background-size:200% 100%;
+  animation:rainbowShift 8s linear infinite;
+}
+footer::after{
+  content:"";position:absolute;bottom:-200px;left:50%;transform:translateX(-50%);
+  width:800px;height:400px;
+  background:radial-gradient(ellipse,rgba(242,41,91,.18),transparent 70%);
+  filter:blur(60px);
+}
+.footer-top{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:3rem;
+  padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08);
+  position:relative;z-index:1;
+}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;gap:2.5rem}}
+@media(max-width:520px){.footer-top{grid-template-columns:1fr}}
+
+.footer-brand .brand{margin-bottom:1.25rem}
+.footer-brand .brand-logo{height:42px;filter:brightness(1.2)}
+.footer-brand p{font-size:.92rem;line-height:1.65;max-width:380px;margin-bottom:1.75rem;color:rgba(255,255,255,.7)}
+
+.footer-contact{display:flex;flex-direction:column;gap:.85rem;font-size:.88rem}
+.footer-contact-item{display:flex;align-items:flex-start;gap:.65rem;color:rgba(255,255,255,.75);transition:color .2s}
+.footer-contact-item:hover{color:var(--rose-soft)}
+.footer-contact-item .icon{
+  flex-shrink:0;width:32px;height:32px;border-radius:8px;
+  background:rgba(242,41,91,.15);border:1px solid rgba(242,41,91,.3);
+  display:grid;place-items:center;font-size:.85rem;color:var(--rose-soft);
+}
+
+.fcol h5{
+  font-family:var(--font-mono);font-size:.72rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--rose-soft);margin-bottom:1.25rem;
+  display:inline-flex;align-items:center;gap:.5rem;
+}
+.fcol h5::before{content:"";width:14px;height:1px;background:var(--rose-soft);box-shadow:0 0 6px var(--rose-soft)}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.fcol a{font-size:.92rem;color:rgba(255,255,255,.7);transition:all .25s;position:relative}
+.fcol a:hover{color:var(--rose-soft);padding-left:8px;text-shadow:0 0 8px rgba(255,94,132,.4)}
+.fcol a:hover::before{content:"→";position:absolute;left:-4px;color:var(--rose-soft)}
+
+.footer-bottom{
+  padding:1.75rem 0;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+  font-size:.82rem;color:rgba(255,255,255,.5);
+  position:relative;z-index:1;
+}
+.footer-bottom .glow{display:inline-flex;align-items:center;gap:.5rem}
+.footer-bottom .glow::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--rose);box-shadow:0 0 8px var(--rose),0 0 16px var(--rose);
+  animation:livePulse 2s infinite;
+}
+.footer-bottom .legal{display:flex;gap:1.25rem}
+.footer-bottom .legal a{color:rgba(255,255,255,.5);transition:color .2s}
+.footer-bottom .legal a:hover{color:var(--rose-soft)}
+
+/* ============ SCROLL FADE-IN ============ */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="cloud-bg"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="cloud c1"></div>
+<div class="cloud c2"></div>
+<div class="cloud c3"></div>
+
+<div class="sparkle-layer">
+  <span class="sparkle rose large" style="top:8%;left:5%;--dur:3s;--delay:0s"></span>
+  <span class="sparkle sky" style="top:15%;left:18%;--dur:4s;--delay:.5s"></span>
+  <span class="sparkle amber tiny" style="top:6%;right:25%;--dur:3.5s;--delay:1s"></span>
+  <span class="sparkle indigo" style="top:22%;right:8%;--dur:5s;--delay:1.5s"></span>
+  <span class="sparkle rose tiny" style="top:35%;left:8%;--dur:4s;--delay:2s"></span>
+  <span class="sparkle sky large" style="top:45%;right:15%;--dur:3.5s;--delay:.8s"></span>
+  <span class="sparkle amber" style="top:55%;left:12%;--dur:4.5s;--delay:1.2s"></span>
+  <span class="sparkle rose" style="top:75%;left:20%;--dur:4s;--delay:0s"></span>
+  <span class="sparkle indigo" style="top:85%;right:18%;--dur:5s;--delay:1.8s"></span>
+  <span class="sparkle sky tiny" style="top:25%;left:45%;--dur:3.5s;--delay:2.2s"></span>
+  <span class="sparkle amber large" style="top:50%;right:45%;--dur:4s;--delay:1.5s"></span>
+</div>
+
+<!-- ============ ANNOUNCE ============ -->
+<div class="announce">
+  <div class="container">
+    <div class="left">
+      <span class="live">Welcome to VSolutions Digital</span>
+    </div>
+    <div class="right">
+      <a href="tel:2482328488" class="phone">📞 Call Us 248 232 8488</a>
+      <a href="mailto:info@vsolutionsinc.com">✉ info@vsolutionsinc.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="container">
+    <a href="/" class="brand">
+      <img src="https://vsolutionsinc.com/wp-content/uploads/2026/03/vsolutions-final.svg" alt="V Solutions Inc" class="brand-logo" />
+      <span class="brand-spark s1">✦</span>
+      <span class="brand-spark s2">✦</span>
+    </a>
+    <ul class="menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about-v-solutions-inc/">About</a></li>
+      <li><a href="/how-we-work/">How we work</a></li>
+      <li><a href="/service-overview/">Services</a></li>
+      <li><a href="/case-study/">Case Studies</a></li>
+      <li><a href="/careers/">Careers</a></li>
+      <li class="current"><a href="/pricing/">Pricing</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="search-btn" aria-label="Search">⌕</button>
+      <a href="/contact/" class="btn btn-primary">Contact Us <span class="btn-arrow">→</span></a>
+      <button class="hamburger" aria-label="menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PRICING HERO ============ -->
+<section class="pricing-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Pricing</span>
+    </nav>
+
+    <div class="pricing-hero-pill">
+      <span class="label">Plans</span>
+      <span>Transparent pricing — no hidden fees</span>
+    </div>
+
+    <h1 class="pricing-title">
+      Pricing & <em>Engagement Models.</em>
+    </h1>
+
+    <p class="pricing-subhead">
+      Transparent starting prices with fully customized solutions.
+    </p>
+
+    <p class="pricing-lede">
+      Choose a fixed plan to get started fast, or talk to us for a custom-scoped engagement. Every plan includes a free consultation, written proposal, and transparent timelines.
+    </p>
+
+    <!-- Billing toggle (display-only — services have monthly + project-based) -->
+    <div class="billing-toggle" role="tablist">
+      <button class="billing-option active" data-period="monthly" role="tab">Monthly</button>
+      <button class="billing-option" data-period="annual" role="tab">
+        Annual
+        <span class="savings-badge">SAVE 15%</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIGITAL MARKETING TIERS (3-column hero pricing) ============ -->
+<section class="tiers-section fade-up">
+  <div class="container">
+    <div class="tiers-section-head">
+      <div class="tiers-eyebrow">— Digital Marketing & Ads</div>
+      <h2 class="tiers-title">Pick the <em>ad strategy</em> that fits your stage</h2>
+      <p>Run smarter campaigns with full setup, ongoing optimization, and transparent monthly reporting.</p>
+    </div>
+
+    <div class="tiers-grid">
+
+      <!-- Essential Ads -->
+      <div class="tier-card">
+        <div class="tier-icon t1">⊕</div>
+        <h3 class="tier-name">Essential Ads</h3>
+        <p class="tier-tagline">Single-platform campaign for businesses starting out with paid ads.</p>
+        <div class="tier-price">
+          <span class="tier-price-currency">$</span>
+          <span class="tier-price-amount" data-monthly="599" data-annual="509">599</span>
+          <span class="tier-period">/ monthly</span>
+        </div>
+        <ul class="tier-features">
+          <li class="tier-feature"><span class="check"></span>Ad Platform (Google OR Meta)</li>
+          <li class="tier-feature"><span class="check"></span>Full Campaign Setup</li>
+          <li class="tier-feature"><span class="check"></span>Targeted Audience Strategy</li>
+          <li class="tier-feature"><span class="check"></span>Up to 2 Ad Sets</li>
+          <li class="tier-feature"><span class="check"></span>3–4 Ad Variations</li>
+          <li class="tier-feature"><span class="check"></span>Optimization & Monthly Report</li>
+        </ul>
+        <a href="/contact/" class="tier-cta">Contact us <span class="btn-arrow">→</span></a>
+      </div>
+
+      <!-- Growth Ads (RECOMMENDED) -->
+      <div class="tier-card recommended">
+        <span class="tier-badge">Most Popular</span>
+        <div class="tier-icon t2">⚡</div>
+        <h3 class="tier-name">Growth Ads</h3>
+        <p class="tier-tagline">Multi-platform optimization for scaling brands ready to grow leads predictably.</p>
+        <div class="tier-price">
+          <span class="tier-price-currency">$</span>
+          <span class="tier-price-amount" data-monthly="999" data-annual="849">999</span>
+          <span class="tier-period">/ monthly</span>
+        </div>
+        <ul class="tier-features">
+          <li class="tier-feature"><span class="check"></span>Google + Meta Platforms</li>
+          <li class="tier-feature"><span class="check"></span>Up to 3 Campaigns</li>
+          <li class="tier-feature"><span class="check"></span>Weekly Optimization</li>
+          <li class="tier-feature"><span class="check"></span>A/B Testing</li>
+          <li class="tier-feature"><span class="check"></span>Conversion Tracking Setup</li>
+          <li class="tier-feature"><span class="check"></span>Everything in Essential Ads</li>
+        </ul>
+        <a href="/contact/" class="tier-cta">Contact us <span class="btn-arrow">→</span></a>
+      </div>
+
+      <!-- Business Expansion -->
+      <div class="tier-card">
+        <div class="tier-icon t3">◈</div>
+        <h3 class="tier-name">Business Expansion</h3>
+        <p class="tier-tagline">Full-funnel performance marketing for established companies scaling regionally or globally.</p>
+        <div class="tier-price">
+          <span class="tier-price-currency">$</span>
+          <span class="tier-price-amount" data-monthly="1699" data-annual="1444">1,699</span>
+          <span class="tier-period">/ monthly</span>
+        </div>
+        <ul class="tier-features">
+          <li class="tier-feature"><span class="check"></span>Google + Meta + Optional YouTube</li>
+          <li class="tier-feature"><span class="check"></span>Unlimited Campaigns & Ad Sets</li>
+          <li class="tier-feature"><span class="check"></span>Retargeting + Lookalike Audiences</li>
+          <li class="tier-feature"><span class="check"></span>Advanced Analytics Dashboard</li>
+          <li class="tier-feature"><span class="check"></span>Full-Funnel Optimization</li>
+          <li class="tier-feature"><span class="check"></span>Everything in Growth Ads</li>
+        </ul>
+        <a href="/contact/" class="tier-cta">Contact us <span class="btn-arrow">→</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARISON TABLE ============ -->
+<section class="compare-section fade-up">
+  <div class="container">
+    <div class="tiers-section-head">
+      <div class="tiers-eyebrow">— Quick Compare</div>
+      <h2 class="tiers-title">Side-by-side <em>feature comparison</em></h2>
+      <p>Everything included at every tier. Upgrade anytime, cancel anytime.</p>
+    </div>
+
+    <div class="compare-shell">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Features</th>
+            <th>
+              <div class="tier-th">
+                <span class="tier-th-name">Essential</span>
+                <div class="tier-th-price"><span class="amount">$599</span><span class="period">/mo</span></div>
+              </div>
+            </th>
+            <th>
+              <div class="tier-th">
+                <span class="tier-th-name recommended">Growth</span>
+                <div class="tier-th-price"><span class="amount">$999</span><span class="period">/mo</span></div>
+              </div>
+            </th>
+            <th>
+              <div class="tier-th">
+                <span class="tier-th-name">Expansion</span>
+                <div class="tier-th-price"><span class="amount">$1,699</span><span class="period">/mo</span></div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="feature-name">Ad platforms</span>
+              <span class="feature-desc">Where your campaigns run</span>
+            </td>
+            <td>Google OR Meta</td>
+            <td>Google + Meta</td>
+            <td>Google + Meta + YouTube</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="feature-name">Campaigns included</span>
+              <span class="feature-desc">Active simultaneous campaigns</span>
+            </td>
+            <td>Up to 2 ad sets</td>
+            <td>Up to 3 campaigns</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="feature-name">Ad variations / creatives</span>
+              <span class="feature-desc">Per campaign cycle</span>
+            </td>
+            <td>3–4 variations</td>
+            <td>Unlimited variations</td>
+            <td>Unlimited variations</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="feature-name">A/B testing</span>
+              <span class="feature-desc">Compare creative & copy variants</span>
+            </td>
+            <td><span class="x-cell">—</span></td>
+            <td><span class="check-cell">✓</span></td>
+            <td><span class="check-cell">✓</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="feature-name">Conversion tracking</span>
+              <span class="feature-desc">Pixel + GA4 + server-side</span>
+            </td>
+            <td><span class="x-cell">—</span></td>
+            <td><span class="check-cell">✓</span></td>
+            <td><span class="check-cell">✓</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="feature-name">Retargeting & Lookalikes</span>
+              <span class="feature-desc">Audience-based remarketing</span>
+            </td>
+            <td><span class="x-cell">—</span></td>
+            <td><span class="x-cell">—</span></td>
+            <td><span class="check-cell">✓</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="feature-name">Advanced analytics dashboard</span>
+              <span class="feature-desc">Custom Looker Studio reports</span>
+            </td>
+            <td><span class="x-cell">—</span></td>
+            <td><span class="x-cell">—</span></td>
+            <td><span class="check-cell">✓</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="feature-name">Optimization cadence</span>
+              <span class="feature-desc">How often we tune your campaigns</span>
+            </td>
+            <td>Monthly</td>
+            <td>Weekly</td>
+            <td>Bi-weekly + on-demand</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="feature-name">Reports</span>
+              <span class="feature-desc">Performance + recommendations</span>
+            </td>
+            <td>Monthly summary</td>
+            <td>Bi-weekly + monthly</td>
+            <td>Weekly + monthly + quarterly</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="feature-name">Dedicated account manager</span>
+              <span class="feature-desc">Single point of contact</span>
+            </td>
+            <td><span class="x-cell">—</span></td>
+            <td><span class="check-cell">✓</span></td>
+            <td><span class="check-cell">✓</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="feature-name">Free consultation</span>
+              <span class="feature-desc">Strategy session before kickoff</span>
+            </td>
+            <td><span class="check-cell">✓</span></td>
+            <td><span class="check-cell">✓</span></td>
+            <td><span class="check-cell">✓</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDIVIDUAL SERVICE PRICING ============ -->
+<section class="services-section fade-up">
+  <div class="container">
+    <div class="tiers-section-head">
+      <div class="tiers-eyebrow">— Individual Services</div>
+      <h2 class="tiers-title">Project-based & <em>custom engagements</em></h2>
+      <p>Standalone services — perfect when you need specific expertise without a long-term marketing retainer.</p>
+    </div>
+
+    <div class="service-grid">
+
+      <!-- Web Development -->
+      <a href="/contact/" class="service-pricing-card">
+        <div class="service-thumb">
+          <span class="service-thumb-tag">Web Dev</span>
+          <span class="service-thumb-price">
+            <span class="from">From</span>
+            <span class="amount">$499</span>
+          </span>
+          <div class="service-thumb-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2019/11/website-development.jpg')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Website Development</h3>
+          <span class="service-plan-name">Starting from (Basic Website)</span>
+          <ul class="service-features">
+            <li class="service-feature"><span class="check"></span>Up to 5-page business website</li>
+            <li class="service-feature"><span class="check"></span>Mobile-friendly responsive design</li>
+            <li class="service-feature"><span class="check"></span>Contact forms and basic SEO setup</li>
+            <li class="service-feature"><span class="check"></span>Performance-optimized structure</li>
+            <li class="service-feature"><span class="check"></span>30 days post-launch support</li>
+          </ul>
+          <span class="service-cta">Contact us <span class="service-cta-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- Digital Marketing Starter -->
+      <a href="/contact/" class="service-pricing-card">
+        <div class="service-thumb">
+          <span class="service-thumb-tag">Marketing</span>
+          <span class="service-thumb-price">
+            <span class="from">From</span>
+            <span class="amount">$599</span>
+          </span>
+          <div class="service-thumb-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/01/Comprehensive-AI-Powered-Digital-Marketing.jpg')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Digital Marketing</h3>
+          <span class="service-plan-name">Starter Plan</span>
+          <ul class="service-features">
+            <li class="service-feature"><span class="check"></span>SEO setup and basic optimization</li>
+            <li class="service-feature"><span class="check"></span>Google Business Profile management</li>
+            <li class="service-feature"><span class="check"></span>Limited social media posting</li>
+            <li class="service-feature"><span class="check"></span>Basic lead tracking</li>
+            <li class="service-feature"><span class="check"></span>Monthly performance summary</li>
+          </ul>
+          <span class="service-cta">Contact us <span class="service-cta-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- Content Writing -->
+      <a href="/contact/" class="service-pricing-card">
+        <div class="service-thumb">
+          <span class="service-thumb-tag">Content</span>
+          <span class="service-thumb-price">
+            <span class="from">From</span>
+            <span class="amount">$350</span>
+          </span>
+          <div class="service-thumb-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/01/Content-Writing-Services-That-Convert.jpg')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Content Writing</h3>
+          <span class="service-plan-name">Starter Plan</span>
+          <ul class="service-features">
+            <li class="service-feature"><span class="check"></span>Website and landing page content</li>
+            <li class="service-feature"><span class="check"></span>Blog articles and posts</li>
+            <li class="service-feature"><span class="check"></span>SEO-friendly writing</li>
+            <li class="service-feature"><span class="check"></span>Technical and business content</li>
+            <li class="service-feature"><span class="check"></span>Editing and revisions included</li>
+          </ul>
+          <span class="service-cta">Contact us <span class="service-cta-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- Artificial Intelligence -->
+      <a href="/contact/" class="service-pricing-card">
+        <div class="service-thumb">
+          <span class="service-thumb-tag">AI</span>
+          <span class="service-thumb-price custom">
+            <span class="from">Custom</span>
+            <span class="amount">Pricing</span>
+          </span>
+          <div class="service-thumb-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2020/03/aiseo.jpg')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Artificial Intelligence</h3>
+          <span class="service-plan-name">Starter Plan</span>
+          <ul class="service-features">
+            <li class="service-feature"><span class="check"></span>AI strategy and use-case discovery</li>
+            <li class="service-feature"><span class="check"></span>Chatbots and virtual assistants</li>
+            <li class="service-feature"><span class="check"></span>Workflow and process automation</li>
+            <li class="service-feature"><span class="check"></span>AI system integrations</li>
+            <li class="service-feature"><span class="check"></span>Smart analytics and insights</li>
+          </ul>
+          <span class="service-cta">Contact us <span class="service-cta-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- Cloud DevOps -->
+      <a href="/contact/" class="service-pricing-card">
+        <div class="service-thumb">
+          <span class="service-thumb-tag">Cloud · DevOps</span>
+          <span class="service-thumb-price custom">
+            <span class="from">Custom</span>
+            <span class="amount">Pricing</span>
+          </span>
+          <div class="service-thumb-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/01/Cloud-Solutions-DevOps-Site-Reliability-Engineering.png')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Cloud Solutions, DevOps & SRE</h3>
+          <span class="service-plan-name">Custom Engagement</span>
+          <ul class="service-features">
+            <li class="service-feature"><span class="check"></span>Cloud setup and configuration</li>
+            <li class="service-feature"><span class="check"></span>CI/CD automation</li>
+            <li class="service-feature"><span class="check"></span>Performance and cost optimization</li>
+            <li class="service-feature"><span class="check"></span>Monitoring and alerting</li>
+            <li class="service-feature"><span class="check"></span>High availability and reliability</li>
+          </ul>
+          <span class="service-cta">Contact us <span class="service-cta-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- Cybersecurity -->
+      <a href="/contact/" class="service-pricing-card">
+        <div class="service-thumb">
+          <span class="service-thumb-tag">Security</span>
+          <span class="service-thumb-price custom">
+            <span class="from">Custom</span>
+            <span class="amount">Pricing</span>
+          </span>
+          <div class="service-thumb-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2019/11/Cybersecurity-and-Application-Security.jpg')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Cybersecurity & AppSec Testing</h3>
+          <span class="service-plan-name">Custom Engagement</span>
+          <ul class="service-features">
+            <li class="service-feature"><span class="check"></span>Vulnerability scanning</li>
+            <li class="service-feature"><span class="check"></span>Application security testing</li>
+            <li class="service-feature"><span class="check"></span>Risk and compliance assessments</li>
+            <li class="service-feature"><span class="check"></span>Threat mitigation guidance</li>
+            <li class="service-feature"><span class="check"></span>Detailed security reporting</li>
+          </ul>
+          <span class="service-cta">Contact us <span class="service-cta-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- Mobile Application Development -->
+      <a href="/contact/" class="service-pricing-card">
+        <div class="service-thumb">
+          <span class="service-thumb-tag">Mobile</span>
+          <span class="service-thumb-price custom">
+            <span class="from">Custom</span>
+            <span class="amount">Pricing</span>
+          </span>
+          <div class="service-thumb-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/02/mobile-app-development1.png')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Mobile Application Development</h3>
+          <span class="service-plan-name">Custom Engagement</span>
+          <ul class="service-features">
+            <li class="service-feature"><span class="check"></span>iOS and Android app development</li>
+            <li class="service-feature"><span class="check"></span>Cross-platform solutions</li>
+            <li class="service-feature"><span class="check"></span>UI and UX design</li>
+            <li class="service-feature"><span class="check"></span>Backend and API integrations</li>
+            <li class="service-feature"><span class="check"></span>Testing and deployment</li>
+          </ul>
+          <span class="service-cta">Contact us <span class="service-cta-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- VDI -->
+      <a href="/contact/" class="service-pricing-card">
+        <div class="service-thumb">
+          <span class="service-thumb-tag">VDI</span>
+          <span class="service-thumb-price custom">
+            <span class="from">Custom</span>
+            <span class="amount">Pricing</span>
+          </span>
+          <div class="service-thumb-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2019/11/VDI-and-Endpoint-Management-Services.png')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">VDI & Endpoint Management</h3>
+          <span class="service-plan-name">Custom Engagement</span>
+          <ul class="service-features">
+            <li class="service-feature"><span class="check"></span>Virtual desktop infrastructure</li>
+            <li class="service-feature"><span class="check"></span>Endpoint and device management</li>
+            <li class="service-feature"><span class="check"></span>Secure remote access</li>
+            <li class="service-feature"><span class="check"></span>Patch and update management</li>
+            <li class="service-feature"><span class="check"></span>Ongoing IT support</li>
+          </ul>
+          <span class="service-cta">Contact us <span class="service-cta-arrow">→</span></span>
+        </div>
+      </a>
+
+      <!-- Custom Solutions Enterprise -->
+      <a href="/contact/" class="service-pricing-card">
+        <div class="service-thumb">
+          <span class="service-thumb-tag">Enterprise</span>
+          <span class="service-thumb-price custom">
+            <span class="from">Custom</span>
+            <span class="amount">Pricing</span>
+          </span>
+          <div class="service-thumb-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2019/11/Custom-Solutions-and-Enterprise-Support.png')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Custom Solutions & Enterprise Support</h3>
+          <span class="service-plan-name">Custom Engagement</span>
+          <ul class="service-features">
+            <li class="service-feature"><span class="check"></span>Tailored multi-service solutions</li>
+            <li class="service-feature"><span class="check"></span>Architecture & technology roadmapping</li>
+            <li class="service-feature"><span class="check"></span>Complex system integrations</li>
+            <li class="service-feature"><span class="check"></span>Enterprise-grade security and scalability</li>
+            <li class="service-feature"><span class="check"></span>Ongoing IT support</li>
+          </ul>
+          <span class="service-cta">Contact us <span class="service-cta-arrow">→</span></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq-section fade-up">
+  <div class="container">
+    <div class="faq-grid">
+
+      <aside class="faq-side">
+        <div class="faq-side-eyebrow">— FAQ</div>
+        <h2>Frequently Asked <em>Questions.</em></h2>
+        <p>Honest answers to the questions clients ask most before signing up. Don't see yours below? Reach out — we respond within 1 business day.</p>
+
+        <div class="faq-help-card">
+          <h4>Still have questions?</h4>
+          <p>Talk to our team. Free 30-min consultation, written proposal included. No commitment.</p>
+          <div class="actions">
+            <a href="/contact/" class="btn btn-primary">Book consultation <span class="btn-arrow">→</span></a>
+            <a href="tel:2482328488" class="btn btn-ghost">📞 Call us</a>
+          </div>
+        </div>
+      </aside>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>Why do some services show prices and others do not?</summary>
+          <div class="faq-answer">Some services have standard starter scopes — like our Digital Marketing Starter or Web Dev Basic — where we can publish a fixed entry price. Others (AI, DevOps, Cybersecurity, Mobile, VDI, Enterprise) vary significantly based on your tech stack, integrations, compliance requirements, and timeline, so they use custom pricing built around your specific scope.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What does "Starting from" mean?</summary>
+          <div class="faq-answer">The listed price covers a basic scope — what's listed in the bullets on the card. Additional features, integrations, complexity, or accelerated timelines may increase the final cost. We always provide a written proposal before any work begins so you see the full price up front.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if my requirements grow during the project?</summary>
+          <div class="faq-answer">We review new requirements as they come up and provide transparent change-order pricing before proceeding. You always approve scope changes in writing before they affect the budget. No surprises on invoices.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How do you price custom requirements?</summary>
+          <div class="faq-answer">Custom pricing is based on four factors: scope (what we're building), complexity (architecture & tech depth), integrations (third-party systems & APIs), and timeline (how fast you need it). We assess these on a free discovery call and follow up with a fixed-price written proposal.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can projects become large or enterprise-level?</summary>
+          <div class="faq-answer">Yes. Complex and enterprise engagements range from a few thousand dollars for focused projects to $100,000+ for multi-quarter programs involving cloud migrations, custom platform builds, AI integrations, or compliance-heavy deliverables. We've delivered programs at every scale.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you provide detailed quotes and proposals?</summary>
+          <div class="faq-answer">Yes. Every project includes a written proposal with detailed scope, timeline, milestones, deliverables, payment schedule, and pricing. You receive it within 2-5 business days of our discovery call. No hidden fees, no scope creep without approval.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is there a free consultation?</summary>
+          <div class="faq-answer">Absolutely. We offer a free 30-minute consultation to understand your needs, current setup, business goals, and recommend the right solution. There's no obligation to proceed afterward — many clients use it as a free strategy review.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I cancel a monthly plan anytime?</summary>
+          <div class="faq-answer">Monthly Digital Marketing & Ads plans are pay-as-you-go with a 30-day notice for cancellation. Annual plans (15% discount) include a 90-day notice. Project-based engagements run to completion as scoped in the proposal — but you can pause between milestones if priorities shift.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What payment methods do you accept?</summary>
+          <div class="faq-answer">We accept ACH bank transfers, major credit cards (Visa / Mastercard / Amex), wire transfers for international clients, and Stripe-based recurring billing for monthly plans. Payment terms are typically Net 15 for project work and 1st-of-month autopay for retainers.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta fade-up">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-content">
+        <div class="cta-eyebrow">Free Consultation</div>
+        <h3>Not sure which plan fits? <em>Let's talk it through.</em></h3>
+        <p>Tell us about your goals. We'll recommend the right plan — or build a custom engagement if your scope doesn't fit a standard tier. Free 30-minute call, no commitment.</p>
+        <div class="cta-actions">
+          <a href="/contact/" class="btn btn-primary">Book a Free Consultation <span class="btn-arrow">→</span></a>
+          <a href="tel:2482328488" class="btn btn-ghost">📞 248 232 8488</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="brand">
+          <img src="https://vsolutionsinc.com/wp-content/uploads/2019/10/vsolutions-final_footer.png" alt="V Solutions Inc" class="brand-logo" />
+        </a>
+        <p>V Solutions Inc combines AI, cloud, and digital marketing expertise to transform technology into actionable insights, helping businesses achieve measurable growth and succeed on a global scale.</p>
+      </div>
+
+      <div class="fcol">
+        <h5>Menu</h5>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-v-solutions-inc/">About</a></li>
+          <li><a href="/how-we-work/">How we work</a></li>
+          <li><a href="/service-overview/">Services</a></li>
+          <li><a href="/case-study/">Case Studies</a></li>
+          <li><a href="/careers/">Careers</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/blog-insights/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="fcol">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="/service/artificial-intelligence/">Artificial Intelligence</a></li>
+          <li><a href="/service/cloud-devops-services/">Cloud DevOps & SRE</a></li>
+          <li><a href="/service/cybersecurity-application-security-testing/">Cybersecurity</a></li>
+          <li><a href="/service/website-development-services-vsolutions-inc/">Web Development</a></li>
+          <li><a href="/service/mobile-application-development/">Mobile Development</a></li>
+          <li><a href="/service/digital-marketing/">Digital Marketing</a></li>
+          <li><a href="/service/vdi-endpoint-management-services/">VDI & Endpoint</a></li>
+        </ul>
+      </div>
+
+      <div class="fcol">
+        <h5>Contact us</h5>
+        <div class="footer-contact">
+          <a class="footer-contact-item" href="https://maps.google.com/?q=100+West+Big+Beaver+Rd+Troy+MI+48084" target="_blank">
+            <span class="icon">📍</span>
+            <span>100 West Big Beaver Rd<br>Troy - MI - 48084</span>
+          </a>
+          <a class="footer-contact-item" href="tel:+12482328488">
+            <span class="icon">📞</span>
+            <span>248-232-8488</span>
+          </a>
+          <a class="footer-contact-item" href="mailto:info@vsolutionsinc.com">
+            <span class="icon">✉</span>
+            <span>info@vsolutionsinc.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="glow">2019-26 © All rights reserved by V Solutions INC</span>
+      <div class="legal">
+        <a href="/terms-and-conditions/">Terms and Conditions</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/cookie-policy-v-solutions-inc/">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Cursor glow
+const cursorGlow = document.getElementById('cursorGlow');
+let glowX = window.innerWidth/2, glowY = window.innerHeight/2;
+let targetX = glowX, targetY = glowY;
+document.addEventListener('mousemove', (e) => { targetX = e.clientX; targetY = e.clientY; });
+function animateGlow(){
+  glowX += (targetX - glowX) * 0.15;
+  glowY += (targetY - glowY) * 0.15;
+  cursorGlow.style.left = glowX + 'px';
+  cursorGlow.style.top = glowY + 'px';
+  requestAnimationFrame(animateGlow);
+}
+animateGlow();
+
+// Scroll fade-in
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.12});
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+// Magnetic 3D tilt on tier cards & service cards
+document.querySelectorAll('.tier-card, .service-pricing-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width/2;
+    const y = e.clientY - rect.top - rect.height/2;
+    const tiltX = (y / rect.height) * -3;
+    const tiltY = (x / rect.width) * 3;
+    if (card.classList.contains('recommended')) {
+      card.style.transform = `scale(1.04) translateY(-8px) perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    } else {
+      card.style.transform = `translateY(-6px) perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    }
+  });
+  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+});
+
+// Billing toggle (smooth animated price swap)
+const billingOptions = document.querySelectorAll('.billing-option');
+const priceElements = document.querySelectorAll('[data-monthly]');
+const periodElements = document.querySelectorAll('.tier-period');
+
+billingOptions.forEach(option => {
+  option.addEventListener('click', () => {
+    const period = option.dataset.period;
+    billingOptions.forEach(o => o.classList.toggle('active', o === option));
+    
+    priceElements.forEach(el => {
+      const monthly = parseInt(el.dataset.monthly);
+      const annual = parseInt(el.dataset.annual);
+      const target = period === 'annual' ? annual : monthly;
+      
+      // Animate counter
+      const start = parseInt(el.textContent.replace(/,/g, '')) || monthly;
+      const duration = 400;
+      const startTime = performance.now();
+      
+      function update(now){
+        const t = Math.min(1, (now - startTime) / duration);
+        const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+        const current = Math.floor(start + (target - start) * eased);
+        el.textContent = current.toLocaleString();
+        if (t < 1) requestAnimationFrame(update);
+        else el.textContent = target.toLocaleString();
+      }
+      requestAnimationFrame(update);
+    });
+    
+    periodElements.forEach(el => {
+      el.textContent = period === 'annual' ? '/ monthly · billed yearly' : '/ monthly';
+    });
+  });
+});
+</script>
+
+</body>
+</html>

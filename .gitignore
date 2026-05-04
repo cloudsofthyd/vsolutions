@@ -1,0 +1,38 @@
+node_modules/
+.next/
+.turbo/
+dist/
+build/
+
+# env
+.env
+.env.local
+.env.*.local
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# editor
+.vscode/
+.idea/
+
+# os
+.DS_Store
+Thumbs.db
+
+# migration intermediates
+dump/
+*.sql.gz
+
+# uploads (do not commit binary media)
+apps/web/public/uploads/
+
+# generated
+verification-report.html
+prisma/migrations.lock
+
+# tsbuildinfo
+*.tsbuildinfo

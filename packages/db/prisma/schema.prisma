@@ -1,0 +1,836 @@
+// V Solutions Inc — full schema covering migration + portal + helpdesk + invoicing + AI.
+// Each section maps to a milestone; loaders only touch migration models in M1.
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+  // pgvector extension is created out-of-band (DB role lacks CREATE EXTENSION privilege).
+  // The Unsupported("vector(...)") fields below still work because pgvector is installed.
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SECTION A — MIGRATION (Milestone 1)
+// ─────────────────────────────────────────────────────────────────────────────
+
+model User {
+  id                 String    @id @default(cuid())
+  wpId               Int?      @unique
+  email              String    @unique
+  username           String    @unique
+  passwordHash       String?
+  passwordHashLegacy String?
+  passwordAlgo       String    @default("none") // none | argon2id | phpass | wp_bcrypt
+  displayName        String
+  firstName          String?
+  lastName           String?
+  role               Role      @default(ADMIN)
+  bio                String?   @db.Text
+  avatarUrl          String?
+  emailVerified      DateTime?
+  passwordSetAt      DateTime?
+  lastLoginAt        DateTime?
+  lastLoginIp        String?
+  failedLoginCount   Int       @default(0)
+  lockedUntil        DateTime?
+  twoFactorEnabled   Boolean   @default(false)
+  twoFactorSecret    String?
+  suspendedAt        DateTime?
+  deletedAt          DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  posts             Post[]               @relation("PostAuthor")
+  accounts          Account[]
+  sessions          Session[]
+  passwordResets    PasswordResetToken[]
+  loginOtps         LoginOtp[]
+  authoredTickets   Ticket[]             @relation("TicketAssignee")
+  ticketComments    TicketComment[]      @relation("AdminTicketComment")
+  invoicesCreated   Invoice[]            @relation("InvoiceCreator")
+  paymentsRecorded  InvoicePayment[]     @relation("PaymentRecorder")
+  notifications     Notification[]       @relation("AdminNotification")
+  authEvents        AuthEvent[]          @relation("AuthEventUser")
+  impersonationsBy  ImpersonationLog[]   @relation("Impersonator")
+  clientsManaged    Client[]             @relation("AccountManager")
+  clientsCreated    Client[]             @relation("ClientCreator")
+  projectsManaged   ClientProject[]      @relation("ProjectManager")
+
+  @@index([role])
+  @@index([createdAt])
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+  AUTHOR
+  CLIENT_USER
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  ip           String?
+  userAgent    String?
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model PasswordResetToken {
+  id        String    @id @default(cuid())
+  userId    String
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+  ip        String?
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model LoginOtp {
+  id        String    @id @default(cuid())
+  userId    String
+  codeHash  String
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model AuthEvent {
+  id           String   @id @default(cuid())
+  type         String // login_ok, login_fail, phpass_upgrade, wp_bcrypt_upgrade, password_reset, client_invite_sent, client_invite_accepted, impersonate_start, impersonate_end
+  userId       String?
+  clientUserId String?
+  ip           String?
+  userAgent    String?
+  metadata     Json?
+  createdAt    DateTime @default(now())
+  user         User?    @relation("AuthEventUser", fields: [userId], references: [id])
+
+  @@index([type, createdAt])
+  @@index([userId, createdAt])
+}
+
+model ImpersonationLog {
+  id              String    @id @default(cuid())
+  impersonatorId  String
+  targetClientUserId String
+  startedAt       DateTime  @default(now())
+  endedAt         DateTime?
+  ip              String?
+  reason          String?
+  impersonator    User      @relation("Impersonator", fields: [impersonatorId], references: [id])
+}
+
+model Category {
+  id             String         @id @default(cuid())
+  wpId           Int?           @unique
+  name           String
+  slug           String
+  description    String?        @db.Text
+  parentId       String?
+  parent         Category?      @relation("CatTree", fields: [parentId], references: [id])
+  children       Category[]     @relation("CatTree")
+  taxonomy       String         @default("category")
+  count          Int            @default(0)
+  seoTitle       String?
+  seoDescription String?
+  posts          PostCategory[]
+
+  @@unique([taxonomy, slug])
+  @@index([taxonomy])
+}
+
+model Tag {
+  id    String    @id @default(cuid())
+  wpId  Int?      @unique
+  name  String
+  slug  String    @unique
+  count Int       @default(0)
+  posts PostTag[]
+}
+
+model Post {
+  id              String     @id @default(cuid())
+  wpId            Int?       @unique
+  slug            String
+  permalink       String     @unique
+  title           String
+  content         String     @db.Text
+  excerpt         String?    @db.Text
+  status          PostStatus @default(PUBLISHED)
+  type            String     @default("post") // post | page | service | case-study | portfolio
+  featuredImageId String?
+  featuredImage   Media?     @relation(fields: [featuredImageId], references: [id])
+  authorId        String?
+  author          User?      @relation("PostAuthor", fields: [authorId], references: [id])
+  publishedAt     DateTime
+  updatedAt       DateTime   @updatedAt
+  readingTime     Int        @default(0)
+  viewCount       Int        @default(0)
+
+  // SEO
+  seoTitle       String?
+  seoDescription String?
+  canonicalUrl   String?
+  ogImage        String?
+  twitterCard    String  @default("summary_large_image")
+
+  // Service-specific
+  serviceIcon      String?
+  serviceShortDesc String?
+  serviceFeatures  Json?
+
+  // Case-study-specific
+  csClient   String?
+  csIndustry String?
+  csServices String[]
+  csResults  Json?
+  csLogo     String?
+
+  // Portfolio
+  portfolioUrl String?
+
+  embedding Unsupported("vector(1536)")?
+
+  categories PostCategory[]
+  tags       PostTag[]
+  comments   Comment[]
+
+  @@index([type, status, publishedAt(sort: Desc)])
+  @@index([slug])
+  @@index([status, publishedAt(sort: Desc)])
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+  PRIVATE
+  PENDING
+  TRASH
+}
+
+model PostCategory {
+  postId     String
+  categoryId String
+  post       Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([postId, categoryId])
+}
+
+model PostTag {
+  postId String
+  tagId  String
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+}
+
+model Comment {
+  id          String   @id @default(cuid())
+  wpId        Int?     @unique
+  postId      String
+  authorName  String
+  authorEmail String?
+  authorUrl   String?
+  authorIp    String?
+  content     String   @db.Text
+  parentId    String?
+  status      String   @default("PUBLISHED") // PUBLISHED | PENDING | SPAM | TRASH
+  createdAt   DateTime @default(now())
+  post        Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@index([postId, status, createdAt])
+}
+
+model Media {
+  id       String  @id @default(cuid())
+  wpId     Int?    @unique
+  filename String
+  path     String
+  url      String
+  mimeType String
+  width    Int?
+  height   Int?
+  altText  String?
+  filesize Int?
+  posts    Post[]
+}
+
+model Menu {
+  id       String     @id @default(cuid())
+  wpId     Int?       @unique
+  name     String
+  slug     String     @unique
+  location String?
+  items    MenuItem[]
+}
+
+model MenuItem {
+  id         String     @id @default(cuid())
+  wpId       Int?       @unique
+  menuId     String
+  parentId   String?
+  label      String
+  url        String
+  target     String?
+  orderIndex Int        @default(0)
+  menu       Menu       @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  parent     MenuItem?  @relation("MenuTree", fields: [parentId], references: [id])
+  children   MenuItem[] @relation("MenuTree")
+}
+
+model Redirect {
+  id        String   @id @default(cuid())
+  from      String   @unique
+  to        String
+  code      Int      @default(301)
+  source    String   @default("wp-migration")
+  hits      Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model ContactSubmission {
+  id          String    @id @default(cuid())
+  name        String
+  email       String
+  phone       String?
+  company     String?
+  service     String?
+  message     String    @db.Text
+  ip          String?
+  userAgent   String?
+  status      String    @default("NEW") // NEW | RESPONDED | SPAM | ARCHIVED
+  notes       String?   @db.Text
+  createdAt   DateTime  @default(now())
+  respondedAt DateTime?
+
+  @@index([status, createdAt(sort: Desc)])
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SECTION B — CLIENT PORTAL (Milestone 2)
+// ─────────────────────────────────────────────────────────────────────────────
+
+model Client {
+  id               String       @id @default(cuid())
+  companyName      String
+  slug             String       @unique
+  status           ClientStatus @default(ACTIVE)
+  industry         String?
+  primaryContactId String?
+  accountManagerId String?
+  services         String[]     @default([])
+  startDate        DateTime?
+  endDate          DateTime?
+  notes            String?      @db.Text
+
+  dashboardConfig Json @default("{}")
+
+  billingEmail    String?
+  billingAddress  Json?
+  taxId           String?
+  defaultCurrency String  @default("USD")
+  paymentTerms    Int     @default(30)
+
+  logoUrl    String?
+  brandColor String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  createdBy String
+
+  accountManager User?            @relation("AccountManager", fields: [accountManagerId], references: [id])
+  creator        User             @relation("ClientCreator", fields: [createdBy], references: [id])
+  users          ClientUser[]
+  tickets        Ticket[]
+  invoices       Invoice[]
+  projects       ClientProject[]
+  documents      ClientDocument[]
+  notifications  Notification[]
+
+  @@index([status])
+  @@index([accountManagerId])
+}
+
+enum ClientStatus {
+  ACTIVE
+  PAUSED
+  ARCHIVED
+}
+
+model ClientUser {
+  id               String     @id @default(cuid())
+  clientId         String
+  email            String     @unique
+  passwordHash     String?
+  firstName        String
+  lastName         String?
+  jobTitle         String?
+  phone            String?
+  role             ClientRole @default(VIEWER)
+  emailVerified    DateTime?
+  invitedAt        DateTime   @default(now())
+  invitedBy        String
+  acceptedAt       DateTime?
+  lastLoginAt      DateTime?
+  lastLoginIp      String?
+  failedLoginCount Int        @default(0)
+  lockedUntil      DateTime?
+  twoFactorEnabled Boolean    @default(false)
+  twoFactorSecret  String?
+  avatarUrl        String?
+  suspendedAt      DateTime?
+  deletedAt        DateTime?
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+
+  client            Client                @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  invitations       ClientInvitation[]
+  ticketsCreated    Ticket[]              @relation("TicketReporter")
+  ticketComments    TicketComment[]       @relation("ClientTicketComment")
+  documentsUploaded ClientDocument[]      @relation("DocUploader")
+  passwordResets    ClientPasswordReset[]
+  sessions          ClientSession[]
+  notifications     Notification[]        @relation("ClientNotification")
+
+  @@index([clientId])
+}
+
+enum ClientRole {
+  OWNER
+  ADMIN
+  MEMBER
+  VIEWER
+}
+
+model ClientSession {
+  id           String     @id @default(cuid())
+  sessionToken String     @unique
+  clientUserId String
+  expires      DateTime
+  ip           String?
+  userAgent    String?
+  clientUser   ClientUser @relation(fields: [clientUserId], references: [id], onDelete: Cascade)
+}
+
+model ClientInvitation {
+  id           String     @id @default(cuid())
+  clientUserId String
+  tokenHash    String     @unique
+  expiresAt    DateTime
+  acceptedAt   DateTime?
+  sentAt       DateTime   @default(now())
+  resentCount  Int        @default(0)
+  invitedBy    String
+  clientUser   ClientUser @relation(fields: [clientUserId], references: [id], onDelete: Cascade)
+}
+
+model ClientPasswordReset {
+  id           String     @id @default(cuid())
+  clientUserId String
+  tokenHash    String     @unique
+  expiresAt    DateTime
+  usedAt       DateTime?
+  createdAt    DateTime   @default(now())
+  ip           String?
+  clientUser   ClientUser @relation(fields: [clientUserId], references: [id], onDelete: Cascade)
+}
+
+model ClientProject {
+  id          String    @id @default(cuid())
+  clientId    String
+  name        String
+  slug        String
+  description String?   @db.Text
+  status      String    @default("ACTIVE") // PLANNING | ACTIVE | ON_HOLD | COMPLETED | CANCELLED
+  startDate   DateTime?
+  endDate     DateTime?
+  budget      Decimal?  @db.Decimal(12, 2)
+  progress    Int       @default(0)
+  managerId   String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  client   Client    @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  manager  User?     @relation("ProjectManager", fields: [managerId], references: [id])
+  tickets  Ticket[]
+  invoices Invoice[]
+
+  @@index([clientId, status])
+}
+
+model ClientDocument {
+  id           String      @id @default(cuid())
+  clientId     String
+  uploadedById String?
+  uploaderType String      @default("ADMIN") // ADMIN | CLIENT
+  filename     String
+  path         String
+  url          String
+  mimeType     String
+  filesize     Int
+  category     String?
+  visibility   String      @default("CLIENT") // CLIENT | INTERNAL
+  description  String?
+  uploadedAt   DateTime    @default(now())
+  client       Client      @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  uploadedBy   ClientUser? @relation("DocUploader", fields: [uploadedById], references: [id])
+
+  @@index([clientId])
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SECTION C — HELPDESK / TICKETS (Milestone 3)
+// ─────────────────────────────────────────────────────────────────────────────
+
+model Ticket {
+  id          String         @id @default(cuid())
+  number      String         @unique
+  clientId    String
+  projectId   String?
+  reporterId  String
+  assigneeId  String?
+  subject     String
+  description String         @db.Text
+  type        TicketType     @default(QUESTION)
+  priority    TicketPriority @default(MEDIUM)
+  status      TicketStatus   @default(OPEN)
+  category    String?
+  tags        String[]       @default([])
+
+  slaResponseDue   DateTime?
+  slaResolutionDue DateTime?
+  firstResponseAt  DateTime?
+  resolvedAt       DateTime?
+  closedAt         DateTime?
+  reopenCount      Int       @default(0)
+
+  satisfactionScore   Int?
+  satisfactionComment String?
+
+  aiCategorySuggestion String?
+  aiPrioritySuggestion String?
+  aiSummary            String?                      @db.Text
+  embedding            Unsupported("vector(1536)")?
+
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  client      Client           @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  project     ClientProject?   @relation(fields: [projectId], references: [id])
+  reporter    ClientUser       @relation("TicketReporter", fields: [reporterId], references: [id])
+  assignee    User?            @relation("TicketAssignee", fields: [assigneeId], references: [id])
+  comments    TicketComment[]
+  attachments TicketAttachment[]
+  watchers    TicketWatcher[]
+  history     TicketHistory[]
+
+  @@index([clientId, status])
+  @@index([assigneeId, status])
+  @@index([priority, status])
+  @@index([createdAt(sort: Desc)])
+}
+
+enum TicketType {
+  BUG
+  QUESTION
+  FEATURE_REQUEST
+  INCIDENT
+  TASK
+}
+
+enum TicketPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  WAITING_CLIENT
+  WAITING_INTERNAL
+  RESOLVED
+  CLOSED
+  CANCELLED
+}
+
+model TicketComment {
+  id           String   @id @default(cuid())
+  ticketId     String
+  authorId     String
+  authorType   String // CLIENT | ADMIN
+  content      String   @db.Text
+  isInternal   Boolean  @default(false)
+  aiDraft      Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  ticket      Ticket             @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  // NOTE: authorId is polymorphic (admin User OR ClientUser) — discriminated by authorType.
+  // We keep these relations for IDE-side joins but the FK constraints are dropped at the DB
+  // level (one row can't satisfy two distinct FKs). Resolve actor at query time via authorType.
+  adminUser   User?              @relation("AdminTicketComment", fields: [authorId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "TicketComment_admin_fkey")
+  clientUser  ClientUser?        @relation("ClientTicketComment", fields: [authorId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "TicketComment_client_fkey")
+  attachments TicketAttachment[]
+
+  @@index([ticketId, createdAt])
+}
+
+model TicketAttachment {
+  id         String         @id @default(cuid())
+  ticketId   String
+  commentId  String?
+  filename   String
+  path       String
+  url        String
+  mimeType   String
+  filesize   Int
+  uploadedBy String
+  createdAt  DateTime       @default(now())
+  ticket     Ticket         @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  comment    TicketComment? @relation(fields: [commentId], references: [id], onDelete: SetNull)
+}
+
+model TicketWatcher {
+  id       String @id @default(cuid())
+  ticketId String
+  userId   String
+  userType String // CLIENT | ADMIN
+  ticket   Ticket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+
+  @@unique([ticketId, userId, userType])
+}
+
+model TicketHistory {
+  id        String   @id @default(cuid())
+  ticketId  String
+  actorId   String
+  actorType String // CLIENT | ADMIN | SYSTEM
+  field     String
+  oldValue  String?
+  newValue  String?
+  createdAt DateTime @default(now())
+  ticket    Ticket   @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+
+  @@index([ticketId, createdAt])
+}
+
+model SlaConfig {
+  id              String         @id @default(cuid())
+  name            String
+  priority        TicketPriority @unique
+  responseHours   Int
+  resolutionHours Int
+  active          Boolean        @default(true)
+  updatedAt       DateTime       @updatedAt
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SECTION D — INVOICING (Milestone 3)
+// ─────────────────────────────────────────────────────────────────────────────
+
+model Invoice {
+  id        String        @id @default(cuid())
+  number    String        @unique
+  clientId  String
+  projectId String?
+  status    InvoiceStatus @default(DRAFT)
+
+  issueDate   DateTime  @default(now())
+  dueDate     DateTime
+  paidAt      DateTime?
+  cancelledAt DateTime?
+
+  subtotal       Decimal @db.Decimal(12, 2)
+  taxRate        Decimal @default(0) @db.Decimal(5, 2)
+  taxAmount      Decimal @default(0) @db.Decimal(12, 2)
+  discountAmount Decimal @default(0) @db.Decimal(12, 2)
+  total          Decimal @db.Decimal(12, 2)
+  amountPaid     Decimal @default(0) @db.Decimal(12, 2)
+  currency       String  @default("USD")
+
+  billToName    String
+  billToEmail   String
+  billToAddress Json?
+  billToTaxId   String?
+
+  notes           String? @db.Text
+  termsConditions String? @db.Text
+
+  isRecurring     Boolean @default(false)
+  recurringConfig Json?
+  parentInvoiceId String?
+
+  paymentMethod    String?
+  paymentReference String?
+
+  pdfUrl          String?
+  publicViewToken String  @unique
+
+  createdById    String
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  sentAt         DateTime?
+  reminderSentAt DateTime?
+
+  client    Client           @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  project   ClientProject?   @relation(fields: [projectId], references: [id])
+  createdBy User             @relation("InvoiceCreator", fields: [createdById], references: [id])
+  items     InvoiceItem[]
+  payments  InvoicePayment[]
+
+  @@index([clientId, status])
+  @@index([dueDate, status])
+  @@index([createdAt(sort: Desc)])
+}
+
+enum InvoiceStatus {
+  DRAFT
+  SENT
+  VIEWED
+  PARTIALLY_PAID
+  PAID
+  OVERDUE
+  CANCELLED
+  REFUNDED
+}
+
+model InvoiceItem {
+  id          String  @id @default(cuid())
+  invoiceId   String
+  description String
+  quantity    Decimal @default(1) @db.Decimal(10, 2)
+  unitPrice   Decimal @db.Decimal(12, 2)
+  amount      Decimal @db.Decimal(12, 2)
+  serviceCode String?
+  orderIndex  Int     @default(0)
+  invoice     Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+}
+
+model InvoicePayment {
+  id               String   @id @default(cuid())
+  invoiceId        String
+  amount           Decimal  @db.Decimal(12, 2)
+  currency         String
+  paymentMethod    String
+  paymentReference String?
+  paidAt           DateTime
+  notes            String?
+  recordedById     String?
+  createdAt        DateTime @default(now())
+  invoice          Invoice  @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  recordedBy       User?    @relation("PaymentRecorder", fields: [recordedById], references: [id])
+}
+
+model TaxRate {
+  id     String  @id @default(cuid())
+  name   String
+  rate   Decimal @db.Decimal(5, 2)
+  region String?
+  active Boolean @default(true)
+}
+
+model ServiceItem {
+  id           String   @id @default(cuid())
+  name         String
+  description  String?
+  defaultPrice Decimal? @db.Decimal(12, 2)
+  unit         String   @default("hour")
+  category     String?
+  active       Boolean  @default(true)
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SECTION E — NOTIFICATIONS / ANALYTICS / SETTINGS (Cross-cutting)
+// ─────────────────────────────────────────────────────────────────────────────
+
+model Notification {
+  id           String   @id @default(cuid())
+  userId       String?
+  clientUserId String?
+  clientId     String?
+  type         String
+  title        String
+  body         String?
+  actionUrl    String?
+  read         Boolean  @default(false)
+  createdAt    DateTime @default(now())
+
+  user       User?       @relation("AdminNotification", fields: [userId], references: [id], onDelete: Cascade)
+  clientUser ClientUser? @relation("ClientNotification", fields: [clientUserId], references: [id], onDelete: Cascade)
+  client     Client?     @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@index([userId, read, createdAt(sort: Desc)])
+  @@index([clientUserId, read, createdAt(sort: Desc)])
+}
+
+model AnalyticsEvent {
+  id           String   @id @default(cuid())
+  userId       String?
+  clientUserId String?
+  sessionId    String?
+  type         String
+  properties   Json?
+  createdAt    DateTime @default(now())
+
+  @@index([type, createdAt])
+}
+
+model SiteSetting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+  updatedBy String?
+}
+
+model EmailLog {
+  id           String    @id @default(cuid())
+  to           String
+  from         String
+  subject      String
+  templateName String
+  status       String // QUEUED | SENT | DELIVERED | BOUNCED | FAILED
+  providerId   String?
+  errorMessage String?
+  metadata     Json?
+  sentAt       DateTime?
+  createdAt    DateTime  @default(now())
+
+  @@index([to, createdAt(sort: Desc)])
+  @@index([status, createdAt])
+}

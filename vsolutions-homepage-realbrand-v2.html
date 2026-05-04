@@ -1,0 +1,2524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI & Data Solutions Company | V Solutions Inc – AI, NLP & Digital Marketing</title>
+<meta name="description" content="V Solutions Inc delivers AI-driven digital marketing, cloud engineering, cybersecurity, DevOps, and custom web & mobile development services." />
+
+<link rel="icon" type="image/svg+xml" href="https://vsolutionsinc.com/wp-content/uploads/2026/03/vsolutions-final.svg" />
+<link rel="apple-touch-icon" href="https://vsolutionsinc.com/wp-content/uploads/2026/03/vsolutions-final.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   V SOLUTIONS INC — REAL BRAND PALETTE EDITION
+   Based on actual colors from vsolutionsinc.com:
+   - Hot pink/magenta #f2295b (their button gradient accent)
+   - Cloud blue spectrum (sky, cyan, indigo)
+   - Dark navy header (matches existing site)
+   - White body with cloud-tinted sections
+   Real content & copy from the live site
+============================================================ */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+:root{
+  /* === REAL BRAND COLORS FROM VSOLUTIONSINC.COM === */
+  --rose:#F2295B;                  /* THEIR actual button gradient color */
+  --rose-soft:#FF5E84;
+  --rose-deep:#D11947;
+  --rose-glow:rgba(242,41,91,.18);
+  
+  /* Cloud blue spectrum (modern complement to their rose) */
+  --sky:#3B82F6;
+  --sky-soft:#60A5FA;
+  --sky-deep:#1D4ED8;
+  --sky-glow:rgba(59,130,246,.18);
+  
+  --cyan:#06B6D4;
+  --cyan-soft:#22D3EE;
+  --cyan-glow:rgba(6,182,212,.18);
+  
+  --indigo:#6366F1;
+  --indigo-soft:#818CF8;
+  --indigo-glow:rgba(99,102,241,.18);
+  
+  --teal:#14B8A6;
+  --amber:#F59E0B;
+  --violet:#8B5CF6;
+  
+  /* Brand navy from existing site */
+  --navy:#0E1B3A;
+  --navy-2:#1A2D5A;
+  --navy-3:#243A75;
+  
+  /* Backgrounds — cloud light */
+  --bg:#F4F8FF;                    /* slightly cooler than before */
+  --bg-2:#E9F0FB;
+  --bg-3:#DBE5F5;
+  --paper:#FFFFFF;
+  --cloud:#FAFCFF;
+  
+  /* Text */
+  --ink:#0E1B3A;
+  --ink-2:#334155;
+  --muted:#64748B;
+  --muted-2:#94A3B8;
+  
+  --line:rgba(14,27,58,.08);
+  --line-bright:rgba(59,130,246,.25);
+  --line-rose:rgba(242,41,91,.25);
+  
+  --shadow-sm:0 1px 2px rgba(14,27,58,.04);
+  --shadow-md:0 4px 16px rgba(14,27,58,.06),0 1px 2px rgba(14,27,58,.04);
+  --shadow-cloud:0 20px 50px -12px rgba(59,130,246,.2),0 4px 12px rgba(14,27,58,.05);
+  --shadow-rose:0 16px 50px rgba(242,41,91,.3),0 0 60px rgba(242,41,91,.15);
+  
+  --font-sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  --font-serif:'Instrument Serif',Georgia,serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+
+body{
+  font-family:var(--font-sans);
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+  position:relative;
+}
+
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+.container{max-width:1320px;margin:0 auto;padding:0 1.75rem;position:relative;z-index:2}
+@media(max-width:640px){.container{padding:0 1.25rem}}
+
+/* ============================================================
+   ★ ATMOSPHERIC BACKGROUND
+============================================================ */
+.cloud-bg{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, var(--sky-glow), transparent 60%),
+    radial-gradient(1000px 500px at -10% 30%, var(--rose-glow), transparent 60%),
+    radial-gradient(800px 600px at 50% 80%, var(--cyan-glow), transparent 60%);
+}
+
+.cloud{
+  position:fixed;border-radius:50%;
+  filter:blur(100px);pointer-events:none;
+  z-index:0;opacity:.5;
+}
+.cloud.c1{
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(59,130,246,.3),transparent 70%);
+  top:-200px;right:-150px;
+  animation:cloudDrift1 30s ease-in-out infinite;
+}
+.cloud.c2{
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(242,41,91,.18),transparent 70%);
+  top:25%;left:-200px;
+  animation:cloudDrift2 35s ease-in-out infinite;
+}
+.cloud.c3{
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(99,102,241,.22),transparent 70%);
+  top:55%;right:5%;
+  animation:cloudDrift3 40s ease-in-out infinite;
+}
+.cloud.c4{
+  width:450px;height:450px;
+  background:radial-gradient(circle,rgba(6,182,212,.22),transparent 70%);
+  bottom:10%;left:30%;
+  animation:cloudDrift4 45s ease-in-out infinite;
+}
+@keyframes cloudDrift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-100px,80px) scale(1.2)}}
+@keyframes cloudDrift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(120px,-100px) scale(.85)}}
+@keyframes cloudDrift3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-80px,-120px) scale(1.15)}}
+@keyframes cloudDrift4{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(100px,60px) scale(1.1)}}
+
+/* Sparkles using brand colors */
+.sparkle-layer{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.sparkle{
+  position:absolute;
+  width:3px;height:3px;border-radius:50%;
+  animation:twinkle var(--dur,4s) ease-in-out infinite;
+  animation-delay:var(--delay,0s);
+  box-shadow:0 0 4px currentColor,0 0 8px currentColor,0 0 12px currentColor;
+}
+.sparkle.large{width:5px;height:5px}
+.sparkle.tiny{width:2px;height:2px}
+.sparkle.sky{color:var(--sky);background:var(--sky)}
+.sparkle.rose{color:var(--rose);background:var(--rose)}
+.sparkle.indigo{color:var(--indigo);background:var(--indigo)}
+.sparkle.cyan{color:var(--cyan);background:var(--cyan)}
+.sparkle.amber{color:var(--amber);background:var(--amber)}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}}
+
+.cursor-glow{
+  position:fixed;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(242,41,91,.08) 0%,rgba(59,130,246,.06) 40%,transparent 70%);
+  pointer-events:none;z-index:1;
+  transform:translate(-50%,-50%);
+  filter:blur(20px);
+  mix-blend-mode:multiply;
+}
+
+/* ============================================================
+   ★ ANNOUNCEMENT BAR (uses real navy brand)
+============================================================ */
+.announce{
+  background:linear-gradient(90deg,var(--navy),var(--navy-2) 50%,var(--navy));
+  color:#fff;
+  padding:.55rem 0;
+  font-size:.78rem;
+  position:relative;z-index:30;
+}
+.announce .container{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:1rem;flex-wrap:wrap;
+}
+.announce .left{display:flex;gap:1.5rem;align-items:center;color:rgba(255,255,255,.85)}
+.announce .live{display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-weight:600}
+.announce .live::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--rose);
+  box-shadow:0 0 8px var(--rose);
+  animation:livePulse 1.8s infinite;
+}
+@keyframes livePulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.5;transform:scale(1.4);box-shadow:0 0 16px var(--rose)}
+}
+.announce .right{display:flex;gap:1.25rem;color:rgba(255,255,255,.8)}
+.announce a{transition:color .2s}
+.announce a:hover{color:var(--rose-soft)}
+.announce .phone{
+  font-family:var(--font-mono);font-weight:600;
+  display:inline-flex;align-items:center;gap:.4rem;
+  color:var(--rose-soft);
+}
+
+/* ============================================================
+   ★ HEADER (glassmorphic light)
+============================================================ */
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(244,248,255,.75);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid var(--line);
+}
+.header::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,
+    transparent,
+    var(--sky) 15%,
+    var(--cyan) 35%,
+    var(--rose) 55%,
+    var(--indigo) 75%,
+    transparent);
+  opacity:.7;
+  background-size:200% 100%;
+  animation:rainbowShift 8s linear infinite;
+}
+@keyframes rainbowShift{0%{background-position:0% 0}100%{background-position:200% 0}}
+
+.header .container{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:.85rem;padding-bottom:.85rem;gap:2rem;
+}
+
+.brand{
+  display:flex;align-items:center;gap:.65rem;
+  position:relative;
+  transition:filter .3s;
+}
+.brand-logo{
+  height:42px;width:auto;
+  transition:transform .3s,filter .3s;
+}
+.brand:hover .brand-logo{
+  transform:scale(1.04);
+  filter:drop-shadow(0 0 12px rgba(242,41,91,.5));
+}
+.brand::before{
+  content:"";position:absolute;
+  left:-10px;top:50%;transform:translateY(-50%);
+  width:60px;height:60px;
+  background:radial-gradient(circle,var(--rose-glow),transparent 70%);
+  filter:blur(15px);
+  opacity:0;
+  transition:opacity .3s;
+  pointer-events:none;
+}
+.brand:hover::before{opacity:1}
+.brand-spark{
+  position:absolute;
+  font-size:.65rem;
+  pointer-events:none;
+  filter:drop-shadow(0 0 4px currentColor) drop-shadow(0 0 8px currentColor);
+  animation:starSpin 4s linear infinite;
+}
+.brand-spark.s1{top:-2px;right:-8px;color:var(--rose);animation-delay:0s}
+.brand-spark.s2{bottom:0;left:-6px;font-size:.5rem;color:var(--sky);animation-delay:1s}
+@keyframes starSpin{
+  0%,100%{opacity:.4;transform:rotate(0) scale(.8)}
+  50%{opacity:1;transform:rotate(180deg) scale(1.1)}
+}
+
+.menu{
+  list-style:none;display:flex;gap:1.85rem;align-items:center;
+  font-size:.92rem;font-weight:500;color:var(--ink-2);
+}
+.menu > li{position:relative}
+.menu > li > a{
+  padding:.5rem 0;display:inline-flex;align-items:center;gap:.4rem;
+  transition:color .25s;
+}
+.menu > li > a::after{
+  content:"";position:absolute;left:0;bottom:-2px;
+  height:2px;width:0;
+  background:linear-gradient(90deg,var(--rose),var(--sky));
+  transition:width .3s ease;
+  box-shadow:0 0 8px var(--rose);
+}
+.menu > li:hover > a{color:var(--rose)}
+.menu > li:hover > a::after{width:100%}
+.menu .has-dropdown::after{content:"▾";font-size:.65rem;margin-left:.3rem;opacity:.6}
+
+.menu .dropdown{
+  position:absolute;top:100%;left:-12px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:.6rem;
+  min-width:280px;
+  display:none;
+  box-shadow:0 16px 40px rgba(14,27,58,.12),0 0 0 1px rgba(59,130,246,.08);
+  margin-top:.5rem;
+}
+.menu li:hover .dropdown{display:block;animation:dropdownIn .25s ease}
+@keyframes dropdownIn{
+  from{opacity:0;transform:translateY(-8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.dropdown a{
+  display:block;
+  padding:.65rem .85rem;
+  font-size:.85rem;color:var(--ink-2);
+  border-radius:8px;
+  transition:all .2s;
+}
+.dropdown a:hover{
+  background:linear-gradient(135deg,rgba(242,41,91,.06),rgba(59,130,246,.06));
+  color:var(--rose);
+  padding-left:1.1rem;
+}
+
+.nav-cta{display:flex;gap:.65rem;align-items:center}
+.search-btn{
+  width:38px;height:38px;border-radius:10px;
+  border:1px solid var(--line);
+  background:var(--paper);
+  display:grid;place-items:center;
+  color:var(--ink-2);font-size:1.05rem;
+  transition:all .3s;
+}
+.search-btn:hover{
+  border-color:var(--rose);
+  color:var(--rose);
+  box-shadow:0 0 0 3px var(--rose-glow);
+  transform:rotate(90deg);
+}
+
+.btn{
+  padding:.7rem 1.4rem;border-radius:10px;
+  font-size:.85rem;font-weight:600;
+  display:inline-flex;align-items:center;gap:.5rem;
+  transition:all .3s;white-space:nowrap;
+  position:relative;overflow:hidden;
+}
+
+/* PRIMARY BUTTON USES THEIR ACTUAL ROSE→SKY GRADIENT */
+.btn-primary{
+  background:linear-gradient(135deg,var(--rose) 0%,var(--sky-deep) 100%);
+  color:#fff;
+  box-shadow:0 0 0 1px rgba(255,255,255,.1) inset,0 4px 24px rgba(242,41,91,.4);
+  font-weight:600;
+}
+.btn-primary::before{
+  content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+  transition:left .6s;
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 0 1px rgba(255,255,255,.2) inset,0 8px 36px rgba(242,41,91,.6),0 0 40px rgba(59,130,246,.4);
+}
+.btn-primary:hover::before{left:100%}
+.btn-arrow{transition:transform .25s}
+.btn:hover .btn-arrow{transform:translateX(4px)}
+
+.btn-ghost{
+  border:1px solid var(--line);
+  color:var(--ink);
+  background:var(--paper);
+}
+.btn-ghost:hover{
+  border-color:var(--rose);
+  color:var(--rose);
+  box-shadow:0 0 0 3px var(--rose-glow);
+}
+
+.hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
+.hamburger span{width:22px;height:2px;background:var(--ink);border-radius:2px}
+@media(max-width:1100px){.menu{display:none}.hamburger{display:flex}}
+
+/* ============================================================
+   ★ HERO — Modern with real copy
+============================================================ */
+.hero{
+  position:relative;
+  padding:5rem 0 5rem;
+  overflow:hidden;
+  z-index:2;
+}
+
+.hero::before{
+  content:"";position:absolute;
+  top:-50%;right:-25%;width:80%;height:200%;
+  background:conic-gradient(from 230deg at 50% 50%,
+    rgba(59,130,246,.18),
+    rgba(99,102,241,.15),
+    rgba(242,41,91,.12),
+    rgba(6,182,212,.1),
+    rgba(59,130,246,.18));
+  filter:blur(60px);
+  opacity:.5;
+  animation:heroMesh 30s linear infinite;
+  pointer-events:none;
+}
+@keyframes heroMesh{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(59,130,246,.15) 1.5px,transparent 1.5px);
+  background-size:36px 36px;
+  mask-image:radial-gradient(ellipse at 50% 30%,black 0%,transparent 70%);
+  pointer-events:none;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:3.5rem;
+  align-items:center;
+}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:3rem}}
+
+.hero-pill{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.45rem .95rem .45rem .55rem;
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(10px);
+  border:1px solid var(--line-rose);
+  border-radius:100px;
+  font-size:.78rem;font-weight:600;color:var(--ink);
+  margin-bottom:2rem;
+  box-shadow:0 0 0 1px rgba(255,255,255,.6) inset,0 4px 24px var(--rose-glow);
+  animation:fadeUp .6s .1s backwards;
+}
+.hero-pill .label{
+  font-size:.65rem;font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:.22rem .55rem;border-radius:4px;
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  color:#fff;
+  box-shadow:0 0 12px rgba(242,41,91,.5);
+  animation:pillPulse 2.5s ease-in-out infinite alternate;
+}
+@keyframes pillPulse{
+  from{box-shadow:0 0 12px rgba(242,41,91,.4)}
+  to{box-shadow:0 0 24px rgba(242,41,91,.7),0 0 36px rgba(59,130,246,.5)}
+}
+
+h1.hero-title{
+  font-family:var(--font-sans);
+  font-weight:700;
+  font-size:clamp(2.5rem,6vw,4.8rem);
+  line-height:1;
+  letter-spacing:-.035em;
+  color:var(--navy);
+  margin-bottom:1.5rem;
+  animation:fadeUp .8s .2s backwards;
+}
+h1.hero-title .gradient{
+  font-family:var(--font-serif);
+  font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--rose) 0%,var(--sky) 50%,var(--indigo) 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 24px rgba(242,41,91,.3));
+  background-size:200% 200%;
+  animation:gradientShift 6s ease-in-out infinite alternate;
+  letter-spacing:-.02em;
+}
+@keyframes gradientShift{
+  0%{background-position:0% 50%}
+  100%{background-position:100% 50%}
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+.hero-subhead{
+  font-family:var(--font-serif);
+  font-style:italic;font-weight:400;
+  font-size:1.25rem;line-height:1.4;
+  color:var(--ink-2);
+  margin-bottom:1.25rem;
+  max-width:580px;
+  animation:fadeUp .8s .25s backwards;
+}
+
+.hero-lede{
+  font-size:1.05rem;line-height:1.65;max-width:580px;
+  color:var(--muted);margin-bottom:2.5rem;
+  animation:fadeUp .8s .3s backwards;
+}
+.hero-lede strong{color:var(--ink);font-weight:600}
+
+.hero-actions{
+  display:flex;gap:.75rem;flex-wrap:wrap;
+  animation:fadeUp .8s .4s backwards;
+  margin-bottom:3rem;
+}
+
+.hero-trust{
+  display:flex;gap:2.5rem;align-items:center;flex-wrap:wrap;
+  padding-top:2rem;border-top:1px solid var(--line);
+  animation:fadeUp .8s .5s backwards;
+}
+.hero-trust-item{display:flex;flex-direction:column;gap:.25rem}
+.hero-trust-num{
+  font-family:var(--font-serif);
+  font-style:italic;font-weight:500;
+  font-size:1.8rem;line-height:1;
+  background:linear-gradient(135deg,var(--rose),var(--sky));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.hero-trust-lbl{
+  font-family:var(--font-mono);font-size:.7rem;
+  color:var(--muted);letter-spacing:.1em;text-transform:uppercase;
+}
+
+/* ============================================================
+   ★ HERO VISUAL — Floating dashboard
+============================================================ */
+.hero-visual{
+  position:relative;
+  height:580px;
+  animation:fadeUp 1s .4s backwards;
+}
+@media(max-width:980px){.hero-visual{height:420px}}
+
+.hero-visual-bg{
+  position:absolute;inset:0;
+  border-radius:24px;
+  background:linear-gradient(135deg,rgba(255,255,255,.85) 0%,rgba(248,251,255,.85) 100%);
+  backdrop-filter:blur(20px);
+  border:1px solid var(--line-bright);
+  overflow:hidden;
+  box-shadow:0 0 0 1px rgba(255,255,255,.8) inset,0 24px 80px rgba(59,130,246,.2),0 0 80px rgba(242,41,91,.1);
+}
+.hero-visual-bg::before{
+  content:"";position:absolute;inset:-2px;border-radius:26px;
+  background:conic-gradient(from 0deg,var(--rose),var(--sky),var(--indigo),var(--cyan),var(--amber),var(--rose));
+  opacity:.4;z-index:-1;
+  filter:blur(20px);
+  animation:gradientSpin 8s linear infinite;
+}
+@keyframes gradientSpin{to{filter:hue-rotate(360deg) blur(20px)}}
+
+.hero-visual-bg::after{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(59,130,246,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(59,130,246,.06) 1px,transparent 1px);
+  background-size:30px 30px;
+  mask-image:radial-gradient(ellipse at 50% 50%,black 0%,transparent 80%);
+  pointer-events:none;
+}
+
+.hero-orbit{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+}
+
+.hero-icon{
+  position:absolute;
+  width:80px;height:80px;
+  border-radius:18px;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(20px);
+  border:1px solid var(--line-bright);
+  display:grid;place-items:center;
+  box-shadow:0 8px 30px rgba(59,130,246,.15),inset 0 1px 0 rgba(255,255,255,.8);
+  z-index:2;
+  animation:floatIcon 6s ease-in-out infinite;
+  overflow:hidden;
+}
+.hero-icon img{width:46px;height:46px;border-radius:8px;object-fit:cover}
+
+.hero-icon.i1{top:8%;left:12%;animation-delay:0s;
+  border-color:rgba(59,130,246,.4);
+  box-shadow:0 0 30px rgba(59,130,246,.3),inset 0 1px 0 rgba(255,255,255,.8);
+}
+.hero-icon.i2{top:14%;right:10%;animation-delay:1s;
+  border-color:rgba(99,102,241,.4);
+  box-shadow:0 0 30px rgba(99,102,241,.3),inset 0 1px 0 rgba(255,255,255,.8);
+}
+.hero-icon.i3{top:48%;left:6%;animation-delay:2s;
+  border-color:rgba(242,41,91,.4);
+  box-shadow:0 0 30px rgba(242,41,91,.3),inset 0 1px 0 rgba(255,255,255,.8);
+}
+.hero-icon.i4{top:54%;right:8%;animation-delay:.5s;
+  border-color:rgba(245,158,11,.4);
+  box-shadow:0 0 30px rgba(245,158,11,.3),inset 0 1px 0 rgba(255,255,255,.8);
+}
+.hero-icon.i5{bottom:12%;left:30%;animation-delay:1.5s;
+  border-color:rgba(20,184,166,.4);
+  box-shadow:0 0 30px rgba(20,184,166,.3),inset 0 1px 0 rgba(255,255,255,.8);
+}
+.hero-icon.i6{bottom:18%;right:24%;animation-delay:2.5s;
+  border-color:rgba(6,182,212,.4);
+  box-shadow:0 0 30px rgba(6,182,212,.3),inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+@keyframes floatIcon{
+  0%,100%{transform:translateY(0) rotate(0)}
+  50%{transform:translateY(-12px) rotate(3deg)}
+}
+
+.hero-pulse{
+  position:absolute;
+  width:200px;height:200px;
+  border-radius:50%;
+  border:1px solid var(--rose);
+  opacity:.4;
+  animation:pulseRing 3s ease-out infinite;
+}
+.hero-pulse.p2{animation-delay:1s;border-color:var(--sky)}
+.hero-pulse.p3{animation-delay:2s;border-color:var(--indigo)}
+@keyframes pulseRing{
+  0%{transform:scale(.5);opacity:.7}
+  100%{transform:scale(2);opacity:0}
+}
+
+.hero-center{
+  position:relative;
+  width:140px;height:140px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--paper),var(--bg-2));
+  border:2px solid var(--rose);
+  display:grid;place-items:center;
+  box-shadow:0 0 40px rgba(242,41,91,.4),0 0 80px rgba(59,130,246,.25),inset 0 0 30px rgba(242,41,91,.1);
+  z-index:5;
+  animation:centerGlow 3s ease-in-out infinite alternate;
+}
+.hero-center img{
+  width:90px;height:auto;
+  filter:drop-shadow(0 0 8px rgba(242,41,91,.4));
+}
+@keyframes centerGlow{
+  from{box-shadow:0 0 40px rgba(242,41,91,.3),0 0 80px rgba(59,130,246,.2),inset 0 0 30px rgba(242,41,91,.1)}
+  to{box-shadow:0 0 60px rgba(242,41,91,.6),0 0 120px rgba(59,130,246,.4),inset 0 0 40px rgba(242,41,91,.2)}
+}
+
+/* ============================================================
+   ★ CAPABILITY SHOWCASE — Modern auto-rotating panel
+   Replaces the old "SLIDE 01 / SLIDE 02" format with
+   a premium feature showcase featuring icons, gradient
+   pill labels, and smooth tab navigation
+============================================================ */
+.showcase{
+  margin-top:5rem;position:relative;z-index:2;
+}
+.showcase-shell{
+  position:relative;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 20px 60px -20px rgba(242,41,91,.15),0 4px 12px rgba(14,27,58,.04);
+}
+/* glowing top accent line */
+.showcase-shell::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,
+    transparent,
+    var(--rose) 20%,
+    var(--sky) 50%,
+    var(--indigo) 80%,
+    transparent);
+  background-size:200% 100%;
+  animation:rainbowShift 8s linear infinite;
+  z-index:3;
+}
+/* radial accent glows */
+.showcase-shell::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(600px 300px at 0% 0%,rgba(242,41,91,.08),transparent 70%),
+    radial-gradient(600px 300px at 100% 100%,rgba(59,130,246,.1),transparent 70%);
+}
+
+/* Tab navigation strip */
+.showcase-tabs{
+  display:flex;
+  gap:.25rem;
+  padding:.75rem;
+  background:var(--bg-2);
+  border-bottom:1px solid var(--line);
+  overflow-x:auto;
+  position:relative;z-index:2;
+  scrollbar-width:none;
+}
+.showcase-tabs::-webkit-scrollbar{display:none}
+
+.showcase-tab{
+  flex-shrink:0;
+  padding:.7rem 1.1rem;
+  font-size:.82rem;font-weight:600;
+  color:var(--muted);
+  border-radius:10px;
+  cursor:pointer;
+  transition:all .3s;
+  display:inline-flex;align-items:center;gap:.55rem;
+  white-space:nowrap;
+  border:1px solid transparent;
+  position:relative;
+}
+.showcase-tab:hover:not(.active){
+  background:var(--paper);
+  color:var(--ink);
+}
+.showcase-tab .tab-icon{
+  width:22px;height:22px;
+  border-radius:6px;
+  display:grid;place-items:center;
+  font-size:.7rem;font-weight:800;
+  color:#fff;
+  flex-shrink:0;
+  background:var(--muted-2);
+  transition:all .3s;
+}
+.showcase-tab.active{
+  background:var(--paper);
+  color:var(--ink);
+  box-shadow:0 4px 16px rgba(242,41,91,.15),0 0 0 1px rgba(242,41,91,.25);
+}
+.showcase-tab.active .tab-icon{
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  box-shadow:0 0 12px rgba(242,41,91,.5);
+}
+.showcase-tab.active::after{
+  content:"";position:absolute;bottom:-.75rem;left:50%;transform:translateX(-50%);
+  width:6px;height:6px;border-radius:50%;
+  background:var(--rose);
+  box-shadow:0 0 8px var(--rose);
+}
+
+/* Main showcase panel content */
+.showcase-panel{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  min-height:340px;
+  position:relative;z-index:1;
+}
+@media(max-width:840px){.showcase-panel{grid-template-columns:1fr;min-height:auto}}
+
+.showcase-content{
+  padding:3rem 2.75rem;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;
+}
+@media(max-width:560px){.showcase-content{padding:2.25rem 1.5rem}}
+
+.showcase-eyebrow{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:var(--font-mono);
+  font-size:.7rem;font-weight:700;
+  color:var(--rose);
+  letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:1rem;
+  padding:.35rem .8rem;
+  background:rgba(242,41,91,.08);
+  border:1px solid var(--line-rose);
+  border-radius:100px;
+  align-self:flex-start;
+}
+.showcase-eyebrow .pulse-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--rose);
+  box-shadow:0 0 6px var(--rose);
+  animation:pulseDot 1.5s infinite;
+}
+@keyframes pulseDot{
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.4);opacity:.5}
+}
+
+.showcase-title{
+  font-family:var(--font-sans);
+  font-weight:700;
+  font-size:clamp(1.5rem,2.8vw,2.2rem);
+  line-height:1.15;
+  letter-spacing:-.02em;
+  color:var(--navy);
+  margin-bottom:.85rem;
+}
+.showcase-title em{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--rose),var(--sky));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.showcase-desc{
+  color:var(--ink-2);
+  font-size:.98rem;line-height:1.6;
+  margin-bottom:1.5rem;
+  max-width:440px;
+}
+
+.showcase-meta{
+  display:flex;gap:1.25rem;align-items:center;
+  margin-bottom:1.75rem;
+  flex-wrap:wrap;
+}
+.showcase-meta-item{
+  display:flex;flex-direction:column;gap:.15rem;
+}
+.showcase-meta-num{
+  font-family:var(--font-serif);font-style:italic;font-weight:500;
+  font-size:1.4rem;line-height:1;
+  background:linear-gradient(135deg,var(--rose),var(--sky));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.showcase-meta-lbl{
+  font-family:var(--font-mono);font-size:.62rem;
+  color:var(--muted);letter-spacing:.08em;text-transform:uppercase;
+}
+
+.showcase-cta{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.75rem 1.4rem;
+  background:linear-gradient(135deg,var(--rose) 0%,var(--sky-deep) 100%);
+  color:#fff;
+  border-radius:10px;
+  font-size:.85rem;font-weight:600;
+  align-self:flex-start;
+  box-shadow:0 4px 20px rgba(242,41,91,.4);
+  transition:all .3s;
+  position:relative;overflow:hidden;
+}
+.showcase-cta::before{
+  content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+  transition:left .6s;
+}
+.showcase-cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 30px rgba(242,41,91,.6),0 0 30px rgba(59,130,246,.4);
+}
+.showcase-cta:hover::before{left:100%}
+.showcase-cta-arrow{transition:transform .25s}
+.showcase-cta:hover .showcase-cta-arrow{transform:translateX(4px)}
+
+/* Visual side (right column) */
+.showcase-visual{
+  position:relative;
+  background:linear-gradient(135deg,var(--bg-2) 0%,var(--bg) 100%);
+  display:grid;place-items:center;
+  overflow:hidden;
+  min-height:340px;
+}
+.showcase-visual::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(59,130,246,.08) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(59,130,246,.08) 1px,transparent 1px);
+  background-size:30px 30px;
+  mask-image:radial-gradient(ellipse at 50% 50%,black 0%,transparent 75%);
+}
+.showcase-visual::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 30% 30%,var(--accent-glow,rgba(242,41,91,.15)),transparent 60%),
+    radial-gradient(circle at 70% 70%,rgba(59,130,246,.12),transparent 60%);
+  pointer-events:none;
+}
+
+/* Big icon disk in showcase visual */
+.showcase-disk{
+  position:relative;
+  width:200px;height:200px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--paper),var(--bg-2));
+  border:2px solid var(--rose);
+  display:grid;place-items:center;
+  box-shadow:0 0 40px rgba(242,41,91,.4),0 0 80px rgba(59,130,246,.25),inset 0 0 40px rgba(255,255,255,.5);
+  z-index:5;
+  animation:diskFloat 4s ease-in-out infinite,centerGlow 3s ease-in-out infinite alternate;
+}
+.showcase-disk-icon{
+  font-family:var(--font-serif);font-style:italic;font-weight:500;
+  font-size:5rem;line-height:1;
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 12px rgba(242,41,91,.4));
+}
+@keyframes diskFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+
+/* Pulse rings around disk */
+.showcase-ring{
+  position:absolute;
+  width:200px;height:200px;
+  border-radius:50%;
+  border:1px solid var(--rose);
+  opacity:.3;
+  animation:pulseRing 3s ease-out infinite;
+}
+.showcase-ring.r2{animation-delay:1s;border-color:var(--sky)}
+.showcase-ring.r3{animation-delay:2s;border-color:var(--indigo)}
+
+/* Floating tags around disk */
+.showcase-tag{
+  position:absolute;
+  padding:.5rem .85rem;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:100px;
+  font-size:.75rem;font-weight:600;
+  color:var(--ink);
+  box-shadow:0 8px 24px -8px rgba(14,27,58,.15);
+  display:inline-flex;align-items:center;gap:.4rem;
+  z-index:4;
+  animation:tagFloat 5s ease-in-out infinite;
+}
+.showcase-tag::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--rose);box-shadow:0 0 6px var(--rose);
+}
+.showcase-tag.t1{top:18%;left:8%;animation-delay:0s}
+.showcase-tag.t2{top:25%;right:10%;animation-delay:1.5s}
+.showcase-tag.t2::before{background:var(--sky);box-shadow:0 0 6px var(--sky)}
+.showcase-tag.t3{bottom:22%;left:12%;animation-delay:2.5s}
+.showcase-tag.t3::before{background:var(--indigo);box-shadow:0 0 6px var(--indigo)}
+.showcase-tag.t4{bottom:18%;right:8%;animation-delay:.8s}
+.showcase-tag.t4::before{background:var(--amber);box-shadow:0 0 6px var(--amber)}
+@keyframes tagFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
+
+/* Slide transition states - all panels stack and fade */
+.showcase-slide{
+  display:none;
+  grid-column:1/-1;
+  grid-row:1;
+}
+.showcase-slide.active{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  animation:slideIn .6s cubic-bezier(.2,.8,.2,1);
+}
+@media(max-width:840px){.showcase-slide.active{grid-template-columns:1fr}}
+@keyframes slideIn{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Progress bar at bottom */
+.showcase-progress{
+  position:absolute;bottom:0;left:0;right:0;
+  height:3px;
+  background:rgba(242,41,91,.1);
+  overflow:hidden;z-index:3;
+}
+.showcase-progress-bar{
+  height:100%;width:0%;
+  background:linear-gradient(90deg,var(--rose),var(--sky));
+  box-shadow:0 0 12px var(--rose);
+  transition:width .3s linear;
+}
+
+/* ============================================================
+   ★ MARQUEE
+============================================================ */
+.marquee-section{
+  padding:3rem 0;
+  background:linear-gradient(180deg,transparent,rgba(255,255,255,.6),transparent);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  position:relative;z-index:2;
+}
+.marquee-label{
+  text-align:center;
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  color:var(--muted);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  margin-bottom:1.5rem;
+  font-weight:600;
+}
+.marquee-label::before,.marquee-label::after{
+  content:"";display:inline-block;
+  width:40px;height:1px;background:var(--line-bright);
+  vertical-align:middle;margin:0 1rem;
+}
+.marquee{
+  overflow:hidden;
+  position:relative;
+  mask-image:linear-gradient(90deg,transparent 0%,black 10%,black 90%,transparent 100%);
+}
+.marquee-track{
+  display:flex;gap:5rem;align-items:center;
+  animation:marqueeScroll 40s linear infinite;
+  width:max-content;
+}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-item{
+  height:48px;
+  display:flex;align-items:center;
+  filter:grayscale(100%) opacity(.5);
+  transition:all .3s;
+}
+.marquee-item img{height:100%;width:auto;object-fit:contain}
+.marquee-item:hover{filter:grayscale(0%) opacity(1)}
+
+/* ============================================================
+   ★ SECTION BASE
+============================================================ */
+.sec{padding:6rem 0;position:relative;z-index:2}
+@media(max-width:900px){.sec{padding:4rem 0}}
+
+.sec-eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  color:var(--rose);letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:.85rem;
+  font-weight:600;
+}
+.sec-eyebrow::before{
+  content:"";width:30px;height:1px;background:var(--rose);
+  box-shadow:0 0 8px var(--rose);
+}
+
+.sec-head{
+  text-align:center;
+  margin-bottom:4rem;
+  max-width:780px;
+  margin-left:auto;margin-right:auto;
+}
+.sec-head .sec-eyebrow{justify-content:center}
+.sec-head .sec-eyebrow::before{display:none}
+
+h2.sec-title{
+  font-family:var(--font-sans);
+  font-weight:700;
+  font-size:clamp(2rem,4.5vw,3.5rem);
+  line-height:1.05;letter-spacing:-.025em;
+  color:var(--navy);
+  margin-bottom:1.25rem;
+}
+h2.sec-title em{
+  font-family:var(--font-serif);
+  font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--rose) 0%,var(--sky) 50%,var(--indigo) 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 16px rgba(242,41,91,.25));
+}
+.sec-desc{
+  color:var(--ink-2);font-size:1.05rem;line-height:1.65;
+  max-width:680px;margin:0 auto;
+}
+
+/* ============================================================
+   ★ SERVICES BENTO
+============================================================ */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.25rem;
+}
+@media(max-width:1100px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.services-grid{grid-template-columns:1fr}}
+
+.service-card{
+  position:relative;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  transition:all .4s cubic-bezier(.2,.8,.2,1);
+  display:flex;flex-direction:column;
+}
+.service-card::before{
+  content:"";position:absolute;inset:0;border-radius:18px;
+  padding:1px;
+  background:conic-gradient(from 0deg,var(--rose),var(--sky),var(--indigo),var(--cyan),var(--amber),var(--rose));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .4s;
+  pointer-events:none;
+  animation:gradientSpin 4s linear infinite;
+}
+.service-card:hover{
+  transform:translateY(-8px);
+  border-color:transparent;
+  box-shadow:0 20px 50px -12px rgba(242,41,91,.25),0 0 60px rgba(59,130,246,.15);
+}
+.service-card:hover::before{opacity:1}
+.service-card:hover .service-img{transform:scale(1.08)}
+.service-card:hover .service-title{color:var(--rose)}
+
+.service-thumb{
+  aspect-ratio:16/10;
+  position:relative;
+  overflow:hidden;
+  background:var(--bg-2);
+}
+.service-img{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  transition:transform .8s cubic-bezier(.2,.8,.2,1);
+}
+.service-thumb::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(255,255,255,.3) 100%);
+}
+.service-num{
+  position:absolute;top:1rem;right:1rem;z-index:2;
+  font-family:var(--font-mono);
+  font-size:.7rem;
+  color:var(--rose);
+  background:rgba(255,255,255,.95);
+  padding:.3rem .55rem;border-radius:4px;
+  border:1px solid var(--line-rose);
+  backdrop-filter:blur(8px);
+  letter-spacing:.05em;
+  font-weight:700;
+}
+
+.service-body{
+  padding:1.25rem 1.35rem 1.5rem;
+  display:flex;flex-direction:column;gap:.6rem;
+  flex:1;
+  position:relative;z-index:2;
+}
+.service-title{
+  font-family:var(--font-sans);
+  font-size:1.05rem;font-weight:700;
+  line-height:1.25;letter-spacing:-.01em;
+  color:var(--ink);
+  transition:color .25s;
+}
+.service-desc{
+  color:var(--muted);
+  font-size:.85rem;line-height:1.55;
+  flex:1;
+}
+.service-link{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.78rem;font-weight:600;
+  color:var(--rose);
+  margin-top:.5rem;
+  transition:gap .25s;
+}
+.service-card:hover .service-link{gap:.7rem}
+
+/* ============================================================
+   ★ FEATURE BANNERS (real images from their slider)
+============================================================ */
+.banners{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;
+  margin-top:2rem;
+}
+@media(max-width:900px){.banners{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.banners{grid-template-columns:1fr}}
+
+.banner{
+  position:relative;
+  aspect-ratio:4/3;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  transition:all .4s;
+}
+.banner-img{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  transition:transform 1s;
+}
+.banner::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(14,27,58,.88) 100%);
+}
+.banner:hover{
+  border-color:var(--rose);
+  box-shadow:0 12px 40px -8px rgba(242,41,91,.4);
+  transform:translateY(-4px);
+}
+.banner:hover .banner-img{transform:scale(1.06)}
+.banner-content{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:1.5rem;z-index:2;
+}
+.banner-tag{
+  font-family:var(--font-mono);font-size:.65rem;font-weight:700;
+  color:var(--rose-soft);letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:.5rem;display:inline-block;
+}
+.banner-title{
+  font-family:var(--font-sans);
+  font-size:1.15rem;font-weight:600;
+  line-height:1.25;color:#fff;
+}
+
+/* ============================================================
+   ★ WHY CHOOSE US — 6 real reasons from their site
+============================================================ */
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.25rem;
+}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.why-grid{grid-template-columns:1fr}}
+
+.why-card{
+  position:relative;
+  padding:2rem 1.75rem;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:16px;
+  transition:all .35s;
+  overflow:hidden;
+}
+.why-card::before{
+  content:"";position:absolute;
+  top:-2px;left:-2px;right:-2px;height:3px;
+  background:linear-gradient(90deg,var(--rose),var(--sky),var(--indigo));
+  opacity:0;transition:opacity .35s;
+  border-radius:16px 16px 0 0;
+}
+.why-card::after{
+  content:"";position:absolute;
+  top:0;right:0;width:200px;height:200px;
+  background:radial-gradient(circle,var(--accent-color,var(--rose-glow)),transparent 70%);
+  filter:blur(40px);
+  opacity:0;transition:opacity .35s;
+  pointer-events:none;
+}
+.why-card:hover{transform:translateY(-6px);border-color:transparent;box-shadow:var(--shadow-cloud)}
+.why-card:hover::before{opacity:1}
+.why-card:hover::after{opacity:1}
+.why-card:hover .why-icon{transform:scale(1.08)}
+
+.why-icon{
+  width:56px;height:56px;border-radius:14px;
+  display:grid;place-items:center;
+  font-size:1.5rem;font-weight:800;
+  margin-bottom:1.25rem;
+  box-shadow:0 8px 24px -6px;
+  transition:transform .3s;
+  position:relative;
+  color:#fff;
+}
+.why-icon::after{
+  content:"✦";position:absolute;top:-5px;right:-5px;
+  font-size:.7rem;color:#fff;
+  filter:drop-shadow(0 0 4px currentColor);
+  animation:catSpark 3s ease-in-out infinite;
+}
+@keyframes catSpark{
+  0%,100%{opacity:.6;transform:scale(.8) rotate(0)}
+  50%{opacity:1;transform:scale(1.2) rotate(180deg)}
+}
+
+.why-icon.c1{background:linear-gradient(135deg,#F2295B,#A21044);box-shadow:0 8px 24px -6px rgba(242,41,91,.5)}
+.why-icon.c2{background:linear-gradient(135deg,#3B82F6,#1D4ED8);box-shadow:0 8px 24px -6px rgba(59,130,246,.5)}
+.why-icon.c3{background:linear-gradient(135deg,#F59E0B,#D97706);box-shadow:0 8px 24px -6px rgba(245,158,11,.5)}
+.why-icon.c4{background:linear-gradient(135deg,#6366F1,#4338CA);box-shadow:0 8px 24px -6px rgba(99,102,241,.5)}
+.why-icon.c5{background:linear-gradient(135deg,#14B8A6,#0F766E);box-shadow:0 8px 24px -6px rgba(20,184,166,.5)}
+.why-icon.c6{background:linear-gradient(135deg,#06B6D4,#0E7490);box-shadow:0 8px 24px -6px rgba(6,182,212,.5)}
+
+.why-card.c1{--accent-color:rgba(242,41,91,.15)}
+.why-card.c2{--accent-color:rgba(59,130,246,.15)}
+.why-card.c3{--accent-color:rgba(245,158,11,.15)}
+.why-card.c4{--accent-color:rgba(99,102,241,.15)}
+.why-card.c5{--accent-color:rgba(20,184,166,.15)}
+.why-card.c6{--accent-color:rgba(6,182,212,.15)}
+
+.why-title{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:1.15rem;color:var(--ink);
+  margin-bottom:.6rem;
+  letter-spacing:-.01em;
+}
+.why-desc{color:var(--muted);font-size:.9rem;line-height:1.6}
+
+/* ============================================================
+   ★ STATS BAR
+============================================================ */
+.stats{
+  padding:5rem 0;
+  background:linear-gradient(135deg,var(--paper) 0%,var(--bg-2) 100%);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+}
+.stats::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(800px 400px at 20% 0%,rgba(242,41,91,.12),transparent 50%),
+    radial-gradient(600px 400px at 80% 100%,rgba(59,130,246,.15),transparent 50%);
+  pointer-events:none;
+}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem;
+  position:relative;z-index:1;
+}
+@media(max-width:900px){.stats-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.stats-grid{grid-template-columns:1fr;gap:2rem}}
+.stat{text-align:center}
+.stat-num{
+  font-family:var(--font-serif);font-style:italic;font-weight:500;
+  font-size:clamp(2.5rem,5vw,4rem);line-height:1;
+  background:linear-gradient(135deg,var(--rose),var(--sky) 50%,var(--indigo));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 16px rgba(242,41,91,.2));
+  margin-bottom:.65rem;
+  letter-spacing:-.02em;
+}
+.stat-lbl{
+  font-size:.85rem;color:var(--ink-2);font-weight:500;
+  line-height:1.4;
+}
+
+/* ============================================================
+   ★ CLIENTS GRID
+============================================================ */
+.clients-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:1rem;
+  margin-top:3rem;
+}
+@media(max-width:900px){.clients-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.clients-grid{grid-template-columns:repeat(2,1fr)}}
+
+.client-tile{
+  aspect-ratio:1.5/1;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:12px;
+  display:grid;place-items:center;
+  padding:1.25rem;
+  transition:all .3s;
+  position:relative;overflow:hidden;
+}
+.client-tile::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(242,41,91,.06),rgba(59,130,246,.06));
+  opacity:0;transition:opacity .3s;
+}
+.client-tile:hover{
+  border-color:var(--rose);
+  transform:translateY(-4px);
+  box-shadow:0 8px 30px -8px rgba(242,41,91,.25);
+}
+.client-tile:hover::before{opacity:1}
+.client-tile img{
+  max-height:50px;width:auto;
+  filter:grayscale(100%) opacity(.55);
+  transition:filter .3s;
+  position:relative;z-index:1;
+}
+.client-tile:hover img{filter:grayscale(0%) opacity(1)}
+
+/* ============================================================
+   ★ BLOG / INSIGHTS — using their actual "Latest Blog" tagline
+============================================================ */
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+@media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.blog-grid{grid-template-columns:1fr}}
+
+.post-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:all .35s;
+  position:relative;
+}
+.post-card::before{
+  content:"";position:absolute;inset:0;border-radius:16px;
+  padding:1px;
+  background:conic-gradient(from 0deg,var(--rose),var(--sky),var(--indigo),var(--cyan),var(--amber),var(--rose));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .35s;pointer-events:none;
+  animation:gradientSpin 4s linear infinite;
+}
+.post-card:hover{
+  transform:translateY(-6px);
+  border-color:transparent;
+  box-shadow:0 16px 40px -12px rgba(242,41,91,.25);
+}
+.post-card:hover::before{opacity:1}
+.post-card:hover .post-img{transform:scale(1.06)}
+.post-card:hover .post-title{color:var(--rose)}
+
+.post-thumb{
+  aspect-ratio:16/10;position:relative;overflow:hidden;
+  background:var(--bg-2);
+}
+.post-img{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  transition:transform .8s;
+}
+.post-body{
+  padding:1.4rem;display:flex;flex-direction:column;gap:.7rem;flex:1;
+}
+.post-meta{
+  display:flex;gap:.75rem;align-items:center;
+  font-family:var(--font-mono);
+  font-size:.7rem;color:var(--muted);
+  letter-spacing:.05em;font-weight:500;
+}
+.post-meta .author{color:var(--rose);font-weight:600}
+.post-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--muted-2)}
+.post-title{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:1.05rem;line-height:1.3;
+  color:var(--ink);transition:color .25s;
+  flex:1;
+}
+
+/* ============================================================
+   ★ CTA BANNER (uses real tagline)
+============================================================ */
+.cta{padding:5rem 0;position:relative;z-index:2}
+.cta-box{
+  position:relative;
+  background:linear-gradient(135deg,var(--paper) 0%,var(--bg-2) 100%);
+  border-radius:28px;
+  padding:5rem 3rem;
+  overflow:hidden;
+  text-align:center;
+  box-shadow:0 0 0 1px var(--line-bright),0 30px 80px -20px rgba(242,41,91,.3),0 0 100px rgba(59,130,246,.2);
+}
+.cta-box::before{
+  content:"";position:absolute;inset:-2px;border-radius:30px;
+  padding:2px;
+  background:conic-gradient(from 0deg,var(--rose),var(--sky),var(--indigo),var(--cyan),var(--amber),var(--rose));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  animation:gradientSpin 6s linear infinite;
+  z-index:1;
+}
+.cta-box::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 20% 0%,rgba(242,41,91,.18),transparent 50%),
+    radial-gradient(circle at 80% 100%,rgba(59,130,246,.18),transparent 50%);
+  pointer-events:none;
+}
+.cta-content{position:relative;z-index:2}
+.cta h3{
+  font-family:var(--font-sans);font-weight:700;
+  font-size:clamp(2rem,4vw,3rem);
+  line-height:1.05;letter-spacing:-.025em;
+  color:var(--navy);margin-bottom:1.25rem;
+}
+.cta h3 em{
+  font-family:var(--font-serif);font-style:italic;font-weight:400;
+  background:linear-gradient(135deg,var(--rose),var(--sky) 50%,var(--indigo));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.cta p{
+  color:var(--ink-2);font-size:1.1rem;line-height:1.6;
+  max-width:580px;margin:0 auto 2.5rem;
+}
+.cta-actions{display:inline-flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+
+/* ============================================================
+   ★ FOOTER (uses real navy + real address)
+============================================================ */
+footer{
+  background:var(--navy);
+  color:rgba(255,255,255,.75);
+  padding:5rem 0 0;
+  position:relative;overflow:hidden;
+  z-index:2;
+}
+footer::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,
+    transparent,
+    var(--rose) 25%,
+    var(--sky) 50%,
+    var(--indigo) 75%,
+    transparent);
+  filter:blur(.5px);
+  background-size:200% 100%;
+  animation:rainbowShift 8s linear infinite;
+}
+footer::after{
+  content:"";position:absolute;
+  bottom:-200px;left:50%;transform:translateX(-50%);
+  width:800px;height:400px;
+  background:radial-gradient(ellipse,rgba(242,41,91,.18),transparent 70%);
+  filter:blur(60px);
+}
+
+.footer-top{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1.2fr;
+  gap:3rem;
+  padding-bottom:3rem;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  position:relative;z-index:1;
+}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;gap:2.5rem}}
+@media(max-width:520px){.footer-top{grid-template-columns:1fr}}
+
+.footer-brand .brand{margin-bottom:1.25rem}
+.footer-brand .brand-logo{height:42px;filter:brightness(1.2)}
+.footer-brand p{
+  font-size:.92rem;line-height:1.65;
+  max-width:380px;margin-bottom:1.75rem;
+  color:rgba(255,255,255,.7);
+}
+
+.footer-contact{display:flex;flex-direction:column;gap:.85rem;font-size:.88rem}
+.footer-contact-item{
+  display:flex;align-items:flex-start;gap:.65rem;
+  color:rgba(255,255,255,.75);transition:color .2s;
+}
+.footer-contact-item:hover{color:var(--rose-soft)}
+.footer-contact-item .icon{
+  flex-shrink:0;
+  width:32px;height:32px;
+  border-radius:8px;
+  background:rgba(242,41,91,.15);
+  border:1px solid rgba(242,41,91,.3);
+  display:grid;place-items:center;
+  font-size:.85rem;color:var(--rose-soft);
+}
+
+.fcol h5{
+  font-family:var(--font-mono);
+  font-size:.72rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--rose-soft);margin-bottom:1.25rem;
+  display:inline-flex;align-items:center;gap:.5rem;
+}
+.fcol h5::before{
+  content:"";width:14px;height:1px;background:var(--rose-soft);
+  box-shadow:0 0 6px var(--rose-soft);
+}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.fcol a{
+  font-size:.92rem;color:rgba(255,255,255,.7);
+  transition:all .25s;position:relative;
+}
+.fcol a:hover{
+  color:var(--rose-soft);padding-left:8px;
+  text-shadow:0 0 8px rgba(255,94,132,.4);
+}
+.fcol a:hover::before{
+  content:"→";position:absolute;left:-4px;color:var(--rose-soft);
+}
+
+.socials{display:flex;gap:.55rem;margin-top:1.5rem}
+.socials a{
+  width:38px;height:38px;border-radius:10px;
+  background:rgba(242,41,91,.1);
+  border:1px solid rgba(242,41,91,.2);
+  display:grid;place-items:center;
+  color:rgba(255,255,255,.85);font-size:.95rem;
+  transition:all .3s;
+}
+.socials a:hover{
+  background:linear-gradient(135deg,var(--rose),var(--sky-deep));
+  border-color:transparent;color:#fff;
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(242,41,91,.5);
+}
+
+.footer-bottom{
+  padding:1.75rem 0;
+  display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+  font-size:.82rem;color:rgba(255,255,255,.5);
+  position:relative;z-index:1;
+}
+.footer-bottom .glow{display:inline-flex;align-items:center;gap:.5rem}
+.footer-bottom .glow::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--rose);
+  box-shadow:0 0 8px var(--rose),0 0 16px var(--rose);
+  animation:livePulse 2s infinite;
+}
+.footer-bottom .legal{display:flex;gap:1.25rem}
+.footer-bottom .legal a{color:rgba(255,255,255,.5);transition:color .2s}
+.footer-bottom .legal a:hover{color:var(--rose-soft)}
+
+/* ============================================================
+   ★ SCROLL FADE-IN
+============================================================ */
+.fade-up{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="cloud-bg"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<div class="cloud c1"></div>
+<div class="cloud c2"></div>
+<div class="cloud c3"></div>
+<div class="cloud c4"></div>
+
+<div class="sparkle-layer">
+  <span class="sparkle rose large" style="top:8%;left:5%;--dur:3s;--delay:0s"></span>
+  <span class="sparkle sky" style="top:15%;left:18%;--dur:4s;--delay:.5s"></span>
+  <span class="sparkle amber tiny" style="top:6%;right:25%;--dur:3.5s;--delay:1s"></span>
+  <span class="sparkle indigo" style="top:22%;right:8%;--dur:5s;--delay:1.5s"></span>
+  <span class="sparkle rose tiny" style="top:35%;left:8%;--dur:4s;--delay:2s"></span>
+  <span class="sparkle sky large" style="top:45%;right:15%;--dur:3.5s;--delay:.8s"></span>
+  <span class="sparkle amber" style="top:55%;left:12%;--dur:4.5s;--delay:1.2s"></span>
+  <span class="sparkle cyan tiny" style="top:65%;right:30%;--dur:3s;--delay:2.5s"></span>
+  <span class="sparkle rose" style="top:75%;left:20%;--dur:4s;--delay:0s"></span>
+  <span class="sparkle indigo" style="top:85%;right:18%;--dur:5s;--delay:1.8s"></span>
+  <span class="sparkle sky tiny" style="top:25%;left:45%;--dur:3.5s;--delay:2.2s"></span>
+  <span class="sparkle amber large" style="top:50%;right:45%;--dur:4s;--delay:1.5s"></span>
+  <span class="sparkle cyan" style="top:90%;left:50%;--dur:3s;--delay:.5s"></span>
+  <span class="sparkle rose" style="top:30%;left:65%;--dur:4s;--delay:2s"></span>
+  <span class="sparkle indigo tiny" style="top:70%;left:75%;--dur:3.5s;--delay:.8s"></span>
+</div>
+
+<!-- ============ ANNOUNCE — Real "Welcome to VSolutions Digital" ============ -->
+<div class="announce">
+  <div class="container">
+    <div class="left">
+      <span class="live">Welcome to VSolutions Digital</span>
+    </div>
+    <div class="right">
+      <a href="tel:2482328488" class="phone">📞 Call Us 248 232 8488</a>
+      <a href="mailto:info@vsolutionsinc.com">✉ info@vsolutionsinc.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="container">
+    <a href="/" class="brand" title="Vsolutonsinc">
+      <img src="https://vsolutionsinc.com/wp-content/uploads/2026/03/vsolutions-final.svg" alt="V Solutions Inc" class="brand-logo" />
+      <span class="brand-spark s1">✦</span>
+      <span class="brand-spark s2">✦</span>
+    </a>
+
+    <ul class="menu">
+      <li><a href="/">Home</a></li>
+      <li class="has-dropdown">
+        <a href="/about-v-solutions-inc/">About</a>
+        <div class="dropdown">
+          <a href="/about-v-solutions-inc/">About V Solutions Inc</a>
+          <a href="/about-v-solutions-inc/v-framework/">V-Framework</a>
+        </div>
+      </li>
+      <li><a href="/how-we-work/">How we work</a></li>
+      <li class="has-dropdown">
+        <a href="/service-overview/">Services</a>
+        <div class="dropdown">
+          <a href="/service/artificial-intelligence/">Artificial Intelligence</a>
+          <a href="/service/content-writing/">Content Writing</a>
+          <a href="/service/cloud-devops-services/">Cloud Solutions DevOps, SRE</a>
+          <a href="/service/cybersecurity-application-security-testing/">Cybersecurity Application Security Testing</a>
+          <a href="/service/digital-marketing/">Digital Marketing</a>
+          <a href="/service/mobile-application-development/">Mobile Application Development</a>
+          <a href="/service/vdi-endpoint-management-services/">VDI & Endpoint Management Services</a>
+          <a href="/service/website-development-services-vsolutions-inc/">Website Development Services</a>
+        </div>
+      </li>
+      <li><a href="/case-study/">Case Studies</a></li>
+      <li><a href="/careers/">Careers</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <button class="search-btn" aria-label="Search">⌕</button>
+      <a href="/contact/" class="btn btn-primary">Contact Us <span class="btn-arrow">→</span></a>
+      <button class="hamburger" aria-label="menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO — uses their REAL H1, H6, paragraph ============ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-pill">
+          <span class="label">2026</span>
+          <span>One Partner. Every Solution.</span>
+        </div>
+
+        <h1 class="hero-title">
+          V Solutions Inc – Your <span class="gradient">All-In-One</span> Digital Growth Powerhouse
+        </h1>
+
+        <p class="hero-subhead">
+          AI-Driven Digital Marketing, Secure Cloud Platforms, Cybersecurity, and Scalable Web Solutions for Forward-Thinking Businesses.
+        </p>
+
+        <p class="hero-lede">
+          V Solutions Inc delivers <strong>AI-driven digital marketing, cloud engineering, cybersecurity, DevOps, and custom web & mobile development</strong> services. We help businesses scale faster with secure, high-performance, and conversion-focused technology solutions.
+        </p>
+
+        <div class="hero-actions">
+          <a href="/about-v-solutions-inc/" class="btn btn-primary">About us <span class="btn-arrow">→</span></a>
+          <a href="/contact/" class="btn btn-ghost">Contact Us</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <span class="hero-trust-num">8</span>
+            <span class="hero-trust-lbl">Service Verticals</span>
+          </div>
+          <div class="hero-trust-item">
+            <span class="hero-trust-num">312%</span>
+            <span class="hero-trust-lbl">SEO ROI Delivered</span>
+          </div>
+          <div class="hero-trust-item">
+            <span class="hero-trust-num">300%</span>
+            <span class="hero-trust-lbl">Traffic Growth</span>
+          </div>
+          <div class="hero-trust-item">
+            <span class="hero-trust-num">2019</span>
+            <span class="hero-trust-lbl">Trusted Since</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-visual-bg">
+          <div class="hero-orbit">
+            <div class="hero-pulse"></div>
+            <div class="hero-pulse p2"></div>
+            <div class="hero-pulse p3"></div>
+            
+            <div class="hero-center">
+              <img src="https://vsolutionsinc.com/wp-content/uploads/2026/03/vsolutions-final.svg" alt="V Solutions" />
+            </div>
+            
+            <div class="hero-icon i1"><img src="https://vsolutionsinc.com/wp-content/uploads/2020/03/ai-450x450.png" alt="AI" /></div>
+            <div class="hero-icon i2"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/Cloud-Devops-Services-450x450.jpg" alt="Cloud" /></div>
+            <div class="hero-icon i3"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/cybersecurity-450x450.jpg" alt="Cyber" /></div>
+            <div class="hero-icon i4"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/Mobile-Application-Development-450x450.jpg" alt="Mobile" /></div>
+            <div class="hero-icon i5"><img src="https://vsolutionsinc.com/wp-content/uploads/2020/03/dmhome-450x450.jpg" alt="Marketing" /></div>
+            <div class="hero-icon i6"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/Custom-Website-Design-Development-450x450.jpg" alt="Web" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== Modern capability showcase (replaces old SLIDE 01-06 cards) ====== -->
+    <div class="showcase">
+      <div class="showcase-shell">
+
+        <!-- Tab navigation -->
+        <div class="showcase-tabs" role="tablist">
+          <button class="showcase-tab active" data-target="s0" role="tab">
+            <span class="tab-icon">★</span>
+            <span>One Partner</span>
+          </button>
+          <button class="showcase-tab" data-target="s1" role="tab">
+            <span class="tab-icon">⌬</span>
+            <span>Web Engineering</span>
+          </button>
+          <button class="showcase-tab" data-target="s2" role="tab">
+            <span class="tab-icon">⚡</span>
+            <span>AI Marketing</span>
+          </button>
+          <button class="showcase-tab" data-target="s3" role="tab">
+            <span class="tab-icon">↗</span>
+            <span>DevOps Velocity</span>
+          </button>
+          <button class="showcase-tab" data-target="s4" role="tab">
+            <span class="tab-icon">🛡</span>
+            <span>Cyber Defense</span>
+          </button>
+          <button class="showcase-tab" data-target="s5" role="tab">
+            <span class="tab-icon">✎</span>
+            <span>Content Engine</span>
+          </button>
+        </div>
+
+        <!-- Showcase panel -->
+        <div class="showcase-panel">
+
+          <div class="showcase-slide active" id="s0" style="--accent-glow:rgba(242,41,91,.15)">
+            <div class="showcase-content">
+              <span class="showcase-eyebrow"><span class="pulse-dot"></span>Our Promise</span>
+              <h3 class="showcase-title">One Partner. <em>Every Solution.</em><br>Unstoppable Growth — Starting Today.</h3>
+              <p class="showcase-desc">From AI to cloud to cybersecurity, V Solutions is the only digital partner you'll need. Strategy, engineering, and execution — all under one roof.</p>
+              <div class="showcase-meta">
+                <div class="showcase-meta-item">
+                  <span class="showcase-meta-num">8</span>
+                  <span class="showcase-meta-lbl">Service Verticals</span>
+                </div>
+                <div class="showcase-meta-item">
+                  <span class="showcase-meta-num">2019</span>
+                  <span class="showcase-meta-lbl">Trusted Since</span>
+                </div>
+              </div>
+              <a href="/about-v-solutions-inc/" class="showcase-cta">About us <span class="showcase-cta-arrow">→</span></a>
+            </div>
+            <div class="showcase-visual">
+              <div class="showcase-ring"></div>
+              <div class="showcase-ring r2"></div>
+              <div class="showcase-ring r3"></div>
+              <div class="showcase-disk"><span class="showcase-disk-icon">V</span></div>
+              <span class="showcase-tag t1">AI</span>
+              <span class="showcase-tag t2">Cloud</span>
+              <span class="showcase-tag t3">DevOps</span>
+              <span class="showcase-tag t4">Security</span>
+            </div>
+          </div>
+
+          <div class="showcase-slide" id="s1" style="--accent-glow:rgba(99,102,241,.15)">
+            <div class="showcase-content">
+              <span class="showcase-eyebrow"><span class="pulse-dot"></span>Web Engineering</span>
+              <h3 class="showcase-title">Your Website Should Work <em>as Hard</em> as You Do.</h3>
+              <p class="showcase-desc">Modern, secure, scalable websites built with Next.js, React, and headless architecture. Engineered for speed, SEO, and conversion.</p>
+              <div class="showcase-meta">
+                <div class="showcase-meta-item">
+                  <span class="showcase-meta-num">99</span>
+                  <span class="showcase-meta-lbl">Lighthouse Score</span>
+                </div>
+                <div class="showcase-meta-item">
+                  <span class="showcase-meta-num">3x</span>
+                  <span class="showcase-meta-lbl">Conversion Lift</span>
+                </div>
+              </div>
+              <a href="/service/website-development-services-vsolutions-inc/" class="showcase-cta">Know more <span class="showcase-cta-arrow">→</span></a>
+            </div>
+            <div class="showcase-visual">
+              <div class="showcase-ring" style="border-color:var(--indigo)"></div>
+              <div class="showcase-ring r2" style="border-color:var(--sky)"></div>
+              <div class="showcase-ring r3" style="border-color:var(--rose)"></div>
+              <div class="showcase-disk" style="border-color:var(--indigo);box-shadow:0 0 40px rgba(99,102,241,.4),0 0 80px rgba(99,102,241,.2),inset 0 0 40px rgba(255,255,255,.5)">
+                <span class="showcase-disk-icon">⌬</span>
+              </div>
+              <span class="showcase-tag t1">Next.js</span>
+              <span class="showcase-tag t2">React</span>
+              <span class="showcase-tag t3">SEO</span>
+              <span class="showcase-tag t4">Headless</span>
+            </div>
+          </div>
+
+          <div class="showcase-slide" id="s2" style="--accent-glow:rgba(245,158,11,.15)">
+            <div class="showcase-content">
+              <span class="showcase-eyebrow"><span class="pulse-dot"></span>AI-Driven Marketing</span>
+              <h3 class="showcase-title">Smarter Marketing, <em>Bigger Results</em> — Let AI Do the Heavy Lifting.</h3>
+              <p class="showcase-desc">Predictive lead scoring, automated content generation, AI-driven SEO. Campaigns that learn, adapt, and convert in real-time.</p>
+              <div class="showcase-meta">
+                <div class="showcase-meta-item">
+                  <span class="showcase-meta-num">312%</span>
+                  <span class="showcase-meta-lbl">SEO ROI</span>
+                </div>
+                <div class="showcase-meta-item">
+                  <span class="showcase-meta-num">300%</span>
+                  <span class="showcase-meta-lbl">Traffic Growth</span>
+                </div>
+              </div>
+              <a href="/service/digital-marketing/" class="showcase-cta">Know more <span class="showcase-cta-arrow">→</span></a>
+            </div>
+            <div class="showcase-visual">
+              <div class="showcase-ring" style="border-color:var(--amber)"></div>
+              <div class="showcase-ring r2" style="border-color:var(--rose)"></div>
+              <div class="showcase-ring r3" style="border-color:var(--sky)"></div>
+              <div class="showcase-disk" style="border-color:var(--amber);box-shadow:0 0 40px rgba(245,158,11,.4),0 0 80px rgba(245,158,11,.2),inset 0 0 40px rgba(255,255,255,.5)">
+                <span class="showcase-disk-icon">⚡</span>
+              </div>
+              <span class="showcase-tag t1">SEO</span>
+              <span class="showcase-tag t2">PPC</span>
+              <span class="showcase-tag t3">Analytics</span>
+              <span class="showcase-tag t4">Automation</span>
+            </div>
+          </div>
+
+          <div class="showcase-slide" id="s3" style="--accent-glow:rgba(20,184,166,.15)">
+            <div class="showcase-content">
+              <span class="showcase-eyebrow"><span class="pulse-dot"></span>Cloud DevOps</span>
+              <h3 class="showcase-title">Ship Faster, Break Less — <em>DevOps That Turns</em> Ideas Into Revenue.</h3>
+              <p class="showcase-desc">CI/CD pipelines, Kubernetes orchestration, infrastructure-as-code. Production-grade reliability with the speed of a startup.</p>
+              <div class="showcase-meta">
+                <div class="showcase-meta-item">
+                  <span class="showcase-meta-num">99.99%</span>
+                  <span class="showcase-meta-lbl">Uptime SLA</span>
+                </div>
+                <div class="showcase-meta-item">
+                  <span class="showcase-meta-num">10x</span>
+                  <span class="showcase-meta-lbl">Faster Deploys</span>
+                </div>
+              </div>
+              <a href="/service/cloud-devops-services/" class="showcase-cta">Know more <span class="showcase-cta-arrow">→</span></a>
+            </div>
+            <div class="showcase-visual">
+              <div class="showcase-ring" style="border-color:var(--teal)"></div>
+              <div class="showcase-ring r2" style="border-color:var(--cyan)"></div>
+              <div class="showcase-ring r3" style="border-color:var(--indigo)"></div>
+              <div class="showcase-disk" style="border-color:var(--teal);box-shadow:0 0 40px rgba(20,184,166,.4),0 0 80px rgba(20,184,166,.2),inset 0 0 40px rgba(255,255,255,.5)">
+                <span class="showcase-disk-icon">↗</span>
+              </div>
+              <span class="showcase-tag t1">AWS</span>
+              <span class="showcase-tag t2">K8s</span>
+              <span class="showcase-tag t3">CI/CD</span>
+              <span class="showcase-tag t4">Terraform</span>
+            </div>
+          </div>
+
+          <div class="showcase-slide" id="s4" style="--accent-glow:rgba(59,130,246,.15)">
+            <div class="showcase-content">
+              <span class="showcase-eyebrow"><span class="pulse-dot"></span>Cybersecurity</span>
+              <h3 class="showcase-title">Stay One Step Ahead — <em>Protect Everything</em> Before Threats Strike First.</h3>
+              <p class="showcase-desc">Application security testing, penetration testing, threat modeling, and zero-trust architecture. Compliance-ready by default.</p>
+              <div class="showcase-meta">
+                <div class="showcase-meta-item">
+                  <span class="showcase-meta-num">SOC2</span>
+                  <span class="showcase-meta-lbl">Type II Ready</span>
+                </div>
+                <div class="showcase-meta-item">
+                  <span class="showcase-meta-num">24/7</span>
+                  <span class="showcase-meta-lbl">Threat Monitoring</span>
+                </div>
+              </div>
+              <a href="/service/cybersecurity-application-security-testing/" class="showcase-cta">Know more <span class="showcase-cta-arrow">→</span></a>
+            </div>
+            <div class="showcase-visual">
+              <div class="showcase-ring" style="border-color:var(--sky)"></div>
+              <div class="showcase-ring r2" style="border-color:var(--indigo)"></div>
+              <div class="showcase-ring r3" style="border-color:var(--rose)"></div>
+              <div class="showcase-disk" style="border-color:var(--sky);box-shadow:0 0 40px rgba(59,130,246,.4),0 0 80px rgba(59,130,246,.2),inset 0 0 40px rgba(255,255,255,.5)">
+                <span class="showcase-disk-icon">🛡</span>
+              </div>
+              <span class="showcase-tag t1">Pen-test</span>
+              <span class="showcase-tag t2">SOC2</span>
+              <span class="showcase-tag t3">Zero-Trust</span>
+              <span class="showcase-tag t4">SAST/DAST</span>
+            </div>
+          </div>
+
+          <div class="showcase-slide" id="s5" style="--accent-glow:rgba(242,41,91,.15)">
+            <div class="showcase-content">
+              <span class="showcase-eyebrow"><span class="pulse-dot"></span>Content Engine</span>
+              <h3 class="showcase-title">Content That <em>Attracts Strangers</em> and Converts Them Into Buyers.</h3>
+              <p class="showcase-desc">SEO-optimized copy, technical documentation, brand storytelling. AI-augmented writing with human craft and editorial precision.</p>
+              <div class="showcase-meta">
+                <div class="showcase-meta-item">
+                  <span class="showcase-meta-num">3.2x</span>
+                  <span class="showcase-meta-lbl">Engagement</span>
+                </div>
+                <div class="showcase-meta-item">
+                  <span class="showcase-meta-num">200+</span>
+                  <span class="showcase-meta-lbl">Articles Shipped</span>
+                </div>
+              </div>
+              <a href="/service/digital-marketing/" class="showcase-cta">Know more <span class="showcase-cta-arrow">→</span></a>
+            </div>
+            <div class="showcase-visual">
+              <div class="showcase-ring"></div>
+              <div class="showcase-ring r2"></div>
+              <div class="showcase-ring r3"></div>
+              <div class="showcase-disk"><span class="showcase-disk-icon">✎</span></div>
+              <span class="showcase-tag t1">SEO</span>
+              <span class="showcase-tag t2">Editorial</span>
+              <span class="showcase-tag t3">Storytelling</span>
+              <span class="showcase-tag t4">AI-Augmented</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Auto-advance progress bar -->
+        <div class="showcase-progress">
+          <div class="showcase-progress-bar" id="showcaseProgress"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE — VSolutions Clients and Partners ============ -->
+<section class="marquee-section">
+  <div class="container">
+    <div class="marquee-label">VSolutions Clients and Partners</div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="marquee-item"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/volkswagen.png" alt="Volkswagen" /></div>
+      <div class="marquee-item"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/nrilgoo-1.png" alt="NRI Globe" /></div>
+      <div class="marquee-item"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/devops-1.png" alt="DevOps Container" /></div>
+      <div class="marquee-item"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/inspiredlogo.jpg" alt="Inspired Infotech" /></div>
+      <div class="marquee-item"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/logo_400x55.png" alt="VFutureMedia" /></div>
+      <div class="marquee-item"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/hindu.png" alt="HinduTone" /></div>
+      <div class="marquee-item"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/volkswagen.png" alt="Volkswagen" /></div>
+      <div class="marquee-item"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/nrilgoo-1.png" alt="NRI Globe" /></div>
+      <div class="marquee-item"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/devops-1.png" alt="DevOps Container" /></div>
+      <div class="marquee-item"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/inspiredlogo.jpg" alt="Inspired Infotech" /></div>
+      <div class="marquee-item"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/logo_400x55.png" alt="VFutureMedia" /></div>
+      <div class="marquee-item"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/hindu.png" alt="HinduTone" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES — uses real "What we do?" + real description ============ -->
+<section class="sec fade-up">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">— Services</div>
+      <h2 class="sec-title">What we do? <em>End-to-End</em><br>Digital & Technology Solutions</h2>
+      <p class="sec-desc">We deliver end-to-end digital and technology solutions that help businesses grow faster, operate smarter, and stay secure. Our team combines AI, cloud, marketing, and development expertise to build scalable, high-performance systems tailored to your goals.</p>
+    </div>
+
+    <div class="services-grid">
+      <a href="/service/artificial-intelligence/" class="service-card">
+        <div class="service-thumb">
+          <span class="service-num">01</span>
+          <div class="service-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2020/03/ai-450x450.png')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Artificial Intelligence</h3>
+          <p class="service-desc">Predictive analytics, natural language processing, computer vision, and deep learning solutions that turn data into business outcomes.</p>
+          <span class="service-link">Read more <span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="/service/content-writing/" class="service-card">
+        <div class="service-thumb">
+          <span class="service-num">02</span>
+          <div class="service-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/01/content-writing-450x450.jpg')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Content Writing</h3>
+          <p class="service-desc">SEO-optimized copy, technical documentation, and brand storytelling that converts strangers into buyers.</p>
+          <span class="service-link">Read more <span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="/service/cloud-devops-services/" class="service-card">
+        <div class="service-thumb">
+          <span class="service-num">03</span>
+          <div class="service-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/01/Cloud-Devops-Services-450x450.jpg')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Cloud Solutions, DevOps & Site Reliability Engineering</h3>
+          <p class="service-desc">CI/CD pipelines, Kubernetes orchestration, infrastructure-as-code, and 99.99% uptime SRE services.</p>
+          <span class="service-link">Read more <span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="/service/cybersecurity-application-security-testing/" class="service-card">
+        <div class="service-thumb">
+          <span class="service-num">04</span>
+          <div class="service-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/01/cybersecurity-450x450.jpg')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Cybersecurity & Application Security Testing</h3>
+          <p class="service-desc">Application security testing, penetration testing, threat modeling, and compliance frameworks.</p>
+          <span class="service-link">Read more <span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="/service/mobile-application-development/" class="service-card">
+        <div class="service-thumb">
+          <span class="service-num">05</span>
+          <div class="service-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/01/Mobile-Application-Development-450x450.jpg')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Mobile Application Development</h3>
+          <p class="service-desc">Native iOS, Android, and cross-platform apps with seamless UX and enterprise-grade architecture.</p>
+          <span class="service-link">Read more <span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="/service/digital-marketing/" class="service-card">
+        <div class="service-thumb">
+          <span class="service-num">06</span>
+          <div class="service-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2020/03/dmhome-450x450.jpg')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Digital Marketing</h3>
+          <p class="service-desc">AI-powered SEO, paid media, content strategy, and conversion optimization that drives measurable growth.</p>
+          <span class="service-link">Read more <span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="/service/vdi-endpoint-management-services/" class="service-card">
+        <div class="service-thumb">
+          <span class="service-num">07</span>
+          <div class="service-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2020/03/aisolutions-450x450.png')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">VDI & Endpoint Management Services</h3>
+          <p class="service-desc">Citrix, VMware Horizon, and Microsoft AVD virtual workspaces with secure remote access at scale.</p>
+          <span class="service-link">Read more <span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+
+      <a href="/service/website-development-services-vsolutions-inc/" class="service-card">
+        <div class="service-thumb">
+          <span class="service-num">08</span>
+          <div class="service-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/01/Custom-Website-Design-Development-450x450.jpg')"></div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Website Development Services</h3>
+          <p class="service-desc">Fast, modern, SEO-optimized websites built to engage users, enhance brand credibility, and convert visitors into loyal customers.</p>
+          <span class="service-link">Read more <span class="btn-arrow">→</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURE BANNERS — real images & real slide copy ============ -->
+<section class="sec fade-up" style="padding-top:0">
+  <div class="container">
+    <div class="banners">
+      <a href="/service/website-development-services-vsolutions-inc/" class="banner">
+        <div class="banner-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/01/Modern-Secure-Scalable-Web-Development.jpg')"></div>
+        <div class="banner-content">
+          <span class="banner-tag">Web Engineering</span>
+          <h3 class="banner-title">Modern, Secure & Scalable Web Development</h3>
+        </div>
+      </a>
+      <a href="/service/digital-marketing/" class="banner">
+        <div class="banner-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/01/AI-Enhanced-Digital-Marketing-for-Future-Growth.jpg')"></div>
+        <div class="banner-content">
+          <span class="banner-tag">AI + Marketing</span>
+          <h3 class="banner-title">AI-Enhanced Digital Marketing for Future Growth</h3>
+        </div>
+      </a>
+      <a href="/service/cloud-devops-services/" class="banner">
+        <div class="banner-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/02/Vosultion-Devops-banner.jpg')"></div>
+        <div class="banner-content">
+          <span class="banner-tag">DevOps</span>
+          <h3 class="banner-title">Accelerate Releases & Innovation Through Expert DevOps</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats fade-up">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-num" data-count="312">0</div>
+        <div class="stat-lbl">% ROI<br>Inspired Infotech SEO Case</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="300">0</div>
+        <div class="stat-lbl">% Traffic Growth<br>HinduTone Case Study</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="99">0</div>
+        <div class="stat-lbl">.99% Uptime SLA<br>On Mission-Critical Systems</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="2019">0</div>
+        <div class="stat-lbl">Year Founded<br>Trusted Since Day One</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US — uses their REAL 6 reasons ============ -->
+<section class="sec fade-up">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">— Why Choose Us</div>
+      <h2 class="sec-title">Why Businesses Choose <em>VSolutions Digital</em></h2>
+      <p class="sec-desc">A trusted partner combining AI, cloud, security, and engineering expertise — engineered for measurable business outcomes.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card c1">
+        <div class="why-icon c1">⚡</div>
+        <h3 class="why-title">AI-Powered Growth</h3>
+        <p class="why-desc">Smart AI automation accelerates lead generation, improves targeting, boosts conversions & drives consistent revenue growth across all digital channels.</p>
+      </div>
+      <div class="why-card c2">
+        <div class="why-icon c2">◈</div>
+        <h3 class="why-title">End-to-End Digital Partner</h3>
+        <p class="why-desc">One trusted team delivering AI, cloud, VDI, and web solutions seamlessly integrated to simplify operations and scale business growth.</p>
+      </div>
+      <div class="why-card c3">
+        <div class="why-icon c3">↗</div>
+        <h3 class="why-title">Revenue-Focused Strategy</h3>
+        <p class="why-desc">Every solution is strategically designed to maximize ROI, improve efficiency, and directly support measurable business revenue outcomes.</p>
+      </div>
+      <div class="why-card c4">
+        <div class="why-icon c4">🛡</div>
+        <h3 class="why-title">Secure Cloud Architecture</h3>
+        <p class="why-desc">Enterprise-grade cloud infrastructure ensures strong security, compliance, scalability, and reliable performance for mission-critical business applications.</p>
+      </div>
+      <div class="why-card c5">
+        <div class="why-icon c5">⌂</div>
+        <h3 class="why-title">Remote Work Excellence</h3>
+        <p class="why-desc">Every solution is strategically designed to maximize ROI, improve efficiency, and directly support measurable business revenue outcomes.</p>
+      </div>
+      <div class="why-card c6">
+        <div class="why-icon c6">⬢</div>
+        <h3 class="why-title">High-Converting Websites</h3>
+        <p class="why-desc">Fast, modern, SEO-optimized websites built to engage users, enhance brand credibility, and convert visitors into loyal customers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENTS GRID ============ -->
+<section class="sec fade-up">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">— Our Clients</div>
+      <h2 class="sec-title">VSolutions <em>Clients and Partners</em></h2>
+      <p class="sec-desc">From global automotive brands to high-growth startups — we deliver measurable outcomes that scale.</p>
+    </div>
+    <div class="clients-grid">
+      <a href="#" class="client-tile"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/volkswagen.png" alt="Volkswagen" /></a>
+      <a href="/case-study/nri-globe-case-study/" class="client-tile"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/nrilgoo-1.png" alt="NRI Globe" /></a>
+      <a href="/case-study/devops-container-case-study/" class="client-tile"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/devops-1.png" alt="DevOps Container" /></a>
+      <a href="/case-study/inspired-infotech-seo-case-study-312-roi/" class="client-tile"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/inspiredlogo.jpg" alt="Inspired Infotech" /></a>
+      <a href="/case-study/vfuturemedia-case-study-ai-digital-media-platform-built-by-vsolutions/" class="client-tile"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/logo_400x55.png" alt="VFuture Media" /></a>
+      <a href="/case-study/hindutone-300-percent-traffic-growth-case-study/" class="client-tile"><img src="https://vsolutionsinc.com/wp-content/uploads/2026/01/hindu.png" alt="HinduTone" /></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG — their real "Latest Blog" tagline ============ -->
+<section class="sec fade-up">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">— Latest Blog</div>
+      <h2 class="sec-title">We're here to share story & more news from <em>resource library.</em></h2>
+    </div>
+
+    <div class="blog-grid">
+      <a href="/ai-in-vdi-and-virtual-workspaces-2026-trends-for-secure-remote-work-with-v-solutions-inc/" class="post-card">
+        <div class="post-thumb">
+          <div class="post-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/02/AI-in-VDI-and-Virtual-Workspaces-372x256.jpg')"></div>
+        </div>
+        <div class="post-body">
+          <div class="post-meta"><span>FEBRUARY 24, 2026</span><span class="dot"></span><span class="author">admin</span></div>
+          <h3 class="post-title">AI in VDI and Virtual Workspaces: 2026 Trends for Secure Remote Work with V Solutions Inc.</h3>
+        </div>
+      </a>
+      <a href="/ai-driven-digital-marketing-trends-in-2026-boosting-leads-and-conversions-with-v-solutions-inc/" class="post-card">
+        <div class="post-thumb">
+          <div class="post-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/02/AI-driven-digital-marketing-372x256.jpg')"></div>
+        </div>
+        <div class="post-body">
+          <div class="post-meta"><span>FEBRUARY 24, 2026</span><span class="dot"></span><span class="author">admin</span></div>
+          <h3 class="post-title">AI-Driven Digital Marketing Trends in 2026: Boosting Leads and Conversions with V Solutions Inc.</h3>
+        </div>
+      </a>
+      <a href="/cloud-migration-best-practices-2026-achieving-zero-downtime-devops-transitions-with-solutions-inc/" class="post-card">
+        <div class="post-thumb">
+          <div class="post-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/01/cloud-migration-best-practices-2026-372x256.jpg')"></div>
+        </div>
+        <div class="post-body">
+          <div class="post-meta"><span>JANUARY 5, 2026</span><span class="dot"></span><span class="author">admin</span></div>
+          <h3 class="post-title">Cloud Migration Best Practices 2026: Achieving Zero-Downtime DevOps Transitions with Solutions Inc.</h3>
+        </div>
+      </a>
+      <a href="/citrix-virtual-apps-2026-secure-remote-access-for-hybrid-work/" class="post-card">
+        <div class="post-thumb">
+          <div class="post-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/01/Citrix-Virtual-Apps-2026-372x256.jpg')"></div>
+        </div>
+        <div class="post-body">
+          <div class="post-meta"><span>JANUARY 5, 2026</span><span class="dot"></span><span class="author">admin</span></div>
+          <h3 class="post-title">Citrix Virtual Apps 2026: Bolstering Remote Desktop Security for the Hybrid Workforce</h3>
+        </div>
+      </a>
+      <a href="/seo-best-practices-for-2026-optimizing-for-ai-search-and-user-intent/" class="post-card">
+        <div class="post-thumb">
+          <div class="post-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/01/seo-best-practices-2026-ai-search-372x256.jpg')"></div>
+        </div>
+        <div class="post-body">
+          <div class="post-meta"><span>JANUARY 5, 2026</span><span class="dot"></span><span class="author">admin</span></div>
+          <h3 class="post-title">SEO Best Practices for 2026: Optimizing for AI Search and User Intent</h3>
+        </div>
+      </a>
+      <a href="/integrating-ai-with-cloud-devops-and-digital-marketing-for-business-growth-in-2026/" class="post-card">
+        <div class="post-thumb">
+          <div class="post-img" style="background-image:url('https://vsolutionsinc.com/wp-content/uploads/2026/01/cloud-integration-2026-devops-digital-marketing-372x256.jpg')"></div>
+        </div>
+        <div class="post-body">
+          <div class="post-meta"><span>JANUARY 5, 2026</span><span class="dot"></span><span class="author">admin</span></div>
+          <h3 class="post-title">Integrating AI with Cloud DevOps and Digital Marketing for Business Growth in 2026</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA — uses their real "Unstoppable Growth" tagline ============ -->
+<section class="cta fade-up">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-content">
+        <div class="sec-eyebrow" style="justify-content:center">— Let's Build Together</div>
+        <h3>Unstoppable growth — <em>starting today.</em></h3>
+        <p>One Partner. Every Solution. Talk to our team and discover how V Solutions can transform your business.</p>
+        <div class="cta-actions">
+          <a href="/contact/" class="btn btn-primary">Contact Us <span class="btn-arrow">→</span></a>
+          <a href="tel:2482328488" class="btn btn-ghost">📞 248 232 8488</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER — uses their REAL footer copy + REAL address ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="brand">
+          <img src="https://vsolutionsinc.com/wp-content/uploads/2019/10/vsolutions-final_footer.png" alt="V Solutions Inc" class="brand-logo" />
+        </a>
+        <p>V Solutions Inc combines AI, cloud, and digital marketing expertise to transform technology into actionable insights, helping businesses achieve measurable growth and succeed on a global scale.</p>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="X">𝕏</a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Instagram">◉</a>
+        </div>
+      </div>
+
+      <div class="fcol">
+        <h5>Menu</h5>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-v-solutions-inc/">About</a></li>
+          <li><a href="/how-we-work/">How we work</a></li>
+          <li><a href="/service-overview/">Services</a></li>
+          <li><a href="/case-study/">Case Studies</a></li>
+          <li><a href="/careers/">Careers</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/blog-insights/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="fcol">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="/service/artificial-intelligence/">Artificial Intelligence</a></li>
+          <li><a href="/service/cloud-devops-services/">Cloud DevOps & SRE</a></li>
+          <li><a href="/service/cybersecurity-application-security-testing/">Cybersecurity</a></li>
+          <li><a href="/service/website-development-services-vsolutions-inc/">Web Development</a></li>
+          <li><a href="/service/mobile-application-development/">Mobile Development</a></li>
+          <li><a href="/service/digital-marketing/">Digital Marketing</a></li>
+          <li><a href="/service/vdi-endpoint-management-services/">VDI & Endpoint</a></li>
+        </ul>
+      </div>
+
+      <div class="fcol">
+        <h5>Contact us</h5>
+        <div class="footer-contact">
+          <a class="footer-contact-item" href="https://maps.google.com/?q=100+West+Big+Beaver+Rd+Troy+MI+48084" target="_blank">
+            <span class="icon">📍</span>
+            <span>100 West Big Beaver Rd<br>Troy - MI - 48084</span>
+          </a>
+          <a class="footer-contact-item" href="tel:+12482328488">
+            <span class="icon">📞</span>
+            <span>248-232-8488</span>
+          </a>
+          <a class="footer-contact-item" href="mailto:info@vsolutionsinc.com">
+            <span class="icon">✉</span>
+            <span>info@vsolutionsinc.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="glow">2019-26 © All rights reserved by V Solutions INC</span>
+      <div class="legal">
+        <a href="/terms-and-conditions/">Terms and Conditions</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/cookie-policy-v-solutions-inc/">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const cursorGlow = document.getElementById('cursorGlow');
+let glowX = window.innerWidth/2, glowY = window.innerHeight/2;
+let targetX = glowX, targetY = glowY;
+document.addEventListener('mousemove', (e) => { targetX = e.clientX; targetY = e.clientY; });
+function animateGlow(){
+  glowX += (targetX - glowX) * 0.15;
+  glowY += (targetY - glowY) * 0.15;
+  cursorGlow.style.left = glowX + 'px';
+  cursorGlow.style.top = glowY + 'px';
+  requestAnimationFrame(animateGlow);
+}
+animateGlow();
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+      e.target.querySelectorAll('[data-count]').forEach(el => {
+        const target = parseInt(el.dataset.count);
+        let current = 0;
+        const step = target / 60;
+        const interval = setInterval(() => {
+          current += step;
+          if (current >= target) { current = target; clearInterval(interval); }
+          el.textContent = Math.floor(current);
+        }, 25);
+      });
+    }
+  });
+}, {threshold: 0.12});
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+document.querySelectorAll('.service-card, .why-card, .post-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width/2;
+    const y = e.clientY - rect.top - rect.height/2;
+    const tiltX = (y / rect.height) * -3;
+    const tiltY = (x / rect.width) * 3;
+    card.style.transform = `translateY(-6px) perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+  });
+  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+});
+
+// ★ Showcase auto-rotation with progress bar
+(function(){
+  const tabs = document.querySelectorAll('.showcase-tab');
+  const slides = document.querySelectorAll('.showcase-slide');
+  const progressBar = document.getElementById('showcaseProgress');
+  const SLIDE_DURATION = 6000; // 6 seconds per slide
+  let currentIndex = 0;
+  let progressStart = Date.now();
+  let timer = null;
+  let paused = false;
+
+  function showSlide(index){
+    tabs.forEach((t,i) => t.classList.toggle('active', i === index));
+    slides.forEach((s,i) => s.classList.toggle('active', i === index));
+    currentIndex = index;
+    progressStart = Date.now();
+    progressBar.style.transition = 'none';
+    progressBar.style.width = '0%';
+    requestAnimationFrame(() => {
+      progressBar.style.transition = `width ${SLIDE_DURATION}ms linear`;
+      progressBar.style.width = '100%';
+    });
+  }
+
+  function next(){
+    if (paused) return;
+    showSlide((currentIndex + 1) % slides.length);
+  }
+
+  function startTimer(){
+    clearInterval(timer);
+    timer = setInterval(next, SLIDE_DURATION);
+  }
+
+  // Click to jump
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => {
+      showSlide(i);
+      startTimer();
+    });
+  });
+
+  // Pause on hover
+  const shell = document.querySelector('.showcase-shell');
+  if (shell) {
+    shell.addEventListener('mouseenter', () => {
+      paused = true;
+      const elapsed = Date.now() - progressStart;
+      const pct = Math.min(100, (elapsed / SLIDE_DURATION) * 100);
+      progressBar.style.transition = 'none';
+      progressBar.style.width = pct + '%';
+    });
+    shell.addEventListener('mouseleave', () => {
+      paused = false;
+      const remaining = SLIDE_DURATION - (Date.now() - progressStart);
+      progressBar.style.transition = `width ${Math.max(0, remaining)}ms linear`;
+      progressBar.style.width = '100%';
+    });
+  }
+
+  // Initialize
+  showSlide(0);
+  startTimer();
+})();
+</script>
+
+</body>
+</html>

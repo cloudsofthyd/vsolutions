@@ -1,0 +1,31 @@
+{
+  "name": "vsolutions",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.33.2",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "start": "pnpm --filter web start",
+    "lint": "pnpm -r lint",
+    "db:generate": "pnpm --filter @vsi/db prisma:generate",
+    "db:migrate": "pnpm --filter @vsi/db prisma:migrate",
+    "db:studio": "pnpm --filter @vsi/db prisma:studio",
+    "db:push": "pnpm --filter @vsi/db prisma:push",
+    "migrate:parse": "tsx scripts/01-parse-sql.ts",
+    "migrate:load": "tsx scripts/02-load-pg.ts",
+    "migrate:media": "tsx scripts/03-media.ts",
+    "migrate:verify": "tsx scripts/04-verify.ts",
+    "migrate:all": "pnpm migrate:parse && pnpm migrate:load && pnpm migrate:media",
+    "seed": "tsx scripts/seed-portal.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "playwright-core": "^1.59.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -2651,6 +2651,139 @@ main,
 }
 
 /* ============================================================
+   ★ SERVICE PILL NAV — premium, wrapping, left-aligned rows
+============================================================ */
+.svc-pills {
+  background: rgba(255, 255, 255, .85) !important;
+  border-bottom-color: rgba(14, 44, 102, .06) !important;
+  padding: 1rem 0 !important;
+  position: relative;
+}
+.svc-pills::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 1.5px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(63, 184, 212, .55) 25%,
+    var(--gold) 50%,
+    rgba(63, 184, 212, .55) 75%,
+    transparent 100%);
+  filter: drop-shadow(0 0 6px var(--cyan-glow));
+  opacity: .85;
+  pointer-events: none;
+}
+.svc-pills-track {
+  flex-wrap: wrap !important;
+  overflow-x: visible !important;
+  justify-content: flex-start !important;
+  align-items: center;
+  gap: .5rem !important;
+  row-gap: .55rem !important;
+  padding: .25rem !important;
+}
+
+/* Pill: refined glass surface, layered shadow on rest */
+.svc-pill {
+  padding: .55rem 1rem !important;
+  font-size: .8rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .005em;
+  background: linear-gradient(180deg, #ffffff, #f5faff) !important;
+  border: 1px solid rgba(14, 44, 102, .08) !important;
+  color: var(--ink-2) !important;
+  box-shadow:
+    0 1px 0 #fff inset,
+    0 1px 2px rgba(14, 44, 102, .04),
+    0 4px 12px -8px rgba(14, 44, 102, .08);
+  transition:
+    transform .3s cubic-bezier(.2,.8,.2,1),
+    box-shadow .3s ease,
+    border-color .3s ease,
+    color .3s ease,
+    background .3s ease;
+}
+.svc-pill:hover {
+  transform: translateY(-1px);
+  border-color: rgba(63, 184, 212, .35) !important;
+  color: var(--navy) !important;
+  background: linear-gradient(180deg, #ffffff, #eef6ff) !important;
+  box-shadow:
+    0 6px 18px -8px var(--cyan-glow),
+    0 0 0 1px rgba(63, 184, 212, .25);
+}
+
+/* Active state: cyan→gold gradient with glow halo */
+.svc-pill.is-active {
+  background: linear-gradient(135deg, var(--cyan) 0%, var(--gold) 100%) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  letter-spacing: .015em;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, .25) inset,
+    0 1px 0 rgba(255, 255, 255, .35) inset,
+    0 8px 22px -6px var(--cyan-glow),
+    0 0 28px -6px var(--gold-glow) !important;
+}
+
+/* Active pill icon refinement */
+.svc-pill.is-active .svc-pill-icon {
+  background: rgba(255, 255, 255, .22) !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .35) inset !important;
+}
+
+/* Pill icon refinement on inactive */
+.svc-pill .svc-pill-icon {
+  background: linear-gradient(135deg, var(--cyan), var(--gold));
+  color: #fff;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .35) inset,
+    0 4px 10px -4px var(--cyan-glow);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.svc-pill:hover .svc-pill-icon {
+  transform: scale(1.06);
+}
+
+@media (max-width: 720px) {
+  .svc-pill {
+    padding: .45rem .85rem !important;
+    font-size: .74rem !important;
+  }
+}
+
+/* ============================================================
+   ★ DESCENDER CLIPPING FIX — italic gradient <em> in headings
+   Tight line-height + -webkit-background-clip: text crops the
+   descender of letters like g/y/p/q. Loosen line-height and
+   give the em room to render its full glyphs.
+============================================================ */
+h1.cs-title,
+.cs-title,
+.story-hero-title,
+.contact-hero-title,
+h1.hero-title,
+h1.page-hero-title,
+.svc-hero-title {
+  line-height: 1.15 !important;
+  padding-bottom: .05em;
+}
+h1.cs-title em,
+.cs-title em,
+.story-hero-title em,
+.contact-hero-title em,
+h1.hero-title em,
+h1.page-hero-title em,
+.svc-hero-title em,
+.gradient-text {
+  display: inline-block;
+  line-height: 1.18;
+  padding-bottom: .12em;
+  vertical-align: baseline;
+}
+
+/* ============================================================
    ★ V-FRAMEWORK PILLARS STRIP
 ============================================================ */
 .vf-pillars {
@@ -2718,4 +2851,166 @@ main,
   font-size: .95rem;
   line-height: 1.65;
   color: var(--ink-2);
+}
+
+/* ============================================================
+   ★ FINAL TOUCHES — printed pages, hr, anchor targets, a11y
+============================================================ */
+
+/* Beautiful HR divider — sitewide */
+hr,
+.article-content hr {
+  border: 0;
+  height: 1px;
+  margin: 2.5rem auto;
+  max-width: 220px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(63, 184, 212, .35) 30%,
+    var(--gold) 50%,
+    rgba(63, 184, 212, .35) 70%,
+    transparent 100%
+  );
+  position: relative;
+}
+hr::after,
+.article-content hr::after {
+  content: "◆";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  color: var(--gold);
+  font-size: .65rem;
+  padding: 0 .5rem;
+  letter-spacing: .1em;
+}
+
+/* Anchor-target highlight: when navigating to /page#section, the
+   target element gets a subtle cyan glow so users can spot it. */
+:target {
+  scroll-margin-top: 100px;
+  animation: anchorGlow 2.4s ease-out 1;
+}
+@keyframes anchorGlow {
+  0%   { background-color: rgba(63, 184, 212, .15); box-shadow: 0 0 0 12px rgba(63, 184, 212, .12); }
+  100% { background-color: transparent;            box-shadow: 0 0 0 0  transparent;             }
+}
+
+/* Refined ::placeholder for all inputs */
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: rgba(14, 44, 102, .35);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: .005em;
+}
+
+/* Service-page glyph icons — refined hover */
+.svc-glyph,
+.svc-fv-glyph,
+.svc-related-icon {
+  transition: transform .35s cubic-bezier(.2,.8,.2,1),
+              filter .35s ease;
+}
+.svc-related-card:hover .svc-related-icon {
+  transform: rotate(-6deg) scale(1.08);
+  filter: drop-shadow(0 8px 16px var(--cyan-glow));
+}
+
+/* Universal text-overflow safety on long titles */
+.post-title,
+.svc-related-title,
+.svc-feature-content h3,
+.tier-name,
+.cs-title {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* ============================================================
+   ★ PRINT STYLESHEET — clean, ink-friendly article printing
+============================================================ */
+@media print {
+  body { background: #ffffff !important; }
+  body::after, body::before { display: none !important; }
+  .header, .footer, .announce, .cloud-bg, .cloud, .sparkle-layer,
+  .nav-cta, .menu, .cta, .cta-box, .breadcrumb, .pagination,
+  .marquee-section, .showcase, .stats, .banners, .vf-pillars,
+  .svc-pills, .svc-related-sec, .svc-cta, .contact-orb,
+  .footer-bottom, .scroll-progress {
+    display: none !important;
+  }
+  .article-content,
+  main,
+  .container {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .article-content {
+    color: #000 !important;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+  .article-content h1,
+  .article-content h2,
+  .article-content h3 {
+    color: #000 !important;
+    page-break-after: avoid;
+    -webkit-text-fill-color: #000 !important;
+    background: none !important;
+  }
+  .article-content img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    filter: none !important;
+    box-shadow: none !important;
+  }
+  .article-content blockquote {
+    background: none !important;
+    border-left: 3px solid #000 !important;
+    box-shadow: none !important;
+  }
+  .article-content a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+  .article-content a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555;
+  }
+  .article-content pre,
+  .article-content code {
+    background: #f4f4f4 !important;
+    color: #000 !important;
+    border: 1px solid #ddd !important;
+  }
+}
+
+/* ============================================================
+   ★ A11Y — high-contrast focus for keyboard users
+============================================================ */
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+button:focus-visible,
+a:focus-visible,
+.btn:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 4px var(--cyan),
+    0 0 24px var(--cyan-glow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :target { animation: none !important; }
 }

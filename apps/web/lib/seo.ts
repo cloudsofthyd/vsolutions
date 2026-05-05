@@ -50,6 +50,7 @@ export function organizationLd() {
     ],
     areaServed: [
       { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "Canada" },
       { "@type": "Country", name: "India" },
       { "@type": "Place", name: "North America" },
     ],
@@ -59,7 +60,7 @@ export function organizationLd() {
         telephone: `+1${SITE.phone.replace(/\D/g, "")}`,
         contactType: "customer service",
         email: SITE.email,
-        areaServed: ["US", "IN"],
+        areaServed: ["US", "CA", "IN"],
         availableLanguage: ["English"],
       },
     ],
@@ -126,13 +127,23 @@ export function localBusinessLd() {
     priceRange: "$$$",
     areaServed: [
       { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "Canada" },
       { "@type": "AdministrativeArea", name: "Michigan" },
+      { "@type": "AdministrativeArea", name: "Ontario" },
+      { "@type": "AdministrativeArea", name: "British Columbia" },
+      { "@type": "AdministrativeArea", name: "Quebec" },
+      { "@type": "AdministrativeArea", name: "Alberta" },
       { "@type": "City", name: "Detroit" },
       { "@type": "City", name: "Troy" },
       { "@type": "City", name: "Chicago" },
       { "@type": "City", name: "New York" },
       { "@type": "City", name: "Los Angeles" },
       { "@type": "City", name: "Atlanta" },
+      { "@type": "City", name: "Toronto" },
+      { "@type": "City", name: "Vancouver" },
+      { "@type": "City", name: "Montreal" },
+      { "@type": "City", name: "Ottawa" },
+      { "@type": "City", name: "Calgary" },
     ],
   };
 }
@@ -200,6 +211,7 @@ export function serviceLd(opts: {
     provider: { "@id": `${SITE_URL}#organization` },
     areaServed: [
       { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "Canada" },
       { "@type": "Country", name: "India" },
     ],
     audience: {

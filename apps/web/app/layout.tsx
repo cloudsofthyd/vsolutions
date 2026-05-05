@@ -65,11 +65,19 @@ export const metadata: Metadata = {
     "Digital transformation",
     "Troy Michigan",
     "USA technology consulting",
+    "Canada technology consulting",
+    "Toronto IT services",
+    "Vancouver software development",
+    "Montreal cloud consulting",
+    "Ottawa cybersecurity",
+    "Calgary AI consulting",
+    "North America digital agency",
   ],
   openGraph: {
     type: "website",
     siteName: SITE.name,
     locale: "en_US",
+    alternateLocale: ["en_CA"],
     url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://vsolutionsinc.com",
     images: [
       {
@@ -90,6 +98,7 @@ export const metadata: Metadata = {
     canonical: "/",
     languages: {
       "en-US": "/",
+      "en-CA": "/",
       "x-default": "/",
     },
   },

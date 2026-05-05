@@ -3810,3 +3810,196 @@ section + main > section:first-child {
     filter: none !important;
   }
 }
+
+/* ============================================================
+   ★ PROFESSIONAL SHEEN + GLOW PASS — sitewide premium polish
+   On-brand cyan/sky/navy glow halos. No green/gold/rose. Designed
+   to make every page feel "premium" without changing layout.
+============================================================ */
+
+/* Page hero (legal / about / careers / case-study / blog index): add
+   a soft ambient cyan halo behind the H1 so it reads with depth. */
+.page-hero {
+  position: relative;
+  isolation: isolate;
+}
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: -10% 10% auto 10%;
+  height: 70%;
+  background:
+    radial-gradient(60% 60% at 30% 35%, rgba(63, 184, 212, .12), transparent 70%),
+    radial-gradient(50% 60% at 80% 20%, rgba(45, 124, 201, .12), transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: .9;
+}
+.page-hero-title {
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, .6),
+    0 2px 28px rgba(63, 184, 212, .18);
+}
+
+/* Display H1/H2 sitewide — gentle cyan halo for premium feel */
+h1.hero-title,
+.svc-hero-title,
+.contact-h2,
+.cta h3 {
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, .55),
+    0 2px 30px rgba(63, 184, 212, .12);
+}
+
+/* Sitewide card glow — persistent soft cyan halo on the surface, with a
+   richer halo on hover. Works on every primary card class. */
+.service-card,
+.post-card,
+.why-card,
+.benefit-card,
+.tier-card,
+.svc-related-card,
+.case-study-card,
+.office-card-v2,
+.svc-feature-block,
+.contact-quick-pill {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .85) inset,
+    0 1px 2px rgba(14, 44, 102, .04),
+    0 12px 32px -16px rgba(14, 44, 102, .14),
+    0 0 0 1px rgba(63, 184, 212, .06),
+    0 0 24px -10px rgba(63, 184, 212, .18);
+}
+.service-card:hover,
+.post-card:hover,
+.why-card:hover,
+.benefit-card:hover,
+.tier-card:hover,
+.svc-related-card:hover,
+.case-study-card:hover,
+.office-card-v2:hover,
+.svc-feature-block:hover,
+.contact-quick-pill:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .9) inset,
+    0 1px 2px rgba(14, 44, 102, .04),
+    0 24px 48px -18px rgba(14, 44, 102, .22),
+    0 0 0 1px rgba(63, 184, 212, .25),
+    0 0 56px -10px rgba(63, 184, 212, .35);
+}
+
+/* Primary CTA: animated sheen (slow, subtle, looping) — looks "alive"
+   without being distracting. Already has a hover sweep; this adds a
+   quiet idle pulse so the most important button glows by default. */
+@keyframes ctaPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, .18) inset,
+      0 6px 18px -4px rgba(14, 44, 102, .35),
+      0 4px 24px rgba(30, 136, 184, .4);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, .22) inset,
+      0 8px 22px -4px rgba(14, 44, 102, .42),
+      0 8px 36px rgba(30, 136, 184, .55),
+      0 0 28px rgba(63, 184, 212, .25);
+  }
+}
+.btn-primary {
+  animation: ctaPulse 4.5s ease-in-out infinite;
+}
+.btn-primary:hover {
+  animation: none;  /* hover takes over with its own glow */
+}
+
+/* Section ambient glow — give every <section> a barely-there cyan
+   accent ring at the top edge so consecutive sections don't read as a
+   flat scroll. Pure decoration, no layout shift. */
+section + section {
+  position: relative;
+}
+section + section::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(640px, 60%);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(63, 184, 212, .25) 30%,
+    rgba(30, 136, 184, .35) 50%,
+    rgba(63, 184, 212, .25) 70%,
+    transparent
+  );
+  filter: blur(.4px);
+  opacity: .6;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle gradient border ring on featured cards — only the most prominent
+   card on each section gets a thin animated cyan ring on hover. Uses
+   conic-gradient masked to a 1px ring. */
+.tier-card.is-featured,
+.case-study-card.is-featured,
+.svc-feature-block.is-featured {
+  position: relative;
+}
+.tier-card.is-featured::before,
+.case-study-card.is-featured::before,
+.svc-feature-block.is-featured::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from 0deg,
+    rgba(63, 184, 212, .55),
+    rgba(45, 124, 201, .65),
+    rgba(26, 77, 140, .55),
+    rgba(63, 184, 212, .55)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  opacity: .7;
+}
+
+/* Footer brand: subtle ambient cyan halo around the white logo panel */
+.footer-brand .brand {
+  position: relative;
+}
+.footer-brand .brand::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 18px;
+  background: radial-gradient(
+    closest-side,
+    rgba(63, 184, 212, .25),
+    transparent 70%
+  );
+  filter: blur(8px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* H2/H3 lift on entry — paired with .reveal IO above */
+.article-content h2.reveal,
+.article-content h3.reveal {
+  transform: translateY(12px);
+}
+
+/* Reduced-motion: kill the looping CTA pulse */
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary { animation: none !important; }
+}

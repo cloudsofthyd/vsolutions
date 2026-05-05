@@ -4,9 +4,9 @@ export const SITE = {
   name: "V Solutions Inc",
   domain: "vsolutionsinc.com",
   description:
-    "V Solutions Inc delivers AI-driven digital marketing, cloud engineering, cybersecurity, DevOps, and custom web & mobile development services.",
+    "V Solutions Inc — North America's AI, cloud, cybersecurity, DevOps and digital marketing partner. Serving USA & Canada with custom web, mobile, VDI and SRE engineering.",
   defaultTitle:
-    "V Solutions Inc — AI, Cloud, DevOps & Digital Marketing",
+    "V Solutions Inc — AI, Cloud, DevOps & Digital Marketing | USA & Canada",
   phone: "248-232-8488",
   phoneHref: "tel:2482328488",
   email: "info@vsolutionsinc.com",

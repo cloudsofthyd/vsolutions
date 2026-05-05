@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { breadcrumbLd, jsonLd } from "@/lib/seo";
 
 interface BreadcrumbItem {
   label: string;
@@ -31,9 +32,27 @@ export function PageHero({
   lede,
   children,
 }: PageHeroProps) {
+  // Emit BreadcrumbList JSON-LD so every page using <PageHero breadcrumb=...>
+  // gets rich-result eligibility automatically — no per-page boilerplate.
+  const ldBreadcrumb =
+    breadcrumb && breadcrumb.length > 1
+      ? jsonLd(
+          breadcrumbLd(
+            breadcrumb.map((b) => ({ name: b.label, url: b.href })),
+          ),
+        )
+      : null;
+
   return (
     <section className="page-hero">
       <div className="container">
+        {ldBreadcrumb && (
+          <script
+            type="application/ld+json"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: ldBreadcrumb }}
+          />
+        )}
         {breadcrumb && breadcrumb.length > 0 && (
           <nav className="breadcrumb" aria-label="Breadcrumb">
             {breadcrumb.map((item, i) => {

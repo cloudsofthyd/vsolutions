@@ -52,6 +52,7 @@ export function SiteScripts() {
           entries.forEach((e) => {
             if (e.isIntersecting) {
               e.target.classList.remove("fade-up--init");
+              e.target.classList.add("reveal-in");
               revealIo!.unobserve(e.target);
             }
           });
@@ -61,6 +62,21 @@ export function SiteScripts() {
       document
         .querySelectorAll(".fade-up.fade-up--init")
         .forEach((el) => revealIo!.observe(el));
+
+      // .reveal: opt-in scroll-reveal — applies to common patterns sitewide.
+      document.querySelectorAll<HTMLElement>(".reveal").forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top > offscreenThreshold) {
+          revealIo!.observe(el);
+        } else {
+          el.classList.add("reveal-in");
+        }
+      });
+    } else {
+      // Reduced motion: instantly mark everything as revealed so styles apply.
+      document
+        .querySelectorAll(".reveal, .fade-up")
+        .forEach((el) => el.classList.add("reveal-in"));
     }
 
     // ── Stat counters (animation only — content already visible) ───────────────

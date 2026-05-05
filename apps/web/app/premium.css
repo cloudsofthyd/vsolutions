@@ -3664,3 +3664,149 @@ h1.hero-title {
 :target {
   scroll-margin-top: 96px;
 }
+
+/* ============================================================
+   ★ FULL-SITE BEAUTY + ANIMATIONS PASS — additive, sitewide.
+   - Typography balance/pretty for headings + body
+   - Smooth section spacing rhythm
+   - Card/image transition refinement
+   - Scroll-reveal animations on .reveal opt-in + auto patterns
+   - Polished link underlines inside articles
+   - Image fade-in on load
+   Respects prefers-reduced-motion throughout.
+============================================================ */
+
+/* Headings: balanced line-breaks (modern browsers) */
+h1, h2, h3,
+.page-hero-title,
+.contact-h2 {
+  text-wrap: balance;
+}
+
+/* Body paragraphs: pretty rivers / no orphans */
+.page-hero-lede,
+.page-hero-subhead,
+.article-content p,
+.svc-hero-tagline-lede,
+.cta p,
+.faq-answer {
+  text-wrap: pretty;
+}
+
+/* Better display-font rendering on big headings */
+h1, h2,
+.page-hero-title,
+.svc-hero-title,
+.hero-title {
+  font-feature-settings: "kern", "liga", "ss01";
+  font-optical-sizing: auto;
+}
+
+/* Sitewide reveal-on-scroll: opt-in via .reveal, auto-applied to common
+   patterns. Default state is hidden + offset; .reveal-in adds smooth
+   entry. The IntersectionObserver in SiteScripts toggles .reveal-in
+   when the element enters the viewport (already wired for .fade-up). */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(2px);
+  transition:
+    opacity .7s cubic-bezier(.2,.8,.2,1),
+    transform .7s cubic-bezier(.2,.8,.2,1),
+    filter .7s ease;
+  will-change: opacity, transform;
+}
+.reveal.reveal-in,
+.reveal.fade-up,
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* Inline body links: gentle animated underline (article + page lede) */
+.article-content a,
+.page-hero-lede a,
+.page-hero-subhead a {
+  background-image: linear-gradient(
+    90deg,
+    var(--sky-deep, #1A4D8C),
+    var(--cyan, #3FB8D4)
+  );
+  background-size: 0% 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .35s cubic-bezier(.2,.8,.2,1), color .25s ease;
+}
+.article-content a:hover,
+.page-hero-lede a:hover,
+.page-hero-subhead a:hover {
+  background-size: 100% 1.5px;
+  color: var(--sky-deep, #1A4D8C);
+}
+
+/* Images: gentle fade in once decoded so they don't pop in */
+img[loading="lazy"] {
+  animation: imgFadeIn .5s ease-out backwards;
+}
+@keyframes imgFadeIn {
+  from { opacity: 0; transform: scale(.985); filter: blur(4px); }
+  to   { opacity: 1; transform: none; filter: none; }
+}
+
+/* Sticky-section transitions: subtle gradient hairline at the top of
+   any major section that follows another major section. Adds rhythm. */
+section + section,
+section + main > section:first-child {
+  position: relative;
+}
+
+/* Card hover refinement — sitewide single transition curve */
+.service-card,
+.post-card,
+.why-card,
+.benefit-card,
+.tier-card,
+.svc-related-card,
+.case-study-card,
+.office-card-v2,
+.svc-feature-block,
+.faq-item {
+  transition:
+    transform .4s cubic-bezier(.2,.8,.2,1),
+    box-shadow .4s cubic-bezier(.2,.8,.2,1),
+    border-color .25s ease;
+}
+
+/* Better h2/h3 in WordPress article content: subtle weight + tracking */
+.article-content h2 {
+  letter-spacing: -.018em;
+  margin-top: 2.5rem;
+}
+.article-content h3 {
+  letter-spacing: -.014em;
+  margin-top: 2rem;
+}
+
+/* Section eyebrow consistency — small caps brand-blue */
+.sec-eyebrow,
+.svc-eyebrow,
+.contact-section-head .sec-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-weight: 700;
+  color: var(--sky-deep, #1A4D8C);
+}
+
+/* Quietly disable the loud animations / heavy filter changes for users
+   who request reduced motion. Already partly handled but consolidated. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  img[loading="lazy"] {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

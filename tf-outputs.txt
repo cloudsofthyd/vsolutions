@@ -1,0 +1,28 @@
+_01_route53_nameservers = tolist([
+  "ns-1398.awsdns-46.org",
+  "ns-166.awsdns-20.com",
+  "ns-1827.awsdns-36.co.uk",
+  "ns-816.awsdns-38.net",
+])
+_02_domain_name = "vsolutionsinc.com"
+alb_dns_name = "vsolutions-prod-alb-653790696.us-east-1.elb.amazonaws.com"
+alb_zone_id = "Z35SXDOTRQ7X7K"
+db_password_command = "aws secretsmanager get-secret-value --profile vsolutions --region us-east-1 --secret-id vsolutions-prod-db-credentials --query SecretString --output text | jq -r .password"
+db_secret_arn = "arn:aws:secretsmanager:us-east-1:481088928154:secret:vsolutions-prod-db-credentials-vyohJy"
+ec2_instance_ids = [
+  "i-05669e1d6d542bc62",
+  "i-0ea24f674cea86142",
+]
+ec2_public_ips = [
+  "13.220.30.230",
+  "44.202.27.239",
+]
+rds_address = "vsolutions-prod-db.cod4g0ecynd2.us-east-1.rds.amazonaws.com"
+rds_endpoint = "vsolutions-prod-db.cod4g0ecynd2.us-east-1.rds.amazonaws.com:5432"
+redis_endpoint = "vsolutions-prod-redis.4igctv.0001.use1.cache.amazonaws.com"
+s3_assets_bucket = "vsolutions-prod-assets-2b439335"
+s3_uploads_bucket = "vsolutions-prod-uploads-2b439335"
+ssh_command_instance_1 = "ssh -i ./vsolutions-prod-ec2-key.pem ec2-user@13.220.30.230"
+ssh_command_instance_2 = "ssh -i ./vsolutions-prod-ec2-key.pem ec2-user@44.202.27.239"
+vpc_cidr = "10.0.0.0/16"
+vpc_id = "vpc-0d07e56b996f76e38"

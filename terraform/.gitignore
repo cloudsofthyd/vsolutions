@@ -1,0 +1,24 @@
+# Terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+crash.log
+crash.*.log
+
+# Saved plans
+*.tfplan
+tfplan
+
+# Sensitive
+*.pem
+*.key
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Local secret tfvars (committed terraform.tfvars contains only non-secret defaults)
+*.auto.tfvars
+secrets.tfvars

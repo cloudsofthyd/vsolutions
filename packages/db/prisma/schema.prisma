@@ -1,7 +1,9 @@
 // V Solutions Inc — full schema covering migration + portal + helpdesk + invoicing + AI.
 // Each section maps to a milestone; loaders only touch migration models in M1.
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  // "native" for local dev, "rhel-openssl-3.0.x" for Amazon Linux 2023 EC2.
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
 }
 
 datasource db {
@@ -833,4 +835,25 @@ model EmailLog {
 
   @@index([to, createdAt(sort: Desc)])
   @@index([status, createdAt])
+}
+
+enum SubscriberStatus {
+  PENDING
+  CONFIRMED
+  UNSUBSCRIBED
+}
+
+model NewsletterSubscriber {
+  id           String           @id @default(cuid())
+  email        String           @unique
+  name         String?
+  source       String?          // "footer", "blog-cta", "popup", etc.
+  ip           String?
+  userAgent    String?
+  status       SubscriberStatus @default(CONFIRMED)
+  unsubscribedAt DateTime?
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  @@index([status, createdAt(sort: Desc)])
 }

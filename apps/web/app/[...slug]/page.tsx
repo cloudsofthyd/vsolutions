@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { prisma } from "@vsi/db";
 import { renderWpContent } from "@/lib/wp-content";
 import { PageHero } from "@/components/site/PageHero";
+import { articleLd, breadcrumbLd, jsonLd } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string[] }>;
@@ -88,8 +89,36 @@ export default async function CatchAllPage({ params }: Props) {
   const kindLabel =
     p.type === "post" ? "Article" : p.type === "page" ? "Page" : p.type;
 
+  const ldBlocks = [
+    breadcrumbLd([
+      { name: "Home", url: "/" },
+      { name: p.title, url: p.permalink },
+    ]),
+    ...(p.type === "post" || p.type === "case-study" || p.type === "portfolio"
+      ? [
+          articleLd({
+            title: p.title,
+            excerpt: p.excerpt,
+            permalink: p.permalink,
+            publishedAt: p.publishedAt,
+            updatedAt: p.updatedAt,
+            authorName: p.author?.displayName,
+            imageUrl: p.featuredImage?.url,
+          }),
+        ]
+      : []),
+  ];
+
   return (
     <main className="page-main">
+      {ldBlocks.map((ld, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: jsonLd(ld) }}
+        />
+      ))}
       <PageHero
         breadcrumb={[{ label: "Home", href: "/" }, { label: p.title }]}
         pillLabel={kindLabel}

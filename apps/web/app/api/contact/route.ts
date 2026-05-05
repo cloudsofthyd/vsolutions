@@ -1,11 +1,10 @@
 // Contact form endpoint.
 //   1. Validate + sanitize input (zod)
 //   2. Persist to DB (always)
-//   3. Send notification email to info@vsolutionsinc.com via Resend (if RESEND_API_KEY set)
-//   4. Send autoresponder to the submitter (if RESEND_API_KEY set)
-// If no email provider is configured, submissions still land in the DB and
-// show up in the admin /admin/contact-submissions/ inbox (M2). EmailLog records
-// every send attempt for traceability.
+//   3. Send notification email to info@/admin@vsolutionsinc.com via Resend.
+//   4. Send autoresponder to the submitter via Resend.
+// If RESEND_API_KEY is missing, submissions still land in the DB; EmailLog
+// records every send attempt for traceability.
 
 import { NextResponse } from "next/server";
 import { prisma } from "@vsi/db";
@@ -204,7 +203,7 @@ export async function POST(req: Request) {
         templateName: "contact_admin_notify",
         status: adminResult.sent ? "SENT" : adminResult.error === "no_api_key" ? "QUEUED" : "FAILED",
         providerId: adminResult.providerId,
-        errorMessage: adminResult.error === "no_api_key" ? "RESEND_API_KEY not set — submission stored only" : adminResult.error,
+        errorMessage: adminResult.error === "no_api_key" ? "RESEND_API_KEY not set - submission stored only" : adminResult.error,
         metadata: { submissionId: sub.id },
         sentAt: adminResult.sent ? new Date() : null,
       },
@@ -215,7 +214,7 @@ export async function POST(req: Request) {
         templateName: "contact_autoresponder",
         status: autoResult.sent ? "SENT" : autoResult.error === "no_api_key" ? "QUEUED" : "FAILED",
         providerId: autoResult.providerId,
-        errorMessage: autoResult.error === "no_api_key" ? "RESEND_API_KEY not set — submission stored only" : autoResult.error,
+        errorMessage: autoResult.error === "no_api_key" ? "RESEND_API_KEY not set - submission stored only" : autoResult.error,
         metadata: { submissionId: sub.id },
         sentAt: autoResult.sent ? new Date() : null,
       },

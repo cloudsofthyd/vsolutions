@@ -1,0 +1,113 @@
+{
+  "_01_route53_nameservers": {
+    "sensitive": false,
+    "type": [
+      "list",
+      "string"
+    ],
+    "value": [
+      "ns-1398.awsdns-46.org",
+      "ns-166.awsdns-20.com",
+      "ns-1827.awsdns-36.co.uk",
+      "ns-816.awsdns-38.net"
+    ]
+  },
+  "_02_domain_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vsolutionsinc.com"
+  },
+  "alb_dns_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vsolutions-prod-alb-653790696.us-east-1.elb.amazonaws.com"
+  },
+  "alb_zone_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "Z35SXDOTRQ7X7K"
+  },
+  "db_password_command": {
+    "sensitive": false,
+    "type": "string",
+    "value": "aws secretsmanager get-secret-value --profile vsolutions --region us-east-1 --secret-id vsolutions-prod-db-credentials --query SecretString --output text | jq -r .password"
+  },
+  "db_secret_arn": {
+    "sensitive": false,
+    "type": "string",
+    "value": "arn:aws:secretsmanager:us-east-1:481088928154:secret:vsolutions-prod-db-credentials-vyohJy"
+  },
+  "ec2_instance_ids": {
+    "sensitive": false,
+    "type": [
+      "tuple",
+      [
+        "string",
+        "string"
+      ]
+    ],
+    "value": [
+      "i-05669e1d6d542bc62",
+      "i-0ea24f674cea86142"
+    ]
+  },
+  "ec2_public_ips": {
+    "sensitive": false,
+    "type": [
+      "tuple",
+      [
+        "string",
+        "string"
+      ]
+    ],
+    "value": [
+      "13.220.30.230",
+      "44.202.27.239"
+    ]
+  },
+  "rds_address": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vsolutions-prod-db.cod4g0ecynd2.us-east-1.rds.amazonaws.com"
+  },
+  "rds_endpoint": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vsolutions-prod-db.cod4g0ecynd2.us-east-1.rds.amazonaws.com:5432"
+  },
+  "redis_endpoint": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vsolutions-prod-redis.4igctv.0001.use1.cache.amazonaws.com"
+  },
+  "s3_assets_bucket": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vsolutions-prod-assets-2b439335"
+  },
+  "s3_uploads_bucket": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vsolutions-prod-uploads-2b439335"
+  },
+  "ssh_command_instance_1": {
+    "sensitive": false,
+    "type": "string",
+    "value": "ssh -i ./vsolutions-prod-ec2-key.pem ec2-user@13.220.30.230"
+  },
+  "ssh_command_instance_2": {
+    "sensitive": false,
+    "type": "string",
+    "value": "ssh -i ./vsolutions-prod-ec2-key.pem ec2-user@44.202.27.239"
+  },
+  "vpc_cidr": {
+    "sensitive": false,
+    "type": "string",
+    "value": "10.0.0.0/16"
+  },
+  "vpc_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vpc-0d07e56b996f76e38"
+  }
+}

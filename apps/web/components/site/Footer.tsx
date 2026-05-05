@@ -5,11 +5,15 @@ import {
   FOOTER_SERVICES,
   LEGAL_LINKS,
 } from "@/lib/site";
+import { NewsletterSignup } from "@/components/site/NewsletterSignup";
 
 export function Footer() {
   return (
     <footer>
       <div className="container">
+        <div className="footer-newsletter-band">
+          <NewsletterSignup source="footer" />
+        </div>
         <div className="footer-top">
           <div className="footer-brand">
             <Link href="/" className="brand">

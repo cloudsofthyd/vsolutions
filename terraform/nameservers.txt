@@ -1,0 +1,4 @@
+ns-816.awsdns-38.net
+ns-1398.awsdns-46.org
+ns-1827.awsdns-36.co.uk
+ns-166.awsdns-20.com

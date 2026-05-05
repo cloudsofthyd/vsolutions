@@ -6,6 +6,7 @@ import {
   LEGAL_LINKS,
 } from "@/lib/site";
 import { NewsletterSignup } from "@/components/site/NewsletterSignup";
+import { PhoneIcon } from "@/components/site/PhoneIcon";
 
 export function Footer() {
   return (
@@ -94,7 +95,7 @@ export function Footer() {
                 </a>
               ))}
               <a className="footer-contact-item" href={`tel:+1${SITE.phone.replace(/-/g, "")}`}>
-                <span className="icon">📞</span>
+                <span className="icon"><PhoneIcon size={14} /></span>
                 <span>{SITE.phone}</span>
               </a>
               <a className="footer-contact-item" href={`mailto:${SITE.email}`}>
@@ -107,7 +108,7 @@ export function Footer() {
 
         <div className="footer-bottom">
           <span className="glow">
-            2022-{new Date().getFullYear().toString().slice(-2)} © All rights reserved by V Solutions INC
+            {new Date().getFullYear()} © All rights reserved by V Solutions INC
           </span>
           <div className="legal">
             {LEGAL_LINKS.map((l) => (

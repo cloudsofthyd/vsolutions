@@ -659,9 +659,9 @@ h1.auth-title em {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: #16a34a;
+  background: #3FB8D4;
   border: 2px solid var(--paper);
-  box-shadow: 0 0 6px rgba(22, 163, 74, 0.5);
+  box-shadow: 0 0 6px rgba(63, 184, 212, 0.55);
 }
 .app-user-name { font-size: 0.86rem !important; }
 .app-logout {
@@ -746,7 +746,7 @@ h1.auth-title em {
   filter: drop-shadow(0 4px 12px rgba(30, 136, 184, 0.22));
 }
 .kpi-delta { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); margin-top: 0.15rem; }
-.kpi-delta.up { color: #16a34a; }
+.kpi-delta.up { color: #0E5C7A; }
 .kpi-delta.down { color: var(--rose); }
 
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -830,7 +830,7 @@ h1.auth-title em {
 .badge-OPEN, .badge-NEW, .badge-SENT { color: var(--sky-deep); background: rgba(45, 124, 201, 0.08); border-color: rgba(45, 124, 201, 0.25); }
 .badge-IN_PROGRESS, .badge-WAITING_INTERNAL { color: var(--amber); background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); }
 .badge-WAITING_CLIENT { color: var(--indigo); background: rgba(79, 102, 214, 0.08); border-color: rgba(79, 102, 214, 0.28); }
-.badge-RESOLVED, .badge-CLOSED, .badge-PAID { color: #15803d; background: rgba(22, 163, 74, 0.1); border-color: rgba(22, 163, 74, 0.28); }
+.badge-RESOLVED, .badge-CLOSED, .badge-PAID { color: #0E5C7A; background: rgba(63, 184, 212, 0.12); border-color: rgba(63, 184, 212, 0.32); }
 .badge-OVERDUE, .badge-URGENT, .badge-HIGH {
   color: #fff;
   background: linear-gradient(135deg, var(--rose), var(--rose-deep));

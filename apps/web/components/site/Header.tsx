@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SITE, HEADER_NAV } from "@/lib/site";
+import { PhoneIcon } from "./PhoneIcon";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -65,9 +66,12 @@ export function Header() {
           </ul>
 
           <div className="nav-cta">
-            <button className="search-btn" aria-label="Search">
-              ⌕
-            </button>
+            <a href={SITE.phoneHref} className="nav-phone" aria-label={`Call ${SITE.phone}`}>
+              <span className="nav-phone-icon">
+                <PhoneIcon />
+              </span>
+              <span className="nav-phone-text">{SITE.phone}</span>
+            </a>
             <Link href="/contact/" className="btn btn-primary">
               Contact Us <span className="btn-arrow">→</span>
             </Link>
@@ -145,7 +149,7 @@ export function Header() {
               Contact Us <span className="btn-arrow">→</span>
             </Link>
             <a href={SITE.phoneHref} className="mobile-drawer-phone">
-              📞 {SITE.phone}
+              <PhoneIcon size={16} /> {SITE.phone}
             </a>
             <a
               href={`mailto:${SITE.email}`}

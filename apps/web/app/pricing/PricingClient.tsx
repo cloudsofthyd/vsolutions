@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { PhoneIcon } from "@/components/site/PhoneIcon";
 
 type Service = {
   name: string;
@@ -365,8 +366,8 @@ export default function PricingClient() {
                   <a href="/contact/" className="btn btn-primary">
                     Book consultation <span className="btn-arrow">→</span>
                   </a>
-                  <a href="tel:2482328488" className="btn btn-ghost">
-                    📞 Call us
+                  <a href="tel:2482328488" className="btn btn-ghost btn-with-icon">
+                    <PhoneIcon size={15} /> Call us
                   </a>
                 </div>
               </div>
@@ -401,8 +402,8 @@ export default function PricingClient() {
                 <a href="/contact/" className="btn btn-primary">
                   Book a Free Consultation <span className="btn-arrow">→</span>
                 </a>
-                <a href="tel:2482328488" className="btn btn-ghost">
-                  📞 248 232 8488
+                <a href="tel:2482328488" className="btn btn-ghost btn-with-icon">
+                  <PhoneIcon size={15} /> 248-232-8488
                 </a>
               </div>
             </div>

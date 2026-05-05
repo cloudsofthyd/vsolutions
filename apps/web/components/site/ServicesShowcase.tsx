@@ -7,6 +7,7 @@ import {
   type Service,
   type ServiceKey,
 } from "@/lib/services-data";
+import { PhoneIcon } from "./PhoneIcon";
 
 type Props = {
   initialSlug?: ServiceKey;
@@ -154,8 +155,8 @@ export function ServicesShowcase({ initialSlug = "ai" }: Props) {
                 <a href="/contact/" className="svc-btn svc-btn-primary">
                   Book a Free Consultation <span className="svc-arrow">→</span>
                 </a>
-                <a href="tel:2482328488" className="svc-btn svc-btn-ghost">
-                  📞 248 232 8488
+                <a href="tel:2482328488" className="svc-btn svc-btn-ghost btn-with-icon">
+                  <PhoneIcon size={15} /> 248-232-8488
                 </a>
               </div>
             </div>

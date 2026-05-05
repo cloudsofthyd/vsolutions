@@ -747,16 +747,6 @@ button:focus-visible,
 .brand:hover { filter: drop-shadow(0 0 18px var(--cyan-glow)); }
 .brand:hover .brand-logo { filter: brightness(1.1) saturate(1.05); }
 .brand-spark { text-shadow: 0 0 10px var(--gold-glow); }
-.search-btn {
-  transition: box-shadow .3s ease, transform .3s ease, background .3s ease;
-}
-.search-btn:hover {
-  transform: translateY(-1px);
-  box-shadow:
-    0 6px 20px -8px var(--cyan-glow),
-    0 0 0 1px var(--cyan-glow),
-    0 0 22px -4px var(--gold-glow);
-}
 .menu .dropdown {
   box-shadow:
     0 24px 60px -22px rgba(14, 44, 102, .35),
@@ -1364,9 +1354,7 @@ h2.sec-title,
 /* Brand: subtle continuous shimmer + bounce on hover */
 .brand {
   position: relative;
-  transition: transform .35s cubic-bezier(.2,.8,.2,1);
 }
-.brand:hover { transform: translateY(-1px); }
 @keyframes brand-shimmer {
   0%, 100% { filter: drop-shadow(0 0 0 transparent); }
   50%      { filter: drop-shadow(0 0 14px var(--cyan-glow)); }
@@ -1501,16 +1489,6 @@ h2.sec-title,
 .menu .dropdown a:hover {
   padding-left: 1.25rem !important;
   color: var(--navy) !important;
-}
-
-/* Search button: smooth icon tilt + glow on hover */
-.search-btn svg,
-.search-btn img {
-  transition: transform .35s cubic-bezier(.2,.8,.2,1);
-}
-.search-btn:hover svg,
-.search-btn:hover img {
-  transform: rotate(-12deg) scale(1.08);
 }
 
 /* Hamburger → X morph (mobile) */
@@ -1838,9 +1816,9 @@ section.cta { padding: clamp(4rem, 7vw, 6rem) 0; }
   filter: drop-shadow(0 0 14px var(--cyan-glow));
 }
 
-/* Footer brand logo: gentle gold glow */
+/* Footer brand logo: render dark logo as white silhouette on navy footer */
 .footer-brand .brand-logo {
-  filter: brightness(1.2) drop-shadow(0 0 16px rgba(201, 169, 97, .3));
+  filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(201, 169, 97, .25));
 }
 
 /* Reduced motion: keep glow but disable any animated transitions */
@@ -2090,23 +2068,29 @@ section.cta { padding: clamp(4rem, 7vw, 6rem) 0; }
   margin: 0 !important;
   display: block !important;
   object-fit: contain;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) !important;
   transform-origin: center center;
-  animation: heroLogoBreathe 5s ease-in-out infinite;
   filter: drop-shadow(0 2px 8px rgba(14, 44, 102, .18))
           drop-shadow(0 0 14px rgba(63, 184, 212, .22)) !important;
-  transition: transform .6s cubic-bezier(.2,.8,.2,1),
-              filter .5s ease;
+  transition: filter .5s ease !important;
+}
+/* Pin the centering transform against the broad .hero-visual img:hover and
+   .hero-visual:hover img rules elsewhere in this file — those rules apply
+   translateY/scale that wipes out the translate(-50%, -50%), causing the
+   logo to slide right by half its width on hover. Keep it locked. */
+.hero-orbit .hero-center img,
+.hero-visual .hero-center img,
+.hero-visual:hover .hero-center img,
+.hero-orbit:hover .hero-center img,
+.hero-center:hover img,
+.hero-visual .hero-center img:hover {
+  transform: translate(-50%, -50%) !important;
+  animation: none !important;
 }
 .hero-center:hover img {
-  transform: translate(-50%, -50%) scale(1.05);
   filter: drop-shadow(0 2px 10px rgba(14, 44, 102, .22))
           drop-shadow(0 0 22px rgba(63, 184, 212, .35))
-          drop-shadow(0 0 28px rgba(201, 169, 97, .25)) !important;
-}
-@keyframes heroLogoBreathe {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50%      { transform: translate(-50%, -50%) scale(1.025); }
+          drop-shadow(0 0 28px rgba(63, 184, 212, .25)) !important;
 }
 
 /* Ensure all 6 hero-icons sit ABOVE the disc — so even if a chip lands
@@ -2518,6 +2502,73 @@ h1.not-found {
   font-weight: 700;
 }
 
+/* ---------- "MENU ITEM" CARD LIST ----------
+   Lists where every <li> leads with a <strong> label (e.g. service lists
+   on the V-Framework page) become uniform cards: blue check badge, label
+   row, descriptive body. Keeps semantics, beautifies layout. */
+.article-content ul:has(> li > strong:first-child) {
+  list-style: none !important;
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .75rem;
+  margin: 1.5rem 0 2rem;
+}
+@media (min-width: 720px) {
+  .article-content ul:has(> li > strong:first-child) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.article-content ul:has(> li > strong:first-child) > li {
+  position: relative;
+  margin: 0 !important;
+  padding: 1.1rem 1.25rem 1.1rem 3rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+  border: 1px solid rgba(14, 44, 102, .08);
+  border-radius: 14px;
+  box-shadow:
+    0 1px 0 #fff inset,
+    0 6px 16px -10px rgba(14, 44, 102, .12);
+  font-size: .96rem;
+  line-height: 1.65;
+  color: var(--ink-2);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1),
+              border-color .25s ease,
+              box-shadow .35s ease;
+}
+.article-content ul:has(> li > strong:first-child) > li::marker { content: "" !important; }
+.article-content ul:has(> li > strong:first-child) > li::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 1.2rem;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'><polyline points='5 12 10 17 19 8'/></svg>")
+      center / 13px 13px no-repeat,
+    linear-gradient(135deg, var(--navy), var(--sky-deep));
+  box-shadow:
+    0 4px 10px -4px rgba(30,136,184,.5),
+    0 0 0 1px rgba(255,255,255,.22) inset;
+}
+.article-content ul:has(> li > strong:first-child) > li:hover {
+  transform: translateY(-2px);
+  border-color: rgba(63, 184, 212, .35);
+  box-shadow:
+    0 1px 0 #fff inset,
+    0 18px 32px -18px rgba(14, 44, 102, .22),
+    0 0 0 1px rgba(63, 184, 212, .25);
+}
+.article-content ul:has(> li > strong:first-child) > li > strong:first-child {
+  display: block;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -.005em;
+  margin-bottom: .25rem;
+}
+
 /* ---------- GLOBAL TRANSITIONS — universal default ---------- */
 a, button, .btn, .card, .tag, .chip {
   transition-timing-function: cubic-bezier(.2,.8,.2,1);
@@ -2580,11 +2631,19 @@ main,
   to   { opacity: 1; transform: none; }
 }
 
-/* — Sharper homepage hero-icon (.ico-tile) hover state — */
+/* — Sharper homepage hero-icon (.ico-tile) hover state —
+   The base .hero-icon runs a continuous floatIcon animation that
+   translates the chip up and back. A paused animation still wins over
+   the hover transform, so on hover we fully detach the animation
+   (animation: none) and apply a clean straight-up lift. The transition
+   smooths the entry/exit so it never reads as a sideways slide. */
 .hero-icon { transition: transform .35s cubic-bezier(.2,.8,.2,1); }
-.hero-icon:hover { transform: translateY(-3px) scale(1.03); }
+.hero-icon:hover {
+  animation: none !important;
+  transform: translateY(-6px) scale(1.04);
+}
 .hero-icon .ico-tile {
-  transition: box-shadow .35s ease, filter .35s ease;
+  transition: box-shadow .35s ease, filter .35s ease, transform .35s ease;
 }
 .hero-icon:hover .ico-tile {
   filter: brightness(1.06) saturate(1.08);
@@ -2593,7 +2652,7 @@ main,
     0 0 0 1px rgba(255, 255, 255, .25) inset,
     0 1px 0 rgba(255, 255, 255, .55) inset,
     0 0 28px -4px var(--cyan-glow),
-    0 0 40px -10px var(--gold-glow);
+    0 0 40px -10px rgba(63, 184, 212, .45);
 }
 .hero-icon:hover .ico-lbl {
   border-color: rgba(63, 184, 212, .35);
@@ -2826,19 +2885,26 @@ h1.page-hero-title em,
     0 28px 56px -22px rgba(14, 44, 102, .22),
     0 0 40px -10px var(--gold-glow);
 }
-.vf-pillar-icon {
+.vf-pillar-icon,
+.vf-pillar-num {
   display: inline-flex;
   width: 56px; height: 56px;
   align-items: center; justify-content: center;
   border-radius: 16px;
-  font-size: 1.4rem;
-  background: linear-gradient(135deg, var(--cyan), var(--gold));
+  background: linear-gradient(135deg, var(--navy) 0%, var(--sky-deep) 100%);
   color: #fff;
   box-shadow:
     0 1px 0 rgba(255,255,255,.45) inset,
     0 0 0 1px rgba(255,255,255,.2) inset,
-    0 12px 28px -8px var(--cyan-glow);
+    0 12px 28px -8px rgba(30,136,184,.55);
   margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+.vf-pillar-num {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .04em;
 }
 .vf-pillar-label {
   font-size: 1.4rem;
@@ -3143,13 +3209,13 @@ a:focus-visible,
   cursor: not-allowed;
 }
 
-/* Submit button — circular gradient */
+/* Submit button — circular brand-blue gradient */
 .newsletter-submit {
   width: 44px;
   height: 44px;
   border-radius: 999px;
   border: 0;
-  background: linear-gradient(135deg, var(--cyan), var(--gold));
+  background: linear-gradient(135deg, var(--navy) 0%, var(--sky-deep) 55%, var(--cyan) 100%);
   color: #fff;
   font-size: 1.1rem;
   font-weight: 700;
@@ -3160,9 +3226,9 @@ a:focus-visible,
   flex-shrink: 0;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, .3) inset,
-    0 0 0 1px rgba(255, 255, 255, .15) inset,
-    0 8px 22px -6px rgba(63, 184, 212, .55),
-    0 0 32px -10px rgba(201, 169, 97, .5);
+    0 0 0 1px rgba(255, 255, 255, .18) inset,
+    0 8px 22px -6px rgba(30, 136, 184, .55),
+    0 0 32px -10px rgba(63, 184, 212, .5);
   transition: transform .25s cubic-bezier(.2, .8, .2, 1),
               box-shadow .35s ease,
               filter .35s ease;
@@ -3218,9 +3284,9 @@ a:focus-visible,
   max-width: 460px;
 }
 .newsletter-msg-success {
-  color: #C9F2D7;
-  background: rgba(34, 197, 94, .15);
-  border: 1px solid rgba(34, 197, 94, .35);
+  color: #CFEAF6;
+  background: rgba(63, 184, 212, .18);
+  border: 1px solid rgba(63, 184, 212, .4);
 }
 .newsletter-msg-error {
   color: #FFD7DD;
@@ -3366,9 +3432,10 @@ a:focus-visible,
 }
 .footer-brand .brand-logo {
   filter:
-    brightness(1.2)
-    drop-shadow(0 0 14px rgba(63, 184, 212, .3))
-    drop-shadow(0 0 24px rgba(201, 169, 97, .25)) !important;
+    brightness(0) invert(1)
+    drop-shadow(0 0 14px rgba(63, 184, 212, .35))
+    drop-shadow(0 0 24px rgba(201, 169, 97, .2)) !important;
+  opacity: .96;
 }
 
 /* ============================================================

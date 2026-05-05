@@ -4,6 +4,7 @@
 // full design exactly. Dynamic LatestBlog is rendered separately above the CTA.
 
 import { HOMEPAGE_STATIC_HTML } from "./homepage-static";
+import { PhoneIcon } from "./PhoneIcon";
 
 export function HomepageHero() {
   return <div dangerouslySetInnerHTML={{ __html: HOMEPAGE_STATIC_HTML }} />;
@@ -29,8 +30,8 @@ export function HomepageCta() {
               <a href="/contact/" className="btn btn-primary">
                 Contact Us <span className="btn-arrow">→</span>
               </a>
-              <a href="tel:2482328488" className="btn btn-ghost">
-                📞 248 232 8488
+              <a href="tel:2482328488" className="btn btn-ghost btn-with-icon">
+                <PhoneIcon size={15} /> 248-232-8488
               </a>
             </div>
           </div>

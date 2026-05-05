@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
+import Script from "next/script";
 import { Plus_Jakarta_Sans, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import "./mobile.css";
@@ -167,6 +168,21 @@ export default async function RootLayout({
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: jsonLd(localBusinessLd()) }}
         />
+
+        {/* Google tag (gtag.js) — Google Ads AW-18126408102 */}
+        <Script
+          id="gtag-src"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18126408102"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18126408102');
+          `}
+        </Script>
       </head>
       <body>
         {appShell ? (

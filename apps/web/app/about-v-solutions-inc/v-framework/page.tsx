@@ -20,17 +20,17 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const PILLARS = [
   {
-    icon: "◆",
+    num: "01",
     label: "Vision",
     body: "Strategy-first discovery aligned to outcomes — not deliverables.",
   },
   {
-    icon: "▲",
+    num: "02",
     label: "Velocity",
     body: "Engineering-led execution with CI/CD, automation, and zero ceremony.",
   },
   {
-    icon: "●",
+    num: "03",
     label: "Value",
     body: "Pricing tied to KPIs. Every release production-ready, every metric earned.",
   },
@@ -64,7 +64,7 @@ export default async function Page() {
           <div className="vf-pillars">
             {PILLARS.map((pillar) => (
               <article key={pillar.label} className="vf-pillar">
-                <span className="vf-pillar-icon" aria-hidden>{pillar.icon}</span>
+                <span className="vf-pillar-num" aria-hidden>{pillar.num}</span>
                 <h3 className="vf-pillar-label">{pillar.label}</h3>
                 <p className="vf-pillar-body">{pillar.body}</p>
               </article>

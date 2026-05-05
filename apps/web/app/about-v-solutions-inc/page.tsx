@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
+import { PhoneIcon } from "@/components/site/PhoneIcon";
 
 export const metadata: Metadata = {
   title: { absolute: "About V Solutions Inc — Global AI & Cloud Partner" },
@@ -217,8 +218,8 @@ export default function AboutPage() {
                 <Link href="/contact/" className="btn btn-primary">
                   Contact us <span className="btn-arrow">→</span>
                 </Link>
-                <a href={SITE.phoneHref} className="btn btn-ghost">
-                  📞 {SITE.phone}
+                <a href={SITE.phoneHref} className="btn btn-ghost btn-with-icon">
+                  <PhoneIcon size={15} /> {SITE.phone}
                 </a>
               </div>
             </div>

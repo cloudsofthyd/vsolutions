@@ -331,7 +331,7 @@ export const HOMEPAGE_STATIC_HTML = `<!-- ============ HERO — uses their REAL 
             </div>
           </div>
 
-          <div class="showcase-slide" id="s3" style="--accent-glow:rgba(20,184,166,.15)">
+          <div class="showcase-slide" id="s3" style="--accent-glow:rgba(30,136,184,.15)">
             <div class="showcase-content">
               <span class="showcase-eyebrow"><span class="pulse-dot"></span>Cloud DevOps</span>
               <h3 class="showcase-title">Ship Faster, Break Less — <em>DevOps That Turns</em> Ideas Into Revenue.</h3>
@@ -349,7 +349,7 @@ export const HOMEPAGE_STATIC_HTML = `<!-- ============ HERO — uses their REAL 
               <a href="/service/cloud-devops-services/" class="showcase-cta">Know more <span class="showcase-cta-arrow">→</span></a>
             </div>
             <div class="showcase-visual">
-              <div class="vpanel" style="--accent:#14B8A6;--accent-rgb:20,184,166">
+              <div class="vpanel" style="--accent:#1E88B8;--accent-rgb:30,136,184">
                 <div class="vpanel-glow"></div>
                 <div class="vpanel-top">
                   <div class="vpanel-tabs"><span></span><span></span><span></span></div>

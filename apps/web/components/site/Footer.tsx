@@ -19,7 +19,7 @@ export function Footer() {
           <div className="footer-brand">
             <Link href="/" className="brand">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={SITE.logoFooter} alt={SITE.name} className="brand-logo" loading="lazy" decoding="async" />
+              <img src={SITE.logoMain} alt={SITE.name} className="brand-logo" loading="lazy" decoding="async" />
             </Link>
             <p>
               V Solutions Inc combines AI, cloud, and digital marketing expertise

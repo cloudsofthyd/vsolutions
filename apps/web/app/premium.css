@@ -1816,9 +1816,10 @@ section.cta { padding: clamp(4rem, 7vw, 6rem) 0; }
   filter: drop-shadow(0 0 14px var(--cyan-glow));
 }
 
-/* Footer brand logo: render dark logo as white silhouette on navy footer */
+/* Footer brand logo: original colored artwork on a white panel — see
+   .footer-brand .brand panel styles in globals.css. No filter inversion. */
 .footer-brand .brand-logo {
-  filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(201, 169, 97, .25));
+  filter: none;
 }
 
 /* Reduced motion: keep glow but disable any animated transitions */
@@ -3431,11 +3432,8 @@ a:focus-visible,
     drop-shadow(0 0 14px rgba(63, 184, 212, .25)) !important;
 }
 .footer-brand .brand-logo {
-  filter:
-    brightness(0) invert(1)
-    drop-shadow(0 0 14px rgba(63, 184, 212, .35))
-    drop-shadow(0 0 24px rgba(201, 169, 97, .2)) !important;
-  opacity: .96;
+  filter: none !important;
+  opacity: 1;
 }
 
 /* ============================================================

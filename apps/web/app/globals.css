@@ -2157,7 +2157,29 @@ footer::after{
 @media(max-width:520px){.footer-top{grid-template-columns:1fr}}
 
 .footer-brand .brand{margin-bottom:1.25rem}
-.footer-brand .brand-logo{height:48px;width:auto;filter:brightness(0) invert(1)}
+.footer-brand .brand{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:.85rem 1.25rem;
+  background:rgba(255,255,255,.96);
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:14px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.85) inset,
+    0 12px 32px -14px rgba(0,0,0,.45),
+    0 0 0 1px rgba(63,184,212,.18),
+    0 0 28px -10px rgba(63,184,212,.4);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .25s ease;
+}
+.footer-brand .brand:hover{
+  transform:translateY(-2px);
+  border-color:rgba(63,184,212,.5);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.85) inset,
+    0 16px 40px -14px rgba(0,0,0,.55),
+    0 0 0 1px rgba(63,184,212,.45),
+    0 0 36px -8px rgba(63,184,212,.55);
+}
+.footer-brand .brand-logo{height:42px;width:auto;filter:none}
 .footer-brand p{
   font-size:.92rem;line-height:1.65;
   max-width:380px;margin-bottom:1.75rem;

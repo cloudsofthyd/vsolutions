@@ -6,7 +6,14 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: { absolute: SITE.defaultTitle },
   description: SITE.description,
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/",
+      "en-CA": "/",
+      "x-default": "/",
+    },
+  },
 };
 
 // Revalidate every 5 minutes — homepage rarely changes but should reflect new blog posts.

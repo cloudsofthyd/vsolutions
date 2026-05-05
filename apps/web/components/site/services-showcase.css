@@ -91,18 +91,30 @@
   box-shadow: 0 4px 14px var(--accent-glow);
 }
 .svc-pill-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 5px;
   display: grid;
   place-items: center;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   line-height: 1;
   font-weight: 800;
-  background: rgba(63, 184, 212, 0.15);
+  background: rgba(45, 124, 201, 0.14);
   color: var(--accent);
   flex-shrink: 0;
   font-variant-emoji: text;
+  text-shadow: none;
+}
+/* Make sure any color-emoji glyph that slipped past the U+FE0E
+   variation selector still renders monochrome in the same brand
+   sky-deep — no green/yellow native emoji bleed-through. */
+.svc-pill-icon, .svc-pill-icon * {
+  font-variant-emoji: text !important;
+  -webkit-text-fill-color: var(--accent);
+}
+.svc-pill.is-active .svc-pill-icon,
+.svc-pill.is-active .svc-pill-icon * {
+  -webkit-text-fill-color: #fff;
 }
 .svc-pill.is-active .svc-pill-icon {
   background: rgba(255, 255, 255, 0.22);

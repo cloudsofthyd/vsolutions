@@ -2726,11 +2726,11 @@ main,
   height: 1.5px;
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(63, 184, 212, .55) 25%,
-    var(--gold) 50%,
-    rgba(63, 184, 212, .55) 75%,
+    rgba(63, 184, 212, .45) 25%,
+    var(--sky-deep) 50%,
+    rgba(63, 184, 212, .45) 75%,
     transparent 100%);
-  filter: drop-shadow(0 0 6px var(--cyan-glow));
+  filter: drop-shadow(0 0 6px rgba(30, 136, 184, .4));
   opacity: .85;
   pointer-events: none;
 }
@@ -2774,17 +2774,17 @@ main,
     0 0 0 1px rgba(63, 184, 212, .25);
 }
 
-/* Active state: cyan→gold gradient with glow halo */
+/* Active state: navy → cyan brand-blue gradient with cyan glow halo */
 .svc-pill.is-active {
-  background: linear-gradient(135deg, var(--cyan) 0%, var(--gold) 100%) !important;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--sky-deep) 55%, var(--cyan) 100%) !important;
   color: #ffffff !important;
   border-color: transparent !important;
   letter-spacing: .015em;
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, .25) inset,
     0 1px 0 rgba(255, 255, 255, .35) inset,
-    0 8px 22px -6px var(--cyan-glow),
-    0 0 28px -6px var(--gold-glow) !important;
+    0 8px 22px -6px rgba(30, 136, 184, .55),
+    0 0 28px -6px rgba(63, 184, 212, .45) !important;
 }
 
 /* Active pill icon refinement */
@@ -2793,13 +2793,11 @@ main,
   box-shadow: 0 0 0 1px rgba(255, 255, 255, .35) inset !important;
 }
 
-/* Pill icon refinement on inactive */
+/* Pill icon refinement on inactive — soft brand-blue tint, no gold */
 .svc-pill .svc-pill-icon {
-  background: linear-gradient(135deg, var(--cyan), var(--gold));
-  color: #fff;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, .35) inset,
-    0 4px 10px -4px var(--cyan-glow);
+  background: rgba(45, 124, 201, 0.14);
+  color: var(--accent, var(--sky-deep));
+  box-shadow: none;
   transition: transform .35s cubic-bezier(.2,.8,.2,1);
 }
 .svc-pill:hover .svc-pill-icon {

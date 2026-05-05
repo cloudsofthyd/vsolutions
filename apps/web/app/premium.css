@@ -3522,3 +3522,149 @@ a:focus-visible,
     animation: none !important;
   }
 }
+
+/* ============================================================
+   ★ SITEWIDE POLISH PASS — selection, focus rings, scrollbar,
+   homepage hero label refinement, section-rhythm divider.
+   Pure additive — no behavioral changes, just nicer surfaces.
+============================================================ */
+
+/* Branded text selection */
+::selection {
+  background: rgba(63, 184, 212, .28);
+  color: var(--navy);
+}
+::-moz-selection {
+  background: rgba(63, 184, 212, .28);
+  color: var(--navy);
+}
+
+/* Smooth, on-brand focus ring sitewide */
+:where(a, button, [role="button"], input, textarea, select, summary):focus-visible {
+  outline: 2px solid rgba(63, 184, 212, .85);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Custom scrollbar (Webkit + Firefox) — narrow, brand-blue */
+* { scrollbar-color: rgba(30, 136, 184, .35) transparent; scrollbar-width: thin; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(30, 136, 184, .35), rgba(26, 77, 140, .45));
+  border: 2px solid transparent;
+  background-clip: content-box;
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(30, 136, 184, .55), rgba(26, 77, 140, .65));
+  background-clip: content-box;
+}
+
+/* Homepage hero pill — slimmer, more elegant; "2026" label refined  */
+.hero-pill {
+  padding: .35rem .9rem .35rem .4rem !important;
+  font-size: .76rem !important;
+  letter-spacing: .005em;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, .7) inset,
+    0 8px 24px -10px rgba(14, 44, 102, .18),
+    0 4px 18px rgba(63, 184, 212, .25) !important;
+}
+.hero-pill .label {
+  font-size: .58rem !important;
+  font-weight: 700 !important;
+  letter-spacing: .16em !important;
+  padding: .26rem .55rem !important;
+  background: linear-gradient(135deg, var(--navy), var(--sky-deep)) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, .25) inset,
+    0 0 14px rgba(63, 184, 212, .35) !important;
+}
+
+/* Hero h1 — finer optical kerning */
+h1.hero-title {
+  text-wrap: balance;
+}
+
+/* Hero ghost button polish — softer hover lift on brand blue */
+.hero-actions .btn-ghost {
+  border: 1px solid rgba(14, 44, 102, .14);
+  background: rgba(255, 255, 255, .9);
+  backdrop-filter: blur(8px);
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1),
+              border-color .25s ease,
+              box-shadow .35s ease,
+              background .25s ease;
+}
+.hero-actions .btn-ghost:hover {
+  transform: translateY(-2px);
+  border-color: rgba(63, 184, 212, .55);
+  background: #fff;
+  color: var(--sky-deep);
+  box-shadow:
+    0 0 0 3px rgba(63, 184, 212, .15),
+    0 10px 24px -10px rgba(14, 44, 102, .25);
+}
+
+/* Section vertical rhythm — softer top edge after the hero so the
+   transition into the showcase strip reads as a clean break, not
+   a hard seam. Adds a subtle gradient line. */
+.hero + .showcase,
+.hero ~ .showcase {
+  position: relative;
+}
+.hero + .showcase::before,
+.hero ~ .showcase::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(820px, 70%);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(63, 184, 212, .35) 25%,
+    rgba(30, 136, 184, .55) 50%,
+    rgba(63, 184, 212, .35) 75%,
+    transparent
+  );
+  filter: blur(.4px);
+  opacity: .8;
+  pointer-events: none;
+}
+
+/* Sitewide card surface refinement — uniform soft inner highlight on
+   the most-used card classes. No size change; only a 1px white inset
+   sheen so cards read as glass surfaces instead of flat paper. */
+.service-card,
+.post-card,
+.why-card,
+.benefit-card,
+.tier-card,
+.svc-related-card {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .85) inset,
+    0 1px 2px rgba(14, 44, 102, .04),
+    0 14px 32px -16px rgba(14, 44, 102, .14);
+}
+
+/* Smoother CTA button shine on .btn-primary — already exists, just
+   tighten the timing so it doesn't feel mechanical. */
+.btn-primary {
+  letter-spacing: .005em;
+}
+
+/* Headline rhythm — pull h2/h3 closer to the eyebrow so titles feel
+   anchored to their micro-label instead of floating. Applies sitewide. */
+.sec-eyebrow + h2,
+.sec-eyebrow + h3 {
+  margin-top: .65rem;
+}
+
+/* Anchor target offset so jump-to links don't hide behind the sticky header */
+:target {
+  scroll-margin-top: 96px;
+}

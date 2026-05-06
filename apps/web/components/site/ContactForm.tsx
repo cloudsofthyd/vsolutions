@@ -25,6 +25,11 @@ export function ContactForm() {
       }
       setState("ok");
       form.reset();
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag("event", "conversion", {
+          send_to: "AW-18126408102/UmSxCMvL0qQcEKaTrMND",
+        });
+      }
     } catch (err) {
       setErrMsg(err instanceof Error ? err.message : "Something went wrong");
       setState("err");
@@ -105,8 +110,9 @@ export function ContactForm() {
       </button>
 
       <p className="contact-form-disclaim">
-        We respect your privacy. No third-party tracking — your message goes
-        straight to our team at <strong>info@vsolutionsinc.com</strong>.
+        We respect your privacy — your message goes straight to our team at{" "}
+        <strong>info@vsolutionsinc.com</strong>. See our{" "}
+        <a href="/privacy-policy/">privacy policy</a> for how we use analytics.
       </p>
     </form>
   );

@@ -530,26 +530,183 @@
   .hamburger { display: none; }
 }
 
-/* Active route — blue underline per brief */
-.menu > li.is-active > a {
-  color: var(--blue-600);
+/* ===== MENU BEAUTY PASS ===== */
+
+/* Reset legacy gradient underline; we use a refined pill+border treatment. */
+.menu > li > a,
+.menu .menu-more-trigger {
+  position: relative;
+  border-radius: var(--r-md);
+  color: var(--ink-700);
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  transition:
+    color var(--dur) var(--ease),
+    background-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
 }
-.menu > li.is-active > a::after {
-  width: 100%;
-  background: var(--blue-600);
-  box-shadow: none;
+/* Kill the legacy gradient underline pseudo on hover — replaced below */
+.menu > li > a::after { display: none !important; }
+
+/* Pill-style hover — soft brand-blue tint, no movement. Works well on
+   the frosted-glass header backdrop. */
+.menu > li:hover > a,
+.menu > li:focus-within > a,
+.menu .menu-more:hover .menu-more-trigger,
+.menu .menu-more:focus-within .menu-more-trigger {
+  color: var(--blue-700);
+  background-color: rgba(30, 91, 230, 0.08);
 }
 
-/* "More ▾" caret */
-.menu .menu-more > .menu-more-trigger::after {
+/* Bottom indicator — a 2px brand-blue bar that slides in. */
+.menu > li > a > span.menu-bar,
+.menu > li > a::before,
+.menu .menu-more-trigger::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 4px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue-500), var(--teal-400));
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur) var(--ease);
+  pointer-events: none;
+}
+.menu > li:hover > a::before,
+.menu > li:focus-within > a::before,
+.menu .menu-more:hover .menu-more-trigger::before,
+.menu .menu-more:focus-within .menu-more-trigger::before,
+.menu > li.is-active > a::before {
+  transform: scaleX(1);
+}
+
+/* Active route — bold blue + indicator stays on. */
+.menu > li.is-active > a {
+  color: var(--blue-700);
+  background-color: rgba(30, 91, 230, 0.10);
+  font-weight: 600;
+}
+
+/* "▾" caret on items with children — rotates on hover. */
+.menu .has-dropdown > a::after,
+.menu .menu-more-trigger::after {
   content: "▾";
   font-size: 0.65rem;
-  margin-left: 0.3rem;
-  opacity: 0.6;
+  margin-left: 0.35rem;
+  opacity: 0.55;
+  display: inline-block;
+  transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
 }
+.menu .has-dropdown:hover > a::after,
+.menu .has-dropdown:focus-within > a::after,
+.menu .menu-more:hover .menu-more-trigger::after,
+.menu .menu-more:focus-within .menu-more-trigger::after {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
 .menu .menu-more:hover .dropdown,
 .menu .menu-more:focus-within .dropdown {
   display: block;
+}
+
+/* ----- Dropdown panel — refined glass surface ----- */
+.menu .dropdown {
+  margin-top: 8px !important;
+  padding: 8px !important;
+  min-width: 280px !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(30, 91, 230, 0.12) !important;
+  border-radius: var(--r-lg) !important;
+  box-shadow:
+    0 24px 56px -16px rgba(14, 27, 58, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.6) inset,
+    0 0 32px -10px rgba(30, 91, 230, 0.18) !important;
+}
+
+/* Dropdown item — refined padding, hover indent + color */
+.menu .dropdown a {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px !important;
+  font-size: 0.875rem !important;
+  font-weight: 500;
+  color: var(--ink-700) !important;
+  background: transparent !important;
+  border-radius: var(--r-md) !important;
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease),
+    padding-left var(--dur) var(--ease) !important;
+}
+.menu .dropdown a::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--blue-300);
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.menu .dropdown a:hover {
+  background: rgba(30, 91, 230, 0.08) !important;
+  color: var(--blue-700) !important;
+  padding-left: 16px !important;
+}
+.menu .dropdown a:hover::before {
+  opacity: 1;
+  background: var(--blue-600);
+}
+
+/* Brand logo — refined hover (gentle scale + brand-blue glow) */
+.brand:hover .brand-logo {
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 14px rgba(30, 91, 230, 0.35))
+          drop-shadow(0 4px 12px rgba(30, 91, 230, 0.18));
+}
+.brand-logo {
+  transition: transform var(--dur) var(--ease), filter var(--dur) var(--ease);
+}
+
+/* Brand sparkles — recolor to brand palette */
+.brand-spark.s1 { color: var(--blue-500) !important; }
+.brand-spark.s2 { color: var(--teal-400) !important; }
+
+/* Header — refined frosted glass on scroll feel */
+.header {
+  background: rgba(248, 250, 255, 0.78) !important;
+  border-bottom: 1px solid rgba(30, 91, 230, 0.08) !important;
+}
+
+/* Mobile drawer — refined nav item polish */
+.mobile-nav-item {
+  position: relative;
+  transition:
+    color var(--dur) var(--ease),
+    background-color var(--dur) var(--ease),
+    padding-left var(--dur) var(--ease);
+  border-radius: var(--r-md);
+}
+.mobile-nav-item:hover,
+.mobile-nav-item:focus-visible {
+  color: var(--blue-700) !important;
+  background-color: rgba(30, 91, 230, 0.06);
+  padding-left: 1.1rem !important;
+}
+.mobile-nav-item .arr {
+  transition: transform var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.mobile-nav-item:hover .arr {
+  transform: translateX(4px);
+  color: var(--blue-600);
 }
 
 /* ============================================================

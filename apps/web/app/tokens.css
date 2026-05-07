@@ -505,14 +505,16 @@
   padding: var(--space-2) 14px;
   cursor: pointer;
 }
+/* Logo SVG has viewBox 1119.9x237.4 (aspect ~4.72:1) and no intrinsic px
+   size — keep explicit height so the browser sizes it deterministically. */
 .brand-logo {
-  max-width: 160px;
+  height: 42px;
   width: auto;
-  height: auto;
-  max-height: 42px;
+  max-width: 200px;
+  flex-shrink: 0;
 }
 @media (max-width: 1099px) and (min-width: 1024px) {
-  .brand-logo { max-width: 120px; max-height: 36px; }
+  .brand-logo { height: 36px; max-width: 170px; }
   .menu .menu-item--overflow { display: none; }
   .menu > li > a,
   .menu .menu-more-trigger { padding: var(--space-2) 10px; }

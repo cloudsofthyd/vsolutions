@@ -133,14 +133,13 @@ body::after {
   text-wrap: balance;
 }
 .manifesto h2 em {
-  font-family: var(--font-serif);
+  font-family: var(--ds-font-display);
   font-style: italic;
   font-weight: 400;
-  background: linear-gradient(135deg, var(--cyan-soft) 0%, var(--gold-soft) 55%, var(--cyan) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 6px 22px rgba(63, 184, 212, 0.45));
+  color: var(--teal-500);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  filter: none;
 }
 
 .manifesto-lede {
@@ -257,13 +256,12 @@ body::after {
   text-wrap: balance;
 }
 .pull-quote blockquote em {
-  font-family: var(--font-serif);
+  font-family: var(--ds-font-display);
   font-style: italic;
-  background: linear-gradient(135deg, var(--cyan) 0%, var(--rose) 55%, var(--indigo) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 4px 14px rgba(30, 136, 184, 0.25));
+  color: var(--teal-500);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  filter: none;
 }
 
 .pull-quote-attr {
@@ -1013,11 +1011,13 @@ body {
 .hero-title em,
 .svc-hero-title em,
 .page-hero-title em {
+  font-family: var(--ds-font-display);
   font-style: italic;
-  background: linear-gradient(120deg, var(--cyan) 0%, var(--gold) 100%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+  color: var(--teal-500);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  filter: none;
 }
 
 /* Refined eyebrow micro-text */
@@ -1998,21 +1998,21 @@ section.cta { padding: clamp(4rem, 7vw, 6rem) 0; }
 }
 .svc-intro-gallery img:hover { transform: translateY(-2px); }
 
-/* Process step number: refined gradient */
+/* Process step number — brand blue (Issue 11) */
 .svc-process-num {
-  background: linear-gradient(135deg, var(--cyan), var(--gold));
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: var(--blue-50);
+  border-color: var(--blue-300);
+  color: var(--blue-600);
+  -webkit-text-fill-color: currentColor;
   font-feature-settings: "tnum";
   letter-spacing: -0.03em;
   font-weight: 800;
 }
 
-/* Tech-grid card: refined hover */
+/* Tech-grid card — brand-blue tile (Issue 12) */
 .svc-tech-dot {
-  background: linear-gradient(135deg, var(--cyan), var(--gold)) !important;
-  box-shadow: 0 0 8px var(--cyan-glow);
+  background: var(--blue-100) !important;
+  box-shadow: 0 0 8px rgba(30,91,230,.18);
 }
 
 /* FAQ accordion: refined open state */
@@ -2249,10 +2249,11 @@ section.cta { padding: clamp(4rem, 7vw, 6rem) 0; }
 }
 .article-content h3 em,
 .article-content h2 em {
-  background: linear-gradient(120deg, var(--cyan), var(--gold));
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: var(--ds-font-display);
+  font-style: italic;
+  color: var(--teal-500);
+  background: none;
+  -webkit-text-fill-color: currentColor;
 }
 .article-content blockquote {
   background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
@@ -3147,13 +3148,12 @@ a:focus-visible,
   margin: 0 0 .5rem;
 }
 .newsletter-title em {
-  font-family: var(--font-serif);
+  font-family: var(--ds-font-display);
   font-style: italic;
   font-weight: 400;
-  background: linear-gradient(120deg, var(--cyan), var(--gold));
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--teal-500);
+  background: none;
+  -webkit-text-fill-color: currentColor;
   display: inline-block;
   padding-bottom: .12em;
   line-height: 1.18;
@@ -3441,12 +3441,12 @@ a:focus-visible,
 .sec-head h2.sec-title::after {
   content: "";
   display: block;
-  width: 88px;
+  width: 80px;
   height: 2px;
   margin: 1rem auto 0;
-  background: linear-gradient(90deg, var(--cyan), var(--gold));
-  border-radius: 2px;
-  box-shadow: 0 0 12px var(--cyan-glow);
+  background: linear-gradient(90deg, transparent, var(--blue-500), transparent);
+  border-radius: 0;
+  box-shadow: none;
 }
 .sec-head[data-align="left"] .sec-title::after {
   margin-left: 0;

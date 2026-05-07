@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { PhoneIcon } from "@/components/site/PhoneIcon";
 
 type Service = {
@@ -307,7 +308,7 @@ export default function PricingClient() {
           </div>
 
           <div className="service-grid" ref={serviceGridRef}>
-            {SERVICES.map((s) => (
+            {SERVICES.map((s, i) => (
               <a key={s.name} href="/contact/" className="service-pricing-card">
                 <div className="service-thumb">
                   <span className="service-thumb-tag">{s.tag}</span>
@@ -317,10 +318,15 @@ export default function PricingClient() {
                     <span className="from">{s.price.from}</span>
                     <span className="amount">{s.price.amount}</span>
                   </span>
-                  <div
+                  <Image
+                    src={s.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                    quality={90}
+                    priority={i === 0}
                     className="service-thumb-img"
-                    style={{ backgroundImage: `url('${s.image}')` }}
-                  ></div>
+                  />
                 </div>
                 <div className="service-body">
                   <h3 className="service-name">{s.name}</h3>

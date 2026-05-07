@@ -5,6 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SITE, HEADER_NAV } from "@/lib/site";
 import { PhoneIcon } from "./PhoneIcon";
+import { SiteSearch } from "./SiteSearch";
+
+// At 1024–1099px these labels collapse into a "More ▾" dropdown so the nav
+// stays single-line. They render normally above 1099px.
+const OVERFLOW_LABELS = new Set<string>(["How we work", "Careers", "Pricing"]);
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -44,34 +49,50 @@ export function Header() {
           </Link>
 
           <ul className="menu">
-            {HEADER_NAV.map((item) => (
-              <li
-                key={item.href}
-                className={
-                  "children" in item && item.children ? "has-dropdown" : ""
-                }
-              >
-                <Link href={item.href}>{item.label}</Link>
-                {"children" in item && item.children ? (
-                  <div className="dropdown">
-                    {item.children.map((c) => (
-                      <Link key={c.href} href={c.href}>
-                        {c.label}
-                      </Link>
-                    ))}
-                  </div>
-                ) : null}
-              </li>
-            ))}
+            {HEADER_NAV.map((item) => {
+              const isOverflow = OVERFLOW_LABELS.has(item.label);
+              const hasChildren = "children" in item && item.children;
+              const cls = [
+                hasChildren ? "has-dropdown" : "",
+                isOverflow ? "menu-item--overflow" : "",
+                pathname === item.href ? "is-active" : "",
+              ]
+                .filter(Boolean)
+                .join(" ");
+              return (
+                <li key={item.href} className={cls}>
+                  <Link href={item.href}>{item.label}</Link>
+                  {hasChildren ? (
+                    <div className="dropdown">
+                      {item.children!.map((c) => (
+                        <Link key={c.href} href={c.href}>
+                          {c.label}
+                        </Link>
+                      ))}
+                    </div>
+                  ) : null}
+                </li>
+              );
+            })}
+            {/* Overflow group — shown only at 1024–1099px when individual items are hidden */}
+            <li className="has-dropdown menu-more">
+              <span className="menu-more-trigger" tabIndex={0}>
+                More
+              </span>
+              <div className="dropdown">
+                {HEADER_NAV.filter((it) => OVERFLOW_LABELS.has(it.label)).map(
+                  (it) => (
+                    <Link key={it.href} href={it.href}>
+                      {it.label}
+                    </Link>
+                  ),
+                )}
+              </div>
+            </li>
           </ul>
 
           <div className="nav-cta">
-            <a href={SITE.phoneHref} className="nav-phone" aria-label={`Call ${SITE.phone}`}>
-              <span className="nav-phone-icon">
-                <PhoneIcon />
-              </span>
-              <span className="nav-phone-text">{SITE.phone}</span>
-            </a>
+            <SiteSearch />
             <Link href="/contact/" className="btn btn-primary">
               Contact Us <span className="btn-arrow">→</span>
             </Link>

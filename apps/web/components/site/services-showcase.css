@@ -33,13 +33,12 @@
 }
 
 .svc-showcase em {
-  font-family: var(--font-instrument), "Instrument Serif", Georgia, serif;
+  font-family: var(--ds-font-display);
   font-style: italic;
   font-weight: 400;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--teal-500);
+  background: none;
+  -webkit-text-fill-color: currentColor;
 }
 
 /* ===== PILL NAV ===== */
@@ -1318,7 +1317,7 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  border: 2px solid var(--accent);
+  border: 2px solid var(--blue-300);
   display: grid;
   place-items: center;
   font-family: var(--font-instrument), serif;
@@ -1326,9 +1325,9 @@
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 1;
-  background: linear-gradient(135deg, #fff, #e9f0fb);
-  color: var(--accent);
-  box-shadow: 0 8px 20px var(--accent-glow);
+  background: var(--blue-50);
+  color: var(--blue-600);
+  box-shadow: 0 8px 20px rgba(30,91,230,.12);
   margin-bottom: 0.5rem;
   align-self: flex-start;
 }
@@ -1390,20 +1389,28 @@
 }
 .svc-tech-card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent);
+  border-color: var(--blue-400);
   box-shadow: var(--svc-shadow-cloud);
-  color: var(--accent);
+  color: var(--blue-600);
+}
+.svc-tech-card:hover .svc-tech-dot {
+  background: var(--blue-500);
+  border-color: var(--blue-500);
+  color: #fff;
+  transform: translateY(-2px);
 }
 .svc-tech-dot {
   width: 32px;
   height: 32px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: var(--blue-100);
+  border: 1px solid var(--blue-300);
   display: grid;
   place-items: center;
-  color: #fff;
+  color: var(--blue-600);
   font-size: 0.72rem;
-  box-shadow: 0 4px 10px -2px var(--accent-glow);
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px -2px rgba(30,91,230,.14);
 }
 
 /* ===== TESTIMONIAL ===== */

@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 import Script from "next/script";
-import { Plus_Jakarta_Sans, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Instrument_Serif, JetBrains_Mono, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import "./mobile.css";
 import "./auth.css";
 import "./premium.css";
+import "./tokens.css";
 import { Announce } from "@/components/site/Announce";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
@@ -39,6 +40,23 @@ const mono = JetBrains_Mono({
   weight: ["400", "500", "600"],
   display: "swap",
   variable: "--font-mono",
+});
+
+// Design-system fonts — used by new tokens.css primitives (.ui-btn, .ui-display-italic, etc.).
+// Loaded alongside the legacy fonts; existing pages keep Plus Jakarta Sans / Instrument Serif.
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["italic", "normal"],
+  display: "swap",
+  variable: "--font-playfair",
 });
 
 export const metadata: Metadata = {
@@ -137,9 +155,10 @@ export default async function RootLayout({
   const hdrs = await headers();
   const pathname = hdrs.get("x-pathname") ?? "/";
   const appShell = isAppPath(pathname);
+  const isHome = pathname === "/";
 
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable} ${mono.variable}`}>
+    <html lang="en" className={`${sans.variable} ${serif.variable} ${mono.variable} ${inter.variable} ${playfair.variable}`}>
       <head>
         {/* Geo-targeting USA — secondary signal alongside hreflang en-US */}
         <meta name="geo.region" content="US-MI" />
@@ -194,14 +213,17 @@ export default async function RootLayout({
         </Script>
       </head>
       <body>
+        <a href="#main" className="ui-skip-link">
+          Skip to main content
+        </a>
         {appShell ? (
-          children
+          <div id="main">{children}</div>
         ) : (
           <>
             <Decorations />
-            <Announce />
+            {isHome && <Announce />}
             <Header />
-            {children}
+            <div id="main">{children}</div>
             <Footer />
             <SiteScripts />
           </>

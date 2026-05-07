@@ -1,0 +1,707 @@
+/* ============================================================
+   V SOLUTIONS INC — DESIGN SYSTEM TOKENS
+   Per the master rebuild brief (May 2026). These tokens are the
+   canonical foundation for all NEW components and Phase 2/3
+   refactors. Existing legacy tokens in globals.css/premium.css
+   remain in place; pages migrate to these tokens incrementally.
+
+   Naming policy:
+   - Verbatim from the brief where no legacy collision exists.
+   - "--ds-shadow-*" prefix because legacy globals.css already
+     defines --shadow-sm / --shadow-md with different values; we
+     do not overwrite them to keep regression risk minimal.
+   - "--font-display" and "--font-inter" are added as new vars;
+     legacy --font-sans (Plus Jakarta Sans) is intentionally NOT
+     redefined here so existing body type stays stable.
+============================================================ */
+
+:root {
+  /* ---------- COLOR — primary navy (existing brand) ---------- */
+  --navy-900: #0E1B3A;
+  --navy-800: #142554;
+  --navy-700: #1B3070;
+
+  /* ---------- COLOR — brand blue (the ONE functional blue) --- */
+  --blue-700: #1746C7;
+  --blue-600: #1E5BE6;
+  --blue-500: #2C75F0;
+  --blue-400: #4F92F7;
+  --blue-300: #8FB8FB;
+  --blue-100: #E6F0FF;
+  --blue-50:  #F4F8FF;
+
+  /* ---------- COLOR — italic display teal accent ------------- */
+  --teal-500: #4FB8C9;
+  --teal-400: #6FCAD8;
+  --teal-300: #9CDCE6;
+
+  /* ---------- COLOR — neutrals ------------------------------- */
+  --ink-900:   #0B1220;
+  --ink-700:   #2A3548;
+  --ink-500:   #5A6478;
+  --ink-300:   #B8C0CE;
+  --ink-100:   #EEF1F6;
+  --surface:   #FFFFFF;
+  --surface-2: #F7F9FC;
+
+  /* ---------- COLOR — semantic ------------------------------- */
+  --success: #16A34A;
+  --warning: #D97706;
+  --danger:  #DC2626;
+
+  /* ---------- TYPOGRAPHY — fonts ---------------------------- */
+  /* next/font/google exposes the loaded fonts as --font-inter and
+     --font-playfair on <html>. We layer our DS fonts on top with
+     prefixed names so they never collide with next/font's vars or
+     the legacy --font-sans (Plus Jakarta Sans) in globals.css.
+     Use these in NEW design-system components only. */
+  --ds-font-sans:    var(--font-inter, Inter), "Helvetica Neue", system-ui, -apple-system, sans-serif;
+  --ds-font-display: var(--font-playfair, "Playfair Display"), "DM Serif Display", Georgia, serif;
+
+  /* ---------- TYPOGRAPHY — scale ---------------------------- */
+  --fs-display: clamp(2.5rem, 5vw, 4.5rem);
+  --fs-h2:      clamp(2rem, 3.5vw, 3rem);
+  --fs-h3:      clamp(1.5rem, 2.2vw, 2rem);
+  --fs-h4:      1.25rem;
+  --fs-body:    1rem;
+  --fs-small:   0.875rem;
+  --fs-caption: 0.75rem;
+
+  --lh-tight: 1.1;
+  --lh-snug:  1.25;
+  --lh-base:  1.6;
+  --tracking-tight: -0.02em;
+
+  /* ---------- SPACING --------------------------------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* ---------- RADIUS ---------------------------------------- */
+  --r-sm:    6px;
+  --r-md:   10px;
+  --r-lg:   16px;
+  --r-xl:   24px;
+  --r-pill: 999px;
+
+  /* ---------- SHADOW (namespaced to avoid legacy collision) -- */
+  --ds-shadow-sm: 0 1px 2px rgba(14,27,58,.06), 0 1px 3px rgba(14,27,58,.04);
+  --ds-shadow-md: 0 4px 12px rgba(14,27,58,.08), 0 2px 6px rgba(14,27,58,.05);
+  --ds-shadow-lg: 0 16px 48px rgba(14,27,58,.12), 0 4px 12px rgba(14,27,58,.06);
+
+  /* ---------- MOTION ---------------------------------------- */
+  --ease:     cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 150ms;
+  --dur:      220ms;
+  --dur-slow: 400ms;
+}
+
+/* ============================================================
+   PRIMITIVE COMPONENT STYLES
+   These classes are namespaced (.ui-*) so they cannot collide
+   with legacy .btn / .btn-primary / etc. New components import
+   these classes; legacy pages keep their existing styling until
+   migrated in Phase 2/3.
+============================================================ */
+
+/* ---------- Button (.ui-btn) ------------------------------- */
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--r-md);
+  font-family: var(--ds-font-sans);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.ui-btn:focus-visible {
+  outline: 2px solid var(--blue-600);
+  outline-offset: 2px;
+}
+.ui-btn[disabled],
+.ui-btn[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.ui-btn--primary {
+  background: var(--blue-600);
+  color: #fff;
+}
+.ui-btn--primary:hover {
+  background: var(--blue-700);
+  transform: translateY(-1px);
+  box-shadow: var(--ds-shadow-md);
+}
+
+.ui-btn--secondary {
+  background: transparent;
+  color: var(--blue-600);
+  border-color: var(--blue-300);
+}
+.ui-btn--secondary:hover {
+  background: var(--blue-50);
+  border-color: var(--blue-400);
+}
+
+.ui-btn--ghost {
+  background: transparent;
+  color: var(--ink-700);
+  padding: var(--space-2) var(--space-3);
+}
+.ui-btn--ghost:hover {
+  color: var(--blue-600);
+}
+
+/* ---------- TagPill (.ui-tag-pill) ------------------------- */
+.ui-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  margin: var(--space-1) var(--space-2) var(--space-1) 0;
+  font-family: var(--ds-font-sans);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  line-height: 1;
+  color: var(--blue-600);
+  background: var(--blue-100);
+  border: 1px solid var(--blue-300);
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+  transition: all var(--dur) var(--ease);
+}
+.ui-tag-pill:hover {
+  background: var(--blue-500);
+  color: #fff;
+  border-color: var(--blue-500);
+}
+
+/* ---------- StatBlock (.ui-stat) --------------------------- */
+.ui-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.ui-stat__value {
+  font-family: var(--ds-font-sans);
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  line-height: 1;
+  color: var(--navy-900);
+  letter-spacing: var(--tracking-tight);
+}
+.ui-stat__label {
+  font-family: var(--ds-font-sans);
+  font-weight: 500;
+  font-size: var(--fs-small);
+  line-height: 1.4;
+  color: var(--ink-500);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- HeadingRule (.ui-heading-rule) ----------------- */
+.ui-heading-rule {
+  display: block;
+  height: 2px;
+  width: 80px;
+  border: 0;
+  margin: var(--space-4) auto;
+  background: linear-gradient(90deg, transparent, var(--blue-500), transparent);
+}
+
+/* ---------- DisplayItalic (.ui-display-italic) ------------- */
+.ui-display-italic {
+  font-family: var(--ds-font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--teal-500);
+}
+
+/* ============================================================
+   FOCUS RING — sitewide a11y baseline (additive; will not
+   override more specific component focus styles).
+============================================================ */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--blue-600);
+  outline-offset: 2px;
+}
+
+/* Skip-to-content link — visible on focus, off-screen otherwise. */
+.ui-skip-link {
+  position: fixed;
+  top: -40px;
+  left: var(--space-4);
+  z-index: 200;
+  background: var(--blue-600);
+  color: #fff;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--r-md);
+  font-family: var(--ds-font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top var(--dur) var(--ease);
+}
+.ui-skip-link:focus {
+  top: var(--space-4);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   REDUCED MOTION — global safety net.
+   Page-level rules in globals.css/premium.css already disable
+   most animations under reduced-motion. This catches remaining
+   transitions and keyframes so users with the OS preference set
+   never see large animated movement.
+============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   ★ BEAUTY PASS — brand-aligned glow & polish
+   Swaps the legacy cyan/gold/rose glow tokens to brand blue/teal
+   so all 164+ existing references inherit the new palette without
+   per-rule edits. Layered on top of globals.css/premium.css.
+============================================================ */
+:root {
+  /* Legacy glow tokens — re-pointed at brand palette */
+  --rose-glow:   rgba(30, 91, 230, 0.22);   /* primary brand blue */
+  --sky-glow:    rgba(79, 146, 247, 0.18);  /* lighter blue accent */
+  --cyan-glow:   rgba(79, 202, 216, 0.22);  /* teal accent */
+  --indigo-glow: rgba(30, 91, 230, 0.18);   /* deeper blue */
+  --gold-glow:   rgba(79, 202, 216, 0.18);  /* gold becomes warm teal */
+
+  /* New explicit glow tokens — for the beauty rules below and
+     any new components that need on-brand luminance. */
+  --glow-blue-soft:   0 0 24px rgba(30, 91, 230, 0.18);
+  --glow-blue-strong: 0 0 32px rgba(30, 91, 230, 0.32);
+  --glow-teal-soft:   0 0 24px rgba(79, 202, 216, 0.20);
+  --glow-teal-strong: 0 0 32px rgba(79, 202, 216, 0.36);
+  --halo-blue: 0 18px 56px -16px rgba(30, 91, 230, 0.32),
+               0 0 28px -8px rgba(79, 146, 247, 0.22);
+  --halo-teal: 0 18px 56px -16px rgba(79, 202, 216, 0.30),
+               0 0 28px -8px rgba(79, 202, 216, 0.20);
+}
+
+/* ----- CARDS — refined surfaces, hairline borders, lift on hover ----- */
+.service-card,
+.post-card,
+.tier-card,
+.svc-related-card,
+.svc-why-card,
+.svc-tech-card,
+.svc-feature-block,
+.svc-process-step,
+.svc-testimonial-card,
+.svc-faq-item,
+.story-pillar-card {
+  transition:
+    transform var(--dur-slow) var(--ease),
+    box-shadow var(--dur-slow) var(--ease),
+    border-color var(--dur-slow) var(--ease);
+}
+.service-card:hover,
+.post-card:hover,
+.tier-card:hover,
+.svc-related-card:hover,
+.svc-why-card:hover,
+.svc-tech-card:hover,
+.svc-feature-block:hover,
+.svc-process-step:hover,
+.svc-testimonial-card:hover,
+.story-pillar-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 0 0 1px rgba(30, 91, 230, 0.14),
+    0 24px 56px -22px rgba(14, 27, 58, 0.22),
+    0 0 32px -8px rgba(30, 91, 230, 0.20);
+}
+
+/* ----- IMAGE HALOS — soft permanent luminance on featured imagery ----- */
+.svc-fv-photo,
+.banner-img,
+.service-img,
+.post-img,
+.story-hero img,
+.contact-hero img,
+.cs-hero img {
+  border-radius: var(--r-lg);
+  box-shadow: var(--halo-blue);
+  transition: box-shadow var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+}
+.svc-fv-photo:hover,
+.banner-img:hover,
+.service-img:hover,
+.post-img:hover {
+  box-shadow:
+    0 22px 64px -18px rgba(30, 91, 230, 0.40),
+    0 0 36px -6px rgba(79, 202, 216, 0.28);
+  transform: translateY(-2px);
+}
+
+/* ----- HERO V-ICON LUMINANCE ----- */
+.hero-center img {
+  filter:
+    drop-shadow(0 8px 28px rgba(30, 91, 230, 0.30))
+    drop-shadow(0 0 20px rgba(79, 202, 216, 0.22));
+}
+.hero-icon .ico-tile {
+  box-shadow:
+    0 8px 24px -8px rgba(30, 91, 230, 0.30),
+    0 0 18px -6px rgba(79, 202, 216, 0.22);
+}
+
+/* ----- SECTION TRANSITION HAIRLINE — refined gradient ----- */
+.sec + .sec::before,
+.sec + .stats::before,
+.stats + .sec::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(30, 91, 230, 0.32) 50%,
+    transparent
+  ) !important;
+}
+
+/* ----- BUTTONS — refined primary glow ----- */
+.btn-primary {
+  background:
+    linear-gradient(135deg, var(--navy-900) 0%, var(--blue-700) 55%, var(--blue-600) 100%) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+    0 6px 18px -4px rgba(14, 27, 58, 0.35),
+    0 4px 24px rgba(30, 91, 230, 0.32) !important;
+}
+.btn-primary:hover {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.28) inset,
+    0 10px 24px -4px rgba(14, 27, 58, 0.4),
+    0 12px 38px rgba(30, 91, 230, 0.45),
+    0 0 36px rgba(79, 202, 216, 0.28) !important;
+}
+.btn-ghost:hover {
+  border-color: var(--blue-400) !important;
+  color: var(--blue-600) !important;
+  box-shadow: 0 0 0 3px rgba(30, 91, 230, 0.14) !important;
+}
+
+/* ----- CONTACT FORM — refined floating field & focus glow ----- */
+.contact-form-cool .float-field input,
+.contact-form-cool .float-field textarea {
+  transition:
+    border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+.contact-form-cool .float-field input:focus,
+.contact-form-cool .float-field textarea:focus {
+  border-color: var(--blue-600);
+  box-shadow:
+    0 0 0 3px rgba(30, 91, 230, 0.18),
+    0 0 24px -6px rgba(30, 91, 230, 0.22);
+  outline: none;
+}
+
+/* ----- SEARCH PALETTE — deeper layered shadow & refined backdrop ----- */
+.ui-search-overlay {
+  background: rgba(11, 18, 32, 0.55);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+}
+.ui-search-palette {
+  box-shadow:
+    0 24px 80px -20px rgba(14, 27, 58, 0.55),
+    0 0 0 1px rgba(30, 91, 230, 0.08),
+    0 0 64px -16px rgba(30, 91, 230, 0.18);
+}
+.ui-search-trigger:hover {
+  box-shadow: 0 0 0 3px rgba(30, 91, 230, 0.10);
+}
+
+/* ----- HEADER — refined animated hairline (legacy rainbow → brand) ----- */
+.header::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--blue-400) 30%,
+    var(--blue-600) 50%,
+    var(--teal-400) 70%,
+    transparent
+  ) !important;
+  background-size: 200% 100% !important;
+  opacity: 0.55 !important;
+}
+
+/* ----- NEWSLETTER — refined arrow submit & input glow ----- */
+.newsletter-submit {
+  transition:
+    background var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+.newsletter-submit:hover {
+  box-shadow: 0 0 0 4px rgba(30, 91, 230, 0.22);
+}
+
+/* ----- LINKS in body copy — animated underline luminance ----- */
+.article-content a:hover,
+.contact-form-disclaim a:hover {
+  text-shadow: 0 0 8px rgba(30, 91, 230, 0.28);
+}
+
+/* ----- TAG PILLS — soft glow on hover ----- */
+.ui-tag-pill:hover {
+  box-shadow: 0 0 0 4px rgba(30, 91, 230, 0.16);
+}
+
+/* ============================================================
+   HEADER — single-line nav (Issue 1)
+   Layered on top of legacy .header rules in globals.css.
+   Goal: keep the nav from wrapping to two lines at any
+   width >= 1024px, fold three items into a "More ▾" group
+   between 1024–1099px, hamburger below 1024px.
+============================================================ */
+.header .container {
+  flex-wrap: nowrap;
+  gap: var(--space-5);
+}
+.menu {
+  flex-wrap: nowrap;
+  gap: 0;
+}
+.menu > li > a,
+.menu .menu-more-trigger {
+  padding: var(--space-2) 14px;
+  cursor: pointer;
+}
+.brand-logo {
+  max-width: 160px;
+  width: auto;
+  height: auto;
+  max-height: 42px;
+}
+@media (max-width: 1099px) and (min-width: 1024px) {
+  .brand-logo { max-width: 120px; max-height: 36px; }
+  .menu .menu-item--overflow { display: none; }
+  .menu > li > a,
+  .menu .menu-more-trigger { padding: var(--space-2) 10px; }
+}
+/* Above 1099px, the More group is redundant — hide it */
+@media (min-width: 1100px) {
+  .menu .menu-more { display: none; }
+}
+/* Below 1024px the hamburger takes over (legacy <=1100 rule still applies
+   in globals.css; we expand the menu to remain visible 1024–1099). */
+@media (min-width: 1024px) and (max-width: 1100px) {
+  .menu { display: flex; }
+  .hamburger { display: none; }
+}
+
+/* Active route — blue underline per brief */
+.menu > li.is-active > a {
+  color: var(--blue-600);
+}
+.menu > li.is-active > a::after {
+  width: 100%;
+  background: var(--blue-600);
+  box-shadow: none;
+}
+
+/* "More ▾" caret */
+.menu .menu-more > .menu-more-trigger::after {
+  content: "▾";
+  font-size: 0.65rem;
+  margin-left: 0.3rem;
+  opacity: 0.6;
+}
+.menu .menu-more:hover .dropdown,
+.menu .menu-more:focus-within .dropdown {
+  display: block;
+}
+
+/* ============================================================
+   SEARCH (Issue 6) — header trigger + ⌘K command palette
+============================================================ */
+.ui-search-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px 14px;
+  width: 220px;
+  height: 38px;
+  background: var(--surface);
+  color: var(--ink-500);
+  border: 1px solid var(--ink-300);
+  border-radius: var(--r-md);
+  font-family: var(--ds-font-sans);
+  font-size: 0.85rem;
+  cursor: text;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), width var(--dur) var(--ease);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.ui-search-trigger:hover,
+.ui-search-trigger:focus-visible {
+  border-color: var(--blue-400);
+}
+.ui-search-trigger:focus-visible {
+  outline: none;
+  border-color: var(--blue-600);
+  box-shadow: 0 0 0 3px rgba(30,91,230,.18);
+}
+.ui-search-trigger__placeholder {
+  flex: 1;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.ui-search-trigger__kbd {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--ink-100);
+  color: var(--ink-700);
+  border: 1px solid var(--ink-300);
+  flex-shrink: 0;
+}
+@media (max-width: 1099px) and (min-width: 1024px) {
+  .ui-search-trigger { width: 160px; }
+  .ui-search-trigger__placeholder { font-size: 0.78rem; }
+}
+@media (max-width: 1023px) {
+  .ui-search-trigger {
+    width: 38px;
+    padding: 8px;
+    justify-content: center;
+  }
+  .ui-search-trigger__placeholder,
+  .ui-search-trigger__kbd { display: none; }
+}
+
+/* ----- palette modal ----- */
+.ui-search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(11,18,32,.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 12vh var(--space-4) var(--space-4);
+  animation: ui-fade-in var(--dur) var(--ease);
+}
+@keyframes ui-fade-in { from { opacity: 0 } to { opacity: 1 } }
+
+.ui-search-palette {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  box-shadow: var(--ds-shadow-lg);
+  width: min(640px, 100%);
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: var(--ds-font-sans);
+}
+.ui-search-palette__inputwrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--ink-100);
+  color: var(--ink-500);
+}
+.ui-search-palette__input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--ink-900);
+  font-family: inherit;
+}
+.ui-search-palette__esc {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--ink-100);
+  color: var(--ink-700);
+  border: 1px solid var(--ink-300);
+  cursor: pointer;
+}
+.ui-search-palette__list {
+  overflow-y: auto;
+  padding: var(--space-2) 0;
+}
+.ui-search-palette__group {
+  padding: var(--space-2) 0;
+}
+.ui-search-palette__group [cmdk-group-heading] {
+  padding: var(--space-2) var(--space-5);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-500);
+}
+.ui-search-palette__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  font-size: 0.9rem;
+  color: var(--ink-900);
+  cursor: pointer;
+  border-radius: 0;
+  transition: background var(--dur-fast) var(--ease);
+}
+.ui-search-palette__item[data-selected="true"],
+.ui-search-palette__item:hover {
+  background: var(--blue-50);
+  color: var(--blue-700);
+}
+.ui-search-palette__hint {
+  font-size: 0.75rem;
+  color: var(--ink-500);
+}
+.ui-search-palette__empty {
+  padding: var(--space-6);
+  text-align: center;
+  color: var(--ink-500);
+  font-size: 0.9rem;
+}

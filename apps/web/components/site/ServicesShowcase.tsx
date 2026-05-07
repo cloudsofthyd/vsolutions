@@ -183,7 +183,6 @@ function ServicePage({ s }: { s: Service }) {
           <div className="svc-hero-grid">
             <div>
               <div className="svc-hero-pill">
-                <span className="svc-hero-pill-label">2026</span>
                 <span>{s.pill}</span>
               </div>
               <h1

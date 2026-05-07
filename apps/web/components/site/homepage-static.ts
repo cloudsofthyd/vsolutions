@@ -8,7 +8,6 @@ export const HOMEPAGE_STATIC_HTML = `<!-- ============ HERO — uses their REAL 
     <div class="hero-grid">
       <div>
         <div class="hero-pill">
-          <span class="label">2026</span>
           <span>One Partner. Every Solution.</span>
         </div>
 
@@ -785,7 +784,7 @@ export const HOMEPAGE_STATIC_HTML = `<!-- ============ HERO — uses their REAL 
   <div class="container">
     <div class="sec-head">
       <div class="sec-eyebrow">Why Choose Us</div>
-      <h2 class="sec-title">Why Businesses Choose <em>VSolutions Digital</em></h2>
+      <h2 class="sec-title">Why Businesses Choose <em>VSolutions</em></h2>
       <p class="sec-desc">A trusted partner combining AI, cloud, security, and engineering expertise — engineered for measurable business outcomes.</p>
     </div>
 

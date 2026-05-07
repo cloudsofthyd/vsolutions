@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import { PhoneIcon } from "@/components/site/PhoneIcon";
+import { TagPill } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: { absolute: "About V Solutions Inc — Global AI & Cloud Partner" },
@@ -143,7 +144,7 @@ export default function AboutPage() {
                 <p className="story-pillar-body">{p.body}</p>
                 <div className="story-pillar-tags">
                   {p.tags.map((t) => (
-                    <span key={t} className="story-tag">{t}</span>
+                    <TagPill key={t}>{t}</TagPill>
                   ))}
                 </div>
               </article>

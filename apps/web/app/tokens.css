@@ -590,22 +590,26 @@
   font-weight: 600;
 }
 
-/* "▾" caret on items with children — rotates on hover. */
-.menu .has-dropdown > a::after,
+/* "▾" caret on items with children — rotates on hover.
+   Selectors match the existing legacy globals.css `.menu .has-dropdown::after`
+   so we override (not duplicate) the caret. */
+.menu .has-dropdown::after,
 .menu .menu-more-trigger::after {
   content: "▾";
   font-size: 0.65rem;
   margin-left: 0.35rem;
   opacity: 0.55;
   display: inline-block;
-  transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
+  color: var(--ink-500);
+  transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease), color var(--dur) var(--ease);
 }
-.menu .has-dropdown:hover > a::after,
-.menu .has-dropdown:focus-within > a::after,
+.menu .has-dropdown:hover::after,
+.menu .has-dropdown:focus-within::after,
 .menu .menu-more:hover .menu-more-trigger::after,
 .menu .menu-more:focus-within .menu-more-trigger::after {
   transform: rotate(180deg);
   opacity: 1;
+  color: var(--blue-600);
 }
 
 .menu .menu-more:hover .dropdown,
